@@ -1,33 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="w-full h-screen overflow-hidden">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          disablePictureInPicture
+          controls={false}
+        >
+          <source src="/assets/videos/UniversityOfTorontoAerial.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-0" />
+
+      {/* Left triangle */}
+      <div className="absolute left-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/25 z-10" />
+
+      {/* Right triangle */}
+      <div className="absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/25 border-opacity-50 z-10" />
+
+      <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center ml-6 z-20">
+        <p className="text-white text-left text-7xl font-bold w-[800px] leading-tight">Canada’s Premier Model UN Crisis Simulation</p>
+        <p className="text-white text-left text-[35px] font-normal italic w-[800px]">Toronto, ON</p>
       </div>
-      <p className="read-the-docs bg-red-100 italic">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
