@@ -15,6 +15,16 @@ module.exports = {
           "0 0 165.84px rgba(255,255,255,0.37)",
         ],
       },
+      keyframes: {
+        horizontalScroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        horizontalScroll: "horizontalScroll 20s linear infinite",
+      },
     },
   },
+  plugins: [],
 };
