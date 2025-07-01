@@ -1,31 +1,35 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ScrollScrub({ children }: { children: React.ReactNode }) {
+export default function ScrollScrub({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const el = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.current,
-        { y: '100px', opacity: 0.5 },
+        { y: "100px", opacity: 0.5 },
         {
-          y: '0px',
+          y: "0px",
           opacity: 1,
-          ease: 'none',
+          ease: "none",
           scrollTrigger: {
             trigger: el.current,
-            start: 'top bottom', // Start when the element is 80% visible in
+            start: "top bottom", // Start when the element is 80% visible in
             // the viewport
-            end: 'top top', // End when the element is 20% visible in the viewport
+            end: "top top", // End when the element is 20% visible in the viewport
             scrub: true,
-          }
-        }
+          },
+        },
       );
     }, el);
 

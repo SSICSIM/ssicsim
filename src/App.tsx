@@ -1,7 +1,7 @@
-import './App.css'
-import Landing from './pages/landing'
-import Lenis from 'lenis'
-import { useEffect } from 'react'
+import "./App.css";
+import Landing from "./pages/landing";
+import Lenis from "lenis";
+import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
     <>
       <Landing />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
