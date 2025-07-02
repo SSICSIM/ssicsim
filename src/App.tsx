@@ -9,6 +9,7 @@ import Landing from "./pages/landing";
 // import About from "./pages/about";
 import Committees from "./pages/committees";
 // import Sponsors from "./pages/sponsors";
+import Register from "./pages/register";
 // import Contact from "./pages/contact";
 
 function App() {
@@ -31,10 +32,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/committees" element={<Committees />} />
+        <Route path="/register" element={<Register />} />
 
         {/* <Route path="/about" element={<About />} />
         <Route path="/committees" element={<Committees />} />
         <Route path="/sponsors" element={<Sponsors />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />  */}
       </Routes>
     </Router>

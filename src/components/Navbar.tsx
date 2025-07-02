@@ -19,10 +19,9 @@ export default function Navbar() {
     {
       label: "Committees",
       path: "/committees",
-
     },
     { label: "Sponsors", path: "/sponsors" },
-    {label: "Register", path: "/register" },
+    { label: "Register", path: "/register" },
     { label: "Contact", path: "/contact" },
   ];
 

@@ -167,89 +167,91 @@ const Landing = () => {
               )}
             </div>
           </div>
+        </div>
       </div>
-    </div>
-    <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
-  <h3 className="text-4xl font-dm-sans mb-8">Our Sponsors</h3>
-  <div className="relative w-full overflow-hidden">
-    <div className="animate-horizontalScroll flex gap-8 items-center w-[200%]">
-      <img
-        src="/assets/sponsors/sponsor1.png"
-        alt="Sponsor 1"
-        className="w-[150px] h-auto object-contain"
-      />
-      <img
-        src="/assets/sponsors/sponsor2.png"
-        alt="Sponsor 2"
-        className="w-[150px] h-auto object-contain"
-      />
-      <img
-        src="/assets/sponsors/sponsor3.png"
-        alt="Sponsor 3"
-        className="w-[150px] h-auto object-contain"
-      />
-      <img
-        src="/assets/sponsors/sponsor4.png"
-        alt="Sponsor 4"
-        className="w-[150px] h-auto object-contain"
-      />
-      {/* Repeat the logos to create a seamless loop */}
-      <img
-        src="/assets/sponsors/sponsor1.png"
-        alt="Sponsor 1"
-        className="w-[150px] h-auto object-contain"
-      />
-      <img
-        src="/assets/sponsors/sponsor2.png"
-        alt="Sponsor 2"
-        className="w-[150px] h-auto object-contain"
-      />
-      <img
-        src="/assets/sponsors/sponsor3.png"
-        alt="Sponsor 3"
-        className="w-[150px] h-auto object-contain"
-      />
-      <img
-        src="/assets/photos/Photo1.png"
-        alt="Sponsor 4"
-        className="w-[150px] h-auto object-contain"
-      />
-    </div>
-  </div>
-</div> 
-<div className="bg-[#A3841D] text-white py-8">
-  <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-    {/* Left Section */}
-    <div className="text-center md:text-left mb-4 md:mb-0">
-      <h4 className="text-3xl font-bold font-grotesque">SSICSM 2025</h4>
-      <p className="text-sm mt-2 font-dm-sans font-light">
-        Canada’s Premier Model UN Crisis Simulation
-      </p>
-    </div>
+      <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
+        <h3 className="text-4xl font-dm-sans mb-8">Our Sponsors</h3>
+        <div className="relative w-full overflow-hidden">
+          <div className="animate-horizontalScroll flex gap-8 items-center w-[200%]">
+            <img
+              src="/assets/sponsors/sponsor1.png"
+              alt="Sponsor 1"
+              className="w-[150px] h-auto object-contain"
+            />
+            <img
+              src="/assets/sponsors/sponsor2.png"
+              alt="Sponsor 2"
+              className="w-[150px] h-auto object-contain"
+            />
+            <img
+              src="/assets/sponsors/sponsor3.png"
+              alt="Sponsor 3"
+              className="w-[150px] h-auto object-contain"
+            />
+            <img
+              src="/assets/sponsors/sponsor4.png"
+              alt="Sponsor 4"
+              className="w-[150px] h-auto object-contain"
+            />
+            {/* Repeat the logos to create a seamless loop */}
+            <img
+              src="/assets/sponsors/sponsor1.png"
+              alt="Sponsor 1"
+              className="w-[150px] h-auto object-contain"
+            />
+            <img
+              src="/assets/sponsors/sponsor2.png"
+              alt="Sponsor 2"
+              className="w-[150px] h-auto object-contain"
+            />
+            <img
+              src="/assets/sponsors/sponsor3.png"
+              alt="Sponsor 3"
+              className="w-[150px] h-auto object-contain"
+            />
+            <img
+              src="/assets/photos/Photo1.png"
+              alt="Sponsor 4"
+              className="w-[150px] h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="bg-[#A3841D] text-white py-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+          {/* Left Section */}
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <h4 className="text-3xl font-bold font-grotesque">SSICSM 2025</h4>
+            <p className="text-sm mt-2 font-dm-sans font-light">
+              Canada’s Premier Model UN Crisis Simulation
+            </p>
+          </div>
 
-    {/* Center Section */}
-    <div className="font-dm-sans font-light flex flex-col md:flex-row gap-4 text-center">
-      <a href="#about" className="hover:underline">
-        About Us
-      </a>
-      <a href="#committees" className="hover:underline">
-        Committees
-      </a>
-      <a href="#sponsors" className="hover:underline">
-        Sponsors
-      </a>
-      <a href="#contact" className="hover:underline">
-        Contact
-      </a>
-    </div>
+          {/* Center Section */}
+          <div className="font-dm-sans font-light flex flex-col md:flex-row gap-4 text-center">
+            <a href="#about" className="hover:underline">
+              About Us
+            </a>
+            <a href="#committees" className="hover:underline">
+              Committees
+            </a>
+            <a href="#sponsors" className="hover:underline">
+              Sponsors
+            </a>
+            <a href="#contact" className="hover:underline">
+              Contact
+            </a>
+          </div>
 
-    {/* Right Section */}
-    <div className="text-center md:text-right">
-      <p className="text-sm font-dm-sans font-light">© 2025 SSICSM. All rights reserved.</p>
-    </div>
-  </div>
-</div>
-   </>
+          {/* Right Section */}
+          <div className="text-center md:text-right">
+            <p className="text-sm font-dm-sans font-light">
+              © 2025 SSICSM. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
