@@ -11,6 +11,7 @@ import Committees from "./pages/committees";
 // import Sponsors from "./pages/sponsors";
 import Register from "./pages/register";
 // import Contact from "./pages/contact";
+import Openings from "./pages/openings";
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/committees" element={<Committees />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/staff/openings" element={<Openings />} />
 
         {/* <Route path="/about" element={<About />} />
         <Route path="/committees" element={<Committees />} />

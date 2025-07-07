@@ -2,6 +2,8 @@ import ScrollScrub from "../components/ScrollTriger";
 import CurrentCard from "../components/CurrentCard";
 import CommiteeType from "../components/CommiteeType";
 import { useState } from "react";
+import Gavel from "../components/Gavel";
+
 
 const Landing = () => {
   const [selectedCommittee, setSelectedCommittee] = useState<string | null>(
@@ -60,28 +62,26 @@ const Landing = () => {
           </p>
         </div>
       </div>
-      <div className="bg-white h-screen w-full">
-        <div className="flex flex-col items-center justify-center h-full">
-          <h3 className="text-4xl font-dm-sans mb-4">
-            {" "}
-            The numbers tell the story{" "}
-          </h3>
-          <ScrollScrub>
-            {" "}
-            <h1 className="text-6xl font-bold mb-2">13 years</h1>{" "}
-          </ScrollScrub>
-          <ScrollScrub>
-            {" "}
-            <h1 className="text-6xl font-bold mb-2">300+ delegates </h1>{" "}
-          </ScrollScrub>
-          <ScrollScrub>
-            {" "}
-            <h1 className="text-6xl font-bold mb-2">
-              One unrivaled experience
-            </h1>{" "}
-          </ScrollScrub>
-        </div>
-      </div>
+      <div className="relative bg-white h-screen w-full flex items-center justify-center overflow-hidden">
+  {/* Gavel in the background */}
+  <div className="absolute inset-0 z-0">
+    <Gavel />
+  </div>
+
+  {/* Text content on top */}
+  <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
+    <h3 className="text-4xl font-dm-sans mb-4">The numbers tell the story</h3>
+    <ScrollScrub>
+      <h1 className="text-6xl font-bold mb-2">13 years</h1>
+    </ScrollScrub>
+    <ScrollScrub>
+      <h1 className="text-6xl font-bold mb-2">300+ delegates</h1>
+    </ScrollScrub>
+    <ScrollScrub>
+      <h1 className="text-6xl font-bold mb-2">One unrivaled experience</h1>
+    </ScrollScrub>
+  </div>
+</div>
       <div className="relative bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
         {/* Text Content */}
         <div className="relative z-10 flex items-center">
