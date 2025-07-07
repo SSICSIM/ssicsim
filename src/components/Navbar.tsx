@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null); // Track which dropdown is open
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Track mobile menu state
 
   const navItems = [
@@ -61,7 +60,7 @@ export default function Navbar() {
 
         {/* Hamburger Menu for Mobile */}
         <button
-          className={`sm:hidden focus:outline-none ${
+          className={`md:hidden focus:outline-none ${
             isScrolled ? "text-[#A3841D]" : "text-white"
           }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -84,24 +83,15 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <ul
-          className={`hidden sm:flex gap-10 text-xl font-dm-sans font-light items-center`}
+          className={`hidden md:flex gap-10 text-xl font-dm-sans font-light items-center`}
         >
           {navItems.map((item) => (
-            <li
-              key={item.path}
-              className="relative group flex items-center"
-              onMouseEnter={() => setDropdownOpen(item.label)}
-              onMouseLeave={() => setDropdownOpen(null)}
-            >
-              {/* Conditionally render Link or span */}
+            <li key={item.path} className="relative group flex items-center">
               {item.subItems ? (
                 <span
-                  className={`hover:text-[#A3841D] transition-colors cursor-default py-3 ${
-                    dropdownOpen === item.label ? "text-[#A3841D]" : ""
-                  } flex items-center`}
+                  className={`hover:text-[#A3841D] transition-colors cursor-default py-3 flex items-center`}
                 >
                   {item.label}
-                  {/* Add downwards arrow for dropdown items */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="ml-2 h-4 w-4"
@@ -131,29 +121,13 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               )}
-
-              {/* Dropdown Menu */}
-              {item.subItems && dropdownOpen === item.label && (
-                <ul className="absolute left-0 top-10 mt-2 bg-white shadow-lg rounded-lg py-2 w-48 z-50">
-                  {item.subItems.map((subItem) => (
-                    <li key={subItem.path}>
-                      <Link
-                        to={subItem.path}
-                        className="block px-4 py-2 text-[#A3841D] hover:bg-[#A3841D] hover:text-white transition-colors"
-                      >
-                        {subItem.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </li>
           ))}
         </ul>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <ul className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-lg py-4 z-50 sm:hidden">
+          <ul className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-lg py-4 z-50 md:hidden">
             {navItems.map((item) => (
               <li key={item.path} className="px-4 py-2 border-b border-gray-200">
                 {item.subItems ? (

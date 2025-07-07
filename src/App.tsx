@@ -12,6 +12,7 @@ import Committees from "./pages/committees";
 import Register from "./pages/register";
 // import Contact from "./pages/contact";
 import Openings from "./pages/openings";
+import UnderConstruction from "./pages/underconstruction";
 
 function App() {
   useEffect(() => {
@@ -28,21 +29,18 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/committees" element={<Committees />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/staff/openings" element={<Openings />} />
-
-        {/* <Route path="/about" element={<About />} />
-        <Route path="/committees" element={<Committees />} />
-        <Route path="/sponsors" element={<Sponsors />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<Contact />} />  */}
-      </Routes>
-    </Router>
+    <div style={{ overflowX: "hidden" }}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/committees" element={<Committees />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/staff/openings" element={<Openings />} />
+          <Route path="*" element={<UnderConstruction />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

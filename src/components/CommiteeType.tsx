@@ -13,7 +13,7 @@ const CommiteeType = ({
 }: CommiteeTypeProps) => {
   return (
     <div
-      className={`w-full max-w-[900px] min-w-[700px] rounded-lg p-8 flex flex-col md:flex-row cursor-pointer transition-colors duration-300 ${
+      className={`md:w-[100%] md:max-w-[600px] w-[80%] rounded-lg p-8 flex flex-col items-center md:flex-row cursor-pointer transition-colors duration-300 ${
         isSelected
           ? "bg-[#A3841D] text-white"
           : "bg-white text-black hover:bg-gray-200"
@@ -21,8 +21,8 @@ const CommiteeType = ({
       onClick={onClick}
     >
       {/* Title and Description */}
-      <div className="flex flex-col justify-center w-full md:w-[80%] h-[100%] md:h-[100%]">
-        <div className="font-light text-3xl md:text-5xl lg:text-6xl font-dm-sans break-words">
+      <div className="flex flex-col items-center justify-center w-full md:w-[80%] h-[100%] md:h-[100%]">
+        <div className="font-light text-3xl lg:text-6xl font-dm-sans break-words">
           {title}
         </div>
         {isSelected && (
@@ -34,7 +34,7 @@ const CommiteeType = ({
 
       {/* Circle with Plus/Minus */}
       <div
-        className={`flex items-center justify-center w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full self-center md:self-start transition-colors duration-300 ${
+        className={`flex items-center justify-center w-[80px] h-[80px] md:w-[60px] md:h-[60px] rounded-full self-center md:self-start transition-colors duration-300 ${
           isSelected ? "bg-white text-black" : "bg-gray-300 text-black"
         }`}
       >

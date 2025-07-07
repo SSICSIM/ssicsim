@@ -2,7 +2,6 @@ import ScrollScrub from "../components/ScrollTriger";
 import CurrentCard from "../components/CurrentCard";
 import CommiteeType from "../components/CommiteeType";
 import { useState } from "react";
-import Gavel from "../components/Gavel";
 
 
 const Landing = () => {
@@ -50,126 +49,125 @@ const Landing = () => {
           />
         </div>
         <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-40 z-10" />
-        <div className="absolute left-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10" />
-        <div className="absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
+        <div className="md:opacity-100 opacity-0 absolute left-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10" />
+        <div className="md:opacity-100 opacity-0 absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center ml-6 z-20">
-          <p className="text-white text-left text-7xl font-bold w-[800px] font-sans leading-tight">
+          <p className="text-white text-left md:text-7xl font-bold md:w-[800px] w-[80vw] font-sans leading-tight text-4xl">
             Canada’s Premier Model UN Crisis Simulation
           </p>
-          <p className="text-white text-left text-[35px] font-normal italic w-[800px]">
+          <p className="text-white text-left md:text-[35px] w-[60vw] text-[25px] font-normal italic md:w-[800px]">
             Toronto, ON
           </p>
         </div>
       </div>
       <div className="relative bg-white h-screen w-full flex items-center justify-center overflow-hidden">
-  {/* Gavel in the background */}
+  {/* Mesh Gradient Background */}
   <div className="absolute inset-0 z-0">
-    <Gavel />
+    <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700] via-[#FFC107] to-[#FF8C00] opacity-30"></div>
+    {/* Geometric Shapes */}
+    <div className="absolute top-10 left-10 w-[200px] h-[200px] bg-gradient-to-tr from-[#A3841D] to-[white] rounded-full blur-xl opacity-50 animate-pulse"></div>
+    <div className="absolute bottom-20 right-20 w-[300px] h-[300px] bg-gradient-to-bl from-[#A3841D] to-[white] rounded-full blur-2xl opacity-40 animate-pulse"></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-r from-[#FFD700] to-[white] rounded-full blur-3xl opacity-20"></div>
   </div>
 
-  {/* Text content on top */}
+  {/* Text Content */}
   <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
-    <h3 className="text-4xl font-dm-sans mb-4">The numbers tell the story</h3>
+    <h3 className="text-4xl font-dm-sans mb-4 text-gray-800">The numbers tell the story</h3>
     <ScrollScrub>
-      <h1 className="text-6xl font-bold mb-2">13 years</h1>
+      <h1 className="text-6xl font-bold mb-2 text-gray-900">13 years</h1>
     </ScrollScrub>
     <ScrollScrub>
-      <h1 className="text-6xl font-bold mb-2">300+ delegates</h1>
+      <h1 className="text-6xl font-bold mb-2 text-gray-900">300+ delegates</h1>
     </ScrollScrub>
     <ScrollScrub>
-      <h1 className="text-6xl font-bold mb-2">One unrivaled experience</h1>
+      <h1 className="text-6xl font-bold mb-2 text-gray-900">One unrivaled experience</h1>
     </ScrollScrub>
   </div>
 </div>
-      <div className="relative bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
-        {/* Text Content */}
-        <div className="relative z-10 flex items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 ml-[50px]">
-              <p className="text-[30px] font-extralight text-white font-grotesque">
-                SSICSM 2025
-              </p>
-              <p className="text-[72px] font-bold text-white font-grotesque leading-[1]">
-                Where Strategy Meets Urgency
-              </p>
-            </div>
-            <div className="p-4 w-[80%] flex flex-col justify-center">
-              <p className="text-[20px] font-light text-white font-dm-sans">
-                Most MUNs focus on structured diplomacy—SSICSIM does it
-                differently. Delegates think on their feet, adapt fast, and
-                tackle real-time crises like real-world leaders.
-              </p>
-              <button className="bg-white text-black px-6 py-2 mt-4 rounded-lg hover:bg-gray-200 w-[200px] transition-colors">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
+<div className="relative bg-[#A3841D] w-screen grid grid-rows-auto">
+  {/* Text Content */}
+  <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
+    <div className="md:w-1/2 px-4">
+      <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
+        SSICSM 2025
+      </p>
+      <p className="text-[36px] md:text-[72px] font-bold text-white font-grotesque leading-tight">
+        Where Strategy Meets Urgency
+      </p>
+    </div>
+    <div className="md:w-1/2 flex flex-col px-4 justify-center">
+      <p className="text-[16px] md:text-[20px] font-light text-white font-dm-sans">
+        Most MUNs focus on structured diplomacy—SSICSIM does it differently.
+        Delegates think on their feet, adapt fast, and tackle real-time crises
+        like real-world leaders.
+      </p>
+      <button className="bg-white text-black px-6 py-2 mt-4 rounded-lg hover:bg-gray-200 w-[150px] md:w-[200px] transition-colors">
+        Learn More
+      </button>
+    </div>
+  </div>
 
-        {/* Divider */}
-        <div className="w-full h-[2px] bg-white my-4"></div>
+  {/* Divider */}
+  <div className="w-full h-[2px] bg-white my-4"></div>
 
-        {/* Cards Section */}
-        <div className="grid grid-cols-3 gap-4">
-          <div className="p-4">
-            <CurrentCard
-              title="A Staff Team Like No Other"
-              image="/assets/photos/Photo1.png"
-              description="Our staff team is a diverse group of individuals with a wide range of expertise, from crisis management to diplomacy. We are committed to providing an unparalleled experience for all delegates."
-            />
-          </div>
-          <div className="p-4">
-            <CurrentCard
-              title="Constant Collaboration"
-              image="/assets/photos/Photo2.png"
-              description="With the added pressure of crises, delegates must work together to find solutions. Our simulation encourages teamwork and collaboration, allowing delegates to develop their leadership skills."
-            />
-          </div>
-          <div className="p-4">
-            <CurrentCard
-              title="Real-Time Crisis Action"
-              image="/assets/photos/Photo3.png"
-              description="In SSICSIM, delegates are faced with real-time crises that require quick thinking and decisive action. This unique approach to Model UN allows delegates to experience the thrill of crisis management firsthand."
-            />
-          </div>
-        </div>
-        <div className="bg-gray-100 h-auto w-screen p-18 flex justify-center items-center">
-          {/* Committee Types and Image Section */}
-          <div className="flex gap-24 w-[80%] items-center">
-            {/* Committee Types */}
-            <div className="flex flex-col gap-4 w-[40%]">
-              {committees.map((committee) => (
-                <CommiteeType
-                  key={committee.title}
-                  title={committee.title}
-                  description={committee.description}
-                  onClick={() => handleCommitteeClick(committee.title)}
-                  isSelected={selectedCommittee === committee.title}
-                />
-              ))}
-            </div>
+{/* Cards Section */}
+<div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden">
+  <div className="md:p-4">
+    <CurrentCard
+      title="A Staff Team Like No Other"
+      image="/assets/photos/Photo1.png"
+      description="Our staff team is a diverse group of individuals with a wide range of expertise, from crisis management to diplomacy. We are committed to providing an unparalleled experience for all delegates."
+    />
+  </div>
+  <div className="md:p-4">
+    <CurrentCard
+      title="Constant Collaboration"
+      image="/assets/photos/Photo2.png"
+      description="With the added pressure of crises, delegates must work together to find solutions. Our simulation encourages teamwork and collaboration, allowing delegates to develop their leadership skills."
+    />
+  </div>
+  <div className="md:p-4">
+    <CurrentCard
+      title="Real-Time Crisis Action"
+      image="/assets/photos/Photo3.png"
+      description="In SSICSIM, delegates are faced with real-time crises that require quick thinking and decisive action. This unique approach to Model UN allows delegates to experience the thrill of crisis management firsthand."
+    />
+  </div>
+</div>
+  {/* Committee Types and Image Section */}
+  <div className="bg-gray-100 h-auto w-full px-4 md:px-12 py-8 flex flex-col md:flex-row gap-8 items-center">
+    {/* Committee Types */}
+    <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[50%]">
+      {committees.map((committee) => (
+        <CommiteeType
+          key={committee.title}
+          title={committee.title}
+          description={committee.description}
+          onClick={() => handleCommitteeClick(committee.title)}
+          isSelected={selectedCommittee === committee.title}
+        />
+      ))}
+    </div>
 
-            {/* Image Section */}
-            <div className="w-[60%] flex items-center justify-end">
-              {selectedCommitteeData ? (
-                <img
-                  src={selectedCommitteeData.image}
-                  alt={selectedCommitteeData.title}
-                  className="w-[80%] h-auto object-cover rounded-lg"
-                />
-              ) : (
-                <img
-                  src="/assets/photos/default.png" // Path to your default image
-                  alt="Default Image"
-                  className="w-[80%] h-auto object-cover rounded-lg"
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
+    {/* Image Section */}
+    <div className="w-full md:w-[50%] flex items-center justify-center">
+      {selectedCommitteeData ? (
+        <img
+          src={selectedCommitteeData.image}
+          alt={selectedCommitteeData.title}
+          className="w-[80%] md:w-[100%] mx-auto h-auto object-cover rounded-lg"
+        />
+      ) : (
+        <img
+          src="/assets/photos/default.png"
+          alt="Default Image"
+          className="w-[80%] md:w-[100%] mx-auto h-auto object-cover rounded-lg"
+        />
+      )}
+    </div>
+  </div>
+</div>      <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
         <h3 className="text-4xl font-dm-sans mb-8">Our Sponsors</h3>
         <div className="relative w-full overflow-hidden">
           <div className="animate-horizontalScroll flex gap-8 items-center w-[200%]">
