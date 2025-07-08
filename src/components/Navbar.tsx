@@ -52,13 +52,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo / Brand */}
         <div className="flex items-center">
-            <img
-                src={isScrolled ? "/assets/photos/branding/GoldLogo.png" : "/assets/photos/branding/WhiteLogo.png"}
-                alt="SSICSM Logo"
-                className={`h-10 transition-all duration-300 ${
-                isScrolled ? "filter-none" : "filter brightness-0 invert"
-                }`}
-            />
+          <img
+            src={
+              isScrolled
+                ? "/assets/photos/branding/GoldLogo.png"
+                : "/assets/photos/branding/WhiteLogo.png"
+            }
+            alt="SSICSM Logo"
+            className={`h-10 transition-all duration-300 ${
+              isScrolled ? "filter-none" : "filter brightness-0 invert"
+            }`}
+          />
         </div>
         {/* Hamburger Menu for Mobile */}
         <button

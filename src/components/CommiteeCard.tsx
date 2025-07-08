@@ -33,28 +33,30 @@ const CommiteeCard = ({
     <>
       {/* Committee Card */}
       <div
-  className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[500px] h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
-  onClick={handleOpenModal}
-  style={{
-    backgroundImage: `url('${backgroundImage}')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
-  {/* Enhanced Gold Tint Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-[rgba(255,215,0,0.7)] rounded-lg"></div>
+        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[500px] h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
+        onClick={handleOpenModal}
+        style={{
+          backgroundImage: `url('${backgroundImage}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Enhanced Gold Tint Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.6)] to-[rgba(255,215,0,0.7)] rounded-lg"></div>
 
-  {/* Content */}
-  <div className="relative z-10">
-    <h2 className="text-2xl font-dm-sans font-bold mb-4 text-white">{title}</h2>
-    <p className="text-white mb-4 font-regular font-dm-sans">
-      {description}
-    </p>
-    <button className="bg-[#A3841D] text-white px-4 py-2 rounded hover:bg-[#8a6f1b] transition-colors">
-      Learn More
-    </button>
-  </div>
-</div>
+        {/* Content */}
+        <div className="relative z-10">
+          <h2 className="text-2xl font-dm-sans font-bold mb-4 text-white">
+            {title}
+          </h2>
+          <p className="text-white mb-4 font-regular font-dm-sans">
+            {description}
+          </p>
+          <button className="bg-[#A3841D] text-white px-4 py-2 rounded hover:bg-[#8a6f1b] transition-colors">
+            Learn More
+          </button>
+        </div>
+      </div>
 
       {/* Modal */}
       {isModalOpen && (

@@ -143,7 +143,6 @@ const committeesData = [
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/MetGala.webp",
-
   },
   {
     title: "Second Renaissance",
@@ -154,7 +153,6 @@ const committeesData = [
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/SecondRenaissance.png",
-
   },
   {
     title: "Tetris",
@@ -165,7 +163,6 @@ const committeesData = [
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/Tetris.jpg",
-
   },
   {
     title: "Saving Selene City: A Lunar Colony Crisis",
@@ -176,7 +173,6 @@ const committeesData = [
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/LunarCrisis.jpg",
-
   },
   {
     title: "Conceptual Ad Hoc",
@@ -187,7 +183,6 @@ const committeesData = [
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/ConceptualAdHoc.png",
-
   },
 ];
 
