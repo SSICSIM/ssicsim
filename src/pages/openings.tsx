@@ -45,41 +45,45 @@ const Openings = () => {
         {/* Divider */}
         <div className="w-full h-[2px] bg-white"></div>
 
-{/* Cards Section */}
-<div className="grid grid-rows-2 grid-cols-3 gap-4 h-[70vh] w-[90vw] mx-auto">
-  {/* First Entry (Occupies the first column in both rows) */}
-  <div className="h-full row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
-    <h3 className="text-3xl font-dm-sans">Chair</h3>
-    <p className="font-dm-sans font-light text-lg mt-2">
-      Interested? Take a look at some of these positions! Application link below!
-    </p>
-  </div>
+        {/* Cards Section */}
+        <div className="grid grid-rows-2 grid-cols-3 gap-4 h-[70vh] w-[90vw] mx-auto">
+          {/* First Entry (Occupies the first column in both rows) */}
+          <div className="h-full row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
+            <h3 className="text-3xl font-dm-sans">Chair</h3>
+            <p className="font-dm-sans font-light text-lg mt-2">
+              Interested? Take a look at some of these positions! Application
+              link below!
+            </p>
+          </div>
 
-  {/* Second Entry (Occupies the second column in the first row) */}
-  <div className="h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
-    <h3 className="text-3xl font-dm-sans">Crisis Manager</h3>
-    <p className="font-dm-sans font-light text-lg mt-2">
-      Interested? Take a look at some of these positions! Application link below!
-    </p>
-  </div>
+          {/* Second Entry (Occupies the second column in the first row) */}
+          <div className="h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
+            <h3 className="text-3xl font-dm-sans">Crisis Manager</h3>
+            <p className="font-dm-sans font-light text-lg mt-2">
+              Interested? Take a look at some of these positions! Application
+              link below!
+            </p>
+          </div>
 
-  {/* Third Entry (Occupies the third column in the first row) */}
-  <div className="h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
-    <h3 className="text-3xl font-dm-sans">Crisis Staff</h3>
-    <p className="font-dm-sans font-light text-lg mt-2">
-      Interested? Take a look at some of these positions! Application link below!
-    </p>
-  </div>
+          {/* Third Entry (Occupies the third column in the first row) */}
+          <div className="h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
+            <h3 className="text-3xl font-dm-sans">Crisis Staff</h3>
+            <p className="font-dm-sans font-light text-lg mt-2">
+              Interested? Take a look at some of these positions! Application
+              link below!
+            </p>
+          </div>
 
-  {/* Fourth Entry (Occupies the last two columns in the second row) */}
-  <div className="h-full row-span-1 col-span-2 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
-    <h3 className="text-3xl font-dm-sans">Pagers</h3>
-    <p className="font-dm-sans font-light text-lg mt-2">
-      Interested? Take a look at some of these positions! Application link below!
-    </p>
-  </div>
-</div>
-</div>
+          {/* Fourth Entry (Occupies the last two columns in the second row) */}
+          <div className="h-full row-span-1 col-span-2 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
+            <h3 className="text-3xl font-dm-sans">Pagers</h3>
+            <p className="font-dm-sans font-light text-lg mt-2">
+              Interested? Take a look at some of these positions! Application
+              link below!
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

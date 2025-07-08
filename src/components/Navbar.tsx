@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null); // Track which dropdown is open
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Track mobile menu state
 
   const navItems = [
@@ -42,25 +43,26 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-2 left-2 right-2 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white text-[#A3841D] shadow-lg border-b border-[#A3841D] py-2"
-          : "text-white shadow-md border-b border-white py-4"
+          ? "bg-white/30 backdrop-blur-md shadow-lg border border-[#A3841D] py-2 rounded-lg px-4"
+          : " shadow-md border-b border-white py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-4">
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo / Brand */}
-        <div
-          className={`text-xl font-bold tracking-tight transition-all duration-300 ${
-            isScrolled ? "text-[#A3841D]" : "text-white"
-          } flex items-center`}
-        >
-          SSICSM 2025
+        <div className="flex items-center">
+            <img
+                src={isScrolled ? "/assets/photos/branding/GoldLogo.png" : "/assets/photos/branding/WhiteLogo.png"}
+                alt="SSICSM Logo"
+                className={`h-10 transition-all duration-300 ${
+                isScrolled ? "filter-none" : "filter brightness-0 invert"
+                }`}
+            />
         </div>
-
         {/* Hamburger Menu for Mobile */}
         <button
-          className={`md:hidden focus:outline-none ${
+          className={`sm:hidden focus:outline-none ${
             isScrolled ? "text-[#A3841D]" : "text-white"
           }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -83,15 +85,26 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <ul
-          className={`hidden md:flex gap-10 text-xl font-dm-sans font-light items-center`}
+          className={`hidden sm:flex gap-10 text-xl font-dm-sans font-light items-center`}
         >
           {navItems.map((item) => (
-            <li key={item.path} className="relative group flex items-center">
+            <li
+              key={item.path}
+              className={`relative group flex items-center text-black ${isScrolled ? "text-black" : "text-white"}`}
+              onMouseEnter={() => setDropdownOpen(item.label)}
+              onMouseLeave={() => setDropdownOpen(null)}
+            >
+              {/* Conditionally render Link or span */}
               {item.subItems ? (
                 <span
-                  className={`hover:text-[#A3841D] transition-colors cursor-default py-3 flex items-center`}
+                  className={`hover:text-[#A3841D] transition-colors cursor-default py-3 ${
+                    dropdownOpen === item.label ? "text-[#A3841D]" : ""
+                  } ${
+                    isScrolled ? "text-black" : "text-white"
+                  } flex items-center`}
                 >
                   {item.label}
+                  {/* Add downwards arrow for dropdown items */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="ml-2 h-4 w-4"
@@ -124,26 +137,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <ul className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-lg py-4 z-50 md:hidden">
-            {navItems.map((item) => (
-              <li key={item.path} className="px-4 py-2 border-b border-gray-200">
-                {item.subItems ? (
-                  <span className="text-[#A3841D]">{item.label}</span>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="text-[#A3841D] hover:bg-[#A3841D] hover:text-white block px-4 py-2 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
     </nav>
   );

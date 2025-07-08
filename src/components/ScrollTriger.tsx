@@ -17,16 +17,16 @@ export default function ScrollScrub({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.current,
-        { y: "100px", opacity: 0.5 },
+        { y: "50px", opacity: 0.75 },
         {
           y: "0px",
           opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
-            start: "top bottom", // Start when the element is 80% visible in
+            start: "top 80%", // Start when the element is 80% visible in
             // the viewport
-            end: "top top", // End when the element is 20% visible in the viewport
+            end: "top 20%", // End when the element is 20% visible in the viewport
             scrub: true,
           },
         },
