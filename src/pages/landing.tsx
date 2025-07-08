@@ -3,16 +3,70 @@ import CurrentCard from "../components/CurrentCard";
 import CommiteeType from "../components/CommiteeType";
 import { useState } from "react";
 import { useEffect } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+
+import SplitType from 'split-type';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 const Landing = () => {
+  const strategyRef = useRef(null);
   const [selectedCommittee, setSelectedCommittee] = useState<string | null>(
     null,
   );
-
   useEffect(() => {
-    // Animate gradient shapes popping into the screen when scrolling
+    // Animate the cards to move to the middle
+    gsap.fromTo(
+      ".current-card", // Target all cards
+      { 
+        x: (i) => (i === 0 ? "33vw" : i === 2 ? "-33vw" : "0px"), // Start in their assigned positions
+        opacity: 0, // Start fully visible
+      },
+      { 
+        x: 0, // Move to the middle
+        opacity: 1, // Fade out
+        duration: 1.5, // Animation duration
+        ease: "power4.out", // Smooth easing
+        scrollTrigger: {
+          trigger: '.current-card',
+          start: 'top 80%',
+        },
+      }
+    );
+  }, []);
+  useEffect(() => {
+    const split = new SplitType('#strategy-heading', {
+      types: 'chars,words',
+    });
+  
+    gsap.from(split.chars, {
+      y: 100,
+      opacity: 0,
+      stagger: {
+        amount: 0.5,
+        from: "random",
+        yoyo: true,
+      },
+      duration: 1.2,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '#strategy-heading',
+        start: 'top 80%',
+      },
+    });
+  
+    return () => {
+      // optional cleanup if needed
+      split.revert();
+    };
+  }, []);
+  
+  useEffect(() => {
+    // Animate gradient shapes popping into the screen when they become visible
     gsap.fromTo(
       ".gradient-shape",
       { scale: 0, opacity: 0 },
@@ -20,13 +74,12 @@ const Landing = () => {
         scale: 1,
         opacity: 1,
         duration: 1.5,
-        ease: "elastic.out(1, 0.5)",
-        stagger: 0.5, // Stagger animations for each shape
+        ease: "elastic.out(1, 0.3)", // Adjusted ease for smoother bounce
+        stagger: 0.3, // Increased stagger for a more spaced-out effect
         scrollTrigger: {
           trigger: ".gradient-shape", // Trigger animation when gradient shapes enter the viewport
           start: "top 80%", // Start animation when the top of the shapes is 80% visible
-          end: "top 20%", // End animation when the top of the shapes is 20% visible
-          scrub: true, // Smooth animation based on scroll
+          once: true, // Ensure the animation only occurs once
         },
       }
     );
@@ -187,12 +240,15 @@ const Landing = () => {
             <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
               SSICSM 2025
             </p>
-            <p className="text-[36px] md:text-[72px] font-bold text-white font-grotesque leading-tight">
+            <p className="text-[36px] md:text-[72px] font-bold text-white font-grotesque leading-tight"   ref={strategyRef}
+  id="strategy-heading"
+>
               Where Strategy Meets Urgency
             </p>
           </div>
           <div className="md:w-1/2 flex flex-col px-4 justify-center">
-            <p className="text-[16px] md:text-[20px] font-light text-white font-dm-sans">
+            <p className="text-[16px] md:text-[20px] font-light text-white font-dm-sans"   id="strategy-heading"
+            >
               Most MUNs focus on structured diplomacy—SSICSIM does it
               differently. Delegates think on their feet, adapt fast, and tackle
               real-time crises like real-world leaders.
@@ -208,29 +264,28 @@ const Landing = () => {
 
         {/* Cards Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden">
-          <div className="md:p-4">
-            <CurrentCard
-              title="A Staff Team Like No Other"
-              image="/assets/photos/Photo1.png"
-              description="Our staff team is a diverse group of individuals with a wide range of expertise, from crisis management to diplomacy. We are committed to providing an unparalleled experience for all delegates."
-            />
-          </div>
-          <div className="md:p-4">
-            <CurrentCard
-              title="Constant Collaboration"
-              image="/assets/photos/Photo2.png"
-              description="With the added pressure of crises, delegates must work together to find solutions. Our simulation encourages teamwork and collaboration, allowing delegates to develop their leadership skills."
-            />
-          </div>
-          <div className="md:p-4">
-            <CurrentCard
-              title="Real-Time Crisis Action"
-              image="/assets/photos/Photo3.png"
-              description="In SSICSIM, delegates are faced with real-time crises that require quick thinking and decisive action. This unique approach to Model UN allows delegates to experience the thrill of crisis management firsthand."
-            />
-          </div>
+        <div className="current-card md:p-4">
+          <CurrentCard
+            title="A Staff Team Like No Other"
+            image="/assets/photos/Photo1.png"
+            description="Our staff team is a diverse group of individuals with a wide range of expertise, from crisis management to diplomacy. We are committed to providing an unparalleled experience for all delegates."
+          />
         </div>
-        {/* Committee Types and Image Section */}
+        <div className="current-card md:p-4">
+          <CurrentCard
+            title="Constant Collaboration"
+            image="/assets/photos/Photo2.png"
+            description="With the added pressure of crises, delegates must work together to find solutions. Our simulation encourages teamwork and collaboration, allowing delegates to develop their leadership skills."
+          />
+        </div>
+        <div className="current-card md:p-4">
+          <CurrentCard
+            title="Real-Time Crisis Action"
+            image="/assets/photos/Photo3.png"
+            description="In SSICSIM, delegates are faced with real-time crises that require quick thinking and decisive action. This unique approach to Model UN allows delegates to experience the thrill of crisis management firsthand."
+          />
+        </div>
+      </div>        {/* Committee Types and Image Section */}
         <div className="bg-gray-100 h-auto w-full px-4 md:px-12 py-8 flex flex-col md:flex-row gap-8 items-center">
           {/* Committee Types */}
           <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[50%]">

@@ -17,7 +17,7 @@ export default function ScrollScrub({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.current,
-        { y: "50px", opacity: 0.75 },
+        { y: "50px", opacity: 0 },
         {
           y: "0px",
           opacity: 1,
