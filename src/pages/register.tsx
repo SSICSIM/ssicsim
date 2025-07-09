@@ -1,4 +1,3 @@
-import React from "react";
 import RegistrationStep from "../components/RegistrationStep";
 
 const Register = () => {

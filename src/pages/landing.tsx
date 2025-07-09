@@ -4,6 +4,7 @@ import CommiteeType from "../components/CommiteeType";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
+import { useMemo } from "react";
 import LogoMarquee from "../components/LogoMarquee"
 
 import SplitType from "split-type";
@@ -20,6 +21,31 @@ const Landing = () => {
   const [currentImage, setCurrentImage] = useState<string>(
     "/assets/photos/typesOfCommitees/Default.JPG",
   );
+
+  const committees = useMemo(
+    () => [
+      {
+        title: "Fictional",
+        description:
+          "Fictional Crises bring to life the fantastical worlds of real fiction pieces (ie. Cinema, TV, Books, Adaptations of Current Events, etc.). Here, delegates will need to bring their knowledge of these fictional worlds in order to fully explore the scope of the committee and it’s alternate storylines.",
+        image: "/assets/photos/typesOfCommitees/Fictional.JPG",
+      },
+      {
+        title: "Historical",
+        description:
+          "Historical Crises are, well, historical committees! They bring to life major historical events, be it ancient, medieval, or modern, and implore delegates to reimagine them through various lenses or recreate the events of the past, often with a more academic approach to understanding history and its agents.",
+        image: "/assets/photos/typesOfCommitees/Historical.JPG",
+      },
+      {
+        title: "Conceptual",
+        description:
+          "Conceptual Crises are an opportunity for delegates to engage critically with complex, unconventional crises mechanics/topics. Delegates in these committees might find themselves challenged with non-traditional modes of debate or mechanics and crisis arcs that cannot be fully pre-researched.",
+        image: "/assets/photos/typesOfCommitees/Conceptual.JPG",
+      },
+    ],
+    []
+  );
+
 
   useEffect(() => {
     if (selectedCommittee) {
@@ -45,7 +71,7 @@ const Landing = () => {
         });
       }
     }
-  }, [selectedCommittee]);
+  }, [selectedCommittee, committees]);
 
   useEffect(() => {
     // Animate the blurs to fade in when scrolling
@@ -132,27 +158,7 @@ const Landing = () => {
     );
   }, []);
 
-  const committees = [
-    {
-      title: "Fictional",
-      description:
-        "Fictional Crises bring to life the fantastical worlds of real fiction pieces (ie. Cinema, TV, Books, Adaptations of Current Events, etc.). Here, delegates will need to bring their knowledge of these fictional worlds in order to fully explore the scope of the committee and it’s alternate storylines.",
-      image: "/assets/photos/typesOfCommitees/Fictional.JPG",
-    },
-    {
-      title: "Historical",
-      description:
-        "Historical Crises are, well, historical committees! They bring to life major historical events, be it ancient, medieval, or modern, and implore delegates to reimagine them through various lenses or recreate the events of the past, often with a more academic approach to understanding history and its agents.",
-      image: "/assets/photos/typesOfCommitees/Historical.JPG",
-    },
-    {
-      title: "Conceptual",
-      description:
-        "Conceptual Crises are an opportunity for delegates to engage critically with complex, unconventional crises mechanics/topics. Delegates in these committees might find themselves challenged with non-traditional modes of debate or mechanics and crisis arcs that cannot be fully pre-researched.",
-      image: "/assets/photos/typesOfCommitees/Conceptual.JPG",
-    },
-  ];
-
+  
   const handleCommitteeClick = (title: string) => {
     setSelectedCommittee(title === selectedCommittee ? null : title);
   };
@@ -232,7 +238,7 @@ const Landing = () => {
               SSICSM 2025
             </p>
             <p
-              className="text-[36px] md:text-[50px]/15 lg:text-[72px] font-bold text-white font-grotesque leading-tight"
+              className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-grotesque leading-tight"
               ref={strategyRef}
               id="strategy-heading"
             >
