@@ -36,7 +36,7 @@ const Openings = () => {
                 Apply here!
               </p>
               <button className="bg-white text-black px-6 py-2 mt-4 rounded-lg hover:bg-gray-200 w-[200px] transition-colors">
-                Learn More
+Apply Now!
               </button>
             </div>
           </div>
@@ -49,10 +49,9 @@ const Openings = () => {
         <div className="grid grid-rows-2 grid-cols-3 gap-4 h-[70vh] w-[90vw] mx-auto">
           {/* First Entry (Occupies the first column in both rows) */}
           <div className="h-full row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
-            <h3 className="text-3xl font-dm-sans">Chair</h3>
+            <h3 className="text-3xl font-dm-sans">Moderator</h3>
             <p className="font-dm-sans font-light text-lg mt-2">
-              Interested? Take a look at some of these positions! Application
-              link below!
+              Commands the Flow of Debate
             </p>
           </div>
 
@@ -60,8 +59,7 @@ const Openings = () => {
           <div className="h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <h3 className="text-3xl font-dm-sans">Crisis Manager</h3>
             <p className="font-dm-sans font-light text-lg mt-2">
-              Interested? Take a look at some of these positions! Application
-              link below!
+Constructs the Committee Storyline
             </p>
           </div>
 
@@ -69,17 +67,15 @@ const Openings = () => {
           <div className="h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <h3 className="text-3xl font-dm-sans">Crisis Staff</h3>
             <p className="font-dm-sans font-light text-lg mt-2">
-              Interested? Take a look at some of these positions! Application
-              link below!
+          Steer the Story of Individual Delegates
             </p>
           </div>
 
           {/* Fourth Entry (Occupies the last two columns in the second row) */}
           <div className="h-full row-span-1 col-span-2 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
-            <h3 className="text-3xl font-dm-sans">Pagers</h3>
+            <h3 className="text-3xl font-dm-sans">Crisis Coordinator/Staff Support</h3>
             <p className="font-dm-sans font-light text-lg mt-2">
-              Interested? Take a look at some of these positions! Application
-              link below!
+              Harmonizing Both The Front and Back Rooms & Adapting Experts
             </p>
           </div>
         </div>

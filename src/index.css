@@ -5,4 +5,5 @@
 @theme {
   --font-dm-sans: "DM Sans", sans-serif;
   --font-grotesque: "Darker Grotesque", sans-serif;
+  --breakpoint-clg: 1500px;
 }

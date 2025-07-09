@@ -4,6 +4,7 @@ import CommiteeType from "../components/CommiteeType";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
+import LogoMarquee from "../components/LogoMarquee"
 
 import SplitType from "split-type";
 import gsap from "gsap";
@@ -16,6 +17,54 @@ const Landing = () => {
   const [selectedCommittee, setSelectedCommittee] = useState<string | null>(
     null,
   );
+  const [currentImage, setCurrentImage] = useState<string>(
+    "/assets/photos/typesOfCommitees/Default.JPG",
+  );
+
+  useEffect(() => {
+    if (selectedCommittee) {
+      const selectedCommitteeData = committees.find(
+        (committee) => committee.title === selectedCommittee,
+      );
+
+      if (selectedCommitteeData) {
+        // Animate the fade-out of the current image
+        gsap.to(".committee-image", {
+          opacity: 0,
+          duration: 0.5,
+          onComplete: () => {
+            // Update the image source after fade-out
+            setCurrentImage(selectedCommitteeData.image);
+
+            // Animate the fade-in of the new image
+            gsap.to(".committee-image", {
+              opacity: 1,
+              duration: 0.5,
+            });
+          },
+        });
+      }
+    }
+  }, [selectedCommittee]);
+
+  useEffect(() => {
+    // Animate the blurs to fade in when scrolling
+    gsap.fromTo(
+      ".blur-element", // Target all blur elements
+      { opacity: 0 }, // Start fully transparent
+      {
+        opacity: 1, // Fade in
+        duration: 1.5, // Animation duration
+        ease: "power2.out", // Smooth easing
+        scrollTrigger: {
+          trigger: ".blur-element", // Trigger animation when blur elements enter the viewport
+          start: "top 80%", // Start animation when the top of the blur is 80% visible
+          end: "top 20%", // End animation when the top of the blur is 20% visible
+          once: true, // Ensure the animation only occurs once
+        },
+      },
+    );
+  }, []);
   useEffect(() => {
     // Animate the cards to move to the middle
     gsap.fromTo(
@@ -88,29 +137,25 @@ const Landing = () => {
       title: "Fictional",
       description:
         "Fictional Crises bring to life the fantastical worlds of real fiction pieces (ie. Cinema, TV, Books, Adaptations of Current Events, etc.). Here, delegates will need to bring their knowledge of these fictional worlds in order to fully explore the scope of the committee and it’s alternate storylines.",
-      image: "/assets/photos/Fictional.png",
+      image: "/assets/photos/typesOfCommitees/Fictional.JPG",
     },
     {
       title: "Historical",
       description:
         "Historical Crises are, well, historical committees! They bring to life major historical events, be it ancient, medieval, or modern, and implore delegates to reimagine them through various lenses or recreate the events of the past, often with a more academic approach to understanding history and its agents.",
-      image: "/assets/photos/Historical.png",
+      image: "/assets/photos/typesOfCommitees/Historical.JPG",
     },
     {
       title: "Conceptual",
       description:
         "Conceptual Crises are an opportunity for delegates to engage critically with complex, unconventional crises mechanics/topics. Delegates in these committees might find themselves challenged with non-traditional modes of debate or mechanics and crisis arcs that cannot be fully pre-researched.",
-      image: "/assets/photos/Conceptual.png",
+      image: "/assets/photos/typesOfCommitees/Conceptual.JPG",
     },
   ];
 
   const handleCommitteeClick = (title: string) => {
-    setSelectedCommittee(title === selectedCommittee ? null : title); // Toggle selection
+    setSelectedCommittee(title === selectedCommittee ? null : title);
   };
-
-  const selectedCommitteeData = committees.find(
-    (committee) => committee.title === selectedCommittee,
-  );
 
   return (
     <>
@@ -135,101 +180,51 @@ const Landing = () => {
           </p>
         </div>
       </div>
-      <div className="relative bg-white h-screen w-full flex items-center justify-center overflow-hidden">
+      <div className="relative bg-[#3C2C2C] h-auto py-44 w-full flex items-center justify-center overflow-hidden">
         {/* Geometric Shapes Around the Glassmorphism Section */}
-        <div className="absolute inset-0 z-0">
-          {/* Top Left Blob */}
-          <div
-            className="absolute top-[-150px] left-[-200px] w-[600px] h-[600px] bg-gradient-to-tr from-[#FFD700] to-[#E6C200] rounded-full gradient-shape"
-            style={{
-              clipPath: "circle(50% at 50% 50%)",
-            }}
-          ></div>
 
-          {/* Bottom Right Blob */}
-          <div
-            className="absolute bottom-[-200px] right-[-150px] w-[500px] h-[500px] bg-gradient-to-bl from-[#E6C200] to-[#CBA135] rounded-full gradient-shape"
-            style={{
-              clipPath: "circle(50% at 50% 50%)",
-            }}
-          ></div>
-
-          {/* Center Blob */}
-          <div
-            className="absolute top-[40%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-[#FFD700] to-[#E6C200] rounded-full gradient-shape"
-            style={{
-              clipPath: "circle(50% at 50% 50%)",
-            }}
-          ></div>
-
-          {/* Top Right Gradient Square Rotated 45 Degrees */}
-          <div
-            className="absolute top-[10px] right-[20px] w-[300px] h-[300px] bg-gradient-to-tl from-[#CBA135] to-[#FFD700] gradient-shape"
-            style={{
-              transform: "rotate(45deg)",
-            }}
-          ></div>
-
-          {/* Bottom Left Blob */}
-          <div
-            className="absolute bottom-[-150px] left-[-100px] w-[400px] h-[400px] bg-gradient-to-br from-[#FFD700] to-[#E6C200] rounded-full gradient-shape"
-            style={{
-              clipPath: "circle(50% at 50% 50%)",
-            }}
-          ></div>
-
-          {/* Complex Polygon Shape */}
-          <div
-            className="absolute top-[50%] left-[30%] transform -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-r from-[#E6C200] to-[#CBA135] gradient-shape"
-            style={{
-              clipPath: "polygon(50% 0%, 100% 25%, 75% 100%, 25% 100%, 0% 25%)",
-              rotate: "30deg",
-            }}
-          ></div>
-
-          {/* Complex Path Shape */}
-          <div
-            className="absolute bottom-[-100px] right-[25%] w-[300px] h-[300px] bg-gradient-to-bl from-[#FFD700] to-[#E6C200] gradient-shape"
-            style={{
-              clipPath:
-                "path('M150 0 C200 100, 300 100, 150 300 C0 100, 100 100, 150 0')",
-              rotate: "45deg",
-            }}
-          ></div>
-
-          {/* Abstract Triangle */}
-          <div
-            className="absolute top-[10%] left-[25%] w-[250px] h-[250px] bg-gradient-to-tr from-[#CBA135] to-[#FFD700] gradient-shape"
-            style={{
-              clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
-              rotate: "45deg",
-            }}
-          ></div>
-        </div>
 
         {/* Glassmorphism Content Section */}
-        <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/40 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px] border-[#FFD700]">
-          <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-black">
+        <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/40 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
+          <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-white">
             The numbers tell the story
           </h3>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white">
               13 years
             </h1>
           </ScrollScrub>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white">
               300+ delegates
             </h1>
           </ScrollScrub>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white">
               One unrivaled experience
             </h1>
           </ScrollScrub>
         </div>
       </div>
       <div className="relative bg-[#A3841D] w-screen grid grid-rows-auto">
+        <div
+          className="absolute blur-element rounded-full top-[400px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
+          style={{
+            background:
+              "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%)",
+            boxShadow:
+              "0px 0px 140px 400px rgb(255 255 255 /40%)" /* change the box shadow blur and spread */,
+          }}
+        ></div>
+        <div
+          className="absolute blur-element rounded-full bottom-[400px] right-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
+          style={{
+            background:
+              "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%)",
+            boxShadow:
+              "0px 0px 140px 400px rgb(255 255 255 /40%)" /* change the box shadow blur and spread */,
+          }}
+        ></div>
         {/* Text Content */}
         <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="md:w-1/2 px-4">
@@ -237,16 +232,16 @@ const Landing = () => {
               SSICSM 2025
             </p>
             <p
-              className="text-[36px] md:text-[72px] font-bold text-white font-grotesque leading-tight"
+              className="text-[36px] md:text-[50px]/15 lg:text-[72px] font-bold text-white font-grotesque leading-tight"
               ref={strategyRef}
               id="strategy-heading"
             >
               Where Strategy Meets Urgency
             </p>
           </div>
-          <div className="md:w-1/2 flex flex-col px-4 justify-center">
+          <div className="md:w-1/2 flex flex-col px-4">
             <p
-              className="text-[16px] md:text-[20px] font-light text-white font-dm-sans"
+              className="text-[16px] md:text-[25px] font-light text-white font-dm-sans"
               id="strategy-heading"
             >
               Most MUNs focus on structured diplomacy—SSICSIM does it
@@ -261,7 +256,7 @@ const Landing = () => {
         {/* Divider */}
         <div className="w-full h-[2px] bg-white my-4"></div>
         {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden z-[20]">
           <div className="current-card md:p-4">
             <CurrentCard
               title="A Staff Team Like No Other"
@@ -285,118 +280,69 @@ const Landing = () => {
           </div>
         </div>{" "}
         {/* Committee Types and Image Section */}
-        <div className="bg-gray-100 h-auto w-full px-4 md:px-12 py-8 flex flex-col md:flex-row gap-8 items-center">
-          {/* Committee Types */}
-          <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[50%]">
-            {committees.map((committee) => (
-              <CommiteeType
-                key={committee.title}
-                title={committee.title}
-                description={committee.description}
-                onClick={() => handleCommitteeClick(committee.title)}
-                isSelected={selectedCommittee === committee.title}
-              />
-            ))}
-          </div>
-
-          {/* Image Section */}
-          <div className="w-full md:w-[50%] flex items-center justify-center">
-            {selectedCommitteeData ? (
-              <img
-                src={selectedCommitteeData.image}
-                alt={selectedCommitteeData.title}
-                className="w-[80%] md:w-[100%] mx-auto h-auto object-cover rounded-lg"
-              />
-            ) : (
-              <img
-                src="/assets/photos/default.png"
-                alt="Default Image"
-                className="w-[80%] md:w-[100%] mx-auto h-auto object-cover rounded-lg"
-              />
-            )}
-          </div>
-        </div>
-      </div>{" "}
-      <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
-        <h3 className="text-4xl font-dm-sans mb-8">Our Sponsors</h3>
-        <div className="relative w-full overflow-hidden">
-          <div className="animate-horizontalScroll flex gap-8 items-center w-[200%]">
-            <img
-              src="/assets/sponsors/sponsor1.png"
-              alt="Sponsor 1"
-              className="w-[150px] h-auto object-contain"
-            />
-            <img
-              src="/assets/sponsors/sponsor2.png"
-              alt="Sponsor 2"
-              className="w-[150px] h-auto object-contain"
-            />
-            <img
-              src="/assets/sponsors/sponsor3.png"
-              alt="Sponsor 3"
-              className="w-[150px] h-auto object-contain"
-            />
-            <img
-              src="/assets/sponsors/sponsor4.png"
-              alt="Sponsor 4"
-              className="w-[150px] h-auto object-contain"
-            />
-            {/* Repeat the logos to create a seamless loop */}
-            <img
-              src="/assets/sponsors/sponsor1.png"
-              alt="Sponsor 1"
-              className="w-[150px] h-auto object-contain"
-            />
-            <img
-              src="/assets/sponsors/sponsor2.png"
-              alt="Sponsor 2"
-              className="w-[150px] h-auto object-contain"
-            />
-            <img
-              src="/assets/sponsors/sponsor3.png"
-              alt="Sponsor 3"
-              className="w-[150px] h-auto object-contain"
-            />
-            <img
-              src="/assets/photos/Photo1.png"
-              alt="Sponsor 4"
-              className="w-[150px] h-auto object-contain"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="bg-[#A3841D] text-white py-8">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-          {/* Left Section */}
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <h4 className="text-3xl font-bold font-grotesque">SSICSM 2025</h4>
-            <p className="text-sm mt-2 font-dm-sans font-light">
-              Canada’s Premier Model UN Crisis Simulation
+        <div className="bg-gray-100 h-auto w-full">
+          <div className="w-full text-center my-8">
+            <h2 className="text-2xl md:text-5xl font-bold text-black font-dm-sans">
+              Types of Commitees
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 font-dm-sans mt-4">
+              Click on a committee type to learn more.
             </p>
           </div>
 
-          {/* Center Section */}
-          <div className="font-dm-sans font-light flex flex-col md:flex-row gap-4 text-center">
-            <a href="#about" className="hover:underline">
-              About Us
-            </a>
-            <a href="#committees" className="hover:underline">
-              Committees
-            </a>
-            <a href="#sponsors" className="hover:underline">
-              Sponsors
-            </a>
-            <a href="#contact" className="hover:underline">
-              Contact
-            </a>
-          </div>
+          <div className="relative z-[20] bg-gray-100 h-auto w-full px-4 flex flex-col gap-4 md:flex-row justify-center">
+            {/* Committee Types */}
 
-          {/* Right Section */}
-          <div className="text-center md:text-right">
-            <p className="text-sm font-dm-sans font-light">
-              © 2025 SSICSM. All rights reserved.
-            </p>
+            <div
+  className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
+  style={{
+    background:
+      "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
+    backgroundBlendMode: "overlay", // Blend the texture with the gradient
+    boxShadow:
+      "0px 0px 400px 400px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
+    backgroundSize: "cover", // Ensure the texture covers the entire element
+    backgroundRepeat: "no-repeat", // Prevent repeating the texture
+  }}
+></div>
+
+<div
+  className="absolute blur-element rounded-full right-[200px] bottom-[-200px] h-[1px] w-[1px] pointer-events-none z-[1]"
+  style={{
+    background:
+      "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
+    backgroundBlendMode: "overlay", // Blend the texture with the gradient
+    boxShadow:
+      "0px 0px 200px 200px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
+    backgroundSize: "cover", // Ensure the texture covers the entire element
+    backgroundRepeat: "no-repeat", // Prevent repeating the texture
+  }}
+></div>            <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[40%] z-[20]">
+              {committees.map((committee) => (
+                <CommiteeType
+                  key={committee.title}
+                  title={committee.title}
+                  description={committee.description}
+                  onClick={() => handleCommitteeClick(committee.title)}
+                  isSelected={selectedCommittee === committee.title}
+                />
+              ))}
+            </div>
+
+            {/* Image Section */}
+            <div className="w-full md:w-[40%] flex items-center justify-center">
+              <img
+                src={currentImage}
+                alt="Selected Committee"
+                className="committee-image w-[80%] md:w-[100%] h-auto object-cover rounded-lg"
+                style={{ opacity: 1 }}
+              />
+            </div>
           </div>
+        </div>{" "}
+        <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
+          <h3 className="text-4xl font-dm-sans mb-8">Our Sponsors</h3>
+          <LogoMarquee />
         </div>
       </div>
     </>

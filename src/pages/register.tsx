@@ -14,7 +14,7 @@ const Register = () => {
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
       <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center ml-6 z-20">
-        <p className="text-white text-left text-7xl font-bold w-[800px] font-sans leading-tight">
+        <p className="text-white text-left text-4xl md:text-7xl font-bold w-[800px] font-dm-sans leading-tight">
           Registration
         </p>
       </div>
@@ -32,7 +32,7 @@ const Register = () => {
           </p>
 
           {/* Pricing Grid */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {/* Early Bird Pricing */}
             <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$65</p>
@@ -69,19 +69,19 @@ const Register = () => {
 
         {/* Registration Section */}
         <div className="relative z-10 flex justify-center">
-          <div className="grid grid-cols-2 grid-rows-4 w-[80%] min-h-[100%]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 md:w-[80%] min-h-[100%]">
             {/* First Column (Spanning All Rows) */}
             <div className="row-span-4 p-6 flex flex-col justify-center">
-              <h1 className="text-7xl font-bold font-dm-sans ml-6">
+              <h1 className="text-4xl md:text-7xl font-bold font-dm-sans lg:ml-6">
                 Registration
               </h1>
-              <p className="text-gray-700 text-2xl font-dm-sans font-light w-[30vw] ml-6 pt-2">
+              <p className="text-gray-700 text-2xl font-dm-sans font-light w-[80vw] lg:w-[30vw] lg:ml-6 pt-2">
                 Whether you are an individual or group delegation, it’s easy to
                 register for SSICSIM 2025!
               </p>
 
               {/* Buttons */}
-              <div className="flex gap-4 mt-6 ml-6">
+              <div className="flex gap-4 mt-6 md:ml-6">
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSc_GvoYq_1N5WmPg7UH048-OdMSZTlzSGuHwh8YZIsy2K7rXQ/formResponse"
                   target="_blank"
@@ -139,7 +139,7 @@ const Register = () => {
         <hr className="border-t-2 border-gray-300 my-10" />
 
         {/* Payments Section */}
-        <div className="container mx-auto py-20 text-center">
+        <div className="container mx-auto py-20 text-center w-[80%]">
           <h2 className="text-5xl font-bold font-dm-sans text-black mb-8">
             Payments
           </h2>

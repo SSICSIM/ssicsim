@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const UnderConstruction = () => {
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center bg-gray-100">
+    <div className="h-screen w-full flex flex-col items-center justify-center bg-[#3C2C2C]">
       {/* Animated Construction Icon */}
       <div className="flex items-center justify-center mb-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-20 w-20 text-[#A3841D] animate-spin"
+          className="h-20 w-20 text-white animate-spin"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -20,8 +20,8 @@ const UnderConstruction = () => {
           />
         </svg>
       </div>
-      <h1 className="text-4xl font-bold text-[#A3841D]">Under Construction</h1>
-      <p className="text-lg font-dm-sans text-gray-700 mt-4">
+      <h1 className="text-4xl font-bold text-white">Under Construction</h1>
+      <p className="text-lg font-dm-sans text-white mt-4">
         We're working hard to bring this page to life. Stay tuned!
       </p>
       <Link

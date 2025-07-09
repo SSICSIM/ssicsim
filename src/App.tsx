@@ -13,6 +13,7 @@ import Register from "./pages/register";
 // import Contact from "./pages/contact";
 import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/staff/openings" element={<Openings />} />
           <Route path="*" element={<UnderConstruction />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
