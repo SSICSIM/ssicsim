@@ -257,8 +257,8 @@ const Committees = () => {
         />
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
-      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center ml-6 z-20">
-        <p className="text-white text-left text-4xl font-bold w-[800px] font-sans leading-tight md:text-7xl">
+      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
+        <p className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-sans leading-tight ml-6 md:text-7xl">
           Committees
         </p>
       </div>
@@ -274,50 +274,51 @@ const Committees = () => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-8">
-          <button
-            className={`px-4 py-2 rounded ${
-              filter === "All"
-                ? "bg-[#A3841D] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-            onClick={() => setFilter("All")}
-          >
-            All
-          </button>
-          <button
-            className={`px-4 py-2 rounded ${
-              filter === "Historical"
-                ? "bg-[#A3841D] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-            onClick={() => setFilter("Historical")}
-          >
-            Historical
-          </button>
-          <button
-            className={`px-4 py-2 rounded ${
-              filter === "Fictional"
-                ? "bg-[#A3841D] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-            onClick={() => setFilter("Fictional")}
-          >
-            Fictional
-          </button>
-          <button
-            className={`px-4 py-2 rounded ${
-              filter === "Conceptual"
-                ? "bg-[#A3841D] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-            onClick={() => setFilter("Conceptual")}
-          >
-            Conceptual
-          </button>
-        </div>
-
-        {/* Committee Cards */}
+{/* Filter Buttons */}
+<div className="w-full">
+  <div className="flex flex-wrap justify-center gap-4 px-4 mb-8 w-full">
+    <button
+      className={`px-4 py-2 rounded ${
+        filter === "All"
+          ? "bg-[#A3841D] text-white"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+      }`}
+      onClick={() => setFilter("All")}
+    >
+      All
+    </button>
+    <button
+      className={`px-4 py-2 rounded ${
+        filter === "Historical"
+          ? "bg-[#A3841D] text-white"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+      }`}
+      onClick={() => setFilter("Historical")}
+    >
+      Historical
+    </button>
+    <button
+      className={`px-4 py-2 rounded ${
+        filter === "Fictional"
+          ? "bg-[#A3841D] text-white"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+      }`}
+      onClick={() => setFilter("Fictional")}
+    >
+      Fictional
+    </button>
+    <button
+      className={`px-4 py-2 rounded ${
+        filter === "Conceptual"
+          ? "bg-[#A3841D] text-white"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+      }`}
+      onClick={() => setFilter("Conceptual")}
+    >
+      Conceptual
+    </button>
+  </div>
+</div>        {/* Committee Cards */}
         <div className="grid grid-cols-1 w-[100vw] md:grid-cols-2 md:w-[85%] md:mx-auto xl:grid-cols-3 xl:w-[100%] gap-4">
           {filteredCommittees.map((committee, index) => (
             <CommiteeCard

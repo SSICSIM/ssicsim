@@ -12,8 +12,8 @@ const Register = () => {
         />
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
-      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center ml-6 z-20">
-        <p className="text-white text-left text-4xl md:text-7xl font-bold w-[800px] font-dm-sans leading-tight">
+      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
+        <p className="text-white text-left text-4xl md:text-7xl font-bold  w-[80vw] lg:w-[800px] font-dm-sans ml-6 leading-tight">
           Registration
         </p>
       </div>
@@ -31,7 +31,7 @@ const Register = () => {
           </p>
 
           {/* Pricing Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:w-auto w-[80%] mx-auto">
             {/* Early Bird Pricing */}
             <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$65</p>

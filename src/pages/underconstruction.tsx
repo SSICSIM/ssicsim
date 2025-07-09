@@ -20,13 +20,13 @@ const UnderConstruction = () => {
           />
         </svg>
       </div>
-      <h1 className="text-4xl font-bold text-white">Under Construction</h1>
-      <p className="text-lg font-dm-sans text-white mt-4">
+      <h1 className="text-4xl w-[80%] mx-auto font-bold text-white text-center">Under Construction</h1>
+      <p className="text-lg w-[80%] mx-auto font-dm-sans text-white mt-4 text-center">
         We're working hard to bring this page to life. Stay tuned!
       </p>
       <Link
         to="/"
-        className="mt-6 px-6 py-3 bg-[#A3841D] text-white rounded-lg hover:bg-[#C2A95F] transition-colors"
+        className="mt-6 px-6 py-3 w-[80%] mx-auto text-center bg-[#A3841D] text-white rounded-lg hover:bg-[#C2A95F] transition-colors"
       >
         Go Back Home
       </Link>

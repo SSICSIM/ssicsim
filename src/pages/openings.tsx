@@ -10,8 +10,8 @@ const Openings = () => {
         />
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
-      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center ml-6 z-20">
-        <p className="text-white text-left text-7xl font-bold w-[800px] font-sans leading-tight">
+      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
+        <p className="text-white text-left text-7xl font-bold w-[80vw] lg:w-[800px] font-sans leading-tight ml-6">
           Staff Hiring
         </p>
       </div>

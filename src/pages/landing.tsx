@@ -177,11 +177,11 @@ const Landing = () => {
         <div className="md:opacity-100 opacity-0 absolute left-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10" />
         <div className="md:opacity-100 opacity-0 absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
 
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center ml-6 z-20">
-          <p className="text-white text-left md:text-7xl font-bold md:w-[800px] w-[80vw] font-sans leading-tight text-4xl">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center z-20">
+          <p className="text-white text-left md:text-7xl font-bold w-[80vw] lg:w-[800px] ml-6 font-sans leading-tight text-4xl">
             Canada’s Premier Model UN Crisis Simulation
           </p>
-          <p className="text-white text-left md:text-[35px] w-[60vw] text-[25px] font-normal italic md:w-[800px]">
+          <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
             Toronto, ON
           </p>
         </div>
@@ -262,7 +262,7 @@ const Landing = () => {
         {/* Divider */}
         <div className="w-full h-[2px] bg-white my-4"></div>
         {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden z-[20]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden z-[20]">
           <div className="current-card md:p-4">
             <CurrentCard
               title="A Staff Team Like No Other"

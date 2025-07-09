@@ -7,3 +7,7 @@
   --font-grotesque: "Darker Grotesque", sans-serif;
   --breakpoint-clg: 1500px;
 }
+
+body, html{
+  overflow-x: hidden;
+}

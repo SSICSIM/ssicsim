@@ -22,7 +22,7 @@ const CommiteeType = ({
     >
       {/* Title and Description */}
       <div className="flex flex-col items-center justify-center w-full md:w-[80%] h-[100%] md:h-[100%]">
-        <div className="font-light text-3xl md:text-5xl lg:text-6xl font-dm-sans break-words">
+        <div className="font-light text-3xl md:text-4xl lg:text-6xl font-dm-sans break-words">
           {title}
         </div>
         {isSelected && (
