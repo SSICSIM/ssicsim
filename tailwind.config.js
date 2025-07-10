@@ -26,19 +26,18 @@ module.exports = {
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' }, // shift by half if repeating
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }, // shift by half if repeating
         },
       },
       animation: {
-        marquee: 'marquee 20s linear infinite',
+        marquee: "marquee 20s linear infinite",
       },
       screens: {
-        'xl': '1500px',         // Extra small devices
-        '3xl': '1600px',       // Extra large screens
-        'ultrawide': '1920px'  // 4K monitors, etc.
+        xl: "1500px", // Extra small devices
+        "3xl": "1600px", // Extra large screens
+        ultrawide: "1920px", // 4K monitors, etc.
       },
-
     },
   },
   plugins: [],

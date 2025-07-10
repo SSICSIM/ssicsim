@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useMemo } from "react";
-import LogoMarquee from "../components/LogoMarquee"
+import LogoMarquee from "../components/LogoMarquee";
 
 import SplitType from "split-type";
 import gsap from "gsap";
@@ -43,9 +43,8 @@ const Landing = () => {
         image: "/assets/photos/typesOfCommitees/Conceptual.JPG",
       },
     ],
-    []
+    [],
   );
-
 
   useEffect(() => {
     if (selectedCommittee) {
@@ -158,7 +157,6 @@ const Landing = () => {
     );
   }, []);
 
-  
   const handleCommitteeClick = (title: string) => {
     setSelectedCommittee(title === selectedCommittee ? null : title);
   };
@@ -178,17 +176,26 @@ const Landing = () => {
         <div className="md:opacity-100 opacity-0 absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center z-20">
+          <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+            Toronto, ON
+          </p>
           <p className="text-white text-left md:text-7xl font-bold w-[80vw] lg:w-[800px] ml-6 font-sans leading-tight text-4xl">
             Canada’s Premier Model UN Crisis Simulation
           </p>
           <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-            Toronto, ON
+            October 24th - 26th, 2025
           </p>
+          <a
+            href="/register"
+            rel="noopener noreferrer"
+            className="ml-6 mt-4 bg-white text-[#A3841D] px-6 py-4 rounded-lg font-dm-sans text-2xl md:text-4xl font-bold hover:bg-gray-100 transition-colors"
+          >
+            Register Now
+          </a>
         </div>
       </div>
       <div className="relative bg-[#3C2C2C] h-auto py-44 w-full flex items-center justify-center overflow-hidden">
         {/* Geometric Shapes Around the Glassmorphism Section */}
-
 
         {/* Glassmorphism Content Section */}
         <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/40 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
@@ -235,7 +242,7 @@ const Landing = () => {
         <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="md:w-1/2 px-4">
             <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
-            SSICSIM 2025
+              SSICSIM 2025
             </p>
             <p
               className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-grotesque leading-tight"
@@ -254,9 +261,13 @@ const Landing = () => {
               differently. Delegates think on their feet, adapt fast, and tackle
               real-time crises like real-world leaders.
             </p>
-            <button className="bg-white text-black px-6 py-2 mt-4 rounded-lg hover:bg-gray-200 w-[150px] md:w-[200px] transition-colors">
-              Learn More
-            </button>
+            <a
+      href="/about/mission"
+      rel="noopener noreferrer"
+      className="bg-white mt-3 text-[#A3841D] px-6 py-3 w-[200px] rounded-lg font-dm-sans text-xl text-center hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg"
+    >
+      Learn More
+    </a>
           </div>
         </div>
         {/* Divider */}
@@ -267,21 +278,21 @@ const Landing = () => {
             <CurrentCard
               title="A Staff Team Like No Other"
               image="/assets/photos/Photo1.png"
-              description="Our staff team is a diverse group of individuals with a wide range of expertise, from crisis management to diplomacy. We are committed to providing an unparalleled experience for all delegates."
+              description="From managing spreadsheets to bringing committee ideas to life, our incredible staff team is working tirelssly to make SSICSIM an unforgettable conference."
             />
           </div>
           <div className="current-card md:p-4">
             <CurrentCard
               title="Constant Collaboration"
               image="/assets/photos/Photo2.png"
-              description="With the added pressure of crises, delegates must work together to find solutions. Our simulation encourages teamwork and collaboration, allowing delegates to develop their leadership skills."
+              description="With the added pressure of crises, delegates will work together to find innovative solutions to alarming issues, allowing delegates to develop their leadership skills."
             />
           </div>
           <div className="current-card md:p-4">
             <CurrentCard
               title="Real-Time Crisis Action"
               image="/assets/photos/Photo3.png"
-              description="In SSICSIM, delegates are faced with real-time crises that require quick thinking and decisive action. This unique approach to Model UN allows delegates to experience the thrill of crisis management firsthand."
+              description="SSICSIM is not your normal conference. Delegates are faced with real-time crises that require quick thinking and decisive action. This approach allows delegates to experience the thrill of crisis management firsthand."
             />
           </div>
         </div>{" "}
@@ -298,32 +309,29 @@ const Landing = () => {
 
           <div className="relative z-[20] bg-gray-100 h-auto w-full px-4 flex flex-col gap-4 md:flex-row justify-center">
             {/* Committee Types */}
-
             <div
-  className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
-  style={{
-    background:
-      "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
-    backgroundBlendMode: "overlay", // Blend the texture with the gradient
-    boxShadow:
-      "0px 0px 400px 400px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
-    backgroundSize: "cover", // Ensure the texture covers the entire element
-    backgroundRepeat: "no-repeat", // Prevent repeating the texture
-  }}
-></div>
-
-<div
-  className="absolute blur-element rounded-full right-[200px] bottom-[-200px] h-[1px] w-[1px] pointer-events-none z-[1]"
-  style={{
-    background:
-      "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
-    backgroundBlendMode: "overlay", // Blend the texture with the gradient
-    boxShadow:
-      "0px 0px 200px 200px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
-    backgroundSize: "cover", // Ensure the texture covers the entire element
-    backgroundRepeat: "no-repeat", // Prevent repeating the texture
-  }}
-></div>            <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[40%] z-[20]">
+              className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
+              style={{
+                background:
+                  "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
+                backgroundBlendMode: "overlay", // Blend the texture with the gradient
+                boxShadow: "0px 0px 400px 400px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
+                backgroundSize: "cover", // Ensure the texture covers the entire element
+                backgroundRepeat: "no-repeat", // Prevent repeating the texture
+              }}
+            ></div>
+            <div
+              className="absolute blur-element rounded-full right-[200px] bottom-[-200px] h-[1px] w-[1px] pointer-events-none z-[1]"
+              style={{
+                background:
+                  "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
+                backgroundBlendMode: "overlay", // Blend the texture with the gradient
+                boxShadow: "0px 0px 200px 200px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
+                backgroundSize: "cover", // Ensure the texture covers the entire element
+                backgroundRepeat: "no-repeat", // Prevent repeating the texture
+              }}
+            ></div>{" "}
+            <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[40%] z-[20]">
               {committees.map((committee) => (
                 <CommiteeType
                   key={committee.title}
@@ -334,7 +342,6 @@ const Landing = () => {
                 />
               ))}
             </div>
-
             {/* Image Section */}
             <div className="w-full md:w-[40%] flex items-center justify-center">
               <img

@@ -8,6 +8,7 @@
   --breakpoint-clg: 1500px;
 }
 
-body, html{
+body,
+html {
   overflow-x: hidden;
 }

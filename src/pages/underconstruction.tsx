@@ -20,7 +20,9 @@ const UnderConstruction = () => {
           />
         </svg>
       </div>
-      <h1 className="text-4xl w-[80%] mx-auto font-bold text-white text-center">Under Construction</h1>
+      <h1 className="text-4xl w-[80%] mx-auto font-bold text-white text-center">
+        Under Construction
+      </h1>
       <p className="text-lg w-[80%] mx-auto font-dm-sans text-white mt-4 text-center">
         We're working hard to bring this page to life. Stay tuned!
       </p>
