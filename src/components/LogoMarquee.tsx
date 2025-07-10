@@ -25,7 +25,7 @@ const sponsors = [
           }}
         >
           {/* Repeat logos twice for seamless loop */}
-          {[...sponsors, ...sponsors, ...sponsors].map((src, index) => (
+          {[...sponsors, ...sponsors, ...sponsors, ...sponsors, ...sponsors].map((src, index) => (
             <img
               key={index}
               src={src}

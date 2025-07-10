@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         {/* Left Section */}
         <div className="text-center md:text-left mb-4 md:mb-0">
-          <h3 className="text-lg font-bold">SSICSM</h3>
+          <h3 className="text-lg font-bold">SSICISM</h3>
           <p className="text-sm">
             Canada’s Premier Model UN Crisis Simulation. ©{" "}
             {new Date().getFullYear()} SSICSM. All rights reserved.
