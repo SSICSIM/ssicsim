@@ -7,7 +7,7 @@ interface CurrentCardProps {
 const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
   return (
     <>
-      <div className="flex flex-col md:h-[100%] w-[80%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg">
+      <div className="flex flex-col md:h-[100%] w-[90%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg">
         {/* Image Section */}
         <div className="h-[60%] flex items-center justify-center">
           <div className="relative w-[100%] h-full rounded-md">
