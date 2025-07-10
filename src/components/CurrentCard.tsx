@@ -13,7 +13,7 @@ const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
         <div className="relative w-full h-full rounded-md">
   <img
     src={image}
-    className="md:w-full h-[100%] object-cover rounded-md mx-auto"
+    className="md:w-full object-cover rounded-md mx-auto"
     alt="Current Card Image"
   />
   {/* Filter Overlay */}
