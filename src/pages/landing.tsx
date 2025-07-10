@@ -247,7 +247,7 @@ const Landing = () => {
           </div>
           <div className="md:w-1/2 flex flex-col px-4">
             <p
-              className="text-[16px] md:text-[25px] font-light text-white font-dm-sans"
+              className="text-[16px] md:text-[20px] lg:text-[25px] font-light text-white font-dm-sans"
               id="strategy-heading"
             >
               Most MUNs focus on structured diplomacy—SSICSIM does it

@@ -7,18 +7,18 @@ interface CurrentCardProps {
 const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
   return (
     <>
-      <div className="flex flex-col md:h-[100%] w-[90%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg">
+      <div className="flex flex-col h-auto md:h-[100%] w-[90%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg">
         {/* Image Section */}
         <div className="h-[60%] flex items-center justify-center">
-          <div className="relative w-[100%] h-full rounded-md">
-            <img
-              src={image}
-              className="md:w-full h-[100%] object-cover rounded-md mx-auto"
-              alt="Current Card Image"
-            />
-            <div className="absolute inset-0 bg-[#A3841D]/50 rounded-md"></div>
-          </div>
-        </div>
+        <div className="relative w-full h-full rounded-md">
+  <img
+    src={image}
+    className="md:w-full h-[100%] object-cover rounded-md mx-auto"
+    alt="Current Card Image"
+  />
+  {/* Filter Overlay */}
+  <div className="absolute inset-0 bg-[#A3841D]/50 rounded-md"></div>
+</div>        </div>
 
         {/* Text Section */}
         <div className="flex flex-col py-6">
