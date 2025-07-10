@@ -262,7 +262,7 @@ const Landing = () => {
         {/* Divider */}
         <div className="w-full h-[2px] bg-white my-4"></div>
         {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-8 py-8 mx-auto overflow-hidden z-[20]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-8 py-8 mx-auto h-auto overflow-hidden z-[20]">
           <div className="current-card md:p-4">
             <CurrentCard
               title="A Staff Team Like No Other"
