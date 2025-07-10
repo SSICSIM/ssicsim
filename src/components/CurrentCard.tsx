@@ -13,7 +13,7 @@ const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
           <div className="relative w-[100%] h-full rounded-md">
             <img
               src={image}
-              className="md:w-full h-[100%] w-auto object-cover rounded-md mx-auto"
+              className="md:w-full h-[100%] object-cover rounded-md mx-auto"
               alt="Current Card Image"
             />
             <div className="absolute inset-0 bg-[#A3841D]/50 rounded-md"></div>
