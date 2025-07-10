@@ -19,7 +19,7 @@ const Openings = () => {
       <div className="relative bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
         {/* Text Content */}
         <div className="relative z-10 flex items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 ml-5">
+          <div className="grid w-[100%] grid-cols-1 md:w-auto md:grid-cols-2 md:gap-4 ml-5">
             <div className="p-4 md:ml-[50px]">
               <p className="text-[30px] font-extralight text-white font-grotesque">
                 SSICSIM 2025
