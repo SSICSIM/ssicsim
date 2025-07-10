@@ -19,8 +19,8 @@ const Openings = () => {
       <div className="relative bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
         {/* Text Content */}
         <div className="relative z-10 flex items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 ml-[50px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 ml-5">
+            <div className="p-4 md:ml-[50px]">
               <p className="text-[30px] font-extralight text-white font-grotesque">
                 SSICSIM 2025
               </p>
@@ -35,12 +35,12 @@ const Openings = () => {
                 are passionate about Model UN, crisis management, and diplomacy.
                 Apply here!
               </p>
-              <div className="flex gap-6 w-full mt-6">
+              <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSewsKyMC-dXuSvrGxa4yZ8zTnQDxRXyz5dyNjMPLgwQrCDj6g/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-dm-sans text-[20px] text-center bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  className="font-dm-sans text-[15px] md:text-[20px] text-center bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
                 >
                   Apply Now
                 </a>
@@ -48,7 +48,7 @@ const Openings = () => {
                   href="https://docs.google.com/document/d/1UQe1CURsqdbyQf2QBfL-i2Y42CeV46gUbqzTpWD79vA/edit?tab=t.0#heading=h.3vnl20xphx4r"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-dm-sans text-[20px] text-center bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  className="font-dm-sans text-[15px] md:text-[20px] text-center bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
                 >
                   Roles & Responsibilities
                 </a>
