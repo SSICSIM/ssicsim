@@ -17,7 +17,6 @@ const CommiteeCard = ({
   expandedDescription,
   backgroundGuideLink,
   director,
-  directorImage,
   backgroundImage,
   jointOrNot = false, // Default to false if not provided
 }: CommiteeCardProps) => {
@@ -124,13 +123,13 @@ const CommiteeCard = ({
               Director
             </h3>
             <p className="text-[#A3841D] text-xl font-dm-sans">{director}</p>
-            {directorImage && (
+            {/* {directorImage && (
               <img
                 src={directorImage}
                 alt={director}
                 className="w-24 h-24 rounded-full mt-2"
               />
-            )}
+            )} */}
           </div>
         )}
       </div>
