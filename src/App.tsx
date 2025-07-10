@@ -14,6 +14,7 @@ import Register from "./pages/register";
 import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
   return (
     <div style={{ overflowX: "hidden" }}>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
