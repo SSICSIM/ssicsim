@@ -235,7 +235,7 @@ const Landing = () => {
         <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="md:w-1/2 px-4">
             <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
-              SSICSM 2025
+            SSICSIM 2025
             </p>
             <p
               className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-grotesque leading-tight"

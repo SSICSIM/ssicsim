@@ -22,7 +22,7 @@ const Openings = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 ml-[50px]">
               <p className="text-[30px] font-extralight text-white font-grotesque">
-                SSICSM 2025
+              SSICSIM 2025
               </p>
               <p className="text-[72px] font-bold text-white font-grotesque leading-[1]">
                 Staff Hiring
@@ -31,7 +31,7 @@ const Openings = () => {
             <div className="p-4 w-[80%] flex flex-col justify-center">
               <p className="text-[20px] font-light text-white font-dm-sans">
                 Interested? Check out our open positions below and apply to join
-                the SSICSM 2025 staff team! We are looking for individuals who
+                the SSICSIM 2025 staff team! We are looking for individuals who
                 are passionate about Model UN, crisis management, and diplomacy.
                 Apply here!
               </p>
