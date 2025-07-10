@@ -11,7 +11,7 @@ const committeesData = [
     director: "Ngila Stone",
     directorImage: "/assets/photos/DirectorImage.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/EpicOfSudiata.jpg",
+    backgroundImage: "/assets/photos/commitees/EpicOfSundiata.png",
   },
   {
     title: "Fight for the Layton Legacy: 2011 NDP Leadership Race",
@@ -22,7 +22,7 @@ const committeesData = [
     director: "Luca Rampersad",
     directorImage: "/assets/photos/DirectorImage2.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/NDP.png",
+    backgroundImage: "/assets/photos/commitees/ndp.jpg",
   },
   {
     title: "Viva La Revolution: Cake, Blood and Banque",
