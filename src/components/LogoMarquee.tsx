@@ -33,7 +33,6 @@ export default function LogoMarquee() {
               src={src}
               alt={`sponsor-${index}`}
               className="h-[5vh] w-auto object-contain mx-6"
-              loading="lazy"
             />
           ),
         )}

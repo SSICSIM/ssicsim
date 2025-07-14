@@ -344,7 +344,7 @@ const Committees = () => {
           </div>
         </div>{" "}
         {/* Committee Cards */}
-        <div className="grid grid-cols-1 w-[90vw] mx-auto md:grid-cols-2 md:w-[85%] md:mx-auto xl:grid-cols-3 xl:w-[100%] gap-4">
+        <div className="grid grid-cols-1 w-[100%] mx-auto md:grid-cols-2 md:w-[85%] md:mx-auto xl:grid-cols-3 xl:w-[100%] gap-4">
           {filteredCommittees.map((committee, index) => (
             <CommiteeCard
               key={index}
