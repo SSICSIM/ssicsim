@@ -1,8 +1,8 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"; // Import icons from React Icons
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import icons from React Icons
 
 const Footer = () => {
   return (
-    <footer className="bg-[#A3841D] text-white py-4 font-dm-sans">
+    <footer className="bg-[#3C2C2C] text-white py-4 font-dm-sans z-40">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-center">
         {/* Left Section */}
         <div className="text-center md:text-left mb-6 md:mb-0 flex flex-col items-center md:items-start h-auto">
@@ -73,14 +73,6 @@ const Footer = () => {
               className="hover:text-gray-300 transition-colors"
             >
               <FaLinkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray-300 transition-colors"
-            >
-              <FaTwitter className="w-6 h-6" />
             </a>
           </div>
           <p className="text-sm">

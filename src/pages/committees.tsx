@@ -70,6 +70,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
     backgroundImage: "/assets/photos/commitees/EnglishCivilWar.jpeg",
+    jointOrNot: true,
   },
   {
     title: "Historical Ad Hoc",
@@ -281,7 +282,7 @@ const Committees = () => {
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
       <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <p className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-sans leading-tight ml-6 md:text-7xl">
+        <p className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
           Committees
         </p>
       </div>

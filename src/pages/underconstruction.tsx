@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const UnderConstruction = () => {
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center bg-[#3C2C2C]">
+    <div className="h-screen w-full flex flex-col items-center justify-center bg-[#A3841D]">
       {/* Animated Construction Icon */}
       <div className="flex items-center justify-center mb-6">
         <svg
@@ -28,7 +28,7 @@ const UnderConstruction = () => {
       </p>
       <Link
         to="/"
-        className="mt-6 px-6 py-3 w-[80%] mx-auto text-center bg-[#A3841D] text-white rounded-lg hover:bg-[#C2A95F] transition-colors"
+        className="mt-6 px-6 py-3 w-[80%] mx-auto text-center bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
       >
         Go Back Home
       </Link>

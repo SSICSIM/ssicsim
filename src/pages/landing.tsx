@@ -175,11 +175,11 @@ const Landing = () => {
         <div className="md:opacity-100 opacity-0 absolute left-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10" />
         <div className="md:opacity-100 opacity-0 absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
 
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center z-20">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
           <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
             Toronto, ON
           </p>
-          <p className="text-white text-left md:text-7xl font-bold w-[80vw] lg:w-[800px] ml-6 font-sans leading-tight text-4xl">
+          <p className="text-white text-left md:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
             Canada’s Premier Model UN Crisis Simulation
           </p>
           <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
@@ -194,32 +194,54 @@ const Landing = () => {
           </a>
         </div>
       </div>
-      <div className="relative bg-[#3C2C2C] h-auto py-44 w-full flex items-center justify-center overflow-hidden">
-        {/* Geometric Shapes Around the Glassmorphism Section */}
+      <div
+  className="relative bg-white h-auto py-44 w-full flex items-center justify-center overflow-hidden bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/assets/photos/branding/ArtDeco.png')", // Replace with the correct path to your Art Deco image
+  }}
+>
 
-        {/* Glassmorphism Content Section */}
-        <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/40 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
-          <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-white">
-            The numbers tell the story
-          </h3>
-          <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white">
-              13 years
-            </h1>
-          </ScrollScrub>
-          <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white">
-              300+ delegates
-            </h1>
-          </ScrollScrub>
-          <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-white">
-              One unrivaled experience
-            </h1>
-          </ScrollScrub>
-        </div>
-      </div>
-      <div className="relative bg-[#A3841D] w-screen grid grid-rows-auto">
+
+  {/* Geometric Shapes Around the Glassmorphism Section */}
+  <div
+    className="absolute rounded-full top-[200px] left-[-200px] h-[300px] w-[300px] pointer-events-none z-[1]"
+    style={{
+      background:
+        "radial-gradient(58.31% 58.31% at 50% 50%, rgba(255, 215, 0, 0.1) 0%, rgba(163, 132, 29, 0.5) 100%)",
+      boxShadow: "0px 0px 200px 100px rgba(163, 132, 29, 0.5)", // Gold glow effect
+    }}
+  ></div>
+  <div
+    className="absolute rounded-full bottom-[200px] right-[-200px] h-[300px] w-[300px] pointer-events-none z-[1]"
+    style={{
+      background:
+        "radial-gradient(58.31% 58.31% at 50% 50%, rgba(255, 215, 0, 0.1) 0%, rgba(163, 132, 29, 0.5) 100%)",
+      boxShadow: "0px 0px 200px 100px rgba(163, 132, 29, 0.5)", // Gold glow effect
+    }}
+  ></div>
+
+  {/* Glassmorphism Content Section */}
+  <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/60 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
+    <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-black">
+      The numbers tell the story
+    </h3>
+    <ScrollScrub>
+      <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+        13 years
+      </h1>
+    </ScrollScrub>
+    <ScrollScrub>
+      <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+        300+ delegates
+      </h1>
+    </ScrollScrub>
+    <ScrollScrub>
+      <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+        One unrivaled experience
+      </h1>
+    </ScrollScrub>
+  </div>
+</div>      <div className="relative bg-[#A3841D] w-screen grid grid-rows-auto">
         <div
           className="absolute blur-element rounded-full top-[400px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
           style={{
@@ -245,7 +267,7 @@ const Landing = () => {
               SSICSIM 2025
             </p>
             <p
-              className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-grotesque leading-tight"
+              className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-nunito leading-tight"
               ref={strategyRef}
               id="strategy-heading"
             >
@@ -299,7 +321,7 @@ const Landing = () => {
         {/* Committee Types and Image Section */}
         <div className="bg-gray-100 h-auto w-full">
           <div className="w-full text-center my-8">
-            <h2 className="text-2xl md:text-5xl font-bold text-black font-dm-sans">
+            <h2 className="text-2xl md:text-5xl font-bold text-black font-nunito">
               Types of Commitees
             </h2>
             <p className="text-lg md:text-xl text-gray-700 font-dm-sans mt-4">
@@ -310,7 +332,7 @@ const Landing = () => {
           <div className="relative z-[20] bg-gray-100 h-auto w-full px-4 flex flex-col gap-4 md:flex-row justify-center">
             {/* Committee Types */}
             <div
-              className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
+              className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-10"
               style={{
                 background:
                   "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
@@ -321,7 +343,7 @@ const Landing = () => {
               }}
             ></div>
             <div
-              className="absolute blur-element rounded-full right-[200px] bottom-[-200px] h-[1px] w-[1px] pointer-events-none z-[1]"
+              className="absolute blur-element rounded-full right-[200px] bottom-[-200px] h-[1px] w-[1px] pointer-events-none z-10"
               style={{
                 background:
                   "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
@@ -354,7 +376,7 @@ const Landing = () => {
           </div>
         </div>{" "}
         <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
-          <h3 className="text-4xl font-dm-sans mb-8">Our Sponsors</h3>
+          <h3 className="text-4xl mb-8 font-nunito">Our Sponsors</h3>
           <LogoMarquee />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface CommiteeCardProps {
   title: string;
@@ -6,9 +6,9 @@ interface CommiteeCardProps {
   expandedDescription: string;
   backgroundGuideLink?: string;
   director?: string;
-  directorImage?: string;
-  backgroundImage?: string; // New prop for the background image
-  jointOrNot?: boolean; // Optional prop to indicate if the committee is joint or not
+  backgroundImage?: string;
+  directorImage?: string; // Optional director image
+  jointOrNot?: boolean;
 }
 
 const CommiteeCard = ({
@@ -17,7 +17,7 @@ const CommiteeCard = ({
   expandedDescription,
   director,
   backgroundImage,
-  jointOrNot = false, // Default to false if not provided
+  jointOrNot = false,
 }: CommiteeCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -29,11 +29,26 @@ const CommiteeCard = ({
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    };
+  }, [isModalOpen]);
+
   return (
     <>
-      {/* Committee Card */}
+      {/* Card */}
       <div
-        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[100%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
+        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[80%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
         onClick={handleOpenModal}
         style={{
           backgroundImage: `url('${backgroundImage}')`,
@@ -41,12 +56,10 @@ const CommiteeCard = ({
           backgroundPosition: "center",
         }}
       >
-        {/* Enhanced Gold Tint Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[rgba(255,215,0,0.8)] rounded-lg"></div>
 
-        {/* Content */}
         <div className="relative z-10 bg-white/30 backdrop-blur-lg border border-white/10 rounded-lg p-6">
-          <h2 className="text-2xl font-dm-sans font-bold mb-4 text-white">
+          <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
             {title}
           </h2>
           <p className="text-white mb-4 font-regular font-dm-sans">
@@ -59,46 +72,47 @@ const CommiteeCard = ({
       </div>
 
       {/* Modal */}
-      {/* Modal */}
-      {/* Modal */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          onClick={handleCloseModal} // Close modal when clicking outside
+          className="fixed inset-0 z-50 flex justify-center items-center bg-black/70"
+          onClick={handleCloseModal}
         >
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90%] max-h-[90vh] overflow-y-auto transform transition-transform scale-100 opacity-100"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
-          >
+<div
+  className="modal-scrollbar relative grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]"
+  style={{ overflowY: 'scroll', WebkitOverflowScrolling: 'touch' }}
+  onClick={(e) => e.stopPropagation()}
+>
+
+            {/* Close Button */}
             <button
-              className="absolute top-4 right-4 text-2xl md:text-xl text-black hover:text-gray-300"
+              className="absolute top-4 right-4 text-black hover:text-gray-300"
               onClick={handleCloseModal}
             >
               ✕
             </button>
 
-            {/* Left Column: Image */}
+            {/* Image Section */}
             {backgroundImage && (
               <div
                 className="flex items-center justify-center w-full h-full rounded-lg"
                 style={{
                   backgroundImage: `url('${backgroundImage}')`,
-                  backgroundSize: "cover", // Ensures the image covers the card area
-                  backgroundPosition: "center", // Centers the image within the card
-                  backgroundRepeat: "no-repeat", // Prevents the image from repeating
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
                 }}
               ></div>
             )}
 
-            {/* Right Column: Content */}
-            <div className="flex flex-col justify-center">
-              <h2 className="text-4xl text-[#A3841D] font-dm-sans font-bold mb-4">
+            {/* Content Section */}
+            <div className="flex flex-col justify-start pr-4">
+              <h2 className="text-4xl text-[#A3841D] font-nunito font-bold mb-2">
                 {title}
               </h2>
               <h2 className="text-2xl font-dm-sans font-regular pb-4 mb-4 border-b-[#A3841D] border-b-2 text-[#A3841D]">
                 {jointOrNot ? "Joint Crisis" : "Single Crisis"}
               </h2>
-              <p className="text-[#A3841D] font-light font-dm-sans mb-2">
+              <p className="text-[#A3841D] font-light font-dm-sans">
                 {expandedDescription.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
                     {line}
@@ -117,20 +131,13 @@ const CommiteeCard = ({
                 </a>
               )} */}
               {director && (
-                <div>
+                <div className="mt-2">
                   <h3 className="text-2xl font-semibold font-dm-sans text-[#A3841D]">
                     Director
                   </h3>
                   <p className="text-[#A3841D] text-xl font-dm-sans">
                     {director}
                   </p>
-                  {/* {directorImage && (
-              <img
-                src={directorImage}
-                alt={director}
-                className="w-24 h-24 rounded-full mt-2"
-              />
-            )} */}
                 </div>
               )}
             </div>

@@ -18,7 +18,7 @@ const RegistrationStep = ({
 
       {/* Title and Description */}
       <div className="flex flex-col justify-center w-full md:w-[80%] h-full">
-        <div className="font-regular text-3xl md:text-4xl lg:text-4xl font-dm-sans break-words">
+        <div className="font-regular text-3xl md:text-4xl lg:text-4xl font-nunito break-words">
           {title}
         </div>
         <div className="font-light font-dm-sans text-md break-words pt-4">

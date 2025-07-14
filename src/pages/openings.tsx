@@ -11,25 +11,25 @@ const Openings = () => {
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
       <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <p className="text-white text-left text-7xl font-bold w-[80vw] lg:w-[800px] font-sans leading-tight ml-6">
+        <p className="text-white text-left text-7xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6">
           Staff Hiring
         </p>
       </div>
 
-      <div className="relative bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
+      <div className="relative pb-7 bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
         {/* Text Content */}
         <div className="relative z-10 flex items-center">
-          <div className="grid w-[100%] grid-cols-1 md:w-auto md:grid-cols-2 md:gap-4 ml-5">
-            <div className="p-4 md:ml-[50px]">
+          <div className="grid w-[100%] grid-cols-1 md:w-auto md:grid-cols-2 md:gap-4 ml-5 my-3">
+            <div className="p-4 my-auto md:ml-[50px]">
               <p className="text-[30px] font-extralight text-white font-grotesque">
                 SSICSIM 2025
               </p>
-              <p className="text-[72px] font-bold text-white font-grotesque leading-[1]">
+              <p className="ml-[-3px] mb-[-10px] mt-[10px] text-[72px] md:text-[60px] lg:text-[72px] font-bold text-white font-nunito leading-[1]">
                 Staff Hiring
               </p>
             </div>
             <div className="p-4 w-[80%] flex flex-col justify-center">
-              <p className="text-[15px] md:text-[20px] font-light text-white font-dm-sans">
+              <p className="text-[15px] lg:text-[20px] font-light text-white font-dm-sans">
                 Interested? Check out our open positions below and apply to join
                 the SSICSIM 2025 staff team! We are looking for individuals who
                 are passionate about Model UN, crisis management, and diplomacy.
@@ -70,7 +70,7 @@ const Openings = () => {
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
-            <h3 className="text-3xl font-dm-sans font-extrabold z-20">
+            <h3 className="text-3xl font-nunito font-extrabold z-20">
               Moderator
             </h3>
             <p className="font-dm-sans text-lg mt-2 z-20">
@@ -87,7 +87,7 @@ const Openings = () => {
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
 
-            <h3 className="text-3xl font-dm-sans font-extrabold z-20">
+            <h3 className="text-3xl font-nunito font-extrabold z-20">
               Crisis Manager
             </h3>
             <p className="font-dm-sans text-lg mt-2 z-20">
@@ -104,7 +104,7 @@ const Openings = () => {
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
 
-            <h3 className="text-3xl font-dm-sans font-extrabold z-20">
+            <h3 className="text-3xl font-nunito font-extrabold z-20">
               Crisis Staff
             </h3>
             <p className="font-dm-sans text-lg mt-2 z-20">
@@ -120,7 +120,7 @@ const Openings = () => {
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
-            <h3 className="text-3xl font-extrabold font-dm-sans z-20">
+            <h3 className="text-3xl font-extrabold font-nunito z-20">
               Crisis Coordinator
             </h3>
             <p className="font-dm-sans text-lg mt-2 z-20">
@@ -136,7 +136,7 @@ const Openings = () => {
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
 
-            <h3 className="text-3xl font-extrabold font-dm-sans z-20">
+            <h3 className="text-3xl font-extrabold font-nunito z-20">
               Staff Support
             </h3>
             <p className="font-dm-sans text-lg mt-2 z-20">
