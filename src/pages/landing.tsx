@@ -201,24 +201,9 @@ const Landing = () => {
   }}
 >
 
+  <div className="absolute inset-0 bg-[white]/50"></div>
 
   {/* Geometric Shapes Around the Glassmorphism Section */}
-  <div
-    className="absolute rounded-full top-[200px] left-[-200px] h-[300px] w-[300px] pointer-events-none z-[1]"
-    style={{
-      background:
-        "radial-gradient(58.31% 58.31% at 50% 50%, rgba(255, 215, 0, 0.1) 0%, rgba(163, 132, 29, 0.5) 100%)",
-      boxShadow: "0px 0px 200px 100px rgba(163, 132, 29, 0.5)", // Gold glow effect
-    }}
-  ></div>
-  <div
-    className="absolute rounded-full bottom-[200px] right-[-200px] h-[300px] w-[300px] pointer-events-none z-[1]"
-    style={{
-      background:
-        "radial-gradient(58.31% 58.31% at 50% 50%, rgba(255, 215, 0, 0.1) 0%, rgba(163, 132, 29, 0.5) 100%)",
-      boxShadow: "0px 0px 200px 100px rgba(163, 132, 29, 0.5)", // Gold glow effect
-    }}
-  ></div>
 
   {/* Glassmorphism Content Section */}
   <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/60 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
