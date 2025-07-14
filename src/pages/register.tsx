@@ -59,9 +59,7 @@ const Register = () => {
             {/* Late Bird Pricing */}
             <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$100</p>
-              <p className="text-lg font-nunito mt-4">
-                Late Bird Registration
-              </p>
+              <p className="text-lg font-nunito mt-4">Late Bird Registration</p>
               <p className="text-sm font-light mt-2">
                 September 22nd – September 30th, or until we reach capacity.
               </p>

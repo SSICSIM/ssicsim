@@ -77,12 +77,11 @@ const CommiteeCard = ({
           className="fixed inset-0 z-50 flex justify-center items-center bg-black/70"
           onClick={handleCloseModal}
         >
-<div
-  className="modal-scrollbar relative grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]"
-  style={{ overflowY: 'scroll', WebkitOverflowScrolling: 'touch' }}
-  onClick={(e) => e.stopPropagation()}
->
-
+          <div
+            className="modal-scrollbar relative grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]"
+            style={{ overflowY: "scroll", WebkitOverflowScrolling: "touch" }}
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-black hover:text-gray-300"

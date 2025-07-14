@@ -53,6 +53,10 @@ const Landing = () => {
       );
 
       if (selectedCommitteeData) {
+        // Preload the new image
+        const img = new Image();
+        img.src = selectedCommitteeData.image;
+
         // Animate the fade-out of the current image
         gsap.to(".committee-image", {
           opacity: 0,
@@ -196,38 +200,38 @@ const Landing = () => {
         </div>
       </div>
       <div
-  className="relative bg-white h-auto py-44 w-full flex items-center justify-center overflow-hidden bg-cover bg-center"
-  style={{
-    backgroundImage: "url('/assets/photos/branding/ArtDeco.png')", // Replace with the correct path to your Art Deco image
-  }}
->
+        className="relative bg-white h-auto py-44 w-full flex items-center justify-center overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/assets/photos/branding/ArtDeco.png')", // Replace with the correct path to your Art Deco image
+        }}
+      >
+        <div className="absolute inset-0 bg-[white]/50"></div>
 
-  <div className="absolute inset-0 bg-[white]/50"></div>
+        {/* Geometric Shapes Around the Glassmorphism Section */}
 
-  {/* Geometric Shapes Around the Glassmorphism Section */}
-
-  {/* Glassmorphism Content Section */}
-  <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/60 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
-    <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-black">
-      The numbers tell the story
-    </h3>
-    <ScrollScrub>
-      <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
-        13 years
-      </h1>
-    </ScrollScrub>
-    <ScrollScrub>
-      <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
-        300+ delegates
-      </h1>
-    </ScrollScrub>
-    <ScrollScrub>
-      <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
-        One unrivaled experience
-      </h1>
-    </ScrollScrub>
-  </div>
-</div>      <div className="relative bg-[#A3841D] w-screen grid grid-rows-auto">
+        {/* Glassmorphism Content Section */}
+        <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/60 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
+          <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-black">
+            The numbers tell the story
+          </h3>
+          <ScrollScrub>
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+              13 years
+            </h1>
+          </ScrollScrub>
+          <ScrollScrub>
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+              300+ delegates
+            </h1>
+          </ScrollScrub>
+          <ScrollScrub>
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+              One unrivaled experience
+            </h1>
+          </ScrollScrub>
+        </div>
+      </div>{" "}
+      <div className="relative bg-[#A3841D] w-screen grid grid-rows-auto">
         <div
           className="absolute blur-element rounded-full top-[400px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
           style={{
