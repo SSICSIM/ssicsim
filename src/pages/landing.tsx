@@ -262,12 +262,12 @@ const Landing = () => {
               real-time crises like real-world leaders.
             </p>
             <a
-      href="/about/mission"
-      rel="noopener noreferrer"
-      className="bg-white mt-3 text-[#A3841D] px-6 py-3 w-[200px] rounded-lg font-dm-sans text-xl text-center hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg"
-    >
-      Learn More
-    </a>
+              href="/about/mission"
+              rel="noopener noreferrer"
+              className="bg-white mt-3 text-[#A3841D] px-6 py-3 w-[200px] rounded-lg font-dm-sans text-xl text-center hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg"
+            >
+              Learn More
+            </a>
           </div>
         </div>
         {/* Divider */}

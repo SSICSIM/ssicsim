@@ -15,7 +15,6 @@ const CommiteeCard = ({
   title,
   description,
   expandedDescription,
-  backgroundGuideLink,
   director,
   backgroundImage,
   jointOrNot = false, // Default to false if not provided
@@ -34,7 +33,7 @@ const CommiteeCard = ({
     <>
       {/* Committee Card */}
       <div
-        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[80%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
+        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[100%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
         onClick={handleOpenModal}
         style={{
           backgroundImage: `url('${backgroundImage}')`,
@@ -68,11 +67,11 @@ const CommiteeCard = ({
           onClick={handleCloseModal} // Close modal when clicking outside
         >
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh] overflow-y-auto transform transition-transform scale-100 opacity-100"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90%] max-h-[90vh] overflow-y-auto transform transition-transform scale-100 opacity-100"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
           >
             <button
-              className="absolute top-4 right-4 text-black hover:text-gray-300"
+              className="absolute top-4 right-4 text-2xl md:text-xl text-black hover:text-gray-300"
               onClick={handleCloseModal}
             >
               ✕
@@ -99,7 +98,7 @@ const CommiteeCard = ({
               <h2 className="text-2xl font-dm-sans font-regular pb-4 mb-4 border-b-[#A3841D] border-b-2 text-[#A3841D]">
                 {jointOrNot ? "Joint Crisis" : "Single Crisis"}
               </h2>
-              <p className="text-[#A3841D] font-light font-dm-sans mb-4">
+              <p className="text-[#A3841D] font-light font-dm-sans mb-2">
                 {expandedDescription.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
                     {line}
@@ -107,7 +106,7 @@ const CommiteeCard = ({
                   </React.Fragment>
                 ))}
               </p>
-              {backgroundGuideLink && (
+              {/* {backgroundGuideLink && (
                 <a
                   href={backgroundGuideLink}
                   target="_blank"
@@ -116,9 +115,9 @@ const CommiteeCard = ({
                 >
                   View Background Guide
                 </a>
-              )}
+              )} */}
               {director && (
-                <div className="mt-4">
+                <div>
                   <h3 className="text-2xl font-semibold font-dm-sans text-[#A3841D]">
                     Director
                   </h3>

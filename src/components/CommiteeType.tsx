@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 interface CommiteeTypeProps {
   title: string;
   description: string;
@@ -21,14 +22,22 @@ const CommiteeType = ({
       onClick={onClick}
     >
       {/* Title and Description */}
-      <div className="flex flex-col items-center justify-center w-full md:w-[80%] h-[100%] md:h-[100%]">
-        <div className="font-light text-3xl md:text-4xl lg:text-6xl font-dm-sans break-words">
+      <div className="flex flex-col items-center md:items-start justify-center w-full md:w-[80%] h-[100%] md:h-[100%]">
+        <div className="font-light text-3xl md:text-4xl lg:text-6xl font-dm-sans break-words mb-2">
           {title}
         </div>
         {isSelected && (
-          <div className="font-light font-dm-sans text-md break-words">
+          <div className="font-light font-dm-sans text-md break-words md:mb-0">
             {description}
           </div>
+        )}
+        {isSelected && (
+          <Link
+            to={`/committees?filter=${title}`} // Pass the filter as a query parameter
+            className="my-4 px-6 py-2 bg-white text-[#A3841D] rounded-lg font-dm-sans text-lg hover:bg-gray-200 transition-colors"
+          >
+            View {title} Committees
+          </Link>
         )}
       </div>
 

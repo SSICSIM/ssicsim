@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CommiteeCard from "../components/CommiteeCard";
+import { useLocation } from "react-router-dom";
 
 const committeesData = [
   {
@@ -253,8 +254,15 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
 ];
 
 const Committees = () => {
+  const location = useLocation(); // Access the current URL
+  const queryParams = new URLSearchParams(location.search); // Parse query parameters
+  const checkFilter = queryParams.get("filter") || "All"; // Get the 'filter' parameter or default to 'All'
+
   const [filter, setFilter] = useState<string>("All");
 
+  useEffect(() => {
+    setFilter(checkFilter);
+  }, [checkFilter]);
   // Filter committees based on the selected category
   const filteredCommittees =
     filter === "All"
@@ -334,7 +342,7 @@ const Committees = () => {
           </div>
         </div>{" "}
         {/* Committee Cards */}
-        <div className="grid grid-cols-1 w-[100vw] md:grid-cols-2 md:w-[85%] md:mx-auto xl:grid-cols-3 xl:w-[100%] gap-4">
+        <div className="grid grid-cols-1 w-[90vw] mx-auto md:grid-cols-2 md:w-[85%] md:mx-auto xl:grid-cols-3 xl:w-[100%] gap-4">
           {filteredCommittees.map((committee, index) => (
             <CommiteeCard
               key={index}

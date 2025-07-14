@@ -9,29 +9,30 @@ const sponsors = [
 
 export default function LogoMarquee() {
   return (
-    <div className="overflow-hidden whitespace-nowrap py-6 z-[20] w-full">
+    <div className="overflow-hidden py-6 z-[20] w-full">
       <style>
         {`
-            @keyframes marquee {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); } /* shift by half if repeating */
-            }
-          `}
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}
       </style>
+
       <div
-        className="inline-flex space-x-12"
+        className="flex w-max animate-scroll"
         style={{
-          animation: "marquee 20s linear infinite",
+          animation: "scroll 20s linear infinite",
         }}
       >
-        {/* Repeat logos twice for seamless loop */}
-        {[...sponsors, ...sponsors, ...sponsors, ...sponsors, ...sponsors].map(
+        {/* Duplicate once */}
+        {[...sponsors, ...sponsors, ...sponsors, ...sponsors].map(
           (src, index) => (
             <img
               key={index}
               src={src}
-              alt="sponsor"
-              className="h-[5vh] w-auto object-contain"
+              alt={`sponsor-${index}`}
+              className="h-[5vh] w-auto object-contain mx-6"
             />
           ),
         )}
