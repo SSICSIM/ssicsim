@@ -76,24 +76,24 @@ const Landing = () => {
     }
   }, [selectedCommittee, committees]);
 
-  useEffect(() => {
-    // Animate the blurs to fade in when scrolling
-    gsap.fromTo(
-      ".blur-element", // Target all blur elements
-      { opacity: 0 }, // Start fully transparent
-      {
-        opacity: 1, // Fade in
-        duration: 1.5, // Animation duration
-        ease: "power2.out", // Smooth easing
-        scrollTrigger: {
-          trigger: ".blur-element", // Trigger animation when blur elements enter the viewport
-          start: "top 80%", // Start animation when the top of the blur is 80% visible
-          end: "top 20%", // End animation when the top of the blur is 20% visible
-          once: true, // Ensure the animation only occurs once
-        },
-      },
-    );
-  }, []);
+  // useEffect(() => {
+  //   // Animate the blurs to fade in when scrolling
+  //   gsap.fromTo(
+  //     ".blur-element", // Target all blur elements
+  //     { opacity: 0 }, // Start fully transparent
+  //     {
+  //       opacity: 1, // Fade in
+  //       duration: 1.5, // Animation duration
+  //       ease: "power2.out", // Smooth easing
+  //       scrollTrigger: {
+  //         trigger: ".blur-element", // Trigger animation when blur elements enter the viewport
+  //         start: "top 80%", // Start animation when the top of the blur is 80% visible
+  //         end: "top 20%", // End animation when the top of the blur is 20% visible
+  //         once: true, // Ensure the animation only occurs once
+  //       },
+  //     },
+  //   );
+  // }, []);
   useEffect(() => {
     // Animate the cards to move to the middle
     gsap.fromTo(
