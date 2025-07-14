@@ -34,7 +34,7 @@ const CommiteeType = ({
         {isSelected && (
           <Link
             to={`/committees?filter=${title}`} // Pass the filter as a query parameter
-            className="my-4 px-6 py-2 bg-white text-[#A3841D] rounded-lg font-dm-sans text-lg hover:bg-gray-200 transition-colors"
+            className="my-4 px-6 py-2 bg-white text-center text-[#A3841D] rounded-lg font-dm-sans text-lg hover:bg-gray-200 transition-colors"
           >
             View {title} Committees
           </Link>

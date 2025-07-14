@@ -355,7 +355,7 @@ const Landing = () => {
               ))}
             </div>
             {/* Image Section */}
-            <div className="w-full md:w-[40%] flex items-center justify-center">
+            <div className="w-full md:w-[40%] flex items-center justify-center z-40">
               <img
                 src={currentImage}
                 alt="Selected Committee"
@@ -367,7 +367,7 @@ const Landing = () => {
           </div>
         </div>{" "}
         <div className="bg-gray-100 h-auto w-screen py-12 flex flex-col items-center justify-center">
-          <h3 className="text-4xl mb-8 font-nunito">Our Sponsors</h3>
+          <h3 className="text-4xl mb-8 font-nunito z-20">Our Sponsors</h3>
           <LogoMarquee />
         </div>
       </div>

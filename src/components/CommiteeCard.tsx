@@ -84,7 +84,7 @@ const CommiteeCard = ({
           >
             {/* Close Button */}
             <button
-              className="absolute top-4 right-4 text-black hover:text-gray-300"
+              className="absolute top-4 right-4 text-2xl text-black hover:text-gray-300"
               onClick={handleCloseModal}
             >
               ✕
