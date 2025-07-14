@@ -181,15 +181,15 @@ const Landing = () => {
         <div className="md:opacity-100 opacity-0 absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
-          <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+          <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
             Toronto, ON
-          </p>
-          <p className="text-white text-left md:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
+          </h3>
+          <h1 className="text-white text-left md:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
             Canada’s Premier Model UN Crisis Simulation
-          </p>
-          <p className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+          </h1>
+          <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
             October 24th - 26th, 2025
-          </p>
+          </h3>
           <a
             href="/register"
             rel="noopener noreferrer"
@@ -215,19 +215,19 @@ const Landing = () => {
             The numbers tell the story
           </h3>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
+            <h3 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
               13 years
-            </h1>
+            </h3>
           </ScrollScrub>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
+            <h3 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
               300+ delegates
-            </h1>
+            </h3>
           </ScrollScrub>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
+            <h3 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
               One unrivaled experience
-            </h1>
+            </h3>
           </ScrollScrub>
         </div>
       </div>{" "}
@@ -256,23 +256,23 @@ const Landing = () => {
             <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
               SSICSIM 2025
             </p>
-            <p
+            <h2
               className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-nunito leading-tight"
               ref={strategyRef}
               id="strategy-heading"
             >
               Where Strategy Meets Urgency
-            </p>
+            </h2>
           </div>
           <div className="md:w-1/2 flex flex-col px-4">
-            <p
+            <h3
               className="text-[16px] md:text-[20px] lg:text-[25px] font-light text-white font-dm-sans"
               id="strategy-heading"
             >
               Most MUNs focus on structured diplomacy—SSICSIM does it
               differently. Delegates think on their feet, adapt fast, and tackle
               real-time crises like real-world leaders.
-            </p>
+            </h3>
             <a
               href="/about/mission"
               rel="noopener noreferrer"

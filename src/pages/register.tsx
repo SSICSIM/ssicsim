@@ -20,9 +20,9 @@ const Register = () => {
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
       <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <p className="font-nunito text-white text-left text-4xl md:text-7xl font-bold  w-[80vw] lg:w-[800px] ml-6 leading-tight">
+        <h1 className="font-nunito text-white text-left text-4xl md:text-7xl font-bold  w-[80vw] lg:w-[800px] ml-6 leading-tight">
           Registration
-        </p>
+        </h1>
       </div>
       <div className="relative bg-gray-100 min-w-full min-h-screen pt-7">
         {/* Gold Mesh Gradient Background */}

@@ -11,9 +11,9 @@ const Openings = () => {
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
       <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <p className="text-white text-left text-7xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6">
+        <h1 className="text-white text-left text-7xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6">
           Staff Hiring
-        </p>
+        </h1>
       </div>
 
       <div className="relative pb-7 bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
@@ -24,9 +24,9 @@ const Openings = () => {
               <p className="text-[30px] font-extralight text-white font-grotesque">
                 SSICSIM 2025
               </p>
-              <p className="ml-[-3px] mb-[-10px] mt-[10px] text-[72px] md:text-[60px] lg:text-[72px] font-bold text-white font-nunito leading-[1]">
+              <h2 className="ml-[-3px] mb-[-10px] mt-[10px] text-[72px] md:text-[60px] lg:text-[72px] font-bold text-white font-nunito leading-[1]">
                 Staff Hiring
-              </p>
+              </h2>
             </div>
             <div className="p-4 w-[80%] flex flex-col justify-center">
               <p className="text-[15px] lg:text-[20px] font-light text-white font-dm-sans">
