@@ -48,7 +48,7 @@ const CommiteeCard = ({
     <>
       {/* Card */}
       <div
-        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[80%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
+        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
         onClick={handleOpenModal}
         style={{
           backgroundImage: `url('${backgroundImage}')`,
