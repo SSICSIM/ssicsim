@@ -215,17 +215,17 @@ const Landing = () => {
             The numbers tell the story
           </h3>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+            <h1 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
               13 years
             </h1>
           </ScrollScrub>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+            <h1 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
               300+ delegates
             </h1>
           </ScrollScrub>
           <ScrollScrub>
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 text-black">
+            <h1 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
               One unrivaled experience
             </h1>
           </ScrollScrub>
