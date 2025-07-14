@@ -73,7 +73,7 @@ const Register = () => {
 
         {/* Registration Section */}
         <div className="relative z-10 flex justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 md:w-[80%] min-h-[100%]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 md:w-[90%] min-h-[100%]">
             {/* First Column (Spanning All Rows) */}
             <div className="row-span-4 p-6 flex flex-col justify-center">
               <h1 className="text-4xl md:text-7xl font-bold font-nunito lg:ml-6">
