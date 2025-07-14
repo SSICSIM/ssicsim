@@ -68,6 +68,7 @@ const Openings = () => {
               src="/assets/photos/hiring/Moderator.JPG" // Replace with the actual image path
               alt="Moderator"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
             <h3 className="text-3xl font-nunito font-extrabold z-20">
@@ -84,6 +85,7 @@ const Openings = () => {
               src="/assets/photos/hiring/CrisisManager.JPG" // Replace with the actual image path
               alt="Moderator"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
 
@@ -101,6 +103,7 @@ const Openings = () => {
               src="/assets/photos/hiring/CrisisStaff.JPG" // Replace with the actual image path
               alt="Crisis Staff"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
 
@@ -118,6 +121,7 @@ const Openings = () => {
               src="/assets/photos/hiring/CrisisCoordinator.png" // Replace with the actual image path
               alt="Moderator"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
             <h3 className="text-3xl font-extrabold font-nunito z-20">
@@ -133,6 +137,7 @@ const Openings = () => {
               src="/assets/photos/hiring/StaffSupport.JPG" // Replace with the actual image path
               alt="Staff Support"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
 

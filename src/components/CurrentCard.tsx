@@ -15,6 +15,7 @@ const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
               src={image}
               className="md:w-full md:h-[100%] object-cover rounded-md mx-auto"
               alt="Current Card Image"
+              loading="lazy"
             />
             {/* Filter Overlay */}
             <div className="absolute inset-0 bg-[#A3841D]/50 rounded-md"></div>

@@ -169,6 +169,7 @@ const Landing = () => {
             src="/assets/photos/UoftAerialPhoto.jpg"
             alt="University of Toronto Ariel View"
             className="absolute top-0 left-0 w-full h-screen object-cover z-10"
+            loading="lazy"
           />
         </div>
         <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-40 z-10" />
@@ -356,6 +357,7 @@ const Landing = () => {
                 alt="Selected Committee"
                 className="committee-image w-[80%] md:w-[100%] h-auto object-cover rounded-lg"
                 style={{ opacity: 1 }}
+                loading="lazy"
               />
             </div>
           </div>

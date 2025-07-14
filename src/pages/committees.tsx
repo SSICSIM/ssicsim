@@ -278,6 +278,7 @@ const Committees = () => {
           src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
           className="absolute top-0 left-0 w-full h-[80vh] object-cover z-10"
+          loading="lazy"
         />
       </div>
       <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />

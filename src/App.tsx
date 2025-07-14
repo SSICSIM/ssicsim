@@ -15,6 +15,9 @@ import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
+
 
 function App() {
   useEffect(() => {
@@ -43,6 +46,8 @@ function App() {
           <Route path="*" element={<UnderConstruction />} />
         </Routes>
         <Footer />
+        <Analytics/>
+        <SpeedInsights />
       </Router>
     </div>
   );
