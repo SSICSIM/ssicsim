@@ -328,7 +328,7 @@ const Landing = () => {
               }}
             ></div>
             <div
-              className="absolute blur-element rounded-full right-[200px] bottom-[-200px] h-[1px] w-[1px] pointer-events-none z-10"
+              className="absolute blur-element rounded-full right-[200px] bottom-[0px] h-[1px] w-[1px] pointer-events-none z-10"
               style={{
                 background:
                   "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
