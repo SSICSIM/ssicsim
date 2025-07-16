@@ -205,12 +205,14 @@ const Landing = () => {
     className="hidden md:block absolute left-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10"
     style={{
       maxHeight: "1200px", // Constrain the maximum height of the border
+      minHeight: "600px", // Ensure the border is at least as tall as the image
     }}
   ></div>
   <div
     className="hidden md:block absolute right-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10"
     style={{
       maxHeight: "1200px", // Constrain the maximum height of the border
+      minHeight: "600px", // Ensure the border is at least as tall as the image
     }}
   ></div>
 </div></div>
