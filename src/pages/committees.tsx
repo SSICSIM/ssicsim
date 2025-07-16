@@ -240,6 +240,7 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/LunarCrisis.jpg",
+    jointOrNot: true,
   },
   {
     title: "Conceptual Ad Hoc",
