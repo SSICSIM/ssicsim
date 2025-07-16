@@ -168,12 +168,12 @@ const Landing = () => {
   return (
     <>
       <div>
-      <div className="relative w-full min-h-[600px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
+      <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
   {/* Background Image */}
   <img
     src="/assets/photos/UoftAerialPhoto.jpg"
     alt="University of Toronto Ariel View"
-    className="absolute top-0 left-0 w-full min-h-[600px] h-screen max-h-[1200px] object-cover z-10"
+    className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
     loading="lazy"
   />
 
@@ -198,21 +198,21 @@ const Landing = () => {
   </div>
 
   {/* Overlay */}
-  <div className="absolute top-0 left-0 w-full h-screen min-h-[600px] bg-black opacity-40 z-10"></div>
+  <div className="absolute top-0 left-0 w-full h-screen min-h-[500px] bg-black opacity-40 z-10"></div>
 
   {/* Golden Borders */}
   <div
     className="hidden md:block absolute left-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10"
     style={{
       maxHeight: "1200px", // Constrain the maximum height of the border
-      minHeight: "600px", // Ensure the border is at least as tall as the image
+      minHeight: "500px", // Ensure the border is at least as tall as the image
     }}
   ></div>
   <div
     className="hidden md:block absolute right-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10"
     style={{
       maxHeight: "1200px", // Constrain the maximum height of the border
-      minHeight: "600px", // Ensure the border is at least as tall as the image
+      minHeight: "500px", // Ensure the border is at least as tall as the image
     }}
   ></div>
 </div></div>
