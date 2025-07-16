@@ -10,19 +10,19 @@ const Register = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full h-[80vh] overflow-hidden">
+      <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
           src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
-          className="absolute top-0 left-0 w-full h-[80vh] object-cover z-10"
+          className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"
         />
-      </div>
-      <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
-      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <h1 className="font-nunito text-white text-left text-4xl md:text-7xl font-bold  w-[80vw] lg:w-[800px] ml-6 leading-tight">
-          Registration
-        </h1>
+        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
+        <div className="max-w-[3000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
+          <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
+            Registration
+          </h1>
+        </div>
       </div>
       <div className="relative bg-gray-100 min-w-full min-h-screen pt-7">
         {/* Gold Mesh Gradient Background */}
@@ -71,7 +71,7 @@ const Register = () => {
         <hr className="border-t-2 border-gray-300 my-10" />
 
         {/* Registration Section */}
-        <div className="relative z-10 flex justify-center">
+        <div className="relative z-10 flex justify-center max-w-[3000px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 md:w-[90%] min-h-[100%]">
             {/* First Column (Spanning All Rows) */}
             <div className="row-span-4 p-6 flex flex-col justify-center">

@@ -168,37 +168,52 @@ const Landing = () => {
   return (
     <>
       <div>
-        <div className="w-full h-screen overflow-hidden">
-          <img
-            src="/assets/photos/UoftAerialPhoto.jpg"
-            alt="University of Toronto Ariel View"
-            className="absolute top-0 left-0 w-full h-screen object-cover z-10"
-            loading="lazy"
-          />
-        </div>
-        <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-40 z-10" />
-        <div className="md:opacity-100 opacity-0 absolute left-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10" />
-        <div className="md:opacity-100 opacity-0 absolute right-0 top-0 w-0 h-0 border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10" />
+      <div className="relative w-full min-h-[600px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
+  {/* Background Image */}
+  <img
+    src="/assets/photos/UoftAerialPhoto.jpg"
+    alt="University of Toronto Ariel View"
+    className="absolute top-0 left-0 w-full min-h-[600px] h-screen max-h-[1200px] object-cover z-10"
+    loading="lazy"
+  />
 
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
-          <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-            Toronto, ON
-          </h3>
-          <h1 className="text-white text-left md:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
-            Canada’s Premier Model UN Crisis Simulation
-          </h1>
-          <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-            October 24th - 26th, 2025
-          </h3>
-          <a
-            href="/register"
-            rel="noopener noreferrer"
-            className="ml-6 mt-4 bg-white text-[#A3841D] px-6 py-4 rounded-lg font-dm-sans text-2xl md:text-4xl font-bold hover:bg-gray-100 transition-colors"
-          >
-            Register Now
-          </a>
-        </div>
-      </div>
+  {/* Content Section */}
+  <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
+    <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+      Toronto, ON
+    </h3>
+    <h1 className="text-white text-left md:text-5xl lg:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
+      Canada’s Premier Model UN Crisis Simulation
+    </h1>
+    <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+      October 24th - 26th, 2025
+    </h3>
+    <a
+      href="/register"
+      rel="noopener noreferrer"
+      className="ml-6 mt-4 bg-white text-[#A3841D] px-6 py-4 rounded-lg font-dm-sans text-2xl md:text-4xl font-bold hover:bg-gray-100 transition-colors"
+    >
+      Register Now
+    </a>
+  </div>
+
+  {/* Overlay */}
+  <div className="absolute top-0 left-0 w-full h-screen min-h-[600px] bg-black opacity-40 z-10"></div>
+
+  {/* Golden Borders */}
+  <div
+    className="hidden md:block absolute left-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10"
+    style={{
+      maxHeight: "1200px", // Constrain the maximum height of the border
+    }}
+  ></div>
+  <div
+    className="hidden md:block absolute right-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10"
+    style={{
+      maxHeight: "1200px", // Constrain the maximum height of the border
+    }}
+  ></div>
+</div></div>
       <div
         className="relative bg-white h-auto py-44 w-full flex items-center justify-center overflow-hidden bg-cover bg-center"
         style={{
@@ -210,7 +225,7 @@ const Landing = () => {
         {/* Geometric Shapes Around the Glassmorphism Section */}
 
         {/* Glassmorphism Content Section */}
-        <div className="relative z-10 w-[85%] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/60 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
+        <div className="relative z-10 w-[85%] max-w-[2000px] md:w-[55%] h-auto flex flex-col items-center justify-center text-center px-8 py-12 bg-white/60 backdrop-blur-lg rounded-2xl shadow-2xl border-[2px]">
           <h3 className="text-2xl md:text-4xl font-dm-sans mb-4 text-black">
             The numbers tell the story
           </h3>
@@ -251,7 +266,7 @@ const Landing = () => {
           }}
         ></div>
         {/* Text Content */}
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
+        <div className="max-w-[2000px] mx-auto relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="md:w-1/2 px-4">
             <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
               SSICSIM 2025
@@ -285,7 +300,7 @@ const Landing = () => {
         {/* Divider */}
         <div className="w-full h-[2px] bg-white my-4"></div>
         {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-8 py-8 mx-auto h-auto overflow-hidden z-[20]">
+        <div className="max-w-[2000px] grid grid-cols-1 md:grid-cols-3 gap-4 px-4 md:px-8 py-8 mx-auto h-auto overflow-hidden z-[20]">
           <div className="current-card md:p-4">
             <CurrentCard
               title="A Staff Team Like No Other"
@@ -309,7 +324,7 @@ const Landing = () => {
           </div>
         </div>{" "}
         {/* Committee Types and Image Section */}
-        <div className="bg-gray-100 h-auto w-full">
+        <div className="bg-gray-100 h-auto w-full relative">
           <div className="w-full text-center my-8">
             <h2 className="text-2xl md:text-5xl font-bold text-black font-nunito">
               Types of Commitees
@@ -318,11 +333,8 @@ const Landing = () => {
               Click on a committee type to learn more.
             </p>
           </div>
-
-          <div className="relative z-[20] bg-gray-100 h-auto w-full px-4 flex flex-col gap-4 md:flex-row justify-center">
-            {/* Committee Types */}
-            <div
-              className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-10"
+          <div
+              className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-20"
               style={{
                 background:
                   "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
@@ -333,7 +345,7 @@ const Landing = () => {
               }}
             ></div>
             <div
-              className="absolute blur-element rounded-full right-[200px] bottom-[0px] h-[1px] w-[1px] pointer-events-none z-10"
+              className="absolute blur-element rounded-full right-[200px] bottom-[0px] h-[1px] w-[1px] pointer-events-none z-20"
               style={{
                 background:
                   "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
@@ -343,6 +355,9 @@ const Landing = () => {
                 backgroundRepeat: "no-repeat", // Prevent repeating the texture
               }}
             ></div>{" "}
+          <div className="relative z-[20] max-w-[2000px] mx-auto h-auto w-full px-4 flex flex-col gap-4 md:flex-row justify-center">
+            {/* Committee Types */}
+
             <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[40%] z-[20]">
               {committees.map((committee) => (
                 <CommiteeType

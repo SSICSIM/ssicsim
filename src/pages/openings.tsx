@@ -2,23 +2,24 @@ const Openings = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full h-[80vh] overflow-hidden">
+      <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
           src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
-          className="absolute top-0 left-0 w-full h-[80vh] object-cover z-10"
+          className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
+          loading="lazy"
         />
-      </div>
-      <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
-      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <h1 className="text-white text-left text-7xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6">
-          Staff Hiring
-        </h1>
+        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
+        <div className="max-w-[3000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
+          <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
+            Staff Hiring
+          </h1>
+        </div>
       </div>
 
       <div className="relative pb-7 bg-[#A3841D] min-h-screen w-full grid grid-rows-auto">
         {/* Text Content */}
-        <div className="relative z-10 flex items-center">
+        <div className="relative z-10 flex items-center max-w-[3000px] mx-auto">
           <div className="grid w-[100%] grid-cols-1 md:w-auto md:grid-cols-2 md:gap-4 ml-5 my-3">
             <div className="p-4 my-auto md:ml-[50px]">
               <p className="text-[30px] font-extralight text-white font-grotesque">
@@ -61,7 +62,7 @@ const Openings = () => {
         <div className="w-full h-[2px] bg-white"></div>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 mt-6 md:grid-rows-2 md:grid-cols-3 gap-4 h-[200vh] md:h-[70vh] w-[90vw] mx-auto">
+        <div className="max-w-[3000px] grid grid-cols-1 mt-6 md:grid-rows-2 md:grid-cols-3 gap-4 h-[200vh] md:h-[70vh] w-[90vw] mx-auto">
           {/* First Entry (Occupies the first column in both rows) */}
           <div className="relative h-full row-span-1 md:row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img

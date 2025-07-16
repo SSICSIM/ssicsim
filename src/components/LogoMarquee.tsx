@@ -9,7 +9,7 @@ const sponsors = [
 
 export default function LogoMarquee() {
   return (
-    <div className="overflow-hidden py-6 z-[20] w-full">
+    <div className="overflow-hidden py-6 z-[20] w-full max-w-[2000px] mx-auto">
       <style>
         {`
           @keyframes scroll {

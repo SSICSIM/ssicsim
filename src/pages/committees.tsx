@@ -274,19 +274,19 @@ const Committees = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full h-[80vh] overflow-hidden">
+      <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
           src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
-          className="absolute top-0 left-0 w-full h-[80vh] object-cover z-10"
+          className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"
         />
-      </div>
-      <div className="absolute top-0 left-0 w-full h-[80vh] bg-black opacity-40 z-10" />
-      <div className="absolute top-0 left-0 w-full h-[80vh] flex flex-col items-start justify-center z-20">
-        <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
-          Committees
-        </h1>
+        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
+        <div className="max-w-[2000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
+          <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
+            Committees
+          </h1>
+        </div>
       </div>
 
       {/* Filter Buttons */}
