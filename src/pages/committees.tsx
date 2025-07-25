@@ -222,7 +222,7 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Sukaina Syed",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/Tetris.jpg",
+    backgroundImage: "/assets/photos/commitees/Tetris.avif",
   },
   {
     title: "Saving Selene City: A Lunar Colony Crisis",
