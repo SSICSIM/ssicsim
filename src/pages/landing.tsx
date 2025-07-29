@@ -168,54 +168,55 @@ const Landing = () => {
   return (
     <>
       <div>
-      <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
-  {/* Background Image */}
-  <img
-    src="/assets/photos/UoftAerialPhoto.jpg"
-    alt="University of Toronto Ariel View"
-    className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
-    loading="lazy"
-  />
+        <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
+          {/* Background Image */}
+          <img
+            src="/assets/photos/UoftAerialPhoto.jpg"
+            alt="University of Toronto Ariel View"
+            className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
+            loading="lazy"
+          />
 
-  {/* Content Section */}
-  <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
-    <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-      Toronto, ON
-    </h3>
-    <h1 className="text-white text-left md:text-5xl lg:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
-      Canada’s Premier Model UN Crisis Simulation
-    </h1>
-    <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-      October 24th - 26th, 2025
-    </h3>
-    <a
-      href="/register"
-      rel="noopener noreferrer"
-      className="ml-6 mt-4 bg-white text-[#A3841D] px-6 py-4 rounded-lg font-dm-sans text-2xl md:text-4xl font-bold hover:bg-gray-100 transition-colors"
-    >
-      Register Now
-    </a>
-  </div>
+          {/* Content Section */}
+          <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
+            <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+              Toronto, ON
+            </h3>
+            <h1 className="text-white text-left md:text-5xl lg:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
+              Canada’s Premier Model UN Crisis Simulation
+            </h1>
+            <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
+              October 24th - 26th, 2025
+            </h3>
+            <a
+              href="/register"
+              rel="noopener noreferrer"
+              className="ml-6 mt-4 bg-white text-[#A3841D] px-6 py-4 rounded-lg font-dm-sans text-2xl md:text-4xl font-bold hover:bg-gray-100 transition-colors"
+            >
+              Register Now
+            </a>
+          </div>
 
-  {/* Overlay */}
-  <div className="absolute top-0 left-0 w-full h-screen min-h-[500px] bg-black opacity-40 z-10"></div>
+          {/* Overlay */}
+          <div className="absolute top-0 left-0 w-full h-screen min-h-[500px] bg-black opacity-40 z-10"></div>
 
-  {/* Golden Borders */}
-  <div
-    className="hidden md:block absolute left-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10"
-    style={{
-      maxHeight: "1200px", // Constrain the maximum height of the border
-      minHeight: "500px", // Ensure the border is at least as tall as the image
-    }}
-  ></div>
-  <div
-    className="hidden md:block absolute right-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10"
-    style={{
-      maxHeight: "1200px", // Constrain the maximum height of the border
-      minHeight: "500px", // Ensure the border is at least as tall as the image
-    }}
-  ></div>
-</div></div>
+          {/* Golden Borders */}
+          <div
+            className="hidden md:block absolute left-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10"
+            style={{
+              maxHeight: "1200px", // Constrain the maximum height of the border
+              minHeight: "500px", // Ensure the border is at least as tall as the image
+            }}
+          ></div>
+          <div
+            className="hidden md:block absolute right-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-b-transparent border-r-[60vw] border-r-[#D3AF37]/50 border-opacity-50 z-10"
+            style={{
+              maxHeight: "1200px", // Constrain the maximum height of the border
+              minHeight: "500px", // Ensure the border is at least as tall as the image
+            }}
+          ></div>
+        </div>
+      </div>
       <div
         className="relative bg-white h-auto py-44 w-full flex items-center justify-center overflow-hidden bg-cover bg-center"
         style={{
@@ -336,27 +337,27 @@ const Landing = () => {
             </p>
           </div>
           <div
-              className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-20"
-              style={{
-                background:
-                  "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
-                backgroundBlendMode: "overlay", // Blend the texture with the gradient
-                boxShadow: "0px 0px 400px 400px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
-                backgroundSize: "cover", // Ensure the texture covers the entire element
-                backgroundRepeat: "no-repeat", // Prevent repeating the texture
-              }}
-            ></div>
-            <div
-              className="absolute blur-element rounded-full right-[200px] bottom-[0px] h-[1px] w-[1px] pointer-events-none z-20"
-              style={{
-                background:
-                  "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
-                backgroundBlendMode: "overlay", // Blend the texture with the gradient
-                boxShadow: "0px 0px 200px 200px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
-                backgroundSize: "cover", // Ensure the texture covers the entire element
-                backgroundRepeat: "no-repeat", // Prevent repeating the texture
-              }}
-            ></div>{" "}
+            className="absolute blur-element rounded-full top-[200px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-20"
+            style={{
+              background:
+                "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
+              backgroundBlendMode: "overlay", // Blend the texture with the gradient
+              boxShadow: "0px 0px 400px 400px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
+              backgroundSize: "cover", // Ensure the texture covers the entire element
+              backgroundRepeat: "no-repeat", // Prevent repeating the texture
+            }}
+          ></div>
+          <div
+            className="absolute blur-element rounded-full right-[200px] bottom-[0px] h-[1px] w-[1px] pointer-events-none z-20"
+            style={{
+              background:
+                "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%), url('/assets/textures/grainy.avif')", // Add grainy texture
+              backgroundBlendMode: "overlay", // Blend the texture with the gradient
+              boxShadow: "0px 0px 200px 200px rgb(255 215 0 /40%)", // Adjust the box shadow blur and spread
+              backgroundSize: "cover", // Ensure the texture covers the entire element
+              backgroundRepeat: "no-repeat", // Prevent repeating the texture
+            }}
+          ></div>{" "}
           <div className="relative z-[20] max-w-[2000px] mx-auto h-auto w-full px-4 flex flex-col gap-4 md:flex-row justify-center">
             {/* Committee Types */}
 
