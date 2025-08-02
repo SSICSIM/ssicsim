@@ -9,7 +9,7 @@ const Mission = () => {
   return (
     <>
       {/* Hero Banner */}
-      <div className="relative w-full min-h-[400px] h-[80vh] max-h-[1200px]">
+      <div className="relative w-full min-h-[400px] h-[90vh] max-h-[1200px]">
         <img
           src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
