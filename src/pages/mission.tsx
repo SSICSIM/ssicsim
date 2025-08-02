@@ -26,59 +26,58 @@ const Mission = () => {
 
       {/* Mission Section */}
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
-          {/* Text */}
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <p className="text-2xl font-light text-[#A3841D] font-grotesque mb-2">
               SSICSIM 2025
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#A3841D] font-nunito leading-snug mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#A3841D] font-nunito leading-snug mb-10">
               Our Mission
             </h2>
-            <div className="border-t-4 border-[#A3841D] pt-6 space-y-5 text-gray-700 text-lg md:text-xl font-dm-sans leading-relaxed">
-              <p>
-                SSICSIM is founded on the principle that delegates should be learning about diplomacy and conflict resolution in its purest from: fast-paced and constantly changing.
-              </p>
-              <p>
-                In the crisis format, delegates are challenged to make decisions on their feet that are both representative of their specific role assignment and the collective objectives of their committee/cabinet.
-              </p>
-              <p>
-                Here, delegates are pressured to act quickly and decisively rather than follow a system of bureaucracy. In doing so, delegates are able to unlock unique paths in their own committee journey and alter the committee's direction as a whole.
-              </p>
-            </div>
+            <p className="text-lg md:text-xl text-gray-700 font-dm-sans max-w-3xl mx-auto mb-16">
+              SSICSIM is founded on the principle that delegates should be learning about diplomacy and conflict resolution in its purest form: fast-paced and constantly changing.
+            </p>
           </motion.div>
 
-          {/* Image */}
           <motion.div
+            className="grid md:grid-cols-3 gap-8"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <img
-              src="/assets/photos/MissionPhoto.JPG"
-              alt="Mission"
-              className="w-full h-auto rounded-xl shadow-xl object-cover"
-            />
+            <div className="bg-[#F7F5EF] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+              <h3 className="text-2xl font-bold text-[#A3841D] font-nunito mb-4">Think Fast</h3>
+              <p className="text-gray-700 text-md font-dm-sans leading-relaxed">
+                In the crisis format, delegates are challenged to make decisions on their feet that reflect their roles and their committee’s objectives.
+              </p>
+            </div>
+            <div className="bg-[#F7F5EF] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+              <h3 className="text-2xl font-bold text-[#A3841D] font-nunito mb-4">Lead Boldly</h3>
+              <p className="text-gray-700 text-md font-dm-sans leading-relaxed">
+                Delegates are pressured to act decisively — unlocking creative paths and driving the direction of the committee.
+              </p>
+            </div>
+            <div className="bg-[#F7F5EF] p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+              <h3 className="text-2xl font-bold text-[#A3841D] font-nunito mb-4">Shape the Future</h3>
+              <p className="text-gray-700 text-md font-dm-sans leading-relaxed">
+                Crisis empowers delegates to go beyond scripts, building real diplomatic instincts and adaptive leadership skills.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Land Acknowledgement Section */}
-      <section className="bg-[#F7F5EF] py-20">
+      {/* Land Acknowledgement */}
+      <section className="relative py-20 bg-[#F9F8F5]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
           {/* Image */}
           <motion.div
-            className="order-2 lg:order-1"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            className="order-2 lg:order-1"
           >
             <img
               src="/assets/photos/LandAcknowledgement.JPG"
@@ -89,11 +88,11 @@ const Mission = () => {
 
           {/* Text */}
           <motion.div
-            className="order-1 lg:order-2"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            className="order-1 lg:order-2"
           >
             <p className="text-xl font-light text-[#A3841D] font-grotesque mb-2">
               SSICSIM 2025
@@ -122,6 +121,20 @@ const Mission = () => {
       {/* University of Toronto Section */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
+          {/* Image */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <img
+              src="/assets/photos/UofT_Campus_Shot.jpg"
+              alt="University of Toronto"
+              className="w-full h-auto rounded-xl shadow-xl object-cover"
+            />
+          </motion.div>
+
           {/* Text */}
           <motion.div
             variants={fadeInUp}
@@ -143,20 +156,6 @@ const Mission = () => {
                 Hosting SSICsim here places delegates in a thriving academic hub, and they are encouraged to explore the campus and engage with staff about their U of T experiences.
               </p>
             </div>
-          </motion.div>
-
-          {/* New Unique Image */}
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <img
-              src="/assets/photos/UofT_Campus_Shot.jpg"
-              alt="U of T Campus"
-              className="w-full h-auto rounded-xl shadow-xl object-cover"
-            />
           </motion.div>
         </div>
       </section>
