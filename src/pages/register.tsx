@@ -39,7 +39,7 @@ const Register = () => {
           {/* Pricing Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:w-auto w-[80%] mx-auto">
             {/* Early Bird Pricing */}
-            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$65</p>
               <p className="text-lg font-nunito mt-4">
                 Early Bird Registration
@@ -48,7 +48,7 @@ const Register = () => {
             </div>
 
             {/* Regular Pricing */}
-            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
@@ -91,7 +91,7 @@ const Register = () => {
                   rel="noopener noreferrer"
                   className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
                 >
-                  Early Bird Registration
+                  Regular Registration
                 </a>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSduLLlMb5D1-NwLzUlN2PAxgLH3b-6EeFAigwAu-mRw79CULg/viewform"
