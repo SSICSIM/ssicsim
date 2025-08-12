@@ -10,7 +10,7 @@ import Landing from "./pages/landing";
 import Committees from "./pages/committees";
 // import Sponsors from "./pages/sponsors";
 import Register from "./pages/register";
-// import Contact from "./pages/contact";
+import Contact from "./pages/contact";
 import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
 import Footer from "./components/Footer";
@@ -45,6 +45,7 @@ function App() {
           <Route path="/staff/openings" element={<Openings />} />
           <Route path="/about/mission" element={<Mission />} />
           <Route path="*" element={<UnderConstruction />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
         <Analytics />
