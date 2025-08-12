@@ -18,12 +18,22 @@ const committeesData = [
     title: "Fight for the Layton Legacy: 2011 NDP Leadership Race",
     description:
       "After winning 103 seats and Official Opposition status in the 2011 election, Jack Layton's untimely death has forced Canada's NDP into a high-stakes leadership race. Do you have what it takes to make the Layton Legacy your own?",
-    expandedDescription: `It’s 2011, and an Orange Wave has flooded the House of Commons. With 102 seats, 30 percent of the popular vote, and the Official Opposition status they have never before held, the New Democratic Party—historically, the perennial “plus” in Canada’s two-party-plus political system—is, for the first time ever, on the apparent cusp of forming government.\n\nBut it’s not quite smooth sailing. Just four months after the election, Jack Layton, the party’s iconic leader, passed away. Now, an NDP on the rise is looking for a new standard-bearer. Interest, intrigue, and a dash of classic leftist infighting all promise to be in abundant supply.\n\nIn this committee, you’ll jump into the hotly-contested NDP Leadership Race of 2012. Throughout the campaign, you’ll work with (and against) your fellow delegates to take control of key party factions, craft a winning message, and take the reins of Canada’s second-largest party—all while the chaos of Canadian politics shapes and reshapes the political landscape beyond recognition.\n\nThe tides are turning in Ottawa—it’s time to sink or swim. Welcome to the fight for the Layton Legacy.`,
+    expandedDescription:  `It’s 2011, and an Orange Wave has flooded the House of Commons. With 103 seats, 30 percent of the popular vote, and the Official Opposition status they have never before held, the New Democratic Party—historically, the perennial “plus” in Canada’s two-party-plus political system—is, for the first time ever, on the apparent cusp of forming government.
+
+But it’s not quite smooth sailing. Just four months after the election, Jack Layton, the party’s iconic leader, passed away. Now, an NDP on the rise is looking for a new standard-bearer. Interest, intrigue, and a dash of classic leftist infighting all promise to be in abundant supply.
+
+In this committee, you and a fellow New Democrat will take the plunge into the hotly-contested NDP Leadership Race of 2012. Throughout the campaign, you’ll wrestle for the support of key party factions, craft a winning message, and try to take the reins of Canada’s second-largest party—all while the chaos of Canadian politics shapes and reshapes the political landscape beyond recognition. 
+
+The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fight for the Layton Legacy.
+
+*** Please note that Fight for the Layton Legacy is a Double Delegate committee. Characters in this committee will either be assigned a Candidate or Campaign Manager role, and will work with another delegate to accomplish shared goals while also pursuing unique individual objectives.
+`,
     backgroundGuideLink: "https://example.com/fictional-guide",
     director: "Luca Rampersad",
     directorImage: "/assets/photos/DirectorImage2.jpg",
     category: "Historical",
     backgroundImage: "/assets/photos/commitees/ndp.jpg",
+    double: true,
   },
   {
     title: "Viva La Revolution: Cake, Blood and Banque",
@@ -357,6 +367,7 @@ const Committees = () => {
               directorImage={committee.directorImage}
               backgroundImage={committee.backgroundImage}
               jointOrNot={committee.jointOrNot}
+              double={committee.double}
             />
           ))}
         </div>
