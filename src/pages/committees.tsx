@@ -15,10 +15,10 @@ const committeesData = [
     backgroundImage: "/assets/photos/commitees/EpicOfSundiata.png",
   },
   {
-    title: "Fight for the Layton Legacy: 2011 NDP Leadership Race",
+    title: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
     description:
-      "After winning 103 seats and Official Opposition status in the 2011 election, Jack Layton's untimely death has forced Canada's NDP into a high-stakes leadership race. Do you have what it takes to make the Layton Legacy your own?",
-    expandedDescription:  `It’s 2011, and an Orange Wave has flooded the House of Commons. With 103 seats, 30 percent of the popular vote, and the Official Opposition status they have never before held, the New Democratic Party—historically, the perennial “plus” in Canada’s two-party-plus political system—is, for the first time ever, on the apparent cusp of forming government.
+      "After winning 103 seats and Official Opposition status in the 2012 election, Jack Layton's untimely death has forced Canada's NDP into a high-stakes leadership race. Do you have what it takes to make the Layton Legacy your own?",
+    expandedDescription:  `It’s 2012, and an Orange Wave has flooded the House of Commons. With 103 seats, 30 percent of the popular vote, and the Official Opposition status they have never before held, the New Democratic Party—historically, the perennial “plus” in Canada’s two-party-plus political system—is, for the first time ever, on the apparent cusp of forming government.
 
 But it’s not quite smooth sailing. Just four months after the election, Jack Layton, the party’s iconic leader, passed away. Now, an NDP on the rise is looking for a new standard-bearer. Interest, intrigue, and a dash of classic leftist infighting all promise to be in abundant supply.
 
