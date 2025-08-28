@@ -9,16 +9,16 @@ const Mission = () => {
   return (
     <>
       {/* Hero Banner */}
-      <div className="relative w-full min-h-[400px] h-[90vh] max-h-[1200px]">
+      <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
           src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
-          className="absolute top-0 left-0 w-full h-full object-cover z-10"
+          className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-20" />
-        <div className="relative z-30 max-w-7xl mx-auto h-full flex items-center px-6">
-          <h1 className="text-white text-5xl md:text-7xl font-bold font-nunito leading-tight">
+        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
+        <div className="max-w-[2000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
+          <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
             Our Mission
           </h1>
         </div>

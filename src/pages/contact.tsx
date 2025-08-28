@@ -11,9 +11,18 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
+    console.log("Submitting form data:", formData);
+
+    const apiEndpoint = import.meta.env.VITE_EMAIL_API_ENDPOINT;
+    console.log("API Endpoint:", apiEndpoint);
+    if (!apiEndpoint) {
+      console.error("EMAIL_API_ENDPOINT is not defined");
+      setStatus("error");
+      return;
+    }
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -23,9 +32,12 @@ const Contact = () => {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
+        const errorData = await res.json();
+        console.error("API error:", errorData);
         setStatus("error");
       }
-    } catch {
+    } catch (err) {
+      console.error("Fetch failed:", err);
       setStatus("error");
     }
   };
@@ -49,7 +61,7 @@ const Contact = () => {
       </div>
 
       {/* CONTACT SECTION */}
-      <section className="min-h-screen bg-gradient-to-b bg-[#A3841D] py-16 px-4">
+      <section className="bg-gradient-to-b bg-[#A3841D] py-16 px-4">
         <div className="max-w-5xl mx-auto bg-white/30 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/10">
           <h1 className="text-4xl md:text-5xl font-bold text-center font-nunito text-[white] mb-6">
             Contact Us
@@ -112,16 +124,6 @@ const Contact = () => {
                 <h2 className="text-xl font-bold text-white font-nunito mb-2">Location</h2>
                 <p className="text-white font-dm-sans">University of Toronto, ON</p>
               </div>
-              <iframe
-                title="Google Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.0898302214675!2d-79.39936082435549!3d43.66289105896552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34b90d33c3c7%3A0x30eac9d06cdd0b41!2sUniversity%20of%20Toronto!5e0!3m2!1sen!2sca!4v1691973853245!5m2!1sen!2sca"
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                className="rounded-lg shadow-md"
-              ></iframe>
             </div>
           </div>
         </div>
