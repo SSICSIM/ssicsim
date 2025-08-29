@@ -133,7 +133,7 @@ In this committee, delegates will represent the townspeople of Pelican Town, fro
     director: "Jenny Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: `${CF_DOMAIN}/StardewValley.webp?format=webp`,
+    backgroundImage: `/assets/photos/commitees/StardewValley.webp`,
   },
   {
     title: "The 39 Clues: Cahills vs. Vespers",
@@ -202,7 +202,7 @@ However, the bigger challenge lies not within the minute logistics of the gala b
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: `${CF_DOMAIN}/MetGala.webp?format=webp`,
+    backgroundImage: `/assets/photos/commitees/MetGala.webp`,
 
   },
   {
