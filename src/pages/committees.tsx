@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import CommiteeCard from "../components/CommiteeCard";
 import { useLocation } from "react-router-dom";
 
+
+const CF_DOMAIN = "https://d2r7vam9bxybe0.cloudfront.net/";
+
 const committeesData = [
   {
     title: "The Epic of Sundiata",
@@ -12,7 +15,7 @@ const committeesData = [
     director: "Ngila Stone",
     directorImage: "/assets/photos/DirectorImage.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/EpicOfSundiata.png",
+    backgroundImage: `${CF_DOMAIN}/EpicOfSundiata.png?format=webp`,
   },
   {
     title: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
@@ -32,7 +35,7 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
     director: "Luca Rampersad",
     directorImage: "/assets/photos/DirectorImage2.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/ndp.jpg",
+    backgroundImage: `${CF_DOMAIN}/ndp.jpg?format=webp`,
     double: true,
   },
   {
@@ -44,7 +47,7 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
     director: "Sarah Morra",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/VIvaLaRevolution.webp",
+    backgroundImage: `${CF_DOMAIN}/VIvaLaRevolution.webp?format=webp`,
   },
   {
     title: "Bakumatsu: The Fall of the Shogunate",
@@ -64,7 +67,7 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
     director: "Evelyn So & Alex Drotenko",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/Bakamatsu.jpg",
+    backgroundImage: `${CF_DOMAIN}/Bakamatsu.jpg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -79,7 +82,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Jackie Wang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/EnglishCivilWar.jpeg",
+    backgroundImage: `${CF_DOMAIN}/EnglishCivilWar.jpeg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -91,7 +94,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Petra Visaticki",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/HistoricalAdHoc.jpg",
+    backgroundImage: `${CF_DOMAIN}/HistoricalAdHoc.jpg?format=webp`,
   },
   {
     title: "March of the Machine: The Phyrexian Invasion",
@@ -102,7 +105,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Oscar Hollingsworth",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/ThePhyrexianInvasion.png",
+    backgroundImage: `${CF_DOMAIN}/ThePhyrexianInvasion.png?format=webp`,
   },
   {
     title: "See You This Summer!",
@@ -113,7 +116,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Beatrix Stone",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/GravityFalls.webp",
+    backgroundImage: `${CF_DOMAIN}/GravityFalls.webp?format=webp`,
   },
   {
     title: "Stardew Valley: The Last Harvest",
@@ -130,7 +133,7 @@ In this committee, delegates will represent the townspeople of Pelican Town, fro
     director: "Jenny Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/StardewValley.webp",
+    backgroundImage: `${CF_DOMAIN}/StardewValley.webp?format=webp`,
   },
   {
     title: "The 39 Clues: Cahills vs. Vespers",
@@ -146,7 +149,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     director: "Tom Cai",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/39Clues.jpg",
+    backgroundImage: `${CF_DOMAIN}/39Clues.jpg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -158,7 +161,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     director: "Joshua Qu & Jace Mu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/ValorantConvClear.jpg",
+    backgroundImage: `${CF_DOMAIN}/ValorantConvClear.jpg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -170,7 +173,8 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     director: "Renzo Ugarte Basurco",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/FictionalAdHoc.avif",
+    backgroundImage: `${CF_DOMAIN}/FictionalAdHoc.avif?format=webp`,
+
   },
   {
     title: "The Fall of Atlantis",
@@ -183,7 +187,8 @@ Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of 
     director: "Paula Chu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/AtlantisClear.jpg",
+    backgroundImage: `${CF_DOMAIN}/AtlantisClear.jpg?format=webp`,
+
   },
   {
     title: "Met Gala 2026",
@@ -197,7 +202,8 @@ However, the bigger challenge lies not within the minute logistics of the gala b
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/MetGala.webp",
+    backgroundImage: `${CF_DOMAIN}/MetGala.webp?format=webp`,
+
   },
   {
     title: "Second Renaissance",
@@ -215,7 +221,7 @@ Is how to pack up the board.
     director: "Dor Ioffe",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/SecondRenaissance.png",
+    backgroundImage: `${CF_DOMAIN}/SecondRenaissance.png?format=webp`,
   },
   {
     title: "Tetris",
@@ -232,7 +238,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Sukaina Syed",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/Tetris.avif",
+    backgroundImage: `${CF_DOMAIN}/Tetris.avif?format=webp`,
+
   },
   {
     title: "Saving Selene City: A Lunar Colony Crisis",
@@ -249,7 +256,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Elizabeth Wright",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/LunarCrisis.jpg",
+    backgroundImage: `${CF_DOMAIN}/LunarCrisis.jpg?format=webp`,
+
     jointOrNot: true,
   },
   {
@@ -261,7 +269,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Harvi Karatha & Rameen Azmat",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/ConceptualAdHoc.png",
+    backgroundImage: `${CF_DOMAIN}/ConceptualAdHoc.png?format=webp`,
+
   },
 ];
 
