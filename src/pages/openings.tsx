@@ -1,10 +1,12 @@
+import { CF_DOMAIN } from "../utils/consts";
+
 const Openings = () => {
   return (
     <>
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
-          src="/assets/photos/UoftAerialPhoto.jpg"
+          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
           alt="University of Toronto Aerial View"
           className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"
@@ -66,7 +68,7 @@ const Openings = () => {
           {/* First Entry (Occupies the first column in both rows) */}
           <div className="relative h-full row-span-1 md:row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
-              src="/assets/photos/hiring/Moderator.JPG" // Replace with the actual image path
+              src={`${CF_DOMAIN}/Moderator.JPG?format=webp`}
               alt="Moderator"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
               loading="lazy"
@@ -83,7 +85,7 @@ const Openings = () => {
           {/* Second Entry (Occupies the second column in the first row) */}
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
-              src="/assets/photos/hiring/CrisisManager.JPG" // Replace with the actual image path
+              src={`${CF_DOMAIN}/CrisisManager.JPG?format=webp`}
               alt="Moderator"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
               loading="lazy"
@@ -101,7 +103,7 @@ const Openings = () => {
           {/* Third Entry (Occupies the third column in the first row) */}
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
-              src="/assets/photos/hiring/CrisisStaff.JPG" // Replace with the actual image path
+              src={`${CF_DOMAIN}/CrisisStaff.JPG?format=webp`}
               alt="Crisis Staff"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
               loading="lazy"
@@ -119,7 +121,7 @@ const Openings = () => {
           {/* Fourth Entry (Occupies the last two columns in the second row) */}
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
-              src="/assets/photos/hiring/CrisisCoordinator.png" // Replace with the actual image path
+              src={`${CF_DOMAIN}/CrisisCoordinator.png?format=webp`}
               alt="Moderator"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
               loading="lazy"
@@ -135,7 +137,7 @@ const Openings = () => {
 
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
-              src="/assets/photos/hiring/StaffSupport.JPG" // Replace with the actual image path
+              src={`${CF_DOMAIN}/StaffSupport.JPG?format=webp`}
               alt="Staff Support"
               className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
               loading="lazy"

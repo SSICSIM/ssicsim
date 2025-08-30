@@ -5,6 +5,7 @@ import {
   FaMoneyCheckAlt,
   FaBook,
 } from "react-icons/fa"; // Import icons from React Icons
+import { CF_DOMAIN } from "../utils/consts";
 
 const Register = () => {
   return (
@@ -12,7 +13,7 @@ const Register = () => {
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
-          src="/assets/photos/UoftAerialPhoto.jpg"
+          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
           alt="University of Toronto Aerial View"
           className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"
