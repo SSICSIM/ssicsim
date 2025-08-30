@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import CommiteeCard from "../components/CommiteeCard";
 import { useLocation } from "react-router-dom";
+import { CF_DOMAIN } from "../utils/consts";
 
 
-const CF_DOMAIN = "https://d2r7vam9bxybe0.cloudfront.net/";
 
 const committeesData = [
   {
@@ -133,7 +133,8 @@ In this committee, delegates will represent the townspeople of Pelican Town, fro
     director: "Jenny Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: `/assets/photos/commitees/StardewValley.webp`,
+    backgroundImage: `${CF_DOMAIN}/StardewValley.webp?format=webp`,
+
   },
   {
     title: "The 39 Clues: Cahills vs. Vespers",
@@ -202,7 +203,8 @@ However, the bigger challenge lies not within the minute logistics of the gala b
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: `/assets/photos/commitees/MetGala.webp`,
+    backgroundImage: `${CF_DOMAIN}/MetGala.webp?format=webp`,
+
 
   },
   {
@@ -295,7 +297,7 @@ const Committees = () => {
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
-          src="/assets/photos/UoftAerialPhoto.jpg"
+          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
           alt="University of Toronto Aerial View"
           className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"

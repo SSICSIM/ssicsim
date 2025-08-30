@@ -1,10 +1,12 @@
+import { CF_DOMAIN } from "../utils/consts";
+
 const sponsors = [
-  "/assets/photos/logos/CEES.png",
-  "/assets/photos/logos/MunkSchool.png",
-  "/assets/photos/logos/PoliticalScience.png",
-  "/assets/photos/logos/SchoolOfCities.png",
-  "/assets/photos/logos/TheRoyalSonesta.webp",
-  "/assets/photos/logos/WizePrep.png",
+  "CEES.png",
+  "MunkSchool.png",
+  "PoliticalScience.png",
+  "SchoolOfCities.png",
+  "TheRoyalSonesta.webp",
+  "WizePrep.png",
 ];
 
 export default function LogoMarquee() {
@@ -30,7 +32,7 @@ export default function LogoMarquee() {
           (src, index) => (
             <img
               key={index}
-              src={src}
+              src={`${CF_DOMAIN}/${src}?format=webp`}
               alt={`sponsor-${index}`}
               className="h-[5vh] w-auto object-contain mx-6"
             />
