@@ -117,14 +117,38 @@ const CommiteeCard = ({
                   ? "Double Delegate Crisis"
                   : "Single Crisis"}
               </h2>
-              <p className="text-[#A3841D] font-light font-dm-sans">
-                {expandedDescription.split("\n").map((line, index) => (
-                  <React.Fragment key={index}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
-              </p>
+<p className="text-[#A3841D] font-light font-dm-sans">
+  {expandedDescription.split("\n").map((line, index) => {
+    // Regex: (text before)[URL](text after)
+    const match = line.match(/^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/);
+    if (match) {
+      const before = match[1]; // text before [URL]
+      const url = match[2];    // the URL inside []
+      const after = match[3];  // text after ]
+      return (
+        <React.Fragment key={index}>
+          {before}
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            {after}
+          </a>
+          <br />
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      );
+    }
+  })}
+</p>
               {/* {backgroundGuideLink && (
                 <a
                   href={backgroundGuideLink}

@@ -169,7 +169,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     title: "Fictional Ad Hoc",
     description:
       "This committee is reserved for only the most experienced of delegates. Beware.",
-    expandedDescription: `.....`,
+    expandedDescription: `[https://drive.google.com/file/d/1I81iVeCuFkTC9cRfVP8KPlJL1Ain9ugI/view]‽.pdf`,
     backgroundGuideLink: "https://example.com/historical-guide",
     director: "Renzo Ugarte Basurco",
     directorImage: "/assets/photos/DirectorImage3.jpg",
