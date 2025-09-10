@@ -108,7 +108,7 @@ const Register = () => {
             <div className="pt-6">
               <RegistrationStep
                 title="Delegation Registration"
-                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Early Bird Registration Form indicating their delegation affiliation and committee preferences."
+                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Regular Registration Form indicating their delegation affiliation and committee preferences."
                 icon={
                   <FaUsers className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                 } // Delegation icon
