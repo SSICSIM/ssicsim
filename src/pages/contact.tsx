@@ -11,10 +11,8 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
-    console.log("Submitting form data:", formData);
 
     const apiEndpoint = import.meta.env.VITE_EMAIL_API_ENDPOINT;
-    console.log("API Endpoint:", apiEndpoint);
     if (!apiEndpoint) {
       console.error("EMAIL_API_ENDPOINT is not defined");
       setStatus("error");
