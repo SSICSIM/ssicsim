@@ -44,6 +44,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/staff/openings" element={<Openings />} />
           <Route path="/about/mission" element={<Mission />} />
+          <Route path="/apply" element={<Openings />} />
           <Route path="*" element={<UnderConstruction />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -9,6 +9,7 @@ interface CommiteeCardProps {
   backgroundImage?: string;
   directorImage?: string; // Optional director image
   jointOrNot?: boolean;
+  double?: boolean; // Optional prop to indicate if it's a double delegate committee    
 }
 
 const CommiteeCard = ({
@@ -18,6 +19,7 @@ const CommiteeCard = ({
   director,
   backgroundImage,
   jointOrNot = false,
+  double = false, // Default to false if not provided
 }: CommiteeCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -109,7 +111,11 @@ const CommiteeCard = ({
                 {title}
               </h2>
               <h2 className="text-2xl font-dm-sans font-regular pb-4 mb-4 border-b-[#A3841D] border-b-2 text-[#A3841D]">
-                {jointOrNot ? "Joint Crisis" : "Single Crisis"}
+                {jointOrNot
+                  ? "Joint Crisis"
+                  : double
+                  ? "Double Delegate Crisis"
+                  : "Single Crisis"}
               </h2>
               <p className="text-[#A3841D] font-light font-dm-sans">
                 {expandedDescription.split("\n").map((line, index) => (

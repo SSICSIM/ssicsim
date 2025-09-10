@@ -10,6 +10,7 @@ import LogoMarquee from "../components/LogoMarquee";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CF_DOMAIN } from "../utils/consts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +20,8 @@ const Landing = () => {
     null,
   );
   const [currentImage, setCurrentImage] = useState<string>(
-    "/assets/photos/typesOfCommitees/Default.JPG",
+    `${CF_DOMAIN}/Default.JPG?format=webp`
+
   );
 
   const committees = useMemo(
@@ -28,19 +30,19 @@ const Landing = () => {
         title: "Fictional",
         description:
           "Fictional Crises bring to life the fantastical worlds of real fiction pieces (ie. Cinema, TV, Books, Adaptations of Current Events, etc.). Here, delegates will need to bring their knowledge of these fictional worlds in order to fully explore the scope of the committee and it’s alternate storylines.",
-        image: "/assets/photos/typesOfCommitees/Fictional.JPG",
+        image: `${CF_DOMAIN}/Fictional.JPG?format=webp`,
       },
       {
         title: "Historical",
         description:
           "Historical Crises are, well, historical committees! They bring to life major historical events, be it ancient, medieval, or modern, and implore delegates to reimagine them through various lenses or recreate the events of the past, often with a more academic approach to understanding history and its agents.",
-        image: "/assets/photos/typesOfCommitees/Historical.JPG",
+        image: `${CF_DOMAIN}/Historical.JPG?format=webp`,
       },
       {
         title: "Conceptual",
         description:
           "Conceptual Crises are an opportunity for delegates to engage critically with complex, unconventional crises mechanics/topics. Delegates in these committees might find themselves challenged with non-traditional modes of debate or mechanics and crisis arcs that cannot be fully pre-researched.",
-        image: "/assets/photos/typesOfCommitees/Conceptual.JPG",
+        image: `${CF_DOMAIN}/Conceptual.JPG?format=webp`,
       },
     ],
     [],
@@ -168,14 +170,14 @@ const Landing = () => {
   return (
     <>
       <div>
-        <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
-          {/* Background Image */}
-          <img
-            src="/assets/photos/UoftAerialPhoto.jpg"
-            alt="University of Toronto Ariel View"
-            className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
-            loading="lazy"
-          />
+      <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
+  {/* Background Image */}
+  <img
+          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
+    alt="University of Toronto Ariel View"
+    className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
+    loading="lazy"
+  />
 
           {/* Content Section */}
           <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
@@ -307,21 +309,21 @@ const Landing = () => {
           <div className="current-card md:p-4">
             <CurrentCard
               title="A Staff Team Like No Other"
-              image="/assets/photos/Photo1.png"
+              image={`${CF_DOMAIN}/Photo1.png?format=webp`}
               description="From managing spreadsheets to bringing committee ideas to life, our incredible staff team is working tirelssly to make SSICSIM an unforgettable conference."
             />
           </div>
           <div className="current-card md:p-4">
             <CurrentCard
               title="Constant Collaboration"
-              image="/assets/photos/Photo2.png"
+              image={`${CF_DOMAIN}/Photo2.png?format=webp`}
               description="With the added pressure of crises, delegates will work together to find innovative solutions to alarming issues, allowing delegates to develop their leadership skills."
             />
           </div>
           <div className="current-card md:p-4">
             <CurrentCard
               title="Real-Time Crisis Action"
-              image="/assets/photos/Photo3.png"
+              image={`${CF_DOMAIN}/Photo3.png?format=webp`}
               description="SSICSIM is not your normal conference. Delegates are faced with real-time crises that require quick thinking and decisive action. This approach allows delegates to experience the thrill of crisis management firsthand."
             />
           </div>

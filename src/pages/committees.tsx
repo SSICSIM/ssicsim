@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import CommiteeCard from "../components/CommiteeCard";
 import { useLocation } from "react-router-dom";
+import { CF_DOMAIN } from "../utils/consts";
+
+
 
 const committeesData = [
   {
@@ -12,18 +15,28 @@ const committeesData = [
     director: "Ngila Stone",
     directorImage: "/assets/photos/DirectorImage.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/EpicOfSundiata.png",
+    backgroundImage: `${CF_DOMAIN}/EpicOfSundiata.png?format=webp`,
   },
   {
-    title: "Fight for the Layton Legacy: 2011 NDP Leadership Race",
+    title: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
     description:
-      "After winning 103 seats and Official Opposition status in the 2011 election, Jack Layton's untimely death has forced Canada's NDP into a high-stakes leadership race. Do you have what it takes to make the Layton Legacy your own?",
-    expandedDescription: `It’s 2011, and an Orange Wave has flooded the House of Commons. With 102 seats, 30 percent of the popular vote, and the Official Opposition status they have never before held, the New Democratic Party—historically, the perennial “plus” in Canada’s two-party-plus political system—is, for the first time ever, on the apparent cusp of forming government.\n\nBut it’s not quite smooth sailing. Just four months after the election, Jack Layton, the party’s iconic leader, passed away. Now, an NDP on the rise is looking for a new standard-bearer. Interest, intrigue, and a dash of classic leftist infighting all promise to be in abundant supply.\n\nIn this committee, you’ll jump into the hotly-contested NDP Leadership Race of 2012. Throughout the campaign, you’ll work with (and against) your fellow delegates to take control of key party factions, craft a winning message, and take the reins of Canada’s second-largest party—all while the chaos of Canadian politics shapes and reshapes the political landscape beyond recognition.\n\nThe tides are turning in Ottawa—it’s time to sink or swim. Welcome to the fight for the Layton Legacy.`,
+      "After winning 103 seats and Official Opposition status in the 2012 election, Jack Layton's untimely death has forced Canada's NDP into a high-stakes leadership race. Do you have what it takes to make the Layton Legacy your own?",
+    expandedDescription:  `It’s 2012, and an Orange Wave has flooded the House of Commons. With 103 seats, 30 percent of the popular vote, and the Official Opposition status they have never before held, the New Democratic Party—historically, the perennial “plus” in Canada’s two-party-plus political system—is, for the first time ever, on the apparent cusp of forming government.
+
+But it’s not quite smooth sailing. Just four months after the election, Jack Layton, the party’s iconic leader, passed away. Now, an NDP on the rise is looking for a new standard-bearer. Interest, intrigue, and a dash of classic leftist infighting all promise to be in abundant supply.
+
+In this committee, you and a fellow New Democrat will take the plunge into the hotly-contested NDP Leadership Race of 2012. Throughout the campaign, you’ll wrestle for the support of key party factions, craft a winning message, and try to take the reins of Canada’s second-largest party—all while the chaos of Canadian politics shapes and reshapes the political landscape beyond recognition. 
+
+The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fight for the Layton Legacy.
+
+*** Please note that Fight for the Layton Legacy is a Double Delegate committee. Characters in this committee will either be assigned a Candidate or Campaign Manager role, and will work with another delegate to accomplish shared goals while also pursuing unique individual objectives.
+`,
     backgroundGuideLink: "https://example.com/fictional-guide",
     director: "Luca Rampersad",
     directorImage: "/assets/photos/DirectorImage2.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/ndp.jpg",
+    backgroundImage: `${CF_DOMAIN}/ndp.jpg?format=webp`,
+    double: true,
   },
   {
     title: "Viva La Revolution: Cake, Blood and Banque",
@@ -34,7 +47,7 @@ const committeesData = [
     director: "Sarah Morra",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/VIvaLaRevolution.webp",
+    backgroundImage: `${CF_DOMAIN}/VIvaLaRevolution.webp?format=webp`,
   },
   {
     title: "Bakumatsu: The Fall of the Shogunate",
@@ -54,7 +67,7 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
     director: "Evelyn So & Alex Drotenko",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/Bakamatsu.jpg",
+    backgroundImage: `${CF_DOMAIN}/Bakamatsu.jpg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -69,7 +82,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Jackie Wang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/EnglishCivilWar.jpeg",
+    backgroundImage: `${CF_DOMAIN}/EnglishCivilWar.jpeg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -81,7 +94,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Petra Visaticki",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
-    backgroundImage: "/assets/photos/commitees/HistoricalAdHoc.jpg",
+    backgroundImage: `${CF_DOMAIN}/HistoricalAdHoc.jpg?format=webp`,
   },
   {
     title: "March of the Machine: The Phyrexian Invasion",
@@ -92,7 +105,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Oscar Hollingsworth",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/ThePhyrexianInvasion.png",
+    backgroundImage: `${CF_DOMAIN}/ThePhyrexianInvasion.png?format=webp`,
   },
   {
     title: "See You This Summer!",
@@ -103,7 +116,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     director: "Beatrix Stone",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/GravityFalls.webp",
+    backgroundImage: `${CF_DOMAIN}/GravityFalls.webp?format=webp`,
   },
   {
     title: "Stardew Valley: The Last Harvest",
@@ -120,7 +133,8 @@ In this committee, delegates will represent the townspeople of Pelican Town, fro
     director: "Jenny Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/StardewValley.webp",
+    backgroundImage: `${CF_DOMAIN}/StardewValley.webp?format=webp`,
+
   },
   {
     title: "The 39 Clues: Cahills vs. Vespers",
@@ -136,7 +150,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     director: "Tom Cai",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/39Clues.jpg",
+    backgroundImage: `${CF_DOMAIN}/39Clues.jpg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -148,7 +162,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     director: "Joshua Qu & Jace Mu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/ValorantConvClear.jpg",
+    backgroundImage: `${CF_DOMAIN}/ValorantConvClear.jpg?format=webp`,
     jointOrNot: true,
   },
   {
@@ -160,7 +174,8 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     director: "Renzo Ugarte Basurco",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
-    backgroundImage: "/assets/photos/commitees/FictionalAdHoc.avif",
+    backgroundImage: `${CF_DOMAIN}/FictionalAdHoc.avif?format=webp`,
+
   },
   {
     title: "The Fall of Atlantis",
@@ -173,7 +188,8 @@ Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of 
     director: "Paula Chu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/AtlantisClear.jpg",
+    backgroundImage: `${CF_DOMAIN}/AtlantisClear.jpg?format=webp`,
+
   },
   {
     title: "Met Gala 2026",
@@ -187,7 +203,9 @@ However, the bigger challenge lies not within the minute logistics of the gala b
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/MetGala.webp",
+    backgroundImage: `${CF_DOMAIN}/MetGala.webp?format=webp`,
+
+
   },
   {
     title: "Second Renaissance",
@@ -205,7 +223,7 @@ Is how to pack up the board.
     director: "Dor Ioffe",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/SecondRenaissance.png",
+    backgroundImage: `${CF_DOMAIN}/SecondRenaissance.png?format=webp`,
   },
   {
     title: "Tetris",
@@ -222,7 +240,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Sukaina Syed",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/Tetris.avif",
+    backgroundImage: `${CF_DOMAIN}/Tetris.avif?format=webp`,
+
   },
   {
     title: "Saving Selene City: A Lunar Colony Crisis",
@@ -239,7 +258,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Elizabeth Wright",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/LunarCrisis.jpg",
+    backgroundImage: `${CF_DOMAIN}/LunarCrisis.jpg?format=webp`,
+
     jointOrNot: true,
   },
   {
@@ -251,7 +271,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     director: "Harvi Karatha & Rameen Azmat",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
-    backgroundImage: "/assets/photos/commitees/ConceptualAdHoc.png",
+    backgroundImage: `${CF_DOMAIN}/ConceptualAdHoc.png?format=webp`,
+
   },
 ];
 
@@ -276,7 +297,7 @@ const Committees = () => {
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img
-          src="/assets/photos/UoftAerialPhoto.jpg"
+          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
           alt="University of Toronto Aerial View"
           className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] object-cover z-10"
           loading="lazy"
@@ -357,6 +378,7 @@ const Committees = () => {
               directorImage={committee.directorImage}
               backgroundImage={committee.backgroundImage}
               jointOrNot={committee.jointOrNot}
+              double={committee.double}
             />
           ))}
         </div>
