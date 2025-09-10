@@ -10,13 +10,14 @@ import Landing from "./pages/landing";
 import Committees from "./pages/committees";
 // import Sponsors from "./pages/sponsors";
 import Register from "./pages/register";
-// import Contact from "./pages/contact";
+import Contact from "./pages/contact";
 import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import Mission from "./pages/mission";
 
 function App() {
   useEffect(() => {
@@ -42,8 +43,10 @@ function App() {
           <Route path="/committees" element={<Committees />} />
           <Route path="/register" element={<Register />} />
           <Route path="/staff/openings" element={<Openings />} />
+          <Route path="/about/mission" element={<Mission />} />
           <Route path="/apply" element={<Openings />} />
           <Route path="*" element={<UnderConstruction />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
         <Analytics />
