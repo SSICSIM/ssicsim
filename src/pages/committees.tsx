@@ -39,10 +39,10 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
     double: true,
   },
   {
-    title: "Viva La Revolution: Cake, Blood and Banque",
+    title: "Vive La Revolution: Cake, Blood and Banque",
     description:
       "With the threat of famine, crippling debt and public unrest looming over France, it is up to you to act - will the Ancien Régime be saved, or will it fall alongside the guillotine?",
-    expandedDescription: `It is 1787, France is on the brink of total collapse. Royal coffers are drained, the cost of bread has skyrocketed and as public unrest seethes outside the walls of Versailles – the Bourgeoisie and Third Estate are beginning to join together. With the threat of famine looming over France, the monarchy’s debt to the people, and the Estates-General convening under pressure — delegates will have the opportunity to reshape the French monarchy, constitution and revolution as we know it today.\n\nIn an economically focused crisis committee, based on the events leading up to the French Revolution of 1789 and following, delegates will be guided in converging new economic policies, developing public policy and controlling the chaos of public uproar. Will their reforms save the Ancien Régime, or will it fall alongside the guillotine? The fate of France’s economy lies in their hands; currency, debt, and class structure. Viva La Fiscal Revolution!`,
+    expandedDescription: `It is 1787, France is on the brink of total collapse. Royal coffers are drained, the cost of bread has skyrocketed and as public unrest seethes outside the walls of Versailles – the Bourgeoisie and Third Estate are beginning to join together. With the threat of famine looming over France, the monarchy’s debt to the people, and the Estates-General convening under pressure — delegates will have the opportunity to reshape the French monarchy, constitution and revolution as we know it today.\n\nIn an economically focused crisis committee, based on the events leading up to the French Revolution of 1789 and following, delegates will be guided in converging new economic policies, developing public policy and controlling the chaos of public uproar. Will their reforms save the Ancien Régime, or will it fall alongside the guillotine? The fate of France’s economy lies in their hands; currency, debt, and class structure. Vive La Fiscal Revolution!`,
     backgroundGuideLink: "https://example.com/historical-guide",
     director: "Sarah Morra",
     directorImage: "/assets/photos/DirectorImage3.jpg",
