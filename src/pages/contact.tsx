@@ -13,7 +13,7 @@ const Contact = () => {
     setStatus("sending");
     console.log("Submitting form data:", formData);
 
-    const apiEndpoint = import.meta.env.VITE_EMAIL_API_ENDPOINT;
+    const apiEndpoint = import.meta.env.NEXT_PUBLIC_EMAIL_API_ENDPOINT;
     console.log("API Endpoint:", apiEndpoint);
     if (!apiEndpoint) {
       console.error("EMAIL_API_ENDPOINT is not defined");
