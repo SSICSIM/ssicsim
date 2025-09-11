@@ -91,7 +91,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
       "This committee is reserved for only the most experienced of delegates. Beware.",
     expandedDescription: `...`,
     backgroundGuideLink: "https://example.com/historical-guide",
-    director: "Petra Visaticki",
+    director: "Olly Lewis",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
     backgroundImage: `${CF_DOMAIN}/HistoricalAdHoc.jpg?format=webp`,
