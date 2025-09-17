@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Deploy Vite to Vercel
 
 on:
   push:
@@ -8,27 +8,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vite app
+        run: npm run build
+
       - name: Install Vercel CLI
         run: npm install --global vercel
 
-      - name: Pull Vercel Environment
+      - name: Pull Vercel environment info
         run: vercel pull --yes --environment=production --token=$VERCEL_TOKEN
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-
-      - name: Build Vercel Project
-        run: vercel build --prod --token=$VERCEL_TOKEN
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy to Vercel
+      - name: Deploy
         run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
