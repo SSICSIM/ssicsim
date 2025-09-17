@@ -12,7 +12,7 @@ const committeesData = [
       "Desperate to be free of the corrupt King Sumanguru the Mande people search for Sundiata, a prince in hiding who is destined to become a king.",
     expandedDescription: `“Sundjata became an emperor seven centuries ago. His memory rests with the griot or djeli.”\n\nAs the Empire of Ghana disintegrated, warlords were determined to control this resource-rich region of West Africa for as long as possible. In the midst of this chaos, a young boy has been taken by his mother into the wilderness to escape political rivals.\n\nBut when the brutal King Sumanguru invades, a messenger is sent to find Sundiata (Sundjata), who has been prophesied to become one of the greatest leaders Africa has ever seen. Now it is time for Sundiata to decide if he will answer the call. This prophecy of his future sets the stage for the creation of a new empire. From the battlefield to the royal court, if Sundiata is to be enthroned, there is work to be done.\n\nDelegates in this committee will play a variety of roles in Sundiata's council, including nobles, merchants, and warriors. Using diplomacy and warfare, they will need to secure Sundiata's ascension to the throne (securing their own futures along the way). Relying on history, narrative, and myth, the Epic of Sundiata will question what it means to be destined and how an emperor is born.`,
     backgroundGuideLink: "https://example.com/historical-guide",
-    director: "Ngila Stone",
+    director: "test to see if works",
     directorImage: "/assets/photos/DirectorImage.jpg",
     category: "Historical",
     backgroundImage: `${CF_DOMAIN}/EpicOfSundiata.png?format=webp`,
