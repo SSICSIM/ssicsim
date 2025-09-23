@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 
+interface BackgroundGuide {
+  description: string;
+  link: string;
+}
+
 interface CommiteeCardProps {
   title: string;
   description: string;
   expandedDescription: string;
-  backgroundGuideLink?: string;
+  backgroundGuides?: BackgroundGuide[]; // <-- new array for guides
+  contactEmail?: string;
   director?: string;
   backgroundImage?: string;
-  directorImage?: string; // Optional director image
+  directorImage?: string;
   jointOrNot?: boolean;
-  double?: boolean; // Optional prop to indicate if it's a double delegate committee    
+  double?: boolean;
 }
 
 const CommiteeCard = ({
@@ -20,6 +26,8 @@ const CommiteeCard = ({
   backgroundImage,
   jointOrNot = false,
   double = false, // Default to false if not provided
+  backgroundGuides,
+  contactEmail,
 }: CommiteeCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -60,17 +68,34 @@ const CommiteeCard = ({
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[rgba(255,215,0,0.8)] rounded-lg"></div>
 
-        <div className="relative z-10 bg-white/30 backdrop-blur-lg border border-white/10 rounded-lg p-6">
-          <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
-            {title}
-          </h2>
-          <p className="text-white mb-4 font-regular font-dm-sans">
-            {description}
-          </p>
-          <button className="bg-[#A3841D] text-white px-4 py-2 rounded hover:bg-[#8a6f1b] transition-colors">
-            Learn More
-          </button>
-        </div>
+<div className="relative z-10 bg-white/30 backdrop-blur-lg border border-white/10 rounded-lg p-6">
+  <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
+    {title}
+  </h2>
+  <p className="text-white mb-4 font-regular font-dm-sans">
+    {description}
+  </p>
+  {/* Background Guide Buttons on Main Card */}
+<div className="mb-4 flex flex-row gap-2 flex-wrap">
+  {backgroundGuides && backgroundGuides.length > 0 &&
+    backgroundGuides.map((guide, idx) => (
+      <a
+        key={idx}
+        href={guide.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-center w-[150px] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm"
+      >
+        {guide.description}
+      </a>
+    ))
+  }
+
+  <button className="w-[150px] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm">
+    Learn More
+  </button>
+</div>
+</div>
       </div>
 
       {/* Modal */}
@@ -117,7 +142,34 @@ const CommiteeCard = ({
                   ? "Double Delegate Crisis"
                   : "Single Crisis"}
               </h2>
-<p className="text-[#A3841D] font-light font-dm-sans">
+              {contactEmail && (
+                <p className="text-[#A3841D] font-bold font-dm-sans mb-4">
+                  Contact:{" "}
+                  <a
+                    href={`mailto:${contactEmail}`}
+                    className="text-blue-500 underline hover:text-blue-300"
+                  >
+                    {contactEmail}
+                  </a>
+                </p>
+              )}
+{backgroundGuides && backgroundGuides.length > 0 && (
+  <div className="mb-2 flex flex-row gap-2">
+    {backgroundGuides.map((guide, idx) => (
+      <div key={idx} className="flex flex-col items-start">
+        <a
+          href={guide.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-center inline-block w-[300px] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
+        >
+          {guide.description}
+        </a>
+      </div>
+    ))}
+  </div>
+)}
+<p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
   {expandedDescription.split("\n").map((line, index) => {
     // Regex: (text before)[URL](text after)
     const match = line.match(/^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/);
@@ -149,16 +201,6 @@ const CommiteeCard = ({
     }
   })}
 </p>
-              {/* {backgroundGuideLink && (
-                <a
-                  href={backgroundGuideLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center inline-block w-[300px] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
-                >
-                  View Background Guide
-                </a>
-              )} */}
               {director && (
                 <div className="mt-2">
                   <h3 className="text-2xl font-semibold font-dm-sans text-[#A3841D]">

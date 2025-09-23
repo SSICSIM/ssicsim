@@ -6,7 +6,13 @@ export const committeesData = [
     description:
       "Desperate to be free of the corrupt King Sumanguru the Mande people search for Sundiata, a prince in hiding who is destined to become a king.",
     expandedDescription: `“Sundjata became an emperor seven centuries ago. His memory rests with the griot or djeli.”\n\nAs the Empire of Ghana disintegrated, warlords were determined to control this resource-rich region of West Africa for as long as possible. In the midst of this chaos, a young boy has been taken by his mother into the wilderness to escape political rivals.\n\nBut when the brutal King Sumanguru invades, a messenger is sent to find Sundiata (Sundjata), who has been prophesied to become one of the greatest leaders Africa has ever seen. Now it is time for Sundiata to decide if he will answer the call. This prophecy of his future sets the stage for the creation of a new empire. From the battlefield to the royal court, if Sundiata is to be enthroned, there is work to be done.\n\nDelegates in this committee will play a variety of roles in Sundiata's council, including nobles, merchants, and warriors. Using diplomacy and warfare, they will need to secure Sundiata's ascension to the throne (securing their own futures along the way). Relying on history, narrative, and myth, the Epic of Sundiata will question what it means to be destined and how an emperor is born.`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
     directorImage: "/assets/photos/DirectorImage.jpg",
     category: "Historical",
@@ -26,7 +32,13 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
 
 *** Please note that Fight for the Layton Legacy is a Double Delegate committee. Characters in this committee will either be assigned a Candidate or Campaign Manager role, and will work with another delegate to accomplish shared goals while also pursuing unique individual objectives.
 `,
-    backgroundGuideLink: "https://example.com/fictional-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "layton.legacy@ssicsim.ca",
     director: "Luca Rampersad",
     directorImage: "/assets/photos/DirectorImage2.jpg",
     category: "Historical",
@@ -38,7 +50,13 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
     description:
       "With the threat of famine, crippling debt and public unrest looming over France, it is up to you to act - will the Ancien Régime be saved, or will it fall alongside the guillotine?",
     expandedDescription: `It is 1787, France is on the brink of total collapse. Royal coffers are drained, the cost of bread has skyrocketed and as public unrest seethes outside the walls of Versailles – the Bourgeoisie and Third Estate are beginning to join together. With the threat of famine looming over France, the monarchy’s debt to the people, and the Estates-General convening under pressure — delegates will have the opportunity to reshape the French monarchy, constitution and revolution as we know it today.\n\nIn an economically focused crisis committee, based on the events leading up to the French Revolution of 1789 and following, delegates will be guided in converging new economic policies, developing public policy and controlling the chaos of public uproar. Will their reforms save the Ancien Régime, or will it fall alongside the guillotine? The fate of France’s economy lies in their hands; currency, debt, and class structure. Vive La Fiscal Revolution!`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "french.revolution@ssicsim.ca",
     director: "Sarah Morra",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
@@ -58,7 +76,18 @@ As a JCC, delegates shall be split into two rooms, representing Japan's pro-impe
 
 What will happen to Japan? The birth of a new nation, the reverence of the old ways, or another century of civil war and strife. This is your choice. This is your Japan. 
 `,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide: A",
+        link: "https://example.com/historical-guide",
+      },
+      {
+        description: "Background Guide: B",
+        link: "https://example.com/historical-guide",
+      },
+
+    ],
+    contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
@@ -73,7 +102,18 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
 
 As the 1640 Parliament assembles in November, tensions are high. The incensed Parliament demands limits to Charles’s royal powers, something he cannot tolerate. And as 1640 rolls to 1641, the country lurches on the brink of civil war. All it takes is one wrong decision for the history of England and the British Isles to change forever. Where it goes depends on you.
 `,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide: A",
+        link: "https://example.com/historical-guide",
+      },
+      {
+        description: "Background Guide: B",
+        link: "https://example.com/historical-guide",
+      },
+
+    ],
+    contactEmail: "english.civil.war@ssicsim.ca",
     director: "Jackie Wang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
@@ -85,7 +125,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     description:
       "This committee is reserved for only the most experienced of delegates. Beware.",
     expandedDescription: `...`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    contactEmail: "historical.adhoc@ssicsim.ca",
     director: "Olly Lewis",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Historical",
@@ -96,7 +136,13 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     description:
       "In a world of magic, fantasy and wonder, can the heroes of Magic stop the spread of a villainous and assimilating infection that's been brewing for thousands of years?",
     expandedDescription: `“All worlds will know perfection.”\n\n—Elesh Norn, The Mother of Machines\n\nFrom trading card to placard, the many worlds of the Magic trading card game's story and universe have arrived at SSICSIM, in high-stakes, high-action battle to save the multiverse. In March of the Machine: The Phyrexian Invasion, join the ranks of Magic: The Gathering's greatest heroes and villains as they work to defend the multiverse from a threat like no other. The Phyrexians, a hivemind engine of infection, monsters of both machine and flesh, have unlocked the key to traversing the multiverse and have started converting innocent people, places, and even Gods to their side. Whether you're a world-hopping Planeswalker like the pyromancer Chandra from the inventor world of Avishkar, an immortal dragon like the mad scientist Niv-Mizzet of the city of Ravnica, or even a villainous vampire like Mavren from the islands of Ixalan, your past differences must be put aside in order to defeat the Phyrexians; or at least, to die trying. Grab your spellbooks, arm your allies, and raise your blades to join the fight against an Invasion like no other!`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "phyrexian.invasion@ssicsim.ca",
     director: "Oscar Hollingsworth",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
@@ -107,7 +153,13 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     description:
       "Welcome to Gravity Falls, Oregon: a quaint summer vacation destination. While you're here, check out local sights, like a peaceful tour of the Weirdmageddon rubble.",
     expandedDescription: `It’s finally next summer. Having defeated Bill Cipher and spent a year away, Dipper and Mabel return to Gravity Falls. Their friends and Grunkle have eagerly awaited their return, but they aren’t the only ones: a new threat lurks in the darkness. More gnome monsters? Another floating triangle? Maybe even another age-ambiguous tupée in a baby-blue pant suit? Be ready to solve puzzles, crack codes, and unravel new mysteries while facing the newest (and darkest) magic Gravity Falls has to offer. `,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
@@ -124,7 +176,13 @@ Meanwhile, residents have noticed a portion of the Cindersap Forest, once a vibr
 
 In this committee, delegates will represent the townspeople of Pelican Town, from Eric Barone’s farm-life simulation game Stardew Valley. Each delegate holds different stakes in the town's vast uncertain future— to abandon old ways in favour of a sleek, modern future under Joja’s banner or to preserve their way of life. Yet as something is rotting in the valley, it falls to the delegates to investigate and decide how they will tackle this issue.
 `,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "stardew.valley@ssicsim.ca",
     director: "Jenny Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
@@ -141,7 +199,17 @@ As the Cahills, will you harness the powers of governments and judiciaries to en
 
 As the Vespers, will you fight a war of cat and mouse with the Cahills to undermine their procurement of the Master Serum, or will you declare an open war on the Cahill Family and acquire the Master Serum for your own use?
 `,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide: Cahills",
+        link: "https://example.com/historical-guide",
+      },
+      {
+        description: "Background Guide: Vespers",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "39.clues@ssicsim.ca",
     director: "Tom Cai",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
@@ -153,7 +221,17 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     description:
       "Radianite is fading. When the fate of two worlds lies on the line, what will you do to survive?",
     expandedDescription: `The year is 20XX. Omega Earth is dying. Radianite, the powerful source of energy that Omega Earth has relied on for decades, is running scarce. But as luck would have it, a group of scientists at KING//DOM have discovered a parallel Earth. An Earth filled with radianite – but also copies of themselves. Alpha Earth. A communication channel between the two worlds was established, and representatives of both worlds — collectively known as the VALORANT Protocol for Alpha Earth, and the VALORANT Legion for Omega Earth — have come to parlay. Omega Earth is desperate for radianite. But Alpha Earth realizes that while their supply is abundant — at least, for now — it is not infinite. Perhaps, someplace across the timelines, a solution lies in wait. But as tensions rise, Omega Earth’s options are becoming limited. And Alpha Earth must stand strong. Can peace be achieved? Or is war inevitable? As the fate of both worlds intertwine, the Protocol and the Legion must converge and cooperate — or risk the destruction of two Earths.`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "valorant@ssicsim.ca",
     director: "Joshua Qu & Jace Mu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
@@ -165,7 +243,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     description:
       "This committee is reserved for only the most experienced of delegates. Beware.",
     expandedDescription: `[https://drive.google.com/file/d/1I81iVeCuFkTC9cRfVP8KPlJL1Ain9ugI/view]‽.pdf`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    contactEmail: "fictional.adhoc@ssicsim.ca",
     director: "Renzo Ugarte Basurco",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
@@ -179,7 +257,13 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     expandedDescription: `“Till philosophers become kings in this world, or till those who we now call kings and rulers really and truly become philosophers.” - Plato
 
 Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of utopia. Born from his love for a mortal woman named Cleito, ten of their children were assigned different parts of the empire to rule with virtue. Originally, the civilization was renowned as an advanced, idealistic, and exceptionally powerful naval empire—but with power came pride, and with pride came corruption. Following the failed attempt to conquer Ancient Athens, divine judgment has been set upon Atlantis, and the Greek gods appear to be very displeased. Outraged by the arrogance, greed, and corruption demonstrated by the civilization, the gods now seek retribution against the morally decaying island. Time is running out. It is up to delegates to take control of the empire before it is too late. Will Atlantis be renewed, or will it face condemnation and sink into the sea forever?`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "atlantis@ssicsim.ca",
     director: "Paula Chu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
@@ -194,13 +278,17 @@ Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of 
 
 However, the bigger challenge lies not within the minute logistics of the gala but with the future of fashion as a whole. Each delegate has their own goals, their own characterization, and their own hopes for taking the world by storm. The Met Gala is just a stepping stone – but don’t rocks have a way of making a splash?
 `,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    contactEmail: "met.gala@ssicsim.ca",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: `${CF_DOMAIN}/MetGala.webp?format=webp`,
-
-
   },
   {
     title: "Second Renaissance",
@@ -214,8 +302,13 @@ Delegates. You may think you’re playing a game, but you’re not; maybe you we
 
 Is how to pack up the board.
 `,
-    backgroundGuideLink: "https://example.com/historical-guide",
-    director: "Dor Ioffe",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "second.renaissance@ssicsim.ca",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: `${CF_DOMAIN}/SecondRenaissance.png?format=webp`,
@@ -231,7 +324,13 @@ Nintendo, Atari, Mirrorsoft, and Spectrum Holobyte each believe they own Tetris.
 Delegates must navigate a tangled maze of broken contracts, legal battles, Cold War surveillance, and propaganda wars as they race to stack deals before the screen fills up. One false step could mean losing everything
 
 The future of Tetris is yours to decide. This is no longer about a game, this is about who wins when the last line clears.`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "tetris@ssicsim.ca",
     director: "Sukaina Syed",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
@@ -249,7 +348,17 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     On Earth, the Canadian government is getting nervous. Not only did their colony vote to become their own nation, making Canada irrelevant in space-related foreign affairs, but they also haven't heard from Selene City since a supply freighter went missing on its way to the colony. Facing pressure from foreign space agencies and corporations promised resources from the moon, the Prime Minister has called a session of the Committee for the Management of Selene City to come clean and find answers.
     
     On both celestial bodies, time is of the essence; will you be able to assure Selene City's future and Canada's continued relevance, or is humanity's first attempt at expansion going to crash and burn 400,000 kilometers from home?`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://example.com/historical-guide",
+      },
+      {
+        description: "Background Guide: B",
+        link: "https://example.com/historical-guide",
+      },
+    ],
+    contactEmail: "selene.city@ssicsim.ca",
     director: "Elizabeth Wright",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
@@ -262,7 +371,7 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     description:
       "This committee is reserved for only the most experienced of delegates. Beware.",
     expandedDescription: `...`,
-    backgroundGuideLink: "https://example.com/historical-guide",
+    contactEmail: "conceptual.adhoc@ssicsim.ca",
     director: "Harvi Karatha & Rameen Azmat",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
