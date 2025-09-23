@@ -21,7 +21,7 @@ jobs:
       - name: Configure Git
         run: |
           git config user.name "Nuthanan Tharmarajah"
-          git config user.email "nuthanan06@gmail.ca"
+          git config user.email "nuthanan06@gmail.com"
 
       - name: Make dummy commit as Nuthanan
         run: |
