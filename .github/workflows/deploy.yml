@@ -8,9 +8,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "Nuthanan Tharmarajah"
+          git config user.email "nuthanan06@gmail.com"
+
+      - name: Make dummy commit as me
+        run: |
+          echo "Last deploy: $(date)" > .last_deploy.txt
+          git add .last_deploy.txt
+          git commit -m "chore: trigger deploy as Nuthanan" || echo "No changes to commit"
+          git push origin HEAD:main
 
       - name: Install dependencies
         run: npm install
