@@ -20,8 +20,7 @@ const Landing = () => {
     null,
   );
   const [currentImage, setCurrentImage] = useState<string>(
-    `${CF_DOMAIN}/Default.JPG?format=webp`
-
+    `${CF_DOMAIN}/Default.JPG?format=webp`,
   );
 
   const committees = useMemo(
@@ -170,14 +169,14 @@ const Landing = () => {
   return (
     <>
       <div>
-      <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
-  {/* Background Image */}
-  <img
-          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
-    alt="University of Toronto Ariel View"
-    className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
-    loading="lazy"
-  />
+        <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
+          {/* Background Image */}
+          <img
+            src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
+            alt="University of Toronto Ariel View"
+            className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
+            loading="lazy"
+          />
 
           {/* Content Section */}
           <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">

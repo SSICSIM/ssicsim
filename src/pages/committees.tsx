@@ -101,7 +101,8 @@ const Committees = () => {
               title={committee.title}
               description={committee.description}
               expandedDescription={committee.expandedDescription}
-              backgroundGuideLink={committee.backgroundGuideLink}
+              backgroundGuides={committee.backgroundGuides}
+              contactEmail={committee.contactEmail}
               director={committee.director}
               directorImage={committee.directorImage}
               backgroundImage={committee.backgroundImage}
