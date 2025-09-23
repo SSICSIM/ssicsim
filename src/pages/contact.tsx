@@ -1,10 +1,18 @@
 import { useState } from "react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -65,8 +73,8 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-center text-white font-dm-sans max-w-2xl mx-auto mb-12">
-            Have questions about SSICSM 2025 or need more details?  
-            We’d love to hear from you — fill out the form below or reach out via email.
+            Have questions about SSICSM 2025 or need more details? We’d love to
+            hear from you — fill out the form below or reach out via email.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -108,19 +116,29 @@ const Contact = () => {
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>
 
-              {status === "success" && <p className="text-green-200">Message sent!</p>}
-              {status === "error" && <p className="text-red-200">Something went wrong. Try again.</p>}
+              {status === "success" && (
+                <p className="text-green-200">Message sent!</p>
+              )}
+              {status === "error" && (
+                <p className="text-red-200">Something went wrong. Try again.</p>
+              )}
             </form>
 
             {/* INFO */}
             <div className="flex flex-col gap-6">
               <div className="bg-white/20 rounded-lg p-6 shadow-inner border border-white/10">
-                <h2 className="text-xl font-bold text-white font-nunito mb-2">Email</h2>
+                <h2 className="text-xl font-bold text-white font-nunito mb-2">
+                  Email
+                </h2>
                 <p className="text-white font-dm-sans">contact@ssicsim.ca</p>
               </div>
               <div className="bg-white/20 rounded-lg p-6 shadow-inner border border-white/10">
-                <h2 className="text-xl font-bold text-white font-nunito mb-2">Location</h2>
-                <p className="text-white font-dm-sans">University of Toronto, ON</p>
+                <h2 className="text-xl font-bold text-white font-nunito mb-2">
+                  Location
+                </h2>
+                <p className="text-white font-dm-sans">
+                  University of Toronto, ON
+                </p>
               </div>
             </div>
           </div>

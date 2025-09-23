@@ -68,34 +68,35 @@ const CommiteeCard = ({
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[rgba(255,215,0,0.8)] rounded-lg"></div>
 
-<div className="relative z-10 bg-white/30 backdrop-blur-lg border border-white/10 rounded-lg p-6">
-  <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
-    {title}
-  </h2>
-  <p className="text-white mb-4 font-regular font-dm-sans">
-    {description}
-  </p>
-  {/* Background Guide Buttons on Main Card */}
-<div className="mb-4 flex flex-row gap-2 flex-wrap">
-  {backgroundGuides && backgroundGuides.length > 0 &&
-    backgroundGuides.map((guide, idx) => (
-      <a
-        key={idx}
-        href={guide.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-center w-[150px] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm"
-      >
-        {guide.description}
-      </a>
-    ))
-  }
+        <div className="relative z-10 bg-white/30 backdrop-blur-lg border border-white/10 rounded-lg p-6">
+          <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
+            {title}
+          </h2>
+          <p className="text-white mb-4 font-regular font-dm-sans">
+            {description}
+          </p>
+          {/* Background Guide Buttons on Main Card */}
+          <div className="mb-4 flex flex-row gap-2 flex-wrap">
+            {backgroundGuides &&
+              backgroundGuides.length > 0 &&
+              backgroundGuides.map((guide, idx) => (
+                <a
+                  key={idx}
+                  href={guide.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()} // Prevent modal
+                  className="text-center w-[150px] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] my-auto hover:text-black transition-colors text-sm"
+                >
+                  {guide.description}
+                </a>
+              ))}
 
-  <button className="w-[150px] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm">
-    Learn More
-  </button>
-</div>
-</div>
+            <button className="w-[150px] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm">
+              Learn More
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Modal */}
@@ -139,8 +140,8 @@ const CommiteeCard = ({
                 {jointOrNot
                   ? "Joint Crisis"
                   : double
-                  ? "Double Delegate Crisis"
-                  : "Single Crisis"}
+                    ? "Double Delegate Crisis"
+                    : "Single Crisis"}
               </h2>
               {contactEmail && (
                 <p className="text-[#A3841D] font-bold font-dm-sans mb-4">
@@ -153,54 +154,56 @@ const CommiteeCard = ({
                   </a>
                 </p>
               )}
-{backgroundGuides && backgroundGuides.length > 0 && (
-  <div className="mb-2 flex flex-row gap-2">
-    {backgroundGuides.map((guide, idx) => (
-      <div key={idx} className="flex flex-col items-start">
-        <a
-          href={guide.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-center inline-block w-[300px] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
-        >
-          {guide.description}
-        </a>
-      </div>
-    ))}
-  </div>
-)}
-<p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
-  {expandedDescription.split("\n").map((line, index) => {
-    // Regex: (text before)[URL](text after)
-    const match = line.match(/^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/);
-    if (match) {
-      const before = match[1]; // text before [URL]
-      const url = match[2];    // the URL inside []
-      const after = match[3];  // text after ]
-      return (
-        <React.Fragment key={index}>
-          {before}
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline hover:text-blue-300"
-          >
-            {after}
-          </a>
-          <br />
-        </React.Fragment>
-      );
-    } else {
-      return (
-        <React.Fragment key={index}>
-          {line}
-          <br />
-        </React.Fragment>
-      );
-    }
-  })}
-</p>
+              {backgroundGuides && backgroundGuides.length > 0 && (
+                <div className="mb-2 flex flex-row gap-2">
+                  {backgroundGuides.map((guide, idx) => (
+                    <div key={idx} className="flex flex-col items-start">
+                      <a
+                        href={guide.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-center inline-block w-[300px] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
+                      >
+                        {guide.description}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
+                {expandedDescription.split("\n").map((line, index) => {
+                  // Regex: (text before)[URL](text after)
+                  const match = line.match(
+                    /^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/,
+                  );
+                  if (match) {
+                    const before = match[1]; // text before [URL]
+                    const url = match[2]; // the URL inside []
+                    const after = match[3]; // text after ]
+                    return (
+                      <React.Fragment key={index}>
+                        {before}
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 underline hover:text-blue-300"
+                        >
+                          {after}
+                        </a>
+                        <br />
+                      </React.Fragment>
+                    );
+                  } else {
+                    return (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    );
+                  }
+                })}
+              </p>
               {director && (
                 <div className="mt-2">
                   <h3 className="text-2xl font-semibold font-dm-sans text-[#A3841D]">
