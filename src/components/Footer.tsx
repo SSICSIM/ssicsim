@@ -14,7 +14,7 @@ const Footer = () => {
           />
           <p className="text-sm">
             Canada’s Premier Model UN Crisis Simulation. ©{" "}
-            {new Date().getFullYear()} SSICSIM. All rights reserveddd.
+            {new Date().getFullYear()} SSICSIM. All rights reserved.
           </p>
         </div>
 
