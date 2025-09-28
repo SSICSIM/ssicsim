@@ -13,7 +13,6 @@ dist
 dist-ssr
 *.local
 .env
-.last_deploy.txt
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +24,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.last_deploy.txt
