@@ -166,29 +166,6 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     backgroundImage: `${CF_DOMAIN}/GravityFalls.webp?format=webp`,
   },
   {
-    title: "Stardew Valley: The Last Harvest",
-    description:
-      "Cindersap Forest is withering, something is wrong in Stardew Valley. However, as Joja Corporation continues its expansion, Pelican Town steadily advances into the future. Residents have a choice to make: the modern future or dwindling tradition? But what's happening to your beloved town?",
-    expandedDescription: `Cindersap Forest is withering, something is wrong in Stardew Valley. However, as Joja Corporation continues its expansion, Pelican Town steadily advances into the future. Residents have a choice to make: the modern future or dwindling tradition? But what's happening to your beloved town?
-Pelican Town is at a crossroads. Joja Corporation, a mega corporation controlling numerous industries in the market, has recently launched their “Valley Revitalization Initiative” and with its arrival brought new jobs, automated crop systems, and Jojo Fuel tractors to replace the previous outdated tools. For the first time, Pelican Town feels truly connected to the outside world. 
-
-Meanwhile, residents have noticed a portion of the Cindersap Forest, once a vibrant expanse of towering trees and whispering leaves, is rotting. Trees are losing their leaves midsummer, and fishermen complain that the fish no longer bite. Pelican Town is struggling as a self-sufficient community. Joja Corporation's intervention has mitigated some of the issues, but it is only a temporary solution. Locals whisper that this is because the elusive Junimos, mythical guardians of the forest, have gone silent. Yet no one is sure if they even existed to begin with— Only seen in the children’s bedtime stories or the absurd ramblings of the secluded wizard.
-
-In this committee, delegates will represent the townspeople of Pelican Town, from Eric Barone’s farm-life simulation game Stardew Valley. Each delegate holds different stakes in the town's vast uncertain future— to abandon old ways in favour of a sleek, modern future under Joja’s banner or to preserve their way of life. Yet as something is rotting in the valley, it falls to the delegates to investigate and decide how they will tackle this issue.
-`,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
-    contactEmail: "stardew.valley@ssicsim.ca",
-    director: "Jenny Zhang",
-    directorImage: "/assets/photos/DirectorImage3.jpg",
-    category: "Fictional",
-    backgroundImage: `${CF_DOMAIN}/StardewValley.webp?format=webp`,
-  },
-  {
     title: "The 39 Clues: Cahills vs. Vespers",
     description:
       "Cahills vs Vespers. Two families. One in the light, the other in the shadows. Both fighting for what they believe is their new world order, under their rules, under their philosophies. With the existence of mankind at stake, how will you handle power beyond human comprehension?",
