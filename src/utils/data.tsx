@@ -6,12 +6,12 @@ export const committeesData = [
     description:
       "Desperate to be free of the corrupt King Sumanguru the Mande people search for Sundiata, a prince in hiding who is destined to become a king.",
     expandedDescription: `“Sundjata became an emperor seven centuries ago. His memory rests with the griot or djeli.”\n\nAs the Empire of Ghana disintegrated, warlords were determined to control this resource-rich region of West Africa for as long as possible. In the midst of this chaos, a young boy has been taken by his mother into the wilderness to escape political rivals.\n\nBut when the brutal King Sumanguru invades, a messenger is sent to find Sundiata (Sundjata), who has been prophesied to become one of the greatest leaders Africa has ever seen. Now it is time for Sundiata to decide if he will answer the call. This prophecy of his future sets the stage for the creation of a new empire. From the battlefield to the royal court, if Sundiata is to be enthroned, there is work to be done.\n\nDelegates in this committee will play a variety of roles in Sundiata's council, including nobles, merchants, and warriors. Using diplomacy and warfare, they will need to secure Sundiata's ascension to the throne (securing their own futures along the way). Relying on history, narrative, and myth, the Epic of Sundiata will question what it means to be destined and how an emperor is born.`,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1l5DN66wFEjujvi2LDu8Iu-6sMeAmer9L/view?usp=sharing",
+      },
+    ],
     contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
     directorImage: "/assets/photos/DirectorImage.jpg",
@@ -32,12 +32,12 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
 
 *** Please note that Fight for the Layton Legacy is a Double Delegate committee. Characters in this committee will either be assigned a Candidate or Campaign Manager role, and will work with another delegate to accomplish shared goals while also pursuing unique individual objectives.
 `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1c1SZ9lrvuLaHPgaDKrByVM4lWV8S7Pxb/view?usp=sharing",
+      },
+    ],
     contactEmail: "layton.legacy@ssicsim.ca",
     director: "Luca Rampersad",
     directorImage: "/assets/photos/DirectorImage2.jpg",
@@ -50,12 +50,12 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
     description:
       "With the threat of famine, crippling debt and public unrest looming over France, it is up to you to act - will the Ancien Régime be saved, or will it fall alongside the guillotine?",
     expandedDescription: `It is 1787, France is on the brink of total collapse. Royal coffers are drained, the cost of bread has skyrocketed and as public unrest seethes outside the walls of Versailles – the Bourgeoisie and Third Estate are beginning to join together. With the threat of famine looming over France, the monarchy’s debt to the people, and the Estates-General convening under pressure — delegates will have the opportunity to reshape the French monarchy, constitution and revolution as we know it today.\n\nIn an economically focused crisis committee, based on the events leading up to the French Revolution of 1789 and following, delegates will be guided in converging new economic policies, developing public policy and controlling the chaos of public uproar. Will their reforms save the Ancien Régime, or will it fall alongside the guillotine? The fate of France’s economy lies in their hands; currency, debt, and class structure. Vive La Fiscal Revolution!`,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/18ce39CYmOOa_EjbwUv1Wf1A64NTxB2Zg/view?usp=sharing",
+      },
+    ],
     contactEmail: "french.revolution@ssicsim.ca",
     director: "Sarah Morra",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -76,17 +76,12 @@ As a JCC, delegates shall be split into two rooms, representing Japan's pro-impe
 
 What will happen to Japan? The birth of a new nation, the reverence of the old ways, or another century of civil war and strife. This is your choice. This is your Japan. 
 `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide: A",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    //   {
-    //     description: "Background Guide: B",
-    //     link: "https://example.com/historical-guide",
-    //   },
-
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1-QXvCUTrTr4JvvsySqoo4xWJPOnd8t_Z/view?usp=sharing",
+      },
+    ],
     contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -136,12 +131,12 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     description:
       "In a world of magic, fantasy and wonder, can the heroes of Magic stop the spread of a villainous and assimilating infection that's been brewing for thousands of years?",
     expandedDescription: `“All worlds will know perfection.”\n\n—Elesh Norn, The Mother of Machines\n\nFrom trading card to placard, the many worlds of the Magic trading card game's story and universe have arrived at SSICSIM, in high-stakes, high-action battle to save the multiverse. In March of the Machine: The Phyrexian Invasion, join the ranks of Magic: The Gathering's greatest heroes and villains as they work to defend the multiverse from a threat like no other. The Phyrexians, a hivemind engine of infection, monsters of both machine and flesh, have unlocked the key to traversing the multiverse and have started converting innocent people, places, and even Gods to their side. Whether you're a world-hopping Planeswalker like the pyromancer Chandra from the inventor world of Avishkar, an immortal dragon like the mad scientist Niv-Mizzet of the city of Ravnica, or even a villainous vampire like Mavren from the islands of Ixalan, your past differences must be put aside in order to defeat the Phyrexians; or at least, to die trying. Grab your spellbooks, arm your allies, and raise your blades to join the fight against an Invasion like no other!`,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1f7SI4IEm-22MWVjlSrdU3h-X5Fhmo-3h/view?usp=sharing",
+      },
+    ],
     contactEmail: "phyrexian.invasion@ssicsim.ca",
     director: "Oscar Hollingsworth",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -153,12 +148,12 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
     description:
       "Welcome to Gravity Falls, Oregon: a quaint summer vacation destination. While you're here, check out local sights, like a peaceful tour of the Weirdmageddon rubble.",
     expandedDescription: `It’s finally next summer. Having defeated Bill Cipher and spent a year away, Dipper and Mabel return to Gravity Falls. Their friends and Grunkle have eagerly awaited their return, but they aren’t the only ones: a new threat lurks in the darkness. More gnome monsters? Another floating triangle? Maybe even another age-ambiguous tupée in a baby-blue pant suit? Be ready to solve puzzles, crack codes, and unravel new mysteries while facing the newest (and darkest) magic Gravity Falls has to offer. `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1UAHNwvt_i9HYg8jC2dkENNS9vXUnWxSl/view?usp=sharing",
+      },
+    ],
     contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -197,16 +192,16 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     description:
       "Radianite is fading. When the fate of two worlds lies on the line, what will you do to survive?",
     expandedDescription: `The year is 20XX. Omega Earth is dying. Radianite, the powerful source of energy that Omega Earth has relied on for decades, is running scarce. But as luck would have it, a group of scientists at KING//DOM have discovered a parallel Earth. An Earth filled with radianite – but also copies of themselves. Alpha Earth. A communication channel between the two worlds was established, and representatives of both worlds — collectively known as the VALORANT Protocol for Alpha Earth, and the VALORANT Legion for Omega Earth — have come to parlay. Omega Earth is desperate for radianite. But Alpha Earth realizes that while their supply is abundant — at least, for now — it is not infinite. Perhaps, someplace across the timelines, a solution lies in wait. But as tensions rise, Omega Earth’s options are becoming limited. And Alpha Earth must stand strong. Can peace be achieved? Or is war inevitable? As the fate of both worlds intertwine, the Protocol and the Legion must converge and cooperate — or risk the destruction of two Earths.`,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    //   {
-    //     description: "Background Guide",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide: Alpha Earth",
+        link: "https://drive.google.com/file/d/1ZLad8GAw-atXfGCZNWDfj-rT91HulFmd/view?usp=sharing",
+      },
+      {
+        description: "Background Guide: Omega Earth",
+        link: "https://drive.google.com/file/d/1I8LCGKnjBNbpPSCFNDauKlAQEgBeKZ-d/view?usp=sharing",
+      },
+    ],
     contactEmail: "valorant@ssicsim.ca",
     director: "Joshua Qu & Jace Mu",
     directorImage: "/assets/photos/DirectorImage3.jpg",
