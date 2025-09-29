@@ -35,7 +35,7 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
     backgroundGuides: [
       {
         description: "Background Guide",
-        link: "https://drive.google.com/file/d/1c1SZ9lrvuLaHPgaDKrByVM4lWV8S7Pxb/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1vwsHkCT5j_uL9H_3ePvXZwZY_pD6kCXL/view?usp=sharing",
       },
     ],
     contactEmail: "layton.legacy@ssicsim.ca",
