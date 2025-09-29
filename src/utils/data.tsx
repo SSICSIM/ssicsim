@@ -346,3 +346,78 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     backgroundImage: `${CF_DOMAIN}/ConceptualAdHoc.png?format=webp`,
   },
 ];
+
+export const scheduleData = [
+  {
+    day: "Friday, September 26",
+    sessions: [
+      {
+        time: "5:00 PM – 6:00 PM",
+        title: "Opening Ceremony",
+        location: "Main Hall",
+      },
+      {
+        time: "6:15 PM – 8:00 PM",
+        title: "Committee Session I",
+        location: "Assigned Rooms",
+      },
+    ],
+  },
+  {
+    day: "Saturday, September 27",
+    sessions: [
+      {
+        time: "9:00 AM – 12:00 PM",
+        title: "Committee Session II",
+        location: "Assigned Rooms",
+      },
+      {
+        time: "1:00 PM – 4:00 PM",
+        title: "Committee Session III",
+        location: "Assigned Rooms",
+      },
+      {
+        time: "7:00 PM – 10:00 PM",
+        title: "Delegate Social",
+        location: "Atrium",
+      },
+    ],
+  },
+  {
+    day: "Sunday, September 28",
+    sessions: [
+      {
+        time: "9:00 AM – 12:00 PM",
+        title: "Committee Session IV",
+        location: "Assigned Rooms",
+      },
+      {
+        time: "1:00 PM – 2:00 PM",
+        title: "Closing Ceremony",
+        location: "Main Hall",
+      },
+    ],
+  },
+];
+
+export const resources = [
+  {
+    title: "Rules of Procedures",
+    description: "Understand the rules and procedures for the conference.",
+    href: "https://drive.google.com/file/d/1CPD-I1XtxcrSHqEyWHYlxXyDsHF5X00G/view?usp=sharing",
+    bg: `${CF_DOMAIN}/rop.jpeg?format=webp`, // example placeholder
+  },
+  {
+    title: "Delegate's Guide to Crisis MUN",
+    description:
+      "A comprehensive guide for delegates participating in Crisis MUN.",
+    href: "https://drive.google.com/file/d/18UHASiviwqNX4SCHptRfz_2rLLJbJPe1/view",
+    bg: `${CF_DOMAIN}/delegates-guide.jpeg?format=webp`,
+  },
+  {
+    title: "Committee Archives",
+    description: "Explore past committee topics and materials.",
+    href: "https://docs.google.com/document/d/1rj6pCLqc5eRTqLvVRy-XHe31KqZ1gckAcjwZpHCj9Wc/edit?usp=sharing",
+    bg: `${CF_DOMAIN}/archive.jpg?format=webp`,
+  },
+];

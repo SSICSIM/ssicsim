@@ -94,25 +94,27 @@ const Committees = () => {
           </div>
         </div>{" "}
         {/* Committee Cards */}
-<div className="grid grid-cols-1 w-[100%] mx-auto 
+        <div
+          className="grid grid-cols-1 w-[100%] mx-auto 
                 md:grid-cols-2 md:w-[85%] md:mx-auto 
-                xl:grid-cols-3 xl:w-[100%] gap-4 justify-items-center">
-  {filteredCommittees.map((committee, index) => (
-    <CommiteeCard
-      key={index}
-      title={committee.title}
-      description={committee.description}
-      expandedDescription={committee.expandedDescription}
-      backgroundGuides={committee.backgroundGuides}
-      contactEmail={committee.contactEmail}
-      director={committee.director}
-      directorImage={committee.directorImage}
-      backgroundImage={committee.backgroundImage}
-      jointOrNot={committee.jointOrNot}
-      double={committee.double}
-    />
-  ))}
-</div>
+                xl:grid-cols-3 xl:w-[100%] gap-4 justify-items-center"
+        >
+          {filteredCommittees.map((committee, index) => (
+            <CommiteeCard
+              key={index}
+              title={committee.title}
+              description={committee.description}
+              expandedDescription={committee.expandedDescription}
+              backgroundGuides={committee.backgroundGuides}
+              contactEmail={committee.contactEmail}
+              director={committee.director}
+              directorImage={committee.directorImage}
+              backgroundImage={committee.backgroundImage}
+              jointOrNot={committee.jointOrNot}
+              double={committee.double}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

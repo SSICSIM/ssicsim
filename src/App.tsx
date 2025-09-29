@@ -18,6 +18,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import Mission from "./pages/mission";
+import Schedule from "./pages/schedule";
+import Resources from "./pages/resources";
 
 function App() {
   useEffect(() => {
@@ -47,6 +49,8 @@ function App() {
           <Route path="/apply" element={<Openings />} />
           <Route path="*" element={<UnderConstruction />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/conference/schedule" element={<Schedule />} />
+          <Route path="/conference/resources" element={<Resources />} />
         </Routes>
         <Footer />
         <Analytics />

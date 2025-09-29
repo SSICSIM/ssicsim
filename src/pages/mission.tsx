@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import HistoryTimeline from "../components/Timeline";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -218,6 +219,7 @@ const Mission = () => {
           </motion.div>
         </div>
       </section>
+      <HistoryTimeline />
     </>
   );
 };
