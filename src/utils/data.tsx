@@ -346,3 +346,91 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     backgroundImage: `${CF_DOMAIN}/ConceptualAdHoc.png?format=webp`,
   },
 ];
+
+export const secretariat = [
+  {
+    name: "Nazaha Fazil",
+    position: "Secretary-General",
+    image: `${CF_DOMAIN}/nazaha.jpg?format=webp`,
+  },
+  {
+    name: "Leora Kasneci",
+    position: "Deputy Secretary-General, Equity",
+    image: `${CF_DOMAIN}/leora.jpg?format=webp`,
+  },
+  {
+    name: "Ethan Currie",
+    position: "USG External",
+    image: `${CF_DOMAIN}/ethan.jpg?format=webp`,
+  },
+  {
+    name: "Connor Begg",
+    position: "USG Internal",
+    image: `${CF_DOMAIN}/connor.jpg?format=webp`,
+  },
+  {
+    name: "Elisha Yao",
+    position: "USG Academics",
+    image: `${CF_DOMAIN}/elisha.png?format=webp`,
+  },
+  {
+    name: "Wilson Wong",
+    position: "Chargé D’Affaires",
+    image: `${CF_DOMAIN}/wilson.jpg?format=webp`,
+  },
+  {
+    name: "Shreya Aggarwal",
+    position: "ASG Corporate Relations",
+    image: `${CF_DOMAIN}/shreya.jpg?format=webp`,
+  },
+  {
+    name: "Rafael Garcia Rosas",
+    position: "ASG Logistics",
+    image: `${CF_DOMAIN}/rafael.jpg?format=webp`,
+  },
+  {
+    name: "Nicholas Ali",
+    position: "Co-ASG Hiring & Training",
+    image: `${CF_DOMAIN}/nicholas.jpg?format=webp`,
+  },
+  {
+    name: "Alishba Noman",
+    position: "Co-ASG Hiring & Training",
+    image: `${CF_DOMAIN}/alishba.jpg?format=webp`,
+  },
+  {
+    name: "Biew Biew Sakulwannadee",
+    position: "Co-ASG Design & IT",
+    image: `${CF_DOMAIN}/biewbiew.jpg?format=webp`,
+  },
+  {
+    name: "Ankur Phadke",
+    position: "Co-ASG Design & IT",
+    image: `${CF_DOMAIN}/ankur.jpg?format=webp`,
+  },
+  {
+    name: "Pavithra Venkitaraman",
+    position: "ASG Communications",
+    image: `${CF_DOMAIN}/pavithra.jpg?format=webp`,
+  },
+  {
+    name: "Aryan Rajagopal",
+    position: "ASG Historical Crises",
+    image: `${CF_DOMAIN}/aryan.jpg?format=webp`,
+  },
+  {
+    name: "Jeeya Kaur",
+    position: "ASG Fictional Crises",
+    image: `${CF_DOMAIN}/jeeya.jpg?format=webp`,
+  },
+  {
+    name: "Pavel Telega",
+    position: "ASG Conceptual Crises",
+    image: `${CF_DOMAIN}/unnamed.jpg?format=webp`,
+  },
+  {
+    name: "Brian Daniel",
+    position: "ASG Equity",
+    image: `${CF_DOMAIN}/brian.jpg?format=webp`,
+  },
+];
