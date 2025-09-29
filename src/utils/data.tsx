@@ -195,7 +195,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     backgroundGuides: [
       {
         description: "Background Guide: Alpha Earth",
-        link: "https://drive.google.com/file/d/1ZLad8GAw-atXfGCZNWDfj-rT91HulFmd/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1nVOdOkKw9qqxji_g4Q1TeiM4nVPVF2S2/view?usp=sharing",
       },
       {
         description: "Background Guide: Omega Earth",
