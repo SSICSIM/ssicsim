@@ -22,12 +22,8 @@ export default function Navbar() {
       path: "/committees",
     },
     {
-      label: "Conference",
-      path: "/conference",
-      subItems: [
-        { label: "Schedule", path: "/conference/schedule" },
-        { label: "Resources", path: "/conference/resources" },
-      ],
+      label: "Resources",
+      path: "/resources",
     },
     {
       label: "Staff",
