@@ -97,17 +97,12 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
 
 As the 1640 Parliament assembles in November, tensions are high. The incensed Parliament demands limits to Charles’s royal powers, something he cannot tolerate. And as 1640 rolls to 1641, the country lurches on the brink of civil war. All it takes is one wrong decision for the history of England and the British Isles to change forever. Where it goes depends on you.
 `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide: A",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    //   {
-    //     description: "Background Guide: B",
-    //     link: "https://example.com/historical-guide",
-    //   },
-
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1xB4BdcwVX81RqM-fCdiORL1ysZ28cBFD/view?usp=sharing",
+      },
+    ],
     contactEmail: "english.civil.war@ssicsim.ca",
     director: "Jackie Wang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
