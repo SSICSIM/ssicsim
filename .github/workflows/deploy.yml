@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write   # <--- this gives commit/push rights
+  contents: write # <--- this gives commit/push rights
 
 jobs:
   deploy:
