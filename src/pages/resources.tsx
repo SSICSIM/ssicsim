@@ -1,6 +1,6 @@
 import { CF_DOMAIN } from "../utils/consts";
 import { resources } from "../utils/data";
-import { scheduleData } from "../utils/data";
+import ConferenceSchedule from "../components/Schedule";
 
 const Resources = () => {
   return (
@@ -83,31 +83,7 @@ const Resources = () => {
             Conference Schedule
           </h2>
           <div className="space-y-12">
-            {scheduleData.map((day, idx) => (
-              <div key={idx} className="bg-white rounded-2xl shadow-md p-6">
-                <h3 className="text-2xl font-bold text-[#A3841D] mb-6">
-                  {day.day}
-                </h3>
-                <div className="space-y-4">
-                  {day.sessions.map((session, sIdx) => (
-                    <div
-                      key={sIdx}
-                      className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-gray-200 pb-4 last:border-b-0"
-                    >
-                      <p className="text-gray-700 font-semibold md:w-1/4">
-                        {session.time}
-                      </p>
-                      <p className="text-gray-900 font-nunito md:w-1/2">
-                        {session.title}
-                      </p>
-                      <p className="text-gray-500 italic md:w-1/4 md:text-right">
-                        {session.location}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <ConferenceSchedule />
           </div>
         </div>
       </div>
