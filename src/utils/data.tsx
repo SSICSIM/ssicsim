@@ -198,7 +198,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
       },
     ],
     contactEmail: "valorant@ssicsim.ca",
-    director: "Joshua Qu & Jace Mu",
+    director: "Joshua Qu & Kevin An",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
     backgroundImage: `${CF_DOMAIN}/ValorantConvClear.jpg?format=webp`,
