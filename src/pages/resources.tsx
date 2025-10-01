@@ -41,7 +41,6 @@ const Resources = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {resources.map((res, idx) => (
-                
               <a
                 key={idx}
                 href={res.href}
@@ -78,7 +77,7 @@ const Resources = () => {
 
           {/* Description under resources */}
         </div>
-                <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
           <h2 className="text-4xl mt-18 font-bold font-nunito text-center text-[#A3841D]">
             Conference Schedule
           </h2>
