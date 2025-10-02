@@ -203,7 +203,7 @@ export default function ConferenceSchedule() {
   };
 
   return (
-    <div className="relative w-full max-w-[1200px] mx-auto mt-12 mb-20 p-4 rounded-3xl shadow-xl border-2 border-[#FFD700] bg-white">
+    <div className="relative w-full max-w-[1200px] mx-auto mt-12 mb-20 rounded-3xl shadow-xl border-2 border-[#FFD700] bg-white md:pl-20">
       {/* ---------------- DESKTOP VIEW ---------------- */}
       <div className="hidden md:block">
         {/* Header */}
