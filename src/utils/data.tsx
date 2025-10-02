@@ -79,7 +79,7 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
     backgroundGuides: [
       {
         description: "Background Guide",
-        link: "https://drive.google.com/file/d/1-QXvCUTrTr4JvvsySqoo4xWJPOnd8t_Z/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1pfhT8G_zMKKfj8v4x1LRMZ2XMfshPEox/view?usp=sharing",
       },
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
