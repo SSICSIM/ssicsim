@@ -70,7 +70,7 @@ const Openings = () => {
             <img
               src={`${CF_DOMAIN}/Moderator.JPG?format=webp&fit=cover`}
               alt="Moderator"
-              className="absolute top-1/2 left-1/2 w-f h-full min-w-full min-h-full max-w-none max-h-none object-cover transform -translate-x-1/2 -translate-y-1/2 rotate-90"
+              className="absolute md:top-1/2 left-1/2 top-[100px] md:w-auto md:h-full min-w-full min-h-full max-w-none max-h-none object-cover transform -translate-x-1/2 -translate-y-5/12 md:-translate-y-1/2 rotate-90"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
