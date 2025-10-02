@@ -178,8 +178,8 @@ export default function ConferenceSchedule() {
 
   const getTop = (start: Date) => {
     let minutes = start.getMinutes();
-    if (minutes > 0) minutes = 30; // snap to 30 if not 0
-    return (start.getHours() - 8) * 60 + minutes; // include border
+    if (minutes > 0) minutes = 30;
+    return (start.getHours() - 8) * 60 + minutes;
   };
 
   const getHeight = (start: Date, end: Date) => {
@@ -191,7 +191,7 @@ export default function ConferenceSchedule() {
 
     return (
       end.getHours() * 60 + endMinutes - (start.getHours() * 60 + startMinutes)
-    ); // subtract border so event fits
+    );
   };
 
   const formatTime = (date: Date) => {
@@ -203,42 +203,85 @@ export default function ConferenceSchedule() {
   };
 
   return (
-    <div className="relative w-full max-w-[1200px] mx-auto mt-12 mb-20 p-4 pl-20 rounded-3xl shadow-xl border-2 border-[#FFD700] bg-white">
-      {/* Header */}
-      <div
-        className="grid border-b-2 border-[#FFD700] mb-2"
-        style={{ gridTemplateColumns: "64px 1fr 1fr 1fr" }}
-      >
-        {/* Time column */}
-        <div className="w-16"></div>
-
-        {/* Day labels */}
-        {days.map((day) => (
-          <div
-            key={day.label}
-            className="text-center font-bold text-black py-2 text-lg border-l-2 border-[#FFD700]"
-          >
-            {day.label}
-          </div>
-        ))}
-      </div>
-
-      <div className="flex relative">
-        {/* Time Column */}
-        <div className="w-16 border-r-2 border-[#FFD700] relative">
-          {hours.map((h) => (
+    <div className="relative w-full max-w-[1200px] mx-auto mt-12 mb-20 p-4 rounded-3xl shadow-xl border-2 border-[#FFD700] bg-white">
+      {/* ---------------- DESKTOP VIEW ---------------- */}
+      <div className="hidden md:block">
+        {/* Header */}
+        <div
+          className="grid border-b-2 border-[#FFD700] mb-2"
+          style={{ gridTemplateColumns: "64px 1fr 1fr 1fr" }}
+        >
+          <div className="w-16"></div>
+          {days.map((day) => (
             <div
-              key={h}
-              className="relative h-[60px] flex items-start justify-center border-t-2 border-[#FFD700]/50 text-xs text-black"
+              key={day.label}
+              className="text-center font-bold text-black py-2 text-lg border-l-2 border-[#FFD700]"
             >
-              <span className="absolute -left-16">
-                {h > 12 ? h - 12 : h}:00 {h >= 12 ? "PM" : "AM"}
-              </span>
+              {day.label}
             </div>
           ))}
         </div>
 
-        {/* Day Columns */}
+        <div className="flex relative">
+          {/* Time Column */}
+          <div className="w-16 border-r-2 border-[#FFD700] relative">
+            {hours.map((h) => (
+              <div
+                key={h}
+                className="relative h-[60px] flex items-start justify-center border-t-2 border-[#FFD700]/50 text-xs text-black"
+              >
+                <span className="absolute -left-16">
+                  {h > 12 ? h - 12 : h}:00 {h >= 12 ? "PM" : "AM"}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Day Columns */}
+          {days.map((day) => {
+            const dayEvents = events.filter(
+              (e) => e.start.toDateString() === day.date.toDateString(),
+            );
+
+            return (
+              <div
+                key={day.label}
+                className="flex-1 border-r-2 border-[#FFD700] relative"
+              >
+                {hours.map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute left-0 right-0 h-[1px] border-t-2 border-[#FFD700]/50"
+                    style={{ top: i * 60 }}
+                  />
+                ))}
+
+                {dayEvents.map((e) => (
+                  <div
+                    key={e.id}
+                    style={{
+                      top: getTop(e.start),
+                      height: getHeight(e.start, e.end) - 4,
+                      backgroundColor: colors[e.category],
+                      left: "2px",
+                      right: "2px",
+                    }}
+                    className="absolute rounded-lg text-black px-2 py-1 font-semibold text-sm shadow-md overflow-hidden"
+                  >
+                    <div className="font-light">
+                      <span className="font-bold">{e.title}</span> (
+                      {formatTime(e.start)} - {formatTime(e.end)})
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ---------------- MOBILE VIEW ---------------- */}
+      <div className="block md:hidden space-y-8">
         {days.map((day) => {
           const dayEvents = events.filter(
             (e) => e.start.toDateString() === day.date.toDateString(),
@@ -247,41 +290,58 @@ export default function ConferenceSchedule() {
           return (
             <div
               key={day.label}
-              className="flex-1 border-r-2 border-[#FFD700] relative"
+              className="border-2 border-[#FFD700] rounded-xl overflow-hidden"
             >
-              {/* Hour lines */}
-              {hours.map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute left-0 right-0 h-[1px] border-t-2 border-[#FFD700]/50"
-                  style={{ top: i * 60 }}
-                />
-              ))}
+              {/* Mobile Day Header */}
+              <div className="text-center font-bold text-lg bg-[#FFD700] text-black py-2">
+                {day.label}
+              </div>
 
-              {/* Events */}
-              {dayEvents.map((e) => {
-
-                return (
-                  <div
-                    key={e.id}
-                    style={{
-                      top: getTop(e.start),
-                      height: getHeight(e.start, e.end) - 4,
-                      marginBottom: "2px",
-                      marginTop: "2px",
-                      backgroundColor: colors[e.category],
-                      left: "2px",
-                      right: "2px",
-                    }}
-                    className="absolute rounded-lg text-black px-2 py-1 font-semibold text-sm shadow-md overflow-hidden"
-                  >
-                    <div className="font-light">
-                      <a className="font-bold"> {e.title} </a> (
-                      {formatTime(e.start)} - {formatTime(e.end)})
+              <div className="flex relative">
+                {/* Time Column */}
+                <div className="w-16 border-r-2 border-[#FFD700] relative">
+                  {hours.map((h) => (
+                    <div
+                      key={h}
+                      className="relative h-[60px] flex items-start justify-center border-t-2 border-[#FFD700]/50 text-xs text-black"
+                    >
+                      <span className="absolute left-1">
+                        {h > 12 ? h - 12 : h}:00 {h >= 12 ? "PM" : "AM"}
+                      </span>
                     </div>
-                  </div>
-                );
-              })}
+                  ))}
+                </div>
+
+                {/* Events Column */}
+                <div className="flex-1 relative">
+                  {hours.map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute left-0 right-0 h-[1px] border-t-2 border-[#FFD700]/50"
+                      style={{ top: i * 60 }}
+                    />
+                  ))}
+
+                  {dayEvents.map((e) => (
+                    <div
+                      key={e.id}
+                      style={{
+                        top: getTop(e.start),
+                        height: getHeight(e.start, e.end) - 4,
+                        backgroundColor: colors[e.category],
+                        left: "2px",
+                        right: "2px",
+                      }}
+                      className="absolute rounded-lg text-black px-2 py-1 font-semibold text-sm shadow-md overflow-hidden"
+                    >
+                      <div className="font-light">
+                        <span className="font-bold">{e.title}</span> (
+                        {formatTime(e.start)} - {formatTime(e.end)})
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           );
         })}
