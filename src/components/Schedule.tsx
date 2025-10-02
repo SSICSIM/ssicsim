@@ -47,7 +47,7 @@ const events: MyEvent[] = [
     id: 6,
     title: "Opening Ceremonies",
     start: new Date(2025, 9, 24, 16, 0),
-    end: new Date(2025, 9, 24, 17, 0),
+    end: new Date(2025, 9, 24, 17, 30),
     category: "ceremony",
   },
   {
@@ -259,13 +259,7 @@ export default function ConferenceSchedule() {
               ))}
 
               {/* Events */}
-              {dayEvents.map((e, idx) => {
-                // Overlapping adjustment: shift by small gap if previous event overlaps
-                const prev = idx > 0 ? dayEvents[idx - 1] : null;
-                let leftOffset = 2;
-                if (prev && getTop(e.start) < getTop(prev.end)) {
-                  leftOffset += 10; // reduce gap for overlap
-                }
+              {dayEvents.map((e) => {
 
                 return (
                   <div
@@ -276,7 +270,7 @@ export default function ConferenceSchedule() {
                       marginBottom: "2px",
                       marginTop: "2px",
                       backgroundColor: colors[e.category],
-                      left: `${leftOffset}px`,
+                      left: "2px",
                       right: "2px",
                     }}
                     className="absolute rounded-lg text-black px-2 py-1 font-semibold text-sm shadow-md overflow-hidden"
