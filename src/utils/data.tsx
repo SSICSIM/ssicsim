@@ -11,6 +11,10 @@ export const committeesData = [
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1l5DN66wFEjujvi2LDu8Iu-6sMeAmer9L/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1ZfegZOIsfWabKMwWSCBhY5oNK5PH_MlY/view",
+      },
     ],
     contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
@@ -248,6 +252,10 @@ However, the bigger challenge lies not within the minute logistics of the gala b
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1qUCgHfX4WWOfSrWRnAkNtrUggm9Pyydr/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1wTkcfUsNNmY-FSFwTKWgK9gdd6X_ZkuP/view",
+      },
     ],
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -292,6 +300,10 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
       {
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1-rgehk4Rt-4Q98NJn0VJW26GXOGpo9yU/view?usp=sharing",
+      },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1J-ltDayXRQEKQM6VeSgrwuy2_b9yL2rO/view?usp=sharing",
       },
     ],
     contactEmail: "tetris@ssicsim.ca",
