@@ -357,7 +357,7 @@ export const secretariat = [
   {
     name: "Leora Kasneci",
     position: "Deputy Secretary-General, Equity",
-    image: `${CF_DOMAIN}/leora.jpg?format=webp`,
+    image: `${CF_DOMAIN}/leora.png?format=webp`,
     branch: "Executive Board"
   },
   {
@@ -369,7 +369,7 @@ export const secretariat = [
   {
     name: "Connor Begg",
     position: "USG Internal",
-    image: `${CF_DOMAIN}/connor.jpg?format=webp`,
+    image: `${CF_DOMAIN}/connor.jpg`,
     branch: "Executive Board"
   },
   {
@@ -411,7 +411,7 @@ export const secretariat = [
   {
     name: "Biew Biew Sakulwannadee",
     position: "Co-ASG Design & IT",
-    image: `${CF_DOMAIN}/biewbiew.jpg?format=webp`,
+    image: `${CF_DOMAIN}/biewbiew.jpg`,
     branch: "External & Internal"
   },
   {
@@ -423,7 +423,7 @@ export const secretariat = [
   {
     name: "Pavithra Venkitaraman",
     position: "ASG Communications",
-    image: `${CF_DOMAIN}/pavithra.jpg?format=webp`,
+    image: `${CF_DOMAIN}/pavithra.jpg`,
     branch: "External & Internal"
   },
   {
@@ -433,21 +433,21 @@ export const secretariat = [
     branch: "Academics & Equity"
   },
   {
-    name: "Jeeya Kaur",
+    name: "Jay Kaur",
     position: "ASG Fictional Crises",
-    image: `${CF_DOMAIN}/jeeya.jpg?format=webp`,
+    image: `${CF_DOMAIN}/jay.jpg`,
     branch: "Academics & Equity"
   },
   {
     name: "Pavel Telega",
     position: "ASG Conceptual Crises",
-    image: `${CF_DOMAIN}/unnamed.jpg?format=webp`,
+    image: `${CF_DOMAIN}/pavel.jpg`,
     branch: "Academics & Equity"
   },
   {
     name: "Brian Daniel",
     position: "ASG Equity",
-    image: `${CF_DOMAIN}/brian.jpg?format=webp`,
+    image: `${CF_DOMAIN}/brian.jpg`,
     branch: "Academics & Equity"
   },
 ];
