@@ -82,7 +82,7 @@ const Team = () => {
           </div>
           <div
             key={branch}
-            className={`container mx-auto py-8 flex flex-col md:flex-row ${
+            className={`container mx-auto py-8 flex flex-col lg:flex-row ${
               isLast ? "items-center text-center" : "items-center"
             } gap-8 md:gap-16`}
           >
@@ -90,14 +90,14 @@ const Team = () => {
             {/* Image Left or Top */}
             {isImageLeft || isLast ? (
             <div
-              className={`w-full md:w-1/2 ${
+              className={`w-full lg:w-1/2 order-last lg:order-first ${
                 isExecutive ? "" : "flex flex-col gap-8"
               }`}
             >
               {branchPhotos[branch].map((imgSrc, idx) => (
                 <div
                   key={idx}
-                  className={`w-full h-64 md:h-auto rounded-md overflow-hidden`}
+                  className={`w-full h-full  md:h-auto rounded-md overflow-hidden`}
                 >
                   <img
                     src={imgSrc}
@@ -110,7 +110,7 @@ const Team = () => {
             ) : null}
 
             {/* Members Section */}
-            <div className={`md:w-1/2 w-full ${isLast ? "mt-8 md:mt-12" : ""}`}>
+            <div className={`lg:w-1/2 w-full ${isLast ? "mt-8 md:mt-12" : ""}`}>
               <div
                 className={`flex flex-wrap gap-6 ${
                   isLast ? "justify-center" : "justify-center"
@@ -147,12 +147,12 @@ const Team = () => {
     {branchPhotos[branch].map((imgSrc, idx) => (
       <div
         key={idx}
-        className="w-full h-64 md:h-auto rounded-md overflow-hidden"
+        className="w-full h-full lg:h-auto rounded-md overflow-hidden"
       >
         <img
           src={imgSrc}
           alt={`${branch} ${idx + 1}`}
-          className="w-full h-[600px] object-cover object-center rounded-md shadow-lg"
+          className="w-full h-full lg:h-[600px] object-cover object-center rounded-md shadow-lg"
         />
       </div>
     ))}
