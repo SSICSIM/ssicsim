@@ -49,6 +49,8 @@ function App() {
           <Route path="/apply" element={<Openings />} />
           <Route path="*" element={<UnderConstruction />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/about/team" element={<Team />} />
         </Routes>
         <Footer />
         <Analytics />
