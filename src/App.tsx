@@ -19,6 +19,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import Mission from "./pages/mission";
 import Resources from "./pages/resources";
+import Events from "./pages/events";
 
 function App() {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
           <Route path="*" element={<UnderConstruction />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
         <Footer />
         <Analytics />
