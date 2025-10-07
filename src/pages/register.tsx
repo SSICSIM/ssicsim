@@ -1,10 +1,5 @@
 import RegistrationStep from "../components/RegistrationStep";
-import {
-  FaUsers,
-  FaClipboardList,
-  FaMoneyCheckAlt,
-  FaBook,
-} from "react-icons/fa"; // Import icons from React Icons
+import { FaClipboardList, FaClock, FaBook } from "react-icons/fa"; // Import icons from React Icons
 import { CF_DOMAIN } from "../utils/consts";
 
 const Register = () => {
@@ -60,9 +55,11 @@ const Register = () => {
             {/* Late Bird Pricing */}
             <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$100</p>
-              <p className="text-lg font-nunito mt-4">Late Bird Registration</p>
+              <p className="text-lg font-nunito mt-4">
+                Late Bird Registration + Waitlist
+              </p>
               <p className="text-sm font-light mt-2">
-                September 22nd – September 30th, or until we reach capacity.
+                September 22nd – September 30th, or if you are off the waitlist.
               </p>
             </div>
           </div>
@@ -73,74 +70,60 @@ const Register = () => {
 
         {/* Registration Section */}
         <div className="relative z-10 flex justify-center max-w-[3000px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 md:w-[90%] min-h-[100%]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-3 md:w-[90%] min-h-[100%]">
             {/* First Column (Spanning All Rows) */}
-            <div className="row-span-4 p-6 flex flex-col justify-center">
-              <h1 className="text-4xl md:text-7xl font-bold font-nunito lg:ml-6">
-                Registration
+            <div className="row-span-3 p-6 flex flex-col justify-center">
+              <h1 className="text-4xl md:text-7xl font-bold font-nunito lg:ml-6 ">
+                Waitlist
               </h1>
               <p className="text-gray-700 text-2xl font-dm-sans font-light w-[80vw] lg:w-[30vw] lg:ml-6 pt-2">
-                Whether you are an individual or group delegation, it’s easy to
-                register for SSICSIM 2025!
+                Registration for SSICSIM 2025 is now closed. Delegates may join
+                the waitlist using this form and will be contacted if a spot
+                becomes available—no payment is required unless officially
+                offered a spot.
               </p>
 
               {/* Buttons */}
-              <div className="flex gap-4 mt-6 md:ml-6">
+              <div className="flex gap-4 mt-6 lg:ml-6">
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSc_GvoYq_1N5WmPg7UH048-OdMSZTlzSGuHwh8YZIsy2K7rXQ/formResponse"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
                 >
-                  Late Bird Registration
-                </a>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSduLLlMb5D1-NwLzUlN2PAxgLH3b-6EeFAigwAu-mRw79CULg/viewform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
-                >
-                  Delegation RSVP
+                  Waitlist
                 </a>
               </div>
             </div>
-            {/* Second Column - Row 1 */}
             <div className="pt-6">
               <RegistrationStep
-                title="Delegation Registration"
-                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Late Bird Registration Form indicating their delegation affiliation and committee preferences."
-                icon={
-                  <FaUsers className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                } // Delegation icon
-              />
-            </div>
-            <div className="pt-6">
-              <RegistrationStep
-                title="Choose Your Committee & Register"
-                description="Look through the list of committees, and select three committees you would like to be a part of. Make sure you read all the descriptions! Then, fill out the delegate registration form."
+                title="Fill Out the Waitlist Form"
+                description="This form is intended for delegates who wish to be added to our waitlist and considered for any open spots. To join the waitlist, delegates should fill out this form individually, indicating their school affiliation where required."
                 icon={
                   <FaClipboardList className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                } // Committee selection icon
+                }
               />
             </div>
+
             <div className="pt-6">
               <RegistrationStep
-                title="Confirm Payment"
-                description="Each Independent Delegate and individually-paying Group Delegate will be issued an invoice at the time they receive confirmation of their registration. They will be given twenty-one (21) days to pay the invoice total in full by e-transfer or cash."
+                title="Wait for Confirmation"
+                description="If a spot becomes available, we will reach out to those delegates who have completed the form. There is no additional payment required to be placed on the waitlist."
                 icon={
-                  <FaMoneyCheckAlt className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                } // Payment confirmation icon
+                  <FaClock className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
+                }
               />
             </div>
+
             <div className="pt-6">
               <RegistrationStep
-                title="Receive Assignment & Get Ready"
-                description="Once you have paid your invoice, you will receive your committee assignment. You will also get access to the SSICSIM 2025 Background Guide, which will help you prepare for the conference."
+                title="Receive Assignment & Prepare"
+                description="If a spot opens up, you will be notified immediately. Upon notification, delegates must pay the $100 CAD Waitlist Registration Fee via e-transfer by October 24 to confirm their spot and receive their committee assignment."
                 icon={
                   <FaBook className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
-                } // Assignment and preparation icon
+                }
               />
-            </div>{" "}
+            </div>
           </div>
         </div>
         <hr className="border-t-2 border-gray-300 my-10" />

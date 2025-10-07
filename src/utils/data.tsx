@@ -11,6 +11,10 @@ export const committeesData = [
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1l5DN66wFEjujvi2LDu8Iu-6sMeAmer9L/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1ZfegZOIsfWabKMwWSCBhY5oNK5PH_MlY/view",
+      },
     ],
     contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
@@ -79,7 +83,7 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
     backgroundGuides: [
       {
         description: "Background Guide",
-        link: "https://drive.google.com/file/d/1-QXvCUTrTr4JvvsySqoo4xWJPOnd8t_Z/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1pfhT8G_zMKKfj8v4x1LRMZ2XMfshPEox/view?usp=sharing",
       },
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
@@ -97,17 +101,12 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
 
 As the 1640 Parliament assembles in November, tensions are high. The incensed Parliament demands limits to Charles’s royal powers, something he cannot tolerate. And as 1640 rolls to 1641, the country lurches on the brink of civil war. All it takes is one wrong decision for the history of England and the British Isles to change forever. Where it goes depends on you.
 `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide: A",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    //   {
-    //     description: "Background Guide: B",
-    //     link: "https://example.com/historical-guide",
-    //   },
-
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/1xB4BdcwVX81RqM-fCdiORL1ysZ28cBFD/view?usp=sharing",
+      },
+    ],
     contactEmail: "english.civil.war@ssicsim.ca",
     director: "Jackie Wang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -195,7 +194,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
     backgroundGuides: [
       {
         description: "Background Guide: Alpha Earth",
-        link: "https://drive.google.com/file/d/1ZLad8GAw-atXfGCZNWDfj-rT91HulFmd/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1nVOdOkKw9qqxji_g4Q1TeiM4nVPVF2S2/view?usp=sharing",
       },
       {
         description: "Background Guide: Omega Earth",
@@ -203,7 +202,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
       },
     ],
     contactEmail: "valorant@ssicsim.ca",
-    director: "Joshua Qu & Jace Mu",
+    director: "Joshua Qu & Kevin An",
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Fictional",
     backgroundImage: `${CF_DOMAIN}/ValorantConvClear.jpg?format=webp`,
@@ -253,6 +252,10 @@ However, the bigger challenge lies not within the minute logistics of the gala b
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1qUCgHfX4WWOfSrWRnAkNtrUggm9Pyydr/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1wTkcfUsNNmY-FSFwTKWgK9gdd6X_ZkuP/view",
+      },
     ],
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -297,6 +300,10 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
       {
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1-rgehk4Rt-4Q98NJn0VJW26GXOGpo9yU/view?usp=sharing",
+      },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1J-ltDayXRQEKQM6VeSgrwuy2_b9yL2rO/view?usp=sharing",
       },
     ],
     contactEmail: "tetris@ssicsim.ca",
@@ -344,6 +351,81 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     directorImage: "/assets/photos/DirectorImage3.jpg",
     category: "Conceptual",
     backgroundImage: `${CF_DOMAIN}/ConceptualAdHoc.png?format=webp`,
+  },
+];
+
+export const scheduleData = [
+  {
+    day: "Friday, September 26",
+    sessions: [
+      {
+        time: "5:00 PM – 6:00 PM",
+        title: "Opening Ceremony",
+        location: "Main Hall",
+      },
+      {
+        time: "6:15 PM – 8:00 PM",
+        title: "Committee Session I",
+        location: "Assigned Rooms",
+      },
+    ],
+  },
+  {
+    day: "Saturday, September 27",
+    sessions: [
+      {
+        time: "9:00 AM – 12:00 PM",
+        title: "Committee Session II",
+        location: "Assigned Rooms",
+      },
+      {
+        time: "1:00 PM – 4:00 PM",
+        title: "Committee Session III",
+        location: "Assigned Rooms",
+      },
+      {
+        time: "7:00 PM – 10:00 PM",
+        title: "Delegate Social",
+        location: "Atrium",
+      },
+    ],
+  },
+  {
+    day: "Sunday, September 28",
+    sessions: [
+      {
+        time: "9:00 AM – 12:00 PM",
+        title: "Committee Session IV",
+        location: "Assigned Rooms",
+      },
+      {
+        time: "1:00 PM – 2:00 PM",
+        title: "Closing Ceremony",
+        location: "Main Hall",
+      },
+    ],
+  },
+];
+
+export const resources = [
+  {
+    title: "Rules of Procedures",
+    description: "Understand the rules and procedures for the conference.",
+    href: "https://drive.google.com/file/d/1CPD-I1XtxcrSHqEyWHYlxXyDsHF5X00G/view?usp=sharing",
+    bg: `${CF_DOMAIN}/rop.jpeg?format=webp`, // example placeholder
+  },
+  {
+    title: "Delegate's Guide to Crisis MUN",
+    description:
+      "A comprehensive guide for delegates participating in Crisis MUN.",
+    href: "https://drive.google.com/file/d/18UHASiviwqNX4SCHptRfz_2rLLJbJPe1/view",
+    bg: `${CF_DOMAIN}/delegates-guide.jpeg?format=webp`,
+  },
+  {
+    title: "Committee Archives",
+    description: "Explore past committee topics and materials.",
+    href: "https://docs.google.com/document/d/1rj6pCLqc5eRTqLvVRy-XHe31KqZ1gckAcjwZpHCj9Wc/edit?usp=sharing",
+    bg: `${CF_DOMAIN}/archive.jpg?format=webp`,
   },
 ];
 

@@ -65,12 +65,12 @@ const Openings = () => {
 
         {/* Cards Section */}
         <div className="max-w-[3000px] grid grid-cols-1 mt-6 md:grid-rows-2 md:grid-cols-3 gap-4 h-[200vh] md:h-[70vh] w-[90vw] mx-auto">
-          {/* First Entry (Occupies the first column in both rows) */}
-          <div className="relative h-full row-span-1 md:row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
+          {/* Moderator (rotated 90° clockwise, full coverage) */}
+          <div className="relative h-full row-span-1 md:row-span-2 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white overflow-hidden">
             <img
-              src={`${CF_DOMAIN}/Moderator.JPG?format=webp`}
+              src={`${CF_DOMAIN}/Moderator.JPG?format=webp&fit=cover`}
               alt="Moderator"
-              className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              className="absolute md:top-1/2 left-1/2 top-[100px] md:w-auto md:h-full min-w-full min-h-full max-w-none max-h-none object-cover transform -translate-x-1/2 -translate-y-5/12 md:-translate-y-1/2 rotate-90"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
@@ -82,16 +82,15 @@ const Openings = () => {
             </p>
           </div>
 
-          {/* Second Entry (Occupies the second column in the first row) */}
+          {/* Crisis Manager */}
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
               src={`${CF_DOMAIN}/CrisisManager.JPG?format=webp`}
-              alt="Moderator"
-              className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              alt="Crisis Manager"
+              className="absolute inset-0 w-full h-full object-cover rounded-lg"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
-
             <h3 className="text-3xl font-nunito font-extrabold z-20">
               Crisis Manager
             </h3>
@@ -100,16 +99,15 @@ const Openings = () => {
             </p>
           </div>
 
-          {/* Third Entry (Occupies the third column in the first row) */}
+          {/* Crisis Staff */}
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
               src={`${CF_DOMAIN}/CrisisStaff.JPG?format=webp`}
               alt="Crisis Staff"
-              className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              className="absolute inset-0 w-full h-full object-cover rounded-lg"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
-
             <h3 className="text-3xl font-nunito font-extrabold z-20">
               Crisis Staff
             </h3>
@@ -118,12 +116,12 @@ const Openings = () => {
             </p>
           </div>
 
-          {/* Fourth Entry (Occupies the last two columns in the second row) */}
+          {/* Crisis Coordinator */}
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <img
               src={`${CF_DOMAIN}/CrisisCoordinator.png?format=webp`}
-              alt="Moderator"
-              className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              alt="Crisis Coordinator"
+              className="absolute inset-0 w-full h-full object-cover rounded-lg"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
@@ -135,15 +133,15 @@ const Openings = () => {
             </p>
           </div>
 
-          <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
+          {/* Staff Support (rotated 90° clockwise, full coverage) */}
+          <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white overflow-hidden">
             <img
-              src={`${CF_DOMAIN}/StaffSupport.JPG?format=webp`}
+              src={`${CF_DOMAIN}/StaffSupport.JPG?format=webp&fit=cover`}
               alt="Staff Support"
-              className="absolute inset-0 w-[100%] h-[100%] object-cover rounded-lg"
+              className="absolute top-1/2 left-1/2 w-full h-auto min-w-full min-h-full max-w-none max-h-none object-cover transform -translate-x-1/2 -translate-y-1/2 rotate-270"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
-
             <h3 className="text-3xl font-extrabold font-nunito z-20">
               Staff Support
             </h3>

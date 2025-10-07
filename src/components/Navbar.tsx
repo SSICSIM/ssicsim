@@ -22,6 +22,10 @@ export default function Navbar() {
       path: "/committees",
     },
     {
+      label: "Resources",
+      path: "/resources",
+    },
+    {
       label: "Staff",
       path: "/staff",
       subItems: [{ label: "Openings", path: "/staff/openings" }],
@@ -169,7 +173,7 @@ export default function Navbar() {
         </ul>
         {/* Nav Links */}
         <ul
-          className={`hidden md:flex lg:gap-10 md:text-lg md:gap-4 lg:text-xl  font-dm-sans font-light items-center mr-6`}
+          className={`hidden md:flex lg:gap-10 md:text-[14px] md:gap-4 lg:text-lg  font-dm-sans font-light items-center mr-6`}
         >
           {navItems.map((item) => (
             <li
