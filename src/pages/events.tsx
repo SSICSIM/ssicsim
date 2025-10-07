@@ -22,7 +22,7 @@ description:
     times: ["1:00 – 2:00 PM", "3:00 – 4:00 PM"],
     locations: ["OSE 213", "OSE 253"],
     spots: "In Person: 280 (140 per session), Online: Unlimited",
-    image: "https://picsum.photos/600/400?random=1",
+    image: `${CF_DOMAIN}/DelegateTraining.JPG?format=webp`,
     link: "/register?event=delegate-training",
   },
   {
@@ -32,7 +32,7 @@ description:
     times: ["9:30 – 11:00 AM"],
     locations: ["Meeting Location"],
     spots: "35",
-    image: "https://picsum.photos/600/400?random=2",
+    image: `${CF_DOMAIN}/LegislativeAssemblyTours.jpg?format=webp`,
     link: "/register?event=legislative-tour",
   },
   {
@@ -42,29 +42,27 @@ description:
     times: ["2:00 – 3:00 PM", "12:00 – 1:30 PM", "12:00 – 1:30 PM"],
     locations: ["Session 1", "Session 2", "Session 3"],
     spots: "240 (10 per 10-minute slot)",
-    image: "https://picsum.photos/600/400?random=3",
+    image: `${CF_DOMAIN}/CharityPhotoshoot.JPG?format=webp`,
     link: "/register?event=charity-photoshoot",
   },
   {
     title: "Midnight Crisis",
-    description:
-      "Looking for another crisis committee to participate in? Join the short, late-night Midnight Crisis committee directed by the Secretariat. Committee topic revealed at session start.",
+    description: "Looking for another crisis committee to participate in? Can’t get enough of the crisis committees at SSICSIM? Sign up for (Midnight Crisis), a short but sweet committee directed by the Secretariat in the late hours of the first conference day! This year’s Midnight Crisis is ad hoc, so the committee topic will be revealed at the beginning of the session. ",
     dates: ["Friday, October 24"],
     times: ["8:00 – 11:00 PM"],
     locations: ["Meeting Location"],
     spots: "20",
-    image: "https://picsum.photos/600/400?random=4",
+    image: `${CF_DOMAIN}/MidnightCrisis.jpg?format=webp`,
     link: "/register?event=midnight-crisis",
   },
   {
     title: "Delegate Social",
-    description:
-      "Unwind after a long day of debate! Connect with other Delegates, Staff, and Secretariat members at SSICSIM 2025. Free dinner and refreshments provided.",
+    description:"Looking to unwind after a long day of formal debate? Hoping to connect with other Delegates, Staff, and Secretariat members at SSICSIM? Sign up for Delegate Social, a lively event we’ll be hosting in the heart of the University of Toronto! [Free refreshments and dinner will be provided.]",
     dates: ["Sunday, October 25"],
     times: ["7:30 – 11:00 PM"],
     locations: ["Meeting Location"],
     spots: "120",
-    image: "https://picsum.photos/600/400?random=5",
+    image: `${CF_DOMAIN}/DelegateSocial.JPG?format=webp`,
     link: "/register?event=delegate-social",
   },
 ];
@@ -141,7 +139,7 @@ const parseDescription = (desc: string) => {
 
    return React.createElement(
      "p",
-     { key: idx, className: "text-white mb-2 text-sm md:text-base font-dm-sans" },
+     { key: idx, className: "text-white mb-2 text-xs md:text-xs font-dm-sans" },
      ...elements
    );
  });
@@ -211,15 +209,15 @@ const Events = () => {
                     className="absolute inset-0 bg-cover bg-center transition-all duration-500"
                     style={{
                       backgroundImage: `linear-gradient(${
-                        isExpanded ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.5)"
-                      }, ${isExpanded ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.5)"}), url(${event.image})`,
+                        isExpanded ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.8)"
+                      }, ${isExpanded ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.8)"}), url(${event.image})`,
                       backgroundBlendMode: "multiply",
                     }}
                   />
 
                   {/* Click indicator */}
                   {!isExpanded && (
-                    <div className="absolute top-2 right-2 text-white opacity-70 text-sm md:text-base font-bold">
+                    <div className="absolute top-2 right-2 text-white opacity-70 text-sm md:text-sm font-bold">
                       Click
                     </div>
                   )}
@@ -255,14 +253,14 @@ const Events = () => {
                           {/* Dates, Times, Locations */}
                          <div className="mt-4 bg-[#A3841D]/30 rounded-lg p-4 w-full">
                          {event.dates.length === 1 ? (
-                           <p className="text-white text-sm md:text-base mt-1 font-dm-sans">
+                           <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
                              <span className="font-bold">Event:</span> {event.dates[0]} | {event.times[0]} | {event.locations[0]}
                            </p>
                          ) : (
                            event.dates.map((date, i) => (
                              <p
                                key={i}
-                               className="text-white text-sm md:text-base mt-1 font-dm-sans"
+                               className="text-white text-xs md:text-sm mt-1 font-dm-sans"
                              >
                                <span className="font-bold">Session {i + 1}:</span> {date} | {event.times[i]} | {event.locations[i]}
                              </p>
@@ -271,7 +269,7 @@ const Events = () => {
 
 
                          {event.spots && (
-                           <p className="mt-4 text-white text-sm md:text-base font-dm-sans">
+                           <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
                              <span className="font-bold">Number of Spots:</span>{" "}
                              {event.spots}
                            </p>
