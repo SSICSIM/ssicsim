@@ -43,7 +43,7 @@ description:
     locations: ["Session 1", "Session 2", "Session 3"],
     spots: "240 (10 per 10-minute slot)",
     image: `${CF_DOMAIN}/CharityPhotoshoot.JPG?format=webp`,
-    link: "/register?event=charity-photoshoot",
+    link: "https://forms.gle/pBdCgWzKxHv942s96",
   },
   {
     title: "Midnight Crisis",
@@ -53,7 +53,7 @@ description:
     locations: ["Meeting Location"],
     spots: "20",
     image: `${CF_DOMAIN}/MidnightCrisis.jpg?format=webp`,
-    link: "/register?event=midnight-crisis",
+    link: "https://forms.gle/EE1A7s81hrQsDi6o9",
   },
   {
     title: "Delegate Social",
@@ -209,8 +209,8 @@ const Events = () => {
                     className="absolute inset-0 bg-cover bg-center transition-all duration-500"
                     style={{
                       backgroundImage: `linear-gradient(${
-                        isExpanded ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.8)"
-                      }, ${isExpanded ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.8)"}), url(${event.image})`,
+                        isExpanded ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0.6)"
+                      }, ${isExpanded ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0.6)"}), url(${event.image})`,
                       backgroundBlendMode: "multiply",
                     }}
                   />
@@ -231,7 +231,7 @@ const Events = () => {
                     }`}
                   >
                     <div
-                      className={`backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 py-2 transition-all duration-500 ${
+                      className={` bg-black/60 border border-white/20 rounded-xl px-4 py-2 transition-all duration-500 ${
                         isExpanded ? "w-full flex flex-col items-start" : "w-auto"
                       }`}
                     >
