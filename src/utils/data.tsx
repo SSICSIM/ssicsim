@@ -434,102 +434,102 @@ export const secretariat = [
     name: "Nazaha Fazil",
     position: "Secretary-General",
     image: `${CF_DOMAIN}/nazaha.jpg?format=webp`,
-    branch: "Executive Board"
+    branch: "Executive Board",
   },
   {
     name: "Leora Kasneci",
     position: "Deputy Secretary-General, Equity",
     image: `${CF_DOMAIN}/leora.png?format=webp`,
-    branch: "Executive Board"
+    branch: "Executive Board",
   },
   {
     name: "Ethan Currie",
     position: "USG External",
     image: `${CF_DOMAIN}/ethan.jpg?format=webp`,
-    branch: "Executive Board"
+    branch: "Executive Board",
   },
   {
     name: "Connor Begg",
     position: "USG Internal",
     image: `${CF_DOMAIN}/connor.jpg`,
-    branch: "Executive Board"
+    branch: "Executive Board",
   },
   {
     name: "Elisha Yao",
     position: "USG Academics",
     image: `${CF_DOMAIN}/elisha.png?format=webp`,
-    branch: "Executive Board"
+    branch: "Executive Board",
   },
   {
     name: "Wilson Wong",
     position: "Chargé D’Affaires",
     image: `${CF_DOMAIN}/wilson.jpg?format=webp`,
-    branch: "External & Internal"
+    branch: "External & Internal",
   },
   {
     name: "Shreya Aggarwal",
     position: "ASG Corporate Relations",
     image: `${CF_DOMAIN}/shreya.jpg?format=webp`,
-    branch: "External & Internal"
+    branch: "External & Internal",
   },
   {
     name: "Rafael Garcia Rosas",
     position: "ASG Logistics",
     image: `${CF_DOMAIN}/rafael.jpg?format=webp`,
-    branch: "External & Internal"
+    branch: "External & Internal",
   },
   {
     name: "Nicholas Ali",
     position: "Co-ASG Hiring & Training",
     image: `${CF_DOMAIN}/nicholas.jpg?format=webp`,
-    branch: "Academics & Equity"
+    branch: "Academics & Equity",
   },
   {
     name: "Alishba Noman",
     position: "Co-ASG Hiring & Training",
     image: `${CF_DOMAIN}/alishba.jpg?format=webp`,
-    branch: "Academics & Equity"
+    branch: "Academics & Equity",
   },
   {
     name: "Biew Biew Sakulwannadee",
     position: "Co-ASG Design & IT",
     image: `${CF_DOMAIN}/biewbiew.jpg`,
-    branch: "External & Internal"
+    branch: "External & Internal",
   },
   {
     name: "Ankur Phadke",
     position: "Co-ASG Design & IT",
     image: `${CF_DOMAIN}/ankur.jpg?format=webp`,
-    branch: "External & Internal"
+    branch: "External & Internal",
   },
   {
     name: "Pavithra Venkitaraman",
     position: "ASG Communications",
     image: `${CF_DOMAIN}/pavithra.jpg`,
-    branch: "External & Internal"
+    branch: "External & Internal",
   },
   {
     name: "Aryan Rajagopal",
     position: "ASG Historical Crises",
     image: `${CF_DOMAIN}/aryan.jpg?format=webp`,
-    branch: "Academics & Equity"
+    branch: "Academics & Equity",
   },
   {
     name: "Jay Kaur",
     position: "ASG Fictional Crises",
     image: `${CF_DOMAIN}/jay.jpg`,
-    branch: "Academics & Equity"
+    branch: "Academics & Equity",
   },
   {
     name: "Pavel Telega",
     position: "ASG Conceptual Crises",
     image: `${CF_DOMAIN}/pavel.jpg`,
-    branch: "Academics & Equity"
+    branch: "Academics & Equity",
   },
   {
     name: "Brian Daniel",
     position: "ASG Equity",
     image: `${CF_DOMAIN}/brian.jpg`,
-    branch: "Academics & Equity"
+    branch: "Academics & Equity",
   },
 ];
