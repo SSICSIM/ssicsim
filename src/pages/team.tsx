@@ -100,7 +100,7 @@ const Team = () => {
                       <img
                         src={imgSrc}
                         alt={`${branch} ${idx + 1}`}
-                        className="w-full h-full object-cover object-center rounded-md shadow-lg"
+                        className="w-full h-full md:h-[350px] object-cover object-center rounded-md shadow-lg"
                       />
                     </div>
                   ))}

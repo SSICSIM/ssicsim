@@ -279,6 +279,10 @@ Is how to pack up the board.
         description: "Background Guide",
         link: "https://drive.google.com/file/d/11Chvv-6iq0UdFG5vvutF-8p0sVH_wZuy/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1OCJkapiaFdBfPkKWHcFvbdplQxF76ISR/view?usp=sharing",
+      }
     ],
     contactEmail: "second.renaissance@ssicsim.ca",
     directorImage: "/assets/photos/DirectorImage3.jpg",
