@@ -325,13 +325,18 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     On both celestial bodies, time is of the essence; will you be able to assure Selene City's future and Canada's continued relevance, or is humanity's first attempt at expansion going to crash and burn 400,000 kilometers from home?`,
     backgroundGuides: [
       {
-        description: "Background Guide: Earth",
-        link: "https://drive.google.com/file/d/174vG3V0uP3-lSjwiwsoDJsddPaWqjtsX/view?usp=sharing",
-      },
-      {
         description: "Background Guide: Selene City",
         link: "https://drive.google.com/file/d/1bNIQWg73nFp3SG0cKsKwgnywvYAm2vxW/view?usp=sharing",
       },
+      {
+        description: "Character Guide: Selene City",
+        link: "https://drive.google.com/file/d/1TyOu1-WnaNk_-vAMcqLuI_s0gMBX7y4B/view?usp=sharing",
+      },
+      {
+        description: "Background Guide: Earth",
+        link: "https://drive.google.com/file/d/174vG3V0uP3-lSjwiwsoDJsddPaWqjtsX/view?usp=sharing",
+      },
+      
     ],
     contactEmail: "selene.city@ssicsim.ca",
     director: "Elizabeth Wright",
