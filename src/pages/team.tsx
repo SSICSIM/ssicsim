@@ -95,7 +95,7 @@ const Team = () => {
                   {branchPhotos[branch].map((imgSrc, idx) => (
                     <div
                       key={idx}
-                      className={`w-full h-full md:h-[50%] rounded-md overflow-hidden`}
+                      className={`w-[90%] mx-auto h-full md:h-[50%] rounded-md overflow-hidden`}
                     >
                       <img
                         src={imgSrc}
@@ -152,7 +152,7 @@ const Team = () => {
                       <img
                         src={imgSrc}
                         alt={`${branch} ${idx + 1}`}
-                        className="w-full h-full md:h-[450px] object-cover object-center rounded-md shadow-lg"
+                        className="w-[90%] mx-auto h-full md:h-[450px] object-cover object-center rounded-md shadow-lg"
                       />
                     </div>
                   ))}
