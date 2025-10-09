@@ -282,7 +282,7 @@ Is how to pack up the board.
       {
         description: "Character Guide",
         link: "https://drive.google.com/file/d/1OCJkapiaFdBfPkKWHcFvbdplQxF76ISR/view?usp=sharing",
-      }
+      },
     ],
     contactEmail: "second.renaissance@ssicsim.ca",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -340,7 +340,6 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
         description: "Background Guide: Earth",
         link: "https://drive.google.com/file/d/174vG3V0uP3-lSjwiwsoDJsddPaWqjtsX/view?usp=sharing",
       },
-      
     ],
     contactEmail: "selene.city@ssicsim.ca",
     director: "Elizabeth Wright",
