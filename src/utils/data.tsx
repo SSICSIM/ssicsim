@@ -12,7 +12,7 @@ export const committeesData = [
         link: "https://drive.google.com/file/d/1l5DN66wFEjujvi2LDu8Iu-6sMeAmer9L/view?usp=sharing",
       },
       {
-        description: "Character Guide",
+        description: "Character List",
         link: "https://drive.google.com/file/d/1ZfegZOIsfWabKMwWSCBhY5oNK5PH_MlY/view",
       },
     ],
@@ -118,6 +118,14 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1xB4BdcwVX81RqM-fCdiORL1ysZ28cBFD/view?usp=sharing",
       },
+      {
+        description: "Character Guide: Royalists",
+        link: "https://drive.google.com/file/d/1BXO5O3hdmPc0T8f4F5HJbzet9igshuZ4/view?usp=sharing"
+      },
+      {
+        description: "Character Guide: Parliamentarians",
+        link: "https://drive.google.com/file/d/13rspnPJ5hCvVab8vpoN4m1iTcbH6HNU7/view"
+      }
     ],
     contactEmail: "english.civil.war@ssicsim.ca",
     director: "Jackie Wang",
@@ -189,16 +197,12 @@ As the Cahills, will you harness the powers of governments and judiciaries to en
 
 As the Vespers, will you fight a war of cat and mouse with the Cahills to undermine their procurement of the Master Serum, or will you declare an open war on the Cahill Family and acquire the Master Serum for your own use?
 `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide: Cahills",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    //   {
-    //     description: "Background Guide: Vespers",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/14f1Xp6071ZU4QGxx_J3sTpFEmjFLHQIA/view?usp=sharing",
+      },
+    ],
     contactEmail: "39.clues@ssicsim.ca",
     director: "Tom Cai",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -255,6 +259,10 @@ Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of 
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1uI_ORI85n4s93qsTFYST-VzFsFQRApdV/view?usp=sharing",
       },
+      {
+        description: "Character List",
+        link: "https://drive.google.com/file/d/1Vs6ycHCu0WShXvgqMqhycmBLOuR-Z67z/view?usp=sharing"
+      }
     ],
     contactEmail: "atlantis@ssicsim.ca",
     director: "Paula Chu",
