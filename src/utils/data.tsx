@@ -41,6 +41,10 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1vwsHkCT5j_uL9H_3ePvXZwZY_pD6kCXL/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/130qMwoEY5a4WBk_ruOs76-10UOJcKgIF/view?usp=sharing",
+      }
     ],
     contactEmail: "layton.legacy@ssicsim.ca",
     director: "Luca Rampersad",
@@ -59,6 +63,10 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
         description: "Background Guide",
         link: "https://drive.google.com/file/d/18ce39CYmOOa_EjbwUv1Wf1A64NTxB2Zg/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/12eG6HToMQWNBRBbYpDfeMAwimG7ZjOKN/view?usp=sharing",
+      }
     ],
     contactEmail: "french.revolution@ssicsim.ca",
     director: "Sarah Morra",
@@ -85,6 +93,10 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1pfhT8G_zMKKfj8v4x1LRMZ2XMfshPEox/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/12Ya5Hfc3s62WhcwbYFnTjMVVXcDeoKUQ/view?usp=sharing"
+      }
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
@@ -135,6 +147,10 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1f7SI4IEm-22MWVjlSrdU3h-X5Fhmo-3h/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/12UiNyfWL2JgGE6Rt1NNijjz_tVVbWuF2/view?usp=sharing"
+      }
     ],
     contactEmail: "phyrexian.invasion@ssicsim.ca",
     director: "Oscar Hollingsworth",
@@ -152,6 +168,10 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1UAHNwvt_i9HYg8jC2dkENNS9vXUnWxSl/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1LDUe9EAmyYe5xLLS68qeuzipikNhXCzU/view",
+      }
     ],
     contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
@@ -200,6 +220,10 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
         description: "Background Guide: Omega Earth",
         link: "https://drive.google.com/file/d/1I8LCGKnjBNbpPSCFNDauKlAQEgBeKZ-d/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1TtDb7WTyMsVgBcteA0tDlBTVdfgQUdoZ/view?usp=sharing",
+      }
     ],
     contactEmail: "valorant@ssicsim.ca",
     director: "Joshua Qu & Kevin An",
@@ -340,6 +364,10 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
         description: "Background Guide: Earth",
         link: "https://drive.google.com/file/d/174vG3V0uP3-lSjwiwsoDJsddPaWqjtsX/view?usp=sharing",
       },
+      {
+        description: "Character Guide: Earth",
+        link: "https://drive.google.com/file/d/1pWOtXeCPsxlVn9BeyHxHGruDNEBao--G/view?usp=sharing"
+      }
     ],
     contactEmail: "selene.city@ssicsim.ca",
     director: "Elizabeth Wright",
