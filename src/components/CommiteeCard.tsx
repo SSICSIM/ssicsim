@@ -72,7 +72,7 @@ const CommiteeCard = ({
           <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
             {title}
           </h2>
-          <p className="text-white mb-4 font-regular font-dm-sans">
+          <p className="text-white mb-4 text-[12px] font-regular font-dm-sans">
             {description}
           </p>
           {/* Background Guide Buttons on Main Card */}
@@ -86,7 +86,7 @@ const CommiteeCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()} // Prevent modal
-                  className="text-center w-[100%] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] my-auto hover:text-black transition-colors text-sm"
+                  className="text-center w-[100%] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] my-auto hover:text-black transition-colors text-[12px]"
                 >
                   {guide.description}
                 </a>
@@ -155,14 +155,14 @@ const CommiteeCard = ({
                 </p>
               )}
               {backgroundGuides && backgroundGuides.length > 0 && (
-                <div className="mb-2 flex flex-row gap-2">
+                <div className="mb-2 flex flex-col gap-2">
                   {backgroundGuides.map((guide, idx) => (
                     <div key={idx} className="flex flex-col items-start">
                       <a
                         href={guide.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-center inline-block w-[300px] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
+                        className="text-center inline-block w-[100%] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
                       >
                         {guide.description}
                       </a>
