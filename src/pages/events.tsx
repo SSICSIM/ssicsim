@@ -161,19 +161,19 @@ const Events = () => {
 
                   {/* Text Container */}
                   <div
-                    className={`absolute left-0 right-0 transition-all duration-500 px-4 ${
+                    className={`absolute left-0 right-0  px-4 ${
                       isExpanded
-                        ? "bottom-0 py-4 md:py-6 flex flex-col items-start"
+                        ? "bottom-0 py-4 md:py-6 flex flex-col items-start md:w-[500px]"
                         : "top-0 h-full flex items-center justify-center md:rotate-90 md:origin-center"
                     }`}
                   >
                     <div
-                      className={` bg-black/60 border border-white/20 rounded-xl px-4 py-2 transition-all duration-500 ${
+                      className={` bg-black/70 border border-white/20 rounded-xl px-4 py-2  ${
                         isExpanded ? "w-full flex flex-col items-start" : "w-auto"
                       }`}
                     >
                       <h3
-                        className={`text-white font-bold font-nunito duration-500 ${
+                        className={`text-white font-bold font-nunito  ${
                           isExpanded
                             ? "text-xl md:text-3xl text-left"
                             : "text-lg md:text-2xl whitespace-nowrap"
@@ -188,7 +188,7 @@ const Events = () => {
                           </div>
                           
                           {/* Dates, Times, Locations */}
-                         <div className="mt-4 bg-[#A3841D]/30 rounded-lg p-4 w-full">
+                         <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
                          {event.dates.length === 1 ? (
                            <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
                              <span className="font-bold">Event:</span> {event.dates[0]} | {event.times[0]} | {event.locations[0]}
