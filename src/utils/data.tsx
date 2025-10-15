@@ -77,9 +77,13 @@ export const committeesData = [
         link: "https://drive.google.com/file/d/1l5DN66wFEjujvi2LDu8Iu-6sMeAmer9L/view?usp=sharing",
       },
       {
-        description: "Character Guide",
+        description: "Character List",
         link: "https://drive.google.com/file/d/1ZfegZOIsfWabKMwWSCBhY5oNK5PH_MlY/view",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1DpXs-suEltAziKSYbToiwoT8o5ZZZ5Vg/view?usp=sharing"
+      }
     ],
     contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
@@ -106,6 +110,14 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1vwsHkCT5j_uL9H_3ePvXZwZY_pD6kCXL/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/130qMwoEY5a4WBk_ruOs76-10UOJcKgIF/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1TauGpEEq4frYJjM7ehZzWZ4GZYk6WJhC/view",
+      },
     ],
     contactEmail: "layton.legacy@ssicsim.ca",
     director: "Luca Rampersad",
@@ -123,6 +135,14 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
       {
         description: "Background Guide",
         link: "https://drive.google.com/file/d/18ce39CYmOOa_EjbwUv1Wf1A64NTxB2Zg/view?usp=sharing",
+      },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/12eG6HToMQWNBRBbYpDfeMAwimG7ZjOKN/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/15wcIraAsxN8oo8drKzcLlUTZQi2XwoWP/view?usp=sharing",
       },
     ],
     contactEmail: "french.revolution@ssicsim.ca",
@@ -150,6 +170,10 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1pfhT8G_zMKKfj8v4x1LRMZ2XMfshPEox/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/12Ya5Hfc3s62WhcwbYFnTjMVVXcDeoKUQ/view?usp=sharing",
+      },
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
@@ -170,6 +194,18 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
       {
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1xB4BdcwVX81RqM-fCdiORL1ysZ28cBFD/view?usp=sharing",
+      },
+      {
+        description: "Character Guide: Royalists",
+        link: "https://drive.google.com/file/d/1BXO5O3hdmPc0T8f4F5HJbzet9igshuZ4/view?usp=sharing",
+      },
+      {
+        description: "Character Guide: Parliamentarians",
+        link: "https://drive.google.com/file/d/13rspnPJ5hCvVab8vpoN4m1iTcbH6HNU7/view",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1_lKZZd8cnPMCPchnzaX72SDtOUCQPFz9/view?usp=sharing",
       },
     ],
     contactEmail: "english.civil.war@ssicsim.ca",
@@ -200,6 +236,14 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1f7SI4IEm-22MWVjlSrdU3h-X5Fhmo-3h/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/12UiNyfWL2JgGE6Rt1NNijjz_tVVbWuF2/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1SUSGbbLxy-N7B7ydmZtHaIOmrSPVSs_j/view",
+      },
     ],
     contactEmail: "phyrexian.invasion@ssicsim.ca",
     director: "Oscar Hollingsworth",
@@ -217,6 +261,14 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1UAHNwvt_i9HYg8jC2dkENNS9vXUnWxSl/view?usp=sharing",
       },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1LDUe9EAmyYe5xLLS68qeuzipikNhXCzU/view",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1v46bYYN4d1UeSRejSj9z0pQLYCMckAiN/view?usp=sharing"
+      }
     ],
     contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
@@ -234,16 +286,16 @@ As the Cahills, will you harness the powers of governments and judiciaries to en
 
 As the Vespers, will you fight a war of cat and mouse with the Cahills to undermine their procurement of the Master Serum, or will you declare an open war on the Cahill Family and acquire the Master Serum for your own use?
 `,
-    // backgroundGuides: [
-    //   {
-    //     description: "Background Guide: Cahills",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    //   {
-    //     description: "Background Guide: Vespers",
-    //     link: "https://example.com/historical-guide",
-    //   },
-    // ],
+    backgroundGuides: [
+      {
+        description: "Background Guide",
+        link: "https://drive.google.com/file/d/14f1Xp6071ZU4QGxx_J3sTpFEmjFLHQIA/view?usp=sharing",
+      },
+      {
+        description: "Character List",
+        link: "https://drive.google.com/file/d/1nFdpU-Pp7LyCCqeCqgd4lMtaW2fuvRsu/view?usp=sharing",
+      },
+    ],
     contactEmail: "39.clues@ssicsim.ca",
     director: "Tom Cai",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -264,6 +316,14 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
       {
         description: "Background Guide: Omega Earth",
         link: "https://drive.google.com/file/d/1I8LCGKnjBNbpPSCFNDauKlAQEgBeKZ-d/view?usp=sharing",
+      },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1TtDb7WTyMsVgBcteA0tDlBTVdfgQUdoZ/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1wGZEE9cnMfbV74lOrxp4PbeAJ3yJukBO/view?usp=sharing",
       },
     ],
     contactEmail: "valorant@ssicsim.ca",
@@ -296,6 +356,14 @@ Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of 
         description: "Background Guide",
         link: "https://drive.google.com/file/d/1uI_ORI85n4s93qsTFYST-VzFsFQRApdV/view?usp=sharing",
       },
+      {
+        description: "Character List",
+        link: "https://drive.google.com/file/d/1Vs6ycHCu0WShXvgqMqhycmBLOuR-Z67z/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1MGVj6wKStVp2wNQRnKWzHvjH8nfOp34S/view?usp=sharing",
+      },
     ],
     contactEmail: "atlantis@ssicsim.ca",
     director: "Paula Chu",
@@ -321,6 +389,10 @@ However, the bigger challenge lies not within the minute logistics of the gala b
         description: "Character Guide",
         link: "https://drive.google.com/file/d/1wTkcfUsNNmY-FSFwTKWgK9gdd6X_ZkuP/view",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/14QLVE3d_b9IuXVtwHTPTbzpYdzjEtgq9/view?usp=sharing",
+      },
     ],
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -343,6 +415,14 @@ Is how to pack up the board.
       {
         description: "Background Guide",
         link: "https://drive.google.com/file/d/11Chvv-6iq0UdFG5vvutF-8p0sVH_wZuy/view?usp=sharing",
+      },
+      {
+        description: "Character Guide",
+        link: "https://drive.google.com/file/d/1OCJkapiaFdBfPkKWHcFvbdplQxF76ISR/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1KSiTrmMfLM5poCZeAvKb_MV7C8b8vIC0/view?usp=sharing",
       },
     ],
     contactEmail: "second.renaissance@ssicsim.ca",
@@ -370,6 +450,10 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
         description: "Character Guide",
         link: "https://drive.google.com/file/d/1J-ltDayXRQEKQM6VeSgrwuy2_b9yL2rO/view?usp=sharing",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1-lsNh5TWwOU65lxt44ZGO0U217tew09K/view",
+      },
     ],
     contactEmail: "tetris@ssicsim.ca",
     director: "Sukaina Syed",
@@ -390,12 +474,24 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
     On both celestial bodies, time is of the essence; will you be able to assure Selene City's future and Canada's continued relevance, or is humanity's first attempt at expansion going to crash and burn 400,000 kilometers from home?`,
     backgroundGuides: [
       {
+        description: "Background Guide: Selene City",
+        link: "https://drive.google.com/file/d/1bNIQWg73nFp3SG0cKsKwgnywvYAm2vxW/view?usp=sharing",
+      },
+      {
+        description: "Character Guide: Selene City",
+        link: "https://drive.google.com/file/d/1TyOu1-WnaNk_-vAMcqLuI_s0gMBX7y4B/view?usp=sharing",
+      },
+      {
         description: "Background Guide: Earth",
         link: "https://drive.google.com/file/d/174vG3V0uP3-lSjwiwsoDJsddPaWqjtsX/view?usp=sharing",
       },
       {
-        description: "Background Guide: Selene City",
-        link: "https://drive.google.com/file/d/1bNIQWg73nFp3SG0cKsKwgnywvYAm2vxW/view?usp=sharing",
+        description: "Character Guide: Earth",
+        link: "https://drive.google.com/file/d/1pWOtXeCPsxlVn9BeyHxHGruDNEBao--G/view?usp=sharing",
+      },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/14MGYtFdwlBlO22YnI3qbss7joWB_0LW1/view?usp=sharing",
       },
     ],
     contactEmail: "selene.city@ssicsim.ca",
@@ -491,5 +587,110 @@ export const resources = [
     description: "Explore past committee topics and materials.",
     href: "https://docs.google.com/document/d/1rj6pCLqc5eRTqLvVRy-XHe31KqZ1gckAcjwZpHCj9Wc/edit?usp=sharing",
     bg: `${CF_DOMAIN}/archive.jpg?format=webp`,
+  },
+];
+
+export const secretariat = [
+  {
+    name: "Nazaha Fazil",
+    position: "Secretary-General",
+    image: `${CF_DOMAIN}/nazaha.jpg?format=webp`,
+    branch: "Executive Board",
+  },
+  {
+    name: "Leora Kasneci",
+    position: "Deputy Secretary-General, Equity",
+    image: `${CF_DOMAIN}/leora.png?format=webp`,
+    branch: "Executive Board",
+  },
+  {
+    name: "Ethan Currie",
+    position: "USG External",
+    image: `${CF_DOMAIN}/ethan.jpg?format=webp`,
+    branch: "Executive Board",
+  },
+  {
+    name: "Connor Begg",
+    position: "USG Internal",
+    image: `${CF_DOMAIN}/connor.jpg`,
+    branch: "Executive Board",
+  },
+  {
+    name: "Elisha Yao",
+    position: "USG Academics",
+    image: `${CF_DOMAIN}/elisha.png?format=webp`,
+    branch: "Executive Board",
+  },
+  {
+    name: "Wilson Wong",
+    position: "Chargé D’Affaires",
+    image: `${CF_DOMAIN}/wilson.jpg?format=webp`,
+    branch: "External & Internal",
+  },
+  {
+    name: "Shreya Aggarwal",
+    position: "ASG Corporate Relations",
+    image: `${CF_DOMAIN}/shreya.jpg?format=webp`,
+    branch: "External & Internal",
+  },
+  {
+    name: "Rafael Garcia Rosas",
+    position: "ASG Logistics",
+    image: `${CF_DOMAIN}/rafael.jpg?format=webp`,
+    branch: "External & Internal",
+  },
+  {
+    name: "Nicholas Ali",
+    position: "Co-ASG Hiring & Training",
+    image: `${CF_DOMAIN}/nicholas.jpg?format=webp`,
+    branch: "Academics & Equity",
+  },
+  {
+    name: "Alishba Noman",
+    position: "Co-ASG Hiring & Training",
+    image: `${CF_DOMAIN}/alishba.jpg?format=webp`,
+    branch: "Academics & Equity",
+  },
+  {
+    name: "Biew Biew Sakulwannadee",
+    position: "Co-ASG Design & IT",
+    image: `${CF_DOMAIN}/biewbiew.jpg`,
+    branch: "External & Internal",
+  },
+  {
+    name: "Ankur Phadke",
+    position: "Co-ASG Design & IT",
+    image: `${CF_DOMAIN}/ankur.jpg?format=webp`,
+    branch: "External & Internal",
+  },
+  {
+    name: "Pavithra Venkitaraman",
+    position: "ASG Communications",
+    image: `${CF_DOMAIN}/pavithra.jpg`,
+    branch: "External & Internal",
+  },
+  {
+    name: "Aryan Rajagopal",
+    position: "ASG Historical Crises",
+    image: `${CF_DOMAIN}/aryan.jpg?format=webp`,
+    branch: "Academics & Equity",
+  },
+  {
+    name: "Jay Kaur",
+    position: "ASG Fictional Crises",
+    image: `${CF_DOMAIN}/jay.jpg`,
+    branch: "Academics & Equity",
+  },
+  {
+    name: "Pavel Telega",
+    position: "ASG Conceptual Crises",
+    image: `${CF_DOMAIN}/pavel.jpg`,
+    branch: "Academics & Equity",
+  },
+  {
+    name: "Brian Daniel",
+    position: "ASG Equity",
+    image: `${CF_DOMAIN}/brian.jpg`,
+    branch: "Academics & Equity",
   },
 ];

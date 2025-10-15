@@ -20,6 +20,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Mission from "./pages/mission";
 import Resources from "./pages/resources";
 import Events from "./pages/events";
+import Team from "./pages/team";
 
 function App() {
   useEffect(() => {
@@ -51,6 +52,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/about/team" element={<Team />} />
         </Routes>
         <Footer />
         <Analytics />
