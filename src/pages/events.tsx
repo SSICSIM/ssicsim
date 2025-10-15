@@ -1,71 +1,8 @@
 import { CF_DOMAIN } from "../utils/consts";
 import { useState } from "react";
 import React from "react";
+import { events } from "../utils/data";
 
-interface Event {
-  title: string;
-  description: string;
-  dates: string[];
-  times: string[];
-  locations: string[];
-  spots?: string;
-  image: string;
-  link: string;
-}
-
-const events: Event[] = [
-  {
-    title: "Delegate Training",
-description:
-     "Never competed at Model UN conference before? Need a refresher on the flow of debate in crisis committees? Sign up for a Delegate Training session, hosted by our Co-ASGs of Hiring & Training, to learn all you need to know before participating in your first crisis committee!\n\n[Delegates must check in to the conference at OISE first before attending Delegate Training.]\n\n[Note:] Delegates are only permitted to attend {one} of the two sessions.",
-    dates: ["Friday, October 24", "Friday, October 24"],
-    times: ["1:00 – 2:00 PM", "3:00 – 4:00 PM"],
-    locations: ["OSE 213", "OSE 253"],
-    spots: "In Person: 280 (140 per session), Online: Unlimited",
-    image: `${CF_DOMAIN}/DelegateTraining.JPG?format=webp`,
-    link: "/register?event=delegate-training",
-  },
-  {
-    title: "Legislative Assembly Tour",
-    description: "Join us for a free tour of the Legislative Assembly of Ontario at Queen’s Park! Discover the building's history and architecture, and learn about the traditions and function of Parliament. \n\n[Delegates must check in to the conference and meet at OISE first before attending the Legislative Assembly Tour. We will be leaving at 9:30 AM sharp!]",
-    dates: ["Friday, October 24"],
-    times: ["9:30 – 11:00 AM"],
-    locations: ["Meeting Location"],
-    spots: "35",
-    image: `${CF_DOMAIN}/LegislativeAssemblyTours.jpg?format=webp`,
-    link: "/register?event=legislative-tour",
-  },
-  {
-    title: "Charity Photoshoot",
-    description: "For just a small donation to charity, get your own professional headshot or a group photo with your friends at University College, a historic Romanesque Revival-style building at the University of Toronto. Sign up for a slot today before spots fill up!\n\n[Note:] Costs for individual photos are different from group photos; please see the first page of the sign-up form for more information.\n\n[Delegates must check in to the conference at OISE first before attending the Charity Photoshoot.]",
-    dates: ["Friday, October 24", "Saturday, October 25", "Sunday, October 26"],
-    times: ["2:00 – 3:00 PM", "12:00 – 1:30 PM", "12:00 – 1:30 PM"],
-    locations: ["Session 1", "Session 2", "Session 3"],
-    spots: "240 (10 per 10-minute slot)",
-    image: `${CF_DOMAIN}/CharityPhotoshoot.JPG?format=webp`,
-    link: "https://forms.gle/pBdCgWzKxHv942s96",
-  },
-  {
-    title: "Midnight Crisis",
-    description: "Looking for another crisis committee to participate in? Can’t get enough of the crisis committees at SSICSIM? Sign up for (Midnight Crisis), a short but sweet committee directed by the Secretariat in the late hours of the first conference day! This year’s Midnight Crisis is ad hoc, so the committee topic will be revealed at the beginning of the session. ",
-    dates: ["Friday, October 24"],
-    times: ["8:00 – 11:00 PM"],
-    locations: ["Meeting Location"],
-    spots: "20",
-    image: `${CF_DOMAIN}/MidnightCrisis.jpg?format=webp`,
-    link: "https://forms.gle/EE1A7s81hrQsDi6o9",
-  },
-  {
-    title: "Delegate Social",
-    description:"Looking to unwind after a long day of formal debate? Hoping to connect with other Delegates, Staff, and Secretariat members at SSICSIM? Sign up for Delegate Social, a lively event we’ll be hosting in the heart of the University of Toronto! [Free refreshments and dinner will be provided.]",
-    dates: ["Sunday, October 25"],
-    times: ["7:30 – 11:00 PM"],
-    locations: ["Meeting Location"],
-    spots: "120",
-    image: `${CF_DOMAIN}/DelegateSocial.JPG?format=webp`,
-    link: "/register?event=delegate-social",
-  },
-];
 
 const parseDescription = (desc: string) => {
  const lines = desc.split("\n");
