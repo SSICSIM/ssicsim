@@ -47,9 +47,8 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1TauGpEEq4frYJjM7ehZzWZ4GZYk6WJhC/view"
-
-      }
+        link: "https://drive.google.com/file/d/1TauGpEEq4frYJjM7ehZzWZ4GZYk6WJhC/view",
+      },
     ],
     contactEmail: "layton.legacy@ssicsim.ca",
     director: "Luca Rampersad",
@@ -74,8 +73,8 @@ The tides are turning in Ottawa. It’s time to sink or swim. Welcome to the fig
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/15wcIraAsxN8oo8drKzcLlUTZQi2XwoWP/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/15wcIraAsxN8oo8drKzcLlUTZQi2XwoWP/view?usp=sharing",
+      },
     ],
     contactEmail: "french.revolution@ssicsim.ca",
     director: "Sarah Morra",
@@ -104,8 +103,8 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
       },
       {
         description: "Character Guide",
-        link: "https://drive.google.com/file/d/12Ya5Hfc3s62WhcwbYFnTjMVVXcDeoKUQ/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/12Ya5Hfc3s62WhcwbYFnTjMVVXcDeoKUQ/view?usp=sharing",
+      },
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
@@ -129,16 +128,16 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
       },
       {
         description: "Character Guide: Royalists",
-        link: "https://drive.google.com/file/d/1BXO5O3hdmPc0T8f4F5HJbzet9igshuZ4/view?usp=sharing"
+        link: "https://drive.google.com/file/d/1BXO5O3hdmPc0T8f4F5HJbzet9igshuZ4/view?usp=sharing",
       },
       {
         description: "Character Guide: Parliamentarians",
-        link: "https://drive.google.com/file/d/13rspnPJ5hCvVab8vpoN4m1iTcbH6HNU7/view"
+        link: "https://drive.google.com/file/d/13rspnPJ5hCvVab8vpoN4m1iTcbH6HNU7/view",
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1_lKZZd8cnPMCPchnzaX72SDtOUCQPFz9/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1_lKZZd8cnPMCPchnzaX72SDtOUCQPFz9/view?usp=sharing",
+      },
     ],
     contactEmail: "english.civil.war@ssicsim.ca",
     director: "Jackie Wang",
@@ -170,12 +169,12 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
       },
       {
         description: "Character Guide",
-        link: "https://drive.google.com/file/d/12UiNyfWL2JgGE6Rt1NNijjz_tVVbWuF2/view?usp=sharing"
-      }, 
+        link: "https://drive.google.com/file/d/12UiNyfWL2JgGE6Rt1NNijjz_tVVbWuF2/view?usp=sharing",
+      },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1SUSGbbLxy-N7B7ydmZtHaIOmrSPVSs_j/view"
-      }
+        link: "https://drive.google.com/file/d/1SUSGbbLxy-N7B7ydmZtHaIOmrSPVSs_j/view",
+      },
     ],
     contactEmail: "phyrexian.invasion@ssicsim.ca",
     director: "Oscar Hollingsworth",
@@ -196,7 +195,7 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
       {
         description: "Character Guide",
         link: "https://drive.google.com/file/d/1LDUe9EAmyYe5xLLS68qeuzipikNhXCzU/view",
-      }
+      },
     ],
     contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
@@ -222,7 +221,7 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
       {
         description: "Character List",
         link: "https://drive.google.com/file/d/1nFdpU-Pp7LyCCqeCqgd4lMtaW2fuvRsu/view?usp=sharing",
-      }
+      },
     ],
     contactEmail: "39.clues@ssicsim.ca",
     director: "Tom Cai",
@@ -251,8 +250,8 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1wGZEE9cnMfbV74lOrxp4PbeAJ3yJukBO/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1wGZEE9cnMfbV74lOrxp4PbeAJ3yJukBO/view?usp=sharing",
+      },
     ],
     contactEmail: "valorant@ssicsim.ca",
     director: "Joshua Qu & Kevin An",
@@ -286,12 +285,12 @@ Atlantis—an island forged by the Greek sea god Poseidon, was once a beacon of 
       },
       {
         description: "Character List",
-        link: "https://drive.google.com/file/d/1Vs6ycHCu0WShXvgqMqhycmBLOuR-Z67z/view?usp=sharing"
-      }, 
+        link: "https://drive.google.com/file/d/1Vs6ycHCu0WShXvgqMqhycmBLOuR-Z67z/view?usp=sharing",
+      },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1MGVj6wKStVp2wNQRnKWzHvjH8nfOp34S/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1MGVj6wKStVp2wNQRnKWzHvjH8nfOp34S/view?usp=sharing",
+      },
     ],
     contactEmail: "atlantis@ssicsim.ca",
     director: "Paula Chu",
@@ -319,8 +318,8 @@ However, the bigger challenge lies not within the minute logistics of the gala b
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/14QLVE3d_b9IuXVtwHTPTbzpYdzjEtgq9/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/14QLVE3d_b9IuXVtwHTPTbzpYdzjEtgq9/view?usp=sharing",
+      },
     ],
     director: "Patricia Zhang",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -350,8 +349,8 @@ Is how to pack up the board.
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1KSiTrmMfLM5poCZeAvKb_MV7C8b8vIC0/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1KSiTrmMfLM5poCZeAvKb_MV7C8b8vIC0/view?usp=sharing",
+      },
     ],
     contactEmail: "second.renaissance@ssicsim.ca",
     directorImage: "/assets/photos/DirectorImage3.jpg",
@@ -380,8 +379,8 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1-lsNh5TWwOU65lxt44ZGO0U217tew09K/view"
-      }
+        link: "https://drive.google.com/file/d/1-lsNh5TWwOU65lxt44ZGO0U217tew09K/view",
+      },
     ],
     contactEmail: "tetris@ssicsim.ca",
     director: "Sukaina Syed",
@@ -415,12 +414,12 @@ The future of Tetris is yours to decide. This is no longer about a game, this is
       },
       {
         description: "Character Guide: Earth",
-        link: "https://drive.google.com/file/d/1pWOtXeCPsxlVn9BeyHxHGruDNEBao--G/view?usp=sharing"
+        link: "https://drive.google.com/file/d/1pWOtXeCPsxlVn9BeyHxHGruDNEBao--G/view?usp=sharing",
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/14MGYtFdwlBlO22YnI3qbss7joWB_0LW1/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/14MGYtFdwlBlO22YnI3qbss7joWB_0LW1/view?usp=sharing",
+      },
     ],
     contactEmail: "selene.city@ssicsim.ca",
     director: "Elizabeth Wright",
