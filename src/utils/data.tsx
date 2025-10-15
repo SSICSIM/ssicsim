@@ -15,6 +15,10 @@ export const committeesData = [
         description: "Character List",
         link: "https://drive.google.com/file/d/1ZfegZOIsfWabKMwWSCBhY5oNK5PH_MlY/view",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1DpXs-suEltAziKSYbToiwoT8o5ZZZ5Vg/view?usp=sharing"
+      }
     ],
     contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
@@ -196,6 +200,10 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
         description: "Character Guide",
         link: "https://drive.google.com/file/d/1LDUe9EAmyYe5xLLS68qeuzipikNhXCzU/view",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1v46bYYN4d1UeSRejSj9z0pQLYCMckAiN/view?usp=sharing"
+      }
     ],
     contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
