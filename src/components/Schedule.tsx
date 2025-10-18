@@ -111,7 +111,7 @@ const events: MyEvent[] = [
     id: 15,
     title: "Delegate Social",
     start: new Date(2025, 9, 25, 19, 30),
-    end: new Date(2025, 9, 25, 23, 0),
+    end: new Date(2025, 9, 25, 22, 30),
     category: "other",
   },
   // Sunday
