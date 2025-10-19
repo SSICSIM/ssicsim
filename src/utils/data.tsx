@@ -174,6 +174,10 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
         description: "Character Guide",
         link: "https://drive.google.com/file/d/12Ya5Hfc3s62WhcwbYFnTjMVVXcDeoKUQ/view?usp=sharing",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1Z0miFe1W5KdJmTTtfiidrc5ByjwppgiE/view?usp=sharing"
+      }
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
