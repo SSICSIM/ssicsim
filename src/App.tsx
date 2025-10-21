@@ -9,7 +9,6 @@ import Landing from "./pages/landing";
 // import About from "./pages/about";
 import Committees from "./pages/committees";
 // import Sponsors from "./pages/sponsors";
-import Register from "./pages/register";
 import Contact from "./pages/contact";
 import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
@@ -44,10 +43,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/committees" element={<Committees />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/staff/openings" element={<Openings />} />
           <Route path="/about/mission" element={<Mission />} />
-          <Route path="/apply" element={<Openings />} />
           <Route path="*" element={<UnderConstruction />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
