@@ -29,12 +29,6 @@ export default function Navbar() {
         { label: "Events", path: "/events" },
       ],
     },
-    {
-      label: "Staff",
-      path: "/staff",
-      subItems: [{ label: "Openings", path: "/staff/openings" }],
-    },
-    { label: "Register", path: "/register" },
     { label: "Contact", path: "/contact" },
   ];
 

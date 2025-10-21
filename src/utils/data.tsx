@@ -14,8 +14,8 @@ interface Event {
 export const events: Event[] = [
   {
     title: "Delegate Training",
-description:
-     "Never competed at Model UN conference before? Need a refresher on the flow of debate in crisis committees? Sign up for a Delegate Training session, hosted by our Co-ASGs of Hiring & Training, to learn all you need to know before participating in your first crisis committee!\n\n[Delegates must check in to the conference at OISE first before attending Delegate Training.]\n\n[Note:] Delegates are only permitted to attend {one} of the two sessions.",
+    description:
+      "Never competed at Model UN conference before? Need a refresher on the flow of debate in crisis committees? Sign up for a Delegate Training session, hosted by our Co-ASGs of Hiring & Training, to learn all you need to know before participating in your first crisis committee!\n\n[Delegates must check in to the conference at OISE first before attending Delegate Training.]\n\n[Note:] Delegates are only permitted to attend {one} of the two sessions.",
     dates: ["Friday, October 24", "Friday, October 24"],
     times: ["1:00 – 2:00 PM", "3:00 – 4:00 PM"],
     locations: ["MS 2170", "MS 2170"],
@@ -25,7 +25,8 @@ description:
   },
   {
     title: "Legislative Assembly Tour",
-    description: "Join us for a free tour of the Legislative Assembly of Ontario at Queen’s Park! Discover the building's history and architecture, and learn about the traditions and function of Parliament. \n\n[Delegates must check in to the conference and meet at OISE first before attending the Legislative Assembly Tour. We will be leaving at 9:30 AM sharp!]",
+    description:
+      "Join us for a free tour of the Legislative Assembly of Ontario at Queen’s Park! Discover the building's history and architecture, and learn about the traditions and function of Parliament. \n\n[Delegates must check in to the conference and meet at OISE first before attending the Legislative Assembly Tour. We will be leaving at 9:30 AM sharp!]",
     dates: ["Friday, October 24"],
     times: ["9:30 – 11:00 AM"],
     locations: ["OISE 8200"],
@@ -35,7 +36,8 @@ description:
   },
   {
     title: "Charity Photoshoot",
-    description: "For just a small donation to charity, get your own professional headshot or a group photo with your friends at University College, a historic Romanesque Revival-style building at the University of Toronto. Sign up for a slot today before spots fill up!\n\n[Note:] Costs for individual photos are different from group photos; please see the first page of the sign-up form for more information.\n\n[Delegates must check in to the conference at OISE first before attending the Charity Photoshoot.]",
+    description:
+      "For just a small donation to charity, get your own professional headshot or a group photo with your friends at University College, a historic Romanesque Revival-style building at the University of Toronto. Sign up for a slot today before spots fill up!\n\n[Note:] Costs for individual photos are different from group photos; please see the first page of the sign-up form for more information.\n\n[Delegates must check in to the conference at OISE first before attending the Charity Photoshoot.]",
     dates: ["Friday, October 24", "Saturday, October 25", "Sunday, October 26"],
     times: ["2:00 – 3:00 PM", "12:00 – 1:30 PM", "12:00 – 1:30 PM"],
     locations: ["UC 255", "UC 255", "UC 255"],
@@ -45,7 +47,8 @@ description:
   },
   {
     title: "Midnight Crisis",
-    description: "Looking for another crisis committee to participate in? Can’t get enough of the crisis committees at SSICSIM? Sign up for (Midnight Crisis), a short but sweet committee directed by the Secretariat in the late hours of the first conference day! This year’s Midnight Crisis is ad hoc, so the committee topic will be revealed at the beginning of the session. ",
+    description:
+      "Looking for another crisis committee to participate in? Can’t get enough of the crisis committees at SSICSIM? Sign up for (Midnight Crisis), a short but sweet committee directed by the Secretariat in the late hours of the first conference day! This year’s Midnight Crisis is ad hoc, so the committee topic will be revealed at the beginning of the session. ",
     dates: ["Friday, October 24"],
     times: ["8:00 – 11:00 PM"],
     locations: ["OI 2295"],
@@ -55,7 +58,8 @@ description:
   },
   {
     title: "Delegate Social",
-    description:"Looking to unwind after a long day of formal debate? Hoping to connect with other Delegates, Staff, and Secretariat members at SSICSIM? Sign up for Delegate Social, a lively event we’ll be hosting in the heart of the University of Toronto! [Free refreshments and dinner will be provided.]",
+    description:
+      "Looking to unwind after a long day of formal debate? Hoping to connect with other Delegates, Staff, and Secretariat members at SSICSIM? Sign up for Delegate Social, a lively event we’ll be hosting in the heart of the University of Toronto! [Free refreshments and dinner will be provided.]",
     dates: ["Saturday, October 25"],
     times: ["7:30 – 11:00 PM"],
     locations: ["St. Michael’s College (Father Madden Hall)"],
@@ -82,8 +86,8 @@ export const committeesData = [
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1DpXs-suEltAziKSYbToiwoT8o5ZZZ5Vg/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1DpXs-suEltAziKSYbToiwoT8o5ZZZ5Vg/view?usp=sharing",
+      },
     ],
     contactEmail: "sundiata@ssicsim.ca",
     director: "Ngila Stone",
@@ -176,8 +180,8 @@ What will happen to Japan? The birth of a new nation, the reverence of the old w
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1Z0miFe1W5KdJmTTtfiidrc5ByjwppgiE/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1Z0miFe1W5KdJmTTtfiidrc5ByjwppgiE/view?usp=sharing",
+      },
     ],
     contactEmail: "bakumatsu@ssicsim.ca",
     director: "Evelyn So & Alex Drotenko",
@@ -271,8 +275,8 @@ As the 1640 Parliament assembles in November, tensions are high. The incensed Pa
       },
       {
         description: "Mechanics Guide",
-        link: "https://drive.google.com/file/d/1v46bYYN4d1UeSRejSj9z0pQLYCMckAiN/view?usp=sharing"
-      }
+        link: "https://drive.google.com/file/d/1v46bYYN4d1UeSRejSj9z0pQLYCMckAiN/view?usp=sharing",
+      },
     ],
     contactEmail: "gravity.falls@ssicsim.ca",
     director: "Beatrix Stone",
