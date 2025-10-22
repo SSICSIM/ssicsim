@@ -303,6 +303,10 @@ As the Vespers, will you fight a war of cat and mouse with the Cahills to underm
         description: "Character List",
         link: "https://drive.google.com/file/d/1nFdpU-Pp7LyCCqeCqgd4lMtaW2fuvRsu/view?usp=sharing",
       },
+      {
+        description: "Mechanics Guide",
+        link: "https://drive.google.com/file/d/1zFzbAe4JSa6Qej9X6cgduI7J05kGFjaI/view?usp=sharing",
+      }
     ],
     contactEmail: "39.clues@ssicsim.ca",
     director: "Tom Cai",
