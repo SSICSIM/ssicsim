@@ -688,7 +688,7 @@ export const secretariat = [
     branch: "Academics & Equity",
   },
   {
-    name: "Jay Kaur",
+    name: "Jeeya Kaur",
     position: "ASG Fictional Crises",
     image: `${CF_DOMAIN}/jay.jpg`,
     branch: "Academics & Equity",
