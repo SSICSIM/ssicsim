@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { useMemo } from "react";
 import CommitteeSummary from "../components/CommiteeSummary";
 
 import SplitType from "split-type";
@@ -12,6 +10,7 @@ import { CF_DOMAIN } from "../utils/consts";
 gsap.registerPlugin(ScrollTrigger);
 
 const Wrapped = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const strategyRef = useRef(null);
   const counterRef = useRef<HTMLHeadingElement>(null);
   const staffRef = useRef<HTMLHeadingElement>(null);
@@ -31,13 +30,43 @@ const Wrapped = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 80%",  // animates when scrolled into view
+          start: "top ", // animates when scrolled into view
         },
         onUpdate: () => {
           el.textContent = Math.floor(obj.num) + "+";
         },
-      }
+      },
     );
+  }, []);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const inner = container.querySelector(".horizontal-scroll-inner");
+    if (!inner) return;
+
+    const totalWidth = inner.scrollWidth;
+    const viewportWidth = container.offsetWidth;
+    const scrollDistance = totalWidth - viewportWidth;
+
+    const ctx = gsap.context(() => {
+      gsap.to(inner, {
+        x: -scrollDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "+=" + scrollDistance,
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          markers: false,
+        },
+      });
+    }, container);
+
+    return () => ctx.revert();
   }, []);
 
   useEffect(() => {
@@ -55,59 +84,53 @@ const Wrapped = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 80%",  // animates when scrolled into view
+          start: "top 80%", // animates when scrolled into view
         },
         onUpdate: () => {
           el.textContent = Math.floor(obj.num) + "+";
         },
-      }
+      },
     );
   }, []);
 
-  const committees = useMemo(
-    () => [
-      {
-        title: "Fictional",
-        description:
-          "Fictional Crises bring to life the fantastical worlds of real fiction pieces (ie. Cinema, TV, Books, Adaptations of Current Events, etc.). Here, delegates will need to bring their knowledge of these fictional worlds in order to fully explore the scope of the committee and it’s alternate storylines.",
-        image: `${CF_DOMAIN}/Fictional.JPG?format=webp`,
-      },
-      {
-        title: "Historical",
-        description:
-          "Historical Crises are, well, historical committees! They bring to life major historical events, be it ancient, medieval, or modern, and implore delegates to reimagine them through various lenses or recreate the events of the past, often with a more academic approach to understanding history and its agents.",
-        image: `${CF_DOMAIN}/Historical.JPG?format=webp`,
-      },
-      {
-        title: "Conceptual",
-        description:
-          "Conceptual Crises are an opportunity for delegates to engage critically with complex, unconventional crises mechanics/topics. Delegates in these committees might find themselves challenged with non-traditional modes of debate or mechanics and crisis arcs that cannot be fully pre-researched.",
-        image: `${CF_DOMAIN}/Conceptual.JPG?format=webp`,
-      },
-    ],
-    [],
-  );
-
   const committeeSummary = [
-  {
-    title: "Security Council",
-    description: "Focused on global peace and conflict resolution.",
-    image: "/committees/sc.jpg",
-  },
-  {
-    title: "UNICEF",
-    description: "Centered on humanitarian aid and child welfare.",
-    image: "/committees/unicef.jpg",
-  },
-  {
-    title: "WHO",
-    description: "Addressing global health issues and disease response.",
-    image: "/committees/who.jpg",
-  },
-  // ...repeat until 17 committees
-];
-
-
+    {
+      title: "Security Council",
+      description: "Focused on global peace and conflict resolution.",
+      image: "/committees/sc.jpg",
+    },
+    {
+      title: "UNICEF",
+      description: "Centered on humanitarian aid and child welfare.",
+      image: "/committees/unicef.jpg",
+    },
+    {
+      title: "WHO",
+      description: "Addressing global health issues and disease response.",
+      image: "/committees/who.jpg",
+    },
+    {
+      title: "WHO",
+      description: "Addressing global health issues and disease response.",
+      image: "/committees/who.jpg",
+    },
+    {
+      title: "WHO",
+      description: "Addressing global health issues and disease response.",
+      image: "/committees/who.jpg",
+    },
+    {
+      title: "WHO",
+      description: "Addressing global health issues and disease response.",
+      image: "/committees/who.jpg",
+    },
+    {
+      title: "WHO",
+      description: "Addressing global health issues and disease response.",
+      image: "/committees/who.jpg",
+    },
+    // ...repeat until 17 committees
+  ];
 
   // useEffect(() => {
   //   // Animate the blurs to fade in when scrolling
@@ -194,7 +217,6 @@ const Wrapped = () => {
     );
   }, []);
 
-
   return (
     <>
       <div>
@@ -272,26 +294,25 @@ const Wrapped = () => {
             >
               One Conferences, Records Broken
             </h2>
-            <h3
-              className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans"
-            >
+            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
               At SSICSIM 2025, we shattered records with nearly..
             </h3>
-              <div className="flex items-center w-[100%] justify-center">
-                  <div className="list-inside mt-2 text-[16px] md:text-[20px] text-center text-black font-dm-sans">
-                    <h1
-                      ref={counterRef}
-                      className="font-extrabold text-[#A3841D] lg:text-[100px] mb-0 pb-0"
-                    >
-                      0+
-                    </h1>
-                    <h2 className="lg:text-[40px] text-[#A3841D] mt-[-20px]">Delegates</h2>
-                  </div>
+            <div className="flex items-center w-[100%] justify-center">
+              <div className="list-inside mt-2 text-[16px] md:text-[20px] text-center text-black font-dm-sans">
+                <h1
+                  ref={counterRef}
+                  className="font-extrabold text-[#A3841D] lg:text-[100px] mb-0 pb-0"
+                >
+                  0+
+                </h1>
+                <h2 className="lg:text-[40px] text-[#A3841D] mt-[-20px]">
+                  Delegates
+                </h2>
               </div>
-            <h3
-              className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans"
-            >
-              Yep that many people, one of the largest iterations of SSICSIM in the thirteen years its been running!
+            </div>
+            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
+              Yep that many people, one of the largest iterations of SSICSIM in
+              the thirteen years its been running!
             </h3>
           </div>
           <div className="md:w-1/2 flex flex-col px-4">
@@ -333,55 +354,60 @@ const Wrapped = () => {
               Learn More
             </a>
           </div>
-              <div className="md:w-1/2 px-4">
+          <div className="md:w-1/2 px-4">
             <h2
               className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
               ref={strategyRef}
             >
               Record Breaking Number of Staff?
             </h2>
-            <h3
-              className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans"
-            >
+            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
               With nearly..
             </h3>
-              <div className="flex items-center w-[100%] justify-center">
-                  <div className="list-inside mt-2 text-[16px] md:text-[20px] text-center text-black font-dm-sans">
-                    <h1
-                      ref={staffRef}
-                      className="font-extrabold text-[#A3841D] lg:text-[100px] mb-0 pb-0"
-                    >
-                      0+
-                    </h1>
-                    <h2 className="lg:text-[40px] text-[#A3841D] mt-[-20px]">Staff</h2>
-                  </div>
+            <div className="flex items-center w-[100%] justify-center">
+              <div className="list-inside mt-2 text-[16px] md:text-[20px] text-center text-black font-dm-sans">
+                <h1
+                  ref={staffRef}
+                  className="font-extrabold text-[#A3841D] lg:text-[100px] mb-0 pb-0"
+                >
+                  0+
+                </h1>
+                <h2 className="lg:text-[40px] text-[#A3841D] mt-[-20px]">
+                  Staff
+                </h2>
               </div>
-            <h3
-              className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans"
-            >
-              The largest amount of staff ever had in SSICSIM history, couldn’t have done it without you! ❤️ 
+            </div>
+            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
+              The largest amount of staff ever had in SSICSIM history, couldn’t
+              have done it without you! ❤️
             </h3>
           </div>
         </div>
         {/* Committee Types and Image Section */}
-        <div className="bg-[#A3841D] h-auto w-full relative py-12 ">
-              <h1 className="text-center text-4xl lg:text-6xl font-extrabold text-[#A3841D] mb-10">
-        At SSICSIM 2025, delegates ventured through <br /> 
-        <span className="text-black">17 Different Committees</span>
-      </h1>
+        <div className="bg-[#A3841D] py-12 relative">
+          <h1 className="text-center text-4xl lg:text-6xl font-extrabold text-[#A3841D] mb-10">
+            At SSICSIM 2025, delegates ventured through <br />
+            <span className="text-black">17 Different Committees</span>
+          </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-        {committeeSummary.map((c, i) => (
-          <CommitteeSummary
-            key={i}
-            title={c.title}
-            description={c.description}
-            image={c.image}
-            index={i}
-          />
-        ))}
-      </div>
-      </div>
+          {/* Horizontal scroll container */}
+          <div
+            ref={scrollRef}
+            className="horizontal-scroll-container overflow-hidden"
+          >
+            <div className="horizontal-scroll-inner flex gap-10">
+              {committeeSummary.map((c, i) => (
+                <CommitteeSummary
+                  key={i}
+                  title={c.title}
+                  description={c.description}
+                  image={c.image}
+                  index={i}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
