@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRef } from "react";
 import CommitteeSummary from "../components/CommiteeSummary";
+import WinnersCarousel from "../components/WinnerEntry";
 
 import SplitType from "split-type";
 import gsap from "gsap";
@@ -30,7 +31,7 @@ const Wrapped = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
-          start: "top ", // animates when scrolled into view
+          start: "top 80%", // animates when scrolled into view
         },
         onUpdate: () => {
           el.textContent = Math.floor(obj.num) + "+";
@@ -43,25 +44,23 @@ const Wrapped = () => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const inner = container.querySelector(".horizontal-scroll-inner");
-    if (!inner) return;
-
-    const totalWidth = inner.scrollWidth;
-    const viewportWidth = container.offsetWidth;
-    const scrollDistance = totalWidth - viewportWidth;
+    const cards = gsap.utils.toArray<HTMLElement>(
+      ".horizontal-scroll-inner .committee-card",
+    );
+    if (cards.length === 0) return;
 
     const ctx = gsap.context(() => {
-      gsap.to(inner, {
-        x: -scrollDistance,
+      gsap.to(cards, {
+        xPercent: -100 * (cards.length - 1), // <-- your formula
         ease: "none",
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "+=" + scrollDistance,
-          scrub: true,
+          end: "+=" + window.innerWidth * (cards.length - 4),
+          scrub: 1,
           pin: true,
           anticipatePin: 1,
-          markers: false,
+          markers: false, // set true for debugging
         },
       });
     }, container);
@@ -130,6 +129,34 @@ const Wrapped = () => {
       image: "/committees/who.jpg",
     },
     // ...repeat until 17 committees
+  ];
+
+  const winnersData = [
+    {
+      committee: "Security Council",
+      image: "/committees/sc.jpg",
+      winners: [
+        "Best Delegate – John Lee",
+        "Outstanding – Priya Patel",
+        "Honourable Mention – Sarah Kim",
+      ],
+    },
+    {
+      committee: "UNICEF",
+      image: "/committees/unicef.jpg",
+      winners: ["Best Delegate – Amir Hassan", "Outstanding – Emily Davis"],
+    },
+    {
+      committee: "WHO",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Daniel Chen",
+        "Outstanding – Bella Nguyen",
+        "Honourable Mention – Raj Patel",
+        "Verbal Commendation – Sarah Lopez",
+      ],
+    },
+    // ...continue for all committees
   ];
 
   // useEffect(() => {
@@ -219,7 +246,7 @@ const Wrapped = () => {
 
   return (
     <>
-      <div>
+      <div className="w-[100vw] overflow-x-hidden">
         <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
           {/* Background Image */}
           <img
@@ -263,28 +290,10 @@ const Wrapped = () => {
           ></div>
         </div>
       </div>
-      <div className="relative bg-white  w-screen grid grid-rows-auto">
-        <div
-          className="absolute blur-element rounded-full top-[400px] left-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
-          style={{
-            background:
-              "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%)",
-            boxShadow:
-              "0px 0px 140px 400px rgb(255 255 255 /40%)" /* change the box shadow blur and spread */,
-          }}
-        ></div>
-        <div
-          className="absolute blur-element rounded-full bottom-[400px] right-[-200px] h-[200px] w-[200px] pointer-events-none z-[1]"
-          style={{
-            background:
-              "radial-gradient(58.31% 58.31% at 50% 50%, rgba(162, 156, 223, 0.0037) 0%, rgba(255, 255, 255) 100%)",
-            boxShadow:
-              "0px 0px 140px 400px rgb(255 255 255 /40%)" /* change the box shadow blur and spread */,
-          }}
-        ></div>
-        {/* Text Content */}
-        <div className="max-w-[2000px] mx-auto relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
-          <div className="md:w-1/2 px-4">
+      <div className="relative bg-white grid grid-rows-auto">
+        {/* Text Content SSICSIM2025Polaroid.png */}
+        <div className="max-w-[2000px] w-[100vw]  bg-white relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
+          <div className="w-1/2 px-4">
             <p className="text-[24px] md:text-[30px] font-extralight text-black font-grotesque">
               SSICSIM 2025
             </p>
@@ -315,44 +324,26 @@ const Wrapped = () => {
               the thirteen years its been running!
             </h3>
           </div>
-          <div className="md:w-1/2 flex flex-col px-4">
-            <h3
-              className="text-[16px] md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans"
-              id="strategy-heading"
-            >
-              Most MUNs focus on structured diplomacy—SSICSIM does it
-              differently. Delegates think on their feet, adapt fast, and tackle
-              real-time crises like real-world leaders.
-            </h3>
-            <a
-              href="/about/mission"
-              rel="noopener noreferrer"
-              className="bg-white mt-3 text-[#A3841D] px-6 py-3 w-[200px] rounded-lg font-dm-sans text-xl text-center hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg"
-            >
-              Learn More
-            </a>
+          <div className="md:w-1/2">
+            <img
+              src={`${CF_DOMAIN}/SSICSIM2025Polaroid.png`}
+              alt="Delegates at SSICSIM 2025"
+              className="w-[80%] h-auto mx-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
           </div>
         </div>
         {/* Divider */}
         <div className="w-full h-[2px] bg-[#A3841D] my-4"></div>
         {/* Cards Section */}
-        <div className="max-w-[2000px] mx-auto relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
+        <div className="max-w-[2000px] md:w-[100vw] relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="md:w-1/2 flex flex-col px-4">
-            <h3
-              className="text-[16px] md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans"
-              id="strategy-heading"
-            >
-              Most MUNs focus on structured diplomacy—SSICSIM does it
-              differently. Delegates think on their feet, adapt fast, and tackle
-              real-time crises like real-world leaders.
-            </h3>
-            <a
-              href="/about/mission"
-              rel="noopener noreferrer"
-              className="bg-white mt-3 text-[#A3841D] px-6 py-3 w-[200px] rounded-lg font-dm-sans text-xl text-center hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg"
-            >
-              Learn More
-            </a>
+            <img
+              src={`${CF_DOMAIN}/WrappedStaff.jpg?format=webp`}
+              alt="Delegates at SSICSIM 2025"
+              className="h-[80%] w-auto mx-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
           </div>
           <div className="md:w-1/2 px-4">
             <h2
@@ -385,17 +376,18 @@ const Wrapped = () => {
         </div>
         {/* Committee Types and Image Section */}
         <div className="bg-[#A3841D] py-12 relative">
-          <h1 className="text-center text-4xl lg:text-6xl font-extrabold text-[#A3841D] mb-10">
+          <h1 className="w-[100vw] text-center text-4xl lg:text-6xl font-extrabold text-black mb-10">
             At SSICSIM 2025, delegates ventured through <br />
             <span className="text-black">17 Different Committees</span>
           </h1>
 
           {/* Horizontal scroll container */}
+
           <div
             ref={scrollRef}
-            className="horizontal-scroll-container overflow-hidden"
+            className="horizontal-scroll-container overflow-scroll whitespace-nowrap py-8 px-4"
           >
-            <div className="horizontal-scroll-inner flex gap-10">
+            <div className="horizontal-scroll-inner flex items-center gap-10">
               {committeeSummary.map((c, i) => (
                 <CommitteeSummary
                   key={i}
@@ -405,6 +397,22 @@ const Wrapped = () => {
                   index={i}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-full bg-white">
+          <div className="max-w-[2000px] md:w-[100vw] relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
+            <div className="flex flex-col mx-auto w-[60vw] px-4">
+              <h2
+                className="text-[36px] text-center md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
+                ref={strategyRef}
+              >
+                And of course, we had some victorious!
+              </h2>
+              <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] text-center font-light text-black font-dm-sans">
+                Click here to see the full list of award winners from SSICSIM!
+              </h3>
+              <WinnersCarousel data={winnersData} />
             </div>
           </div>
         </div>
