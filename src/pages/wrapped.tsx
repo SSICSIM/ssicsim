@@ -529,7 +529,7 @@ const Wrapped = () => {
         <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
           {/* Background Image */}
           <img
-            src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
+            src={`${CF_DOMAIN}/SSICSIMWrappedHero.png?format=webp`}
             alt="University of Toronto Ariel View"
             className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
             loading="lazy"
@@ -558,16 +558,17 @@ const Wrapped = () => {
                 SSICSIM 2025 Wrapped
               </h1>
               <p className="mt-4 font-dm-sans text-[#f0e7d6] text-lg md:text-xl max-w-[70%]">
-                A look back at an unforgettable conference — records broken,
+                A look back at an unforgettable conference that had records broken and
                 stories written.
               </p>
               <div className="mt-6 flex items-center gap-4">
-                <a
-                  href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
-                  className="inline-block bg-[#A3841D] text-white font-nunito font-bold px-5 py-3 rounded-lg shadow-sm"
-                >
-                  Conference Photos
-                </a>
+            <a
+              href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
+              rel="noopener noreferrer"
+              className=" bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+            >
+              Conference Photos
+            </a>
               </div>
             </div>
           </div>{" "}
@@ -607,17 +608,17 @@ const Wrapped = () => {
             </div>
 
             <p className="mt-4 text-md md:text-lg text-gray-700 font-light">
-              Yep, that many people — one of the largest iterations of SSICSIM
+              Yep, that many people! One of the largest iterations of SSICSIM
               in its thirteen-year history!
             </p>
           </div>
 
           {/* Image */}
-          <div className="md:w-1/2 flex justify-center relative">
+          <div className="md:w-1/2 flex justify-center relative border-[#A3841D] border-8 rounded-2xl p-2">
             <img
-              src={`${CF_DOMAIN}/SSICSIM2025Polaroid.png`}
+              src={`${CF_DOMAIN}/FirstStatImage.png`}
               alt="Delegates at SSICSIM 2025"
-              className="w-[80%] rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+              className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
           </div>
@@ -666,7 +667,7 @@ const Wrapped = () => {
             </div>
 
             <p className="mt-4 text-md md:text-lg text-gray-700 font-light">
-              The largest amount of staff ever had in SSICSIM history — couldn’t
+              The largest amount of staff ever had in SSICSIM history, couldn’t
               have done it without you! ❤️
             </p>
           </div>
@@ -727,8 +728,7 @@ const Wrapped = () => {
             <p className="text-lg md:text-xl lg:text-2xl font-light text-black font-dm-sans">
               Thank you to every delegate, staff member, and volunteer who made
               this iteration of the conference unforgettable. Your energy,
-              creativity, and teamwork helped us break records and create
-              memories that will last a lifetime.
+              passion on the floor made this conference remarkable.
             </p>
             <p className="text-lg md:text-xl lg:text-2xl font-light text-black font-dm-sans">
               We can’t wait to see you again at{" "}
