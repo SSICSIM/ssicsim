@@ -558,17 +558,17 @@ const Wrapped = () => {
                 SSICSIM 2025 Wrapped
               </h1>
               <p className="mt-4 font-dm-sans text-[#f0e7d6] text-lg md:text-xl max-w-[70%]">
-                A look back at an unforgettable conference that had records broken and
-                stories written.
+                A look back at an unforgettable conference that had records
+                broken and stories written.
               </p>
               <div className="mt-6 flex items-center gap-4">
-            <a
-              href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
-              rel="noopener noreferrer"
-              className=" bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-            >
-              Conference Photos
-            </a>
+                <a
+                  href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
+                  rel="noopener noreferrer"
+                  className=" bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+                >
+                  Conference Photos
+                </a>
               </div>
             </div>
           </div>{" "}
@@ -608,8 +608,8 @@ const Wrapped = () => {
             </div>
 
             <p className="mt-4 text-md md:text-lg text-gray-700 font-light">
-              Yep, that many people! One of the largest iterations of SSICSIM
-              in its thirteen-year history!
+              Yep, that many people! One of the largest iterations of SSICSIM in
+              its thirteen-year history!
             </p>
           </div>
 
@@ -687,9 +687,9 @@ const Wrapped = () => {
 
         <div
           ref={scrollRef}
-          className="horizontal-scroll-container overflow-scroll whitespace-nowrap py-8 px-4"
+          className="horizontal-scroll-container overflow-x-auto overflow-y-visible py-8 px-4"
         >
-          <div className="horizontal-scroll-inner flex items-center gap-10">
+          <div className="horizontal-scroll-inner flex items-start gap-10">
             {committeeSummary.map((c, i) => (
               <CommitteeSummary
                 key={i}
@@ -726,16 +726,17 @@ const Wrapped = () => {
               From All of Us at SSICSIM 2025…
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl font-light text-black font-dm-sans">
-              Thank you to every delegate, staff member, and volunteer who made
-              this iteration of the conference unforgettable. Your energy,
-              passion on the floor made this conference remarkable.
+              A huge thank you to all delegates, staff, and volunteers who made
+              this conference an incredible experience. Your energy and passion
+              in committee brought every debate to life and made this iteration
+              unforgettable! :){" "}
             </p>
             <p className="text-lg md:text-xl lg:text-2xl font-light text-black font-dm-sans">
               We can’t wait to see you again at{" "}
               <span className="font-semibold">SSICSIM 2026</span>!
             </p>
 
-            <h3 className="text-xl md:text-2xl font-semibold text-[#A3841D] mt-4">
+            <h3 className="text-xl md:text-2xl font-nunito font-semibold text-[#A3841D] mt-4">
               Delegations that joined us this year:
             </h3>
             <ul className="list-disc list-inside grid grid-cols-2 md:grid-cols-2 gap-2 text-base md:text-[12px] text-gray-700 font-dm-sans">

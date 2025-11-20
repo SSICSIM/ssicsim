@@ -191,20 +191,20 @@ const Landing = () => {
             </h3>
 
             <div className="flex flex-row">
-            <a
-              href="/wrapped"
-              rel="noopener noreferrer"
-              className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-            >
-              SSICSIM 2025 Wrapped
-            </a>
-            <a
-              href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
-              rel="noopener noreferrer"
-              className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-            >
-              Conference Photos
-            </a>
+              <a
+                href="/wrapped"
+                rel="noopener noreferrer"
+                className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+              >
+                SSICSIM 2025 Wrapped
+              </a>
+              <a
+                href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
+                rel="noopener noreferrer"
+                className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+              >
+                Conference Photos
+              </a>
             </div>
           </div>
 

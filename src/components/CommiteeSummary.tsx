@@ -30,7 +30,7 @@ export default function CommitteeSummary({ title, description, image }: Props) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/50"></div>
       </div>
 
-      <div className="p-6 flex flex-col my-auto h-[30vh]">
+      <div className="p-6 flex flex-col justify-center h-[30vh]">
         <h3
           className="
       font-bold 
