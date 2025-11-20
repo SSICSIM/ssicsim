@@ -24,10 +24,9 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
 
   const current = data[index];
 
-  // Slide animation variants
   const variants = {
     enter: (direction: number) => ({
-      x: direction === 1 ? 80 : -80,
+      x: direction === 1 ? 100 : -100,
       opacity: 0,
       position: "absolute" as const,
     }),
@@ -37,26 +36,25 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
       position: "absolute" as const,
     },
     exit: (direction: number) => ({
-      x: direction === 1 ? -80 : 80,
+      x: direction === 1 ? -100 : 100,
       opacity: 0,
       position: "absolute" as const,
     }),
   };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto py-10 flex items-center justify-center">
+    <div className="relative w-full max-w-6xl mx-auto py-10 flex items-center justify-center px-4">
       {/* LEFT ARROW */}
       <button
         onClick={prev}
-        className="absolute left-[-100px] p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition z-10"
+        className="absolute  left-[40px] top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-lg hover:bg-gray-100 transition z-10"
       >
         <ChevronLeft size={28} />
       </button>
 
-      {/* SLIDE CONTENT */}
-      <div className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg p-6 bg-white overflow-hidden relative">
-        {/* Fixed height container prevents page scroll */}
-        <div className="relative w-full h-[480px] overflow-hidden">
+      {/* CARD */}
+      <div className="w-full md:w-[100%] lg:w-[70%] rounded-2xl shadow-xl p-6 md:p-8 bg-white relative overflow-hidden">
+        <div className="relative w-full h-[525px] md:h-[650px] lg:h-[700px] flex items-center justify-center">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={index}
@@ -66,21 +64,25 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
               animate="center"
               exit="exit"
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="w-full flex flex-col items-center gap-5"
+              className="absolute inset-0 flex flex-col items-center gap-4 md:gap-6 px-2 md:px-4"
             >
+              {/* IMAGE */}
               <img
                 src={current.image}
                 alt={current.committee}
-                className="w-full h-64 object-cover rounded-xl shadow-md"
+                loading="eager"
+                className="w-full md:w-[95%] lg:w-[90%] h-[300px] md:h-[400px] lg:h-[400px] object-cover rounded-xl shadow-md"
               />
 
-              <h2 className="text-3xl font-bold text-center">
+              {/* TITLE */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#A3841D] font-nunito text-center drop-shadow-sm">
                 {current.committee}
               </h2>
 
-              <ul className="text-lg text-center space-y-2 max-h-[180px] overflow-auto px-4">
+              {/* WINNERS LIST */}
+              <ul className="text-sm md:text-lg lg:text-xl font-dm-sans text-center space-y-1 md:space-y-2 max-h-[180px] md:max-h-[240px] overflow-auto px-2 md:px-3">
                 {current.winners.map((w, i) => (
-                  <li key={i} className="font-medium">
+                  <li key={i} className="font-medium text-gray-700">
                     {w}
                   </li>
                 ))}
@@ -93,7 +95,7 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
       {/* RIGHT ARROW */}
       <button
         onClick={next}
-        className="absolute right-[-100px] p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition z-10"
+        className="absolute right-[40px] top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-lg hover:bg-gray-100 transition z-10"
       >
         <ChevronRight size={28} />
       </button>

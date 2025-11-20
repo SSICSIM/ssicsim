@@ -15,6 +15,7 @@ const Wrapped = () => {
   const strategyRef = useRef(null);
   const counterRef = useRef<HTMLHeadingElement>(null);
   const staffRef = useRef<HTMLHeadingElement>(null);
+  const committeesRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const el = staffRef.current;
@@ -183,27 +184,28 @@ const Wrapped = () => {
   const winnersData = [
     {
       committee: "The Epic of Sundiata",
-      image: "/committees/sc.jpg",
+      image: `${CF_DOMAIN}/EpicOfSundiataAwards.png?format=webp`,
       winners: [
         "Best Delegate – Gabrielle Irumhekha",
         "Outstanding Delegate – Kaavya Sethepalli",
         "Honourable Mention – Michelle Irumhekha",
-        "Best Novice - Yash Chhabaria"
+        "Best Novice - Yash Chhabaria",
       ],
     },
     {
       committee: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
-      image: "/committees/unicef.jpg",
+      image: `${CF_DOMAIN}/FightOfLaytonLegacyAwards.png?format=webp`,
       winners: [
         "Best Delegate – Joey Lin",
         "Outstanding Delegate – Arnav Anil Kotian",
         "Honourable Mention – Tanya Walia",
         "Best Novice - Ananya Agarwal",
-        "Best Duo - Ellena Stamatiou & Beatriz Baptista"
-      ],    },
+        "Best Duo - Ellena Stamatiou & Beatriz Baptista",
+      ],
+    },
     {
       committee: "Vive La Revolution: Cake, Blood and Banque",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/ViveLaRevolutionAwards.png?format=webp`,
       winners: [
         "Best Delegate – Spencer Moriarty",
         "Outstanding Delegate – Gur Niwaz Singh Aulakh",
@@ -213,7 +215,7 @@ const Wrapped = () => {
     },
     {
       committee: "Bakumatsu: The Fall of the Shogunate (Pro-Shogunate)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/BakumatsuAwards.png?format=webp`,
       winners: [
         "Best Delegate – Lucas Pan",
         "Outstanding Delegate – Ishsimar Pahwa",
@@ -223,7 +225,7 @@ const Wrapped = () => {
     },
     {
       committee: "Bakumatsu: The Fall of the Shogunate (Pro-Emperor)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/BakumatsuAwards.png?format=webp`,
       winners: [
         "Best Delegate – Jason Zhao",
         "Outstanding Delegate – Anomioghene Medu",
@@ -233,7 +235,7 @@ const Wrapped = () => {
     },
     {
       committee: "English Civil War (Royalists)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/EnglishCivilWarAwards.png?format=webp`,
       winners: [
         "Best Delegate – David Setareh",
         "Outstanding Delegate – Kaleb Blanchard",
@@ -243,7 +245,7 @@ const Wrapped = () => {
     },
     {
       committee: "English Civil War (Parliamentarians)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/EnglishCivilWarAwards.png?format=webp`,
       winners: [
         "Best Delegate – Jacob Lang",
         "Outstanding Delegate – Artus Siu",
@@ -253,7 +255,7 @@ const Wrapped = () => {
     },
     {
       committee: "Historical Ad Hoc",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/HIstoricalAdHocAwards.png?format=webp`,
       winners: [
         "Best Delegate – Rubina Khan",
         "Outstanding Delegate – Helena Musson",
@@ -263,7 +265,7 @@ const Wrapped = () => {
     },
     {
       committee: "March of the Machine: The Phyrexian Invasion",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/MarchOfTheMadnessAwards.png?format=webp`,
       winners: [
         "Best Delegate – Jasjeet Sidhu",
         "Outstanding Delegate – Ananya Singhal",
@@ -273,135 +275,148 @@ const Wrapped = () => {
     },
     {
       committee: "See You This Summer!",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/SeeYouThisSummerAwards.png?format=webp`,
       winners: [
         "Best Delegate – Grace Lavallee-Noel",
         "Outstanding Delegate – Suhaan Chanana",
         "Honourable Mention – Lily Nguyen",
         "Best Novice – Oona Galipeau",
       ],
-
     },
     {
       committee: "The 39 Clues: Cahills vs. Vespers (Cahills)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/CahillsAwards.png?format=webp`,
       winners: [
         "Best Delegate – Camilo Sierra de Rojas",
         "Outstanding Delegate – William Debane",
         "Honourable Mention – Robbie Armstrong",
         "Best Novice – Reichen Thorpe",
-      ]
+      ],
     },
     {
       committee: "The 39 Clues: Cahills vs. Vespers (Vespers)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/VespersAwards.png?format=webp`,
       winners: [
         "Best Delegate – Tate Ullock",
         "Outstanding Delegate – Dhyana Patel",
         "Honourable Mention – Sabin Koirala",
         "Best Novice – Dillon Shelley",
-      ]
+      ],
     },
     {
       committee: "Valorant: CONV//ERGENCE (Alpha)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/AlphaAwards.png?format=webp`,
       winners: [
         "Best Delegate – Ariel Ow",
         "Outstanding Delegate – Suhaana Sharma",
         "Honourable Mention – Sarathraj Maharajan",
         "Best Novice – Rudraa Manjrekar",
-      ]
+      ],
     },
     {
       committee: "Valorant: CONV//ERGENCE (Omega)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/OmegaAwards.png?format=webp`,
       winners: [
         "Best Delegate – Bessie Liu",
         "Outstanding Delegate – Rahib Arham",
         "Honourable Mention – Elliot Zhou",
         "Best Novice – Yousef Muhammed",
-      ]
+      ],
     },
     {
       committee: "Fictional Ad Hoc",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/FictionalAdHocAwards.png?format=webp`,
       winners: [
         "Best Delegate – Desmond Hollingsworth",
         "Outstanding Delegate – Onur Soran",
         "Honourable Mention – Isabel Dai",
         "Best Novice – Saiffie Sidhu",
-      ]
+      ],
     },
     {
       committee: "Fall of Atlantis",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/TheFallOfAtlantisAwards.png?format=webp`,
       winners: [
         "Best Delegate – Giulia Gucciardi",
         "Outstanding Delegate – Julia Wu",
         "Honourable Mention – Ariadne Gonsalves",
         "Best Novice – Muhammad Syed",
-      ]
+      ],
     },
     {
       committee: "Met Gala 2026",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/MetGalaAwards.png?format=webp`,
       winners: [
         "Best Delegate – Flora Gu",
         "Outstanding Delegate – Mitchell Ojei-David",
         "Honourable Mention – Kate Yau",
         "Best Novice – Vaibhavi Khare",
-      ]
+      ],
     },
     {
       committee: "Second Renaissance",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/SecondRenaissanceAwards.png?format=webp`,
       winners: [
         "Best Delegate – Hayley Pang",
         "Outstanding Delegate – Kaelyn Shen",
         "Honourable Mention – Ben Krakauer",
         "Best Novice – Madeline Mountz",
-      ]
+      ],
     },
     {
       committee: "Tetris",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/TetrisAwards.png?format=webp`,
       winners: [
         "Best Delegate – Gloria Yang",
         "Outstanding Delegate – Jackie Liu",
         "Honourable Mention – Aydin Dossa",
         "Best Novice – Nick Chen",
-      ]
+      ],
     },
     {
       committee: "Saving Selene City: A Lunar Colony Crisis (Earth)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/SeleneCityAwards.png?format=webp`,
       winners: [
         "Best Delegate – Adarsh Thoduvakkal",
         "Outstanding Delegate – Douglas Forrest",
         "Honourable Mention – Jasmeet Singh",
         "Best Novice – Malcolm Seifred",
-      ]
+      ],
     },
     {
       committee: "Saving Selene City: A Lunar Colony Crisis (Selene City)",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/SeleneCityAwards.png?format=webp`,
       winners: [
         "Best Delegate – Prabhjot Singh Saini",
         "Outstanding Delegate – Xavier Gaudreau",
         "Honourable Mention – Preston Lui",
         "Best Novice – Julian Cheng",
-      ]
+      ],
     },
     {
       committee: "Conceptual Ad Hoc",
-      image: "/committees/who.jpg",
+      image: `${CF_DOMAIN}/ConceptualAdHocAwards.png?format=webp`,
       winners: [
         "Best Delegate – Sumayyah Satia",
         "Outstanding Delegate – Audrina Dayrit",
         "Honourable Mention – Gordon Zeng",
         "Best Novice – Xavi Amy",
-      ]
-    }
+      ],
+    },
+    {
+      committee: "Small Delegation Awards",
+      image: `${CF_DOMAIN}/SmallDelegationAward.png?format=webp`,
+      winners: ["Best Small Delegation - GTAMUN"],
+    },
+    {
+      committee: "Large Delegation Awards",
+      image: `${CF_DOMAIN}/LargeDelegationAward.png?format=webp`,
+      winners: [
+        "Best Large Delegation - Parkdale Collegiate Institute",
+        "Outstanding Large Delegation -  Sentosa",
+        "Honourable Delegation - St. Michael's College School",
+      ],
+    },
   ];
 
   // useEffect(() => {
@@ -422,6 +437,25 @@ const Wrapped = () => {
   //     },
   //   );
   // }, []);
+
+  useEffect(() => {
+    if (!committeesRef.current) return;
+
+    gsap.fromTo(
+      committeesRef.current,
+      { fontWeight: 300 }, // start light
+      {
+        fontWeight: 900, // end bold
+        scrollTrigger: {
+          trigger: committeesRef.current,
+          start: "top 80%",
+          end: "bottom 60%",
+          scrub: true, // smooth scroll progress
+        },
+      },
+    );
+  }, []);
+
   useEffect(() => {
     // Animate the cards to move to the middle
     gsap.fromTo(
@@ -500,24 +534,8 @@ const Wrapped = () => {
             className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
             loading="lazy"
           />
-
-          {/* Content Section */}
-          <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
-            <h1 className="text-white text-left md:text-5xl lg:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
-              SSICSIM 2025 Wrapped
-            </h1>
-            <a
-              href="/resources"
-              rel="noopener noreferrer"
-              className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-            >
-              Conference Resources
-            </a>
-          </div>
-
           {/* Overlay */}
           <div className="absolute top-0 left-0 w-full h-screen min-h-[500px] bg-black opacity-40 z-10"></div>
-
           {/* Golden Borders */}
           <div
             className="hidden md:block absolute left-0 top-0 w-0 h-0 border-t-[20vh] md:border-t-[80vh] mt-[20vh] mb-[20px] border-t-transparent border-l-[60vw] border-l-[#D3AF37]/50 z-10"
@@ -533,132 +551,234 @@ const Wrapped = () => {
               minHeight: "500px", // Ensure the border is at least as tall as the image
             }}
           ></div>
+          {/* Content Section */}
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6 py-28">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 md:p-12 max-w-[1100px]">
+              <h1 className="font-nunito text-white text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+                SSICSIM 2025 Wrapped
+              </h1>
+              <p className="mt-4 font-dm-sans text-[#f0e7d6] text-lg md:text-xl max-w-[70%]">
+                A look back at an unforgettable conference — records broken,
+                stories written.
+              </p>
+              <div className="mt-6 flex items-center gap-4">
+                <a
+                  href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
+                  className="inline-block bg-[#A3841D] text-white font-nunito font-bold px-5 py-3 rounded-lg shadow-sm"
+                >
+                  Conference Photos
+                </a>
+              </div>
+            </div>
+          </div>{" "}
         </div>
       </div>
-      <div className="relative bg-white grid grid-rows-auto">
-        {/* Text Content SSICSIM2025Polaroid.png */}
-        <div className="max-w-[2000px] w-[100vw]  bg-white relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
-          <div className="w-1/2 px-4">
-            <p className="text-[24px] md:text-[30px] font-extralight text-black font-grotesque">
+      <div className="relative bg-white">
+        {/* SSICSIM 2025 Section */}
+        <div className="max-w-[1800px] w-full mx-auto flex flex-col md:flex-row items-center gap-12 px-6 py-16">
+          {/* Text */}
+          <div className="md:w-1/2 flex flex-col ml-4 gap-6 border-[#A3841D] border-l-8 pl-6">
+            <p className="text-xl md:text-2xl font-extralight text-gray-700 tracking-wide">
               SSICSIM 2025
             </p>
             <h2
-              className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
               ref={strategyRef}
             >
-              One Conferences, Records Broken
+              One Conference, Records Broken
             </h2>
-            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
-              At SSICSIM 2025, we shattered records with nearly..
-            </h3>
-            <div className="flex items-center w-[100%] justify-center">
-              <div className="list-inside mt-2 text-[16px] md:text-[20px] text-center text-black font-dm-sans">
+            <p className="text-md md:text-lg text-gray-700 font-light">
+              At SSICSIM 2025, we shattered records with nearly…
+            </p>
+
+            {/* Counter */}
+            <div className="mt-4 flex items-center justify-start gap-4">
+              <div className="flex flex-col items-center">
                 <h1
                   ref={counterRef}
-                  className="font-extrabold text-[#A3841D] lg:text-[100px] mb-0 pb-0"
+                  className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-gold-500"
                 >
                   0+
                 </h1>
-                <h2 className="lg:text-[40px] text-[#A3841D] mt-[-20px]">
+                <p className="text-xl md:text-2xl font-semibold text-gold-500 mt-[-8px]">
                   Delegates
-                </h2>
+                </p>
               </div>
             </div>
-            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
-              Yep that many people, one of the largest iterations of SSICSIM in
-              the thirteen years its been running!
-            </h3>
+
+            <p className="mt-4 text-md md:text-lg text-gray-700 font-light">
+              Yep, that many people — one of the largest iterations of SSICSIM
+              in its thirteen-year history!
+            </p>
           </div>
-          <div className="md:w-1/2">
+
+          {/* Image */}
+          <div className="md:w-1/2 flex justify-center relative">
             <img
               src={`${CF_DOMAIN}/SSICSIM2025Polaroid.png`}
               alt="Delegates at SSICSIM 2025"
-              className="w-[80%] h-auto mx-auto rounded-lg shadow-lg"
+              className="w-[80%] rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
           </div>
         </div>
+
         {/* Divider */}
-        <div className="w-full h-[2px] bg-[#A3841D] my-4"></div>
-        {/* Cards Section */}
-        <div className="max-w-[2000px] md:w-[100vw] relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
-          <div className="md:w-1/2 flex flex-col px-4">
+        <div className="w-full h-[3px] bg-gold-500 my-12"></div>
+
+        {/* Staff Section */}
+        <div className="max-w-[1800px] w-full mx-auto flex flex-col md:flex-row items-center gap-12 px-6 py-16 bg-gray-50 rounded-3xl shadow-lg">
+          {/* Image */}
+          <div className="md:w-1/2 flex justify-center relative border-[#A3841D] border-8 rounded-2xl p-2">
             <img
               src={`${CF_DOMAIN}/WrappedStaff.jpg?format=webp`}
-              alt="Delegates at SSICSIM 2025"
-              className="h-[80%] w-auto mx-auto rounded-lg shadow-lg"
+              alt="Staff at SSICSIM 2025"
+              className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
           </div>
-          <div className="md:w-1/2 px-4">
+
+          {/* Text */}
+          <div className="md:w-1/2 flex flex-col gap-6 border-[#A3841D] border-l-8 pl-6">
             <h2
-              className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
               ref={strategyRef}
             >
-              Record Breaking Number of Staff?
+              Record-Breaking Number of Staff?
             </h2>
-            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
-              With nearly..
-            </h3>
-            <div className="flex items-center w-[100%] justify-center">
-              <div className="list-inside mt-2 text-[16px] md:text-[20px] text-center text-black font-dm-sans">
+            <p className="text-md md:text-lg text-gray-700 font-light">
+              With nearly…
+            </p>
+
+            {/* Counter */}
+            <div className="mt-4 flex items-center justify-start gap-4">
+              <div className="flex flex-col items-center">
                 <h1
                   ref={staffRef}
-                  className="font-extrabold text-[#A3841D] lg:text-[100px] mb-0 pb-0"
+                  className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-gold-500"
                 >
                   0+
                 </h1>
-                <h2 className="lg:text-[40px] text-[#A3841D] mt-[-20px]">
+                <p className="text-xl md:text-2xl font-semibold text-gold-500 mt-[-8px]">
                   Staff
-                </h2>
+                </p>
               </div>
             </div>
-            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] font-light text-black font-dm-sans">
-              The largest amount of staff ever had in SSICSIM history, couldn’t
+
+            <p className="mt-4 text-md md:text-lg text-gray-700 font-light">
+              The largest amount of staff ever had in SSICSIM history — couldn’t
               have done it without you! ❤️
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Committee Types and Image Section */}
+      <div className="bg-[#A3841D] py-12 relative">
+        <h1
+          id="committees-heading"
+          ref={committeesRef}
+          className="w-[100vw] text-center text-3xl lg:text-5xl font-extrabold text-white mb-10 font-nunito variable-font"
+        >
+          At SSICSIM 2025, delegates ventured through 17 Different Committees
+        </h1>
+
+        {/* Horizontal scroll container */}
+
+        <div
+          ref={scrollRef}
+          className="horizontal-scroll-container overflow-scroll whitespace-nowrap py-8 px-4"
+        >
+          <div className="horizontal-scroll-inner flex items-center gap-10">
+            {committeeSummary.map((c, i) => (
+              <CommitteeSummary
+                key={i}
+                title={c.title}
+                description={c.description}
+                image={c.image}
+                index={i}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-full bg-white">
+        <div className="max-w-[2000px] mx-auto md:w-[100vw] relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
+          <div className="flex flex-col mx-auto w-[90vw] px-4">
+            <h2
+              className="text-[36px] text-center md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
+              ref={strategyRef}
+            >
+              And of course, we had some victorious!
+            </h2>
+            <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] text-center font-light text-black font-dm-sans">
+              Click here to see the full list of award winners from SSICSIM!
             </h3>
+            <WinnersCarousel data={winnersData} />
           </div>
         </div>
-        {/* Committee Types and Image Section */}
-        <div className="bg-[#A3841D] py-12 relative">
-          <h1 className="w-[100vw] text-center text-4xl lg:text-6xl font-extrabold text-black mb-10">
-            At SSICSIM 2025, delegates ventured through <br />
-            <span className="text-black">17 Different Committees</span>
-          </h1>
+      </div>
+      <div className="w-full bg-white py-16 px-4 md:px-12">
+        <div className="max-w-[2000px] mx-auto flex flex-col md:flex-row items-start md:items-center gap-8">
+          {/* LEFT: Thank You Text & Delegations */}
+          <div className="md:w-1/2 flex flex-col gap-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-nunito">
+              From All of Us at SSICSIM 2025…
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl font-light text-black font-dm-sans">
+              Thank you to every delegate, staff member, and volunteer who made
+              this iteration of the conference unforgettable. Your energy,
+              creativity, and teamwork helped us break records and create
+              memories that will last a lifetime.
+            </p>
+            <p className="text-lg md:text-xl lg:text-2xl font-light text-black font-dm-sans">
+              We can’t wait to see you again at{" "}
+              <span className="font-semibold">SSICSIM 2026</span>!
+            </p>
 
-          {/* Horizontal scroll container */}
-
-          <div
-            ref={scrollRef}
-            className="horizontal-scroll-container overflow-scroll whitespace-nowrap py-8 px-4"
-          >
-            <div className="horizontal-scroll-inner flex items-center gap-10">
-              {committeeSummary.map((c, i) => (
-                <CommitteeSummary
-                  key={i}
-                  title={c.title}
-                  description={c.description}
-                  image={c.image}
-                  index={i}
-                />
+            <h3 className="text-xl md:text-2xl font-semibold text-[#A3841D] mt-4">
+              Delegations that joined us this year:
+            </h3>
+            <ul className="list-disc list-inside grid grid-cols-2 md:grid-cols-2 gap-2 text-base md:text-[12px] text-gray-700 font-dm-sans">
+              {[
+                "Sentosa",
+                "CodeX",
+                "Westmount Collegiate Institute",
+                "GTAMUN",
+                "Xavier Tigers",
+                "Brampton Centennial Secondary School",
+                "Prairie Lamb Empire",
+                "Lawrence Park CI",
+                "Black Pine",
+                "Sunrise Education Inc",
+                "The York School",
+                "Chinguacousy Secondary School",
+                "King's Christian Collegiate",
+                "Richmond Hill High School",
+                "Central Peel Secondary School",
+                "Parkdale Collegiate Institute",
+                "École secondaire catholique Saint-Charles-Garnier",
+                "Sherwood Heights School",
+                "The Woodlands School",
+                "Lorne Park Secondary School",
+                "Crestwood Preparatory College",
+                "Pickering High School",
+                "Royal St. George's College",
+                "Monarch Park Collegiate",
+                "Westdale Secondary School",
+              ].map((delegation, i) => (
+                <li key={i}>{delegation}</li>
               ))}
-            </div>
+            </ul>
           </div>
-        </div>
-        <div className="w-full h-full bg-white">
-          <div className="max-w-[2000px] md:w-[100vw] relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
-            <div className="flex flex-col mx-auto w-[60vw] px-4">
-              <h2
-                className="text-[36px] text-center md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
-                ref={strategyRef}
-              >
-                And of course, we had some victorious!
-              </h2>
-              <h3 className="text-[16px] mt-4 md:text-[20px] lg:text-[25px] text-center font-light text-black font-dm-sans">
-                Click here to see the full list of award winners from SSICSIM!
-              </h3>
-              <WinnersCarousel data={winnersData} />
-            </div>
+
+          {/* RIGHT: Staff Image */}
+          <div className="md:w-1/2 flex justify-center md:justify-end">
+            <img
+              src={`${CF_DOMAIN}/secretariat.jpg?format=webp`}
+              alt="SSICSIM Staff 2025"
+              className="h-full w-auto rounded-xl shadow-xl object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
