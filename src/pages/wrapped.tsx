@@ -706,7 +706,7 @@ const Wrapped = () => {
         <div className="max-w-[2000px] mx-auto md:w-[100vw] relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="flex flex-col mx-auto w-[90vw] px-4">
             <h2
-              className="text-[36px] text-center md:text-[50px]/ lg:text-[72px] font-bold text-black font-nunito leading-tight"
+              className="text-[36px] text-center md:text-[40px]/ lg:text-[50px] font-bold text-black font-nunito leading-tight"
               ref={strategyRef}
             >
               And of course, we had some victorious!

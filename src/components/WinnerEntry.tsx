@@ -54,7 +54,7 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
 
       {/* CARD */}
       <div className="w-full md:w-[100%] lg:w-[70%] rounded-2xl shadow-xl p-6 md:p-8 bg-white relative overflow-hidden">
-        <div className="relative w-full h-[525px] md:h-[650px] lg:h-[700px] flex items-center justify-center">
+        <div className="relative w-full h-[500px] md:h-[650px] lg:h-[700px] flex items-center justify-center">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={index}
@@ -75,7 +75,8 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
               />
 
               {/* TITLE */}
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#A3841D] font-nunito text-center drop-shadow-sm">
+              <div className="my-auto">
+              <h2 className="text-2xl mb-6 md:text-3xl lg:text-4xl font-extrabold text-[#A3841D] font-nunito text-center drop-shadow-sm">
                 {current.committee}
               </h2>
 
@@ -87,6 +88,7 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
                   </li>
                 ))}
               </ul>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
