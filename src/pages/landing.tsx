@@ -11,8 +11,6 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CF_DOMAIN } from "../utils/consts";
-import FlipCountdown from "../components/FlipCountdown";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,14 +189,23 @@ const Landing = () => {
             <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
               October 24th - 26th, 2025
             </h3>
-            <div className="ml-6"> <FlipCountdown targetDate="2025-10-24T00:00:00" /></div>
-            <a
-              href="/resources"
-              rel="noopener noreferrer"
-              className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-            >
-              Conference Resources
-            </a>
+
+            <div className="flex flex-row">
+              <a
+                href="/wrapped"
+                rel="noopener noreferrer"
+                className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+              >
+                SSICSIM 2025 Wrapped
+              </a>
+              <a
+                href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
+                rel="noopener noreferrer"
+                className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+              >
+                Conference Photos
+              </a>
+            </div>
           </div>
 
           {/* Overlay */}

@@ -20,6 +20,7 @@ import Mission from "./pages/mission";
 import Resources from "./pages/resources";
 import Events from "./pages/events";
 import Team from "./pages/team";
+import Wrapped from "./pages/wrapped";
 
 function App() {
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/events" element={<Events />} />
           <Route path="/about/team" element={<Team />} />
+          <Route path="/wrapped" element={<Wrapped />} />
         </Routes>
         <Footer />
         <Analytics />
