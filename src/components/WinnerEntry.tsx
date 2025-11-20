@@ -48,7 +48,7 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
       {/* LEFT ARROW */}
       <button
         onClick={prev}
-        className="absolute left-0 p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition z-10"
+        className="absolute left-[-100px] p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition z-10"
       >
         <ChevronLeft size={28} />
       </button>
@@ -93,7 +93,7 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
       {/* RIGHT ARROW */}
       <button
         onClick={next}
-        className="absolute right-0 p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition z-10"
+        className="absolute right-[-100px] p-3 rounded-full bg-white shadow-md hover:bg-gray-100 transition z-10"
       >
         <ChevronRight size={28} />
       </button>

@@ -44,23 +44,22 @@ const Wrapped = () => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const cards = gsap.utils.toArray<HTMLElement>(
-      ".horizontal-scroll-inner .committee-card",
-    );
-    if (cards.length === 0) return;
+    const inner = container.querySelector(".horizontal-scroll-inner");
+    if (!inner) return;
+
+    console.log("inner scroll width:", inner.scrollWidth);
+    console.log("viewport width:", window.innerWidth);
 
     const ctx = gsap.context(() => {
-      gsap.to(cards, {
-        xPercent: -100 * (cards.length - 1), // <-- your formula
+      gsap.to(inner, {
+        x: () => -(inner.scrollWidth - window.innerWidth),
         ease: "none",
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "+=" + window.innerWidth * (cards.length - 4),
-          scrub: 1,
+          end: () => "+=" + (inner.scrollWidth - window.innerWidth),
+          scrub: true,
           pin: true,
-          anticipatePin: 1,
-          markers: false, // set true for debugging
         },
       });
     }, container);
@@ -94,69 +93,315 @@ const Wrapped = () => {
 
   const committeeSummary = [
     {
-      title: "Security Council",
-      description: "Focused on global peace and conflict resolution.",
-      image: "/committees/sc.jpg",
+      title: "The Epic of Sundiata",
+      description: "Prophecy, betrayal, and the rise of a legend.",
+      image: `${CF_DOMAIN}/EpicOfSundiata.jpg?format=webp`,
     },
     {
-      title: "UNICEF",
-      description: "Centered on humanitarian aid and child welfare.",
-      image: "/committees/unicef.jpg",
+      title: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
+      description: "A movement shaken, a legacy reborn.",
+      image: `${CF_DOMAIN}/FightOfTheLaytonLegacy.jpg?format=webp`,
     },
     {
-      title: "WHO",
-      description: "Addressing global health issues and disease response.",
-      image: "/committees/who.jpg",
+      title: "Vive La Revolution: Cake, Blood and Banque",
+      description: "A kingdom on fire, and a blade that decides its fate.",
+      image: `${CF_DOMAIN}/ViveLaRevolution.jpg?format=webp`,
     },
     {
-      title: "WHO",
-      description: "Addressing global health issues and disease response.",
-      image: "/committees/who.jpg",
+      title: "Bakumatsu: The Fall of the Shogunate",
+      description: "Tradition collapsing, a new Japan igniting.",
+      image: `${CF_DOMAIN}/BakamatsuCommittee.jpg?format=webp`,
     },
     {
-      title: "WHO",
-      description: "Addressing global health issues and disease response.",
-      image: "/committees/who.jpg",
+      title: "English Civil War",
+      description: "Power divided, a nation at its breaking point.",
+      image: `${CF_DOMAIN}/EnglishCivilWar.jpg?format=webp`,
     },
     {
-      title: "WHO",
-      description: "Addressing global health issues and disease response.",
-      image: "/committees/who.jpg",
+      title: "Historical Ad Hoc",
+      description: "History’s chaos—unfiltered and unforgiving.",
+      image: `${CF_DOMAIN}/HistoricalAdHocCommittee.jpg?format=webp`,
     },
     {
-      title: "WHO",
-      description: "Addressing global health issues and disease response.",
-      image: "/committees/who.jpg",
+      title: "March of the Machine: The Phyrexian Invasion",
+      description: "A universe on the brink of assimilation.",
+      image: `${CF_DOMAIN}/MarchOfTheMachine.jpg?format=webp`,
     },
-    // ...repeat until 17 committees
+    {
+      title: "See You This Summer!",
+      description: "Mysteries uncovered, weirdness unleashed.",
+      image: `${CF_DOMAIN}/GravityFalls.jpg?format=webp`,
+    },
+    {
+      title: "The 39 Clues: Cahills vs. Vespers",
+      description: "Ancient secrets, global stakes, one final race.",
+      image: `${CF_DOMAIN}/39CluesCommittee.jpg?format=webp`,
+    },
+    {
+      title: "Valorant: CONV//ERGENCE",
+      description: "Two worlds colliding, one reality left standing.",
+      image: `${CF_DOMAIN}/Valorant.jpg?format=webp`,
+    },
+    {
+      title: "Fictional Ad Hoc",
+      description: "The unknown, raw and unpredictable.",
+      image: `${CF_DOMAIN}/FictionalAdHocCommittee.jpg?format=webp`,
+    },
+    {
+      title: "Fall of Atlantis",
+      description: "A utopia crumbling beneath rising tides.",
+      image: `${CF_DOMAIN}/FallOfAtlantis.jpg?format=webp`,
+    },
+    {
+      title: "Met Gala 2026",
+      description: "Glamour under pressure—style meets chaos.",
+      image: `${CF_DOMAIN}/MetGala2026Committee.jpg?format=webp`,
+    },
+    {
+      title: "Second Renaissance",
+      description: "Humanity tested as machines awaken.",
+      image: `${CF_DOMAIN}/SecondRenaissanceCommittee.png?format=webp`,
+    },
+    {
+      title: "Tetris",
+      description:
+        "Espionage, innovation, and a battle for the world’s most dangerous game.",
+      image: `${CF_DOMAIN}/TetrisCommittee.png?format=webp`,
+    },
+    {
+      title: "Saving Selene City: A Lunar Colony Crisis",
+      description: "Oxygen dwindling, tensions rising, the moon on edge.",
+      image: `${CF_DOMAIN}/SavingSeleneCity.jpg?format=webp`,
+    },
+    {
+      title: "Conceptual Ad Hoc",
+      description: "Reality bent, logic broken.",
+      image: `${CF_DOMAIN}/ConceptualAdHocCommittee.png?format=webp`,
+    },
   ];
 
   const winnersData = [
     {
-      committee: "Security Council",
+      committee: "The Epic of Sundiata",
       image: "/committees/sc.jpg",
       winners: [
-        "Best Delegate – John Lee",
-        "Outstanding – Priya Patel",
-        "Honourable Mention – Sarah Kim",
+        "Best Delegate – Gabrielle Irumhekha",
+        "Outstanding Delegate – Kaavya Sethepalli",
+        "Honourable Mention – Michelle Irumhekha",
+        "Best Novice - Yash Chhabaria"
       ],
     },
     {
-      committee: "UNICEF",
+      committee: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
       image: "/committees/unicef.jpg",
-      winners: ["Best Delegate – Amir Hassan", "Outstanding – Emily Davis"],
-    },
+      winners: [
+        "Best Delegate – Joey Lin",
+        "Outstanding Delegate – Arnav Anil Kotian",
+        "Honourable Mention – Tanya Walia",
+        "Best Novice - Ananya Agarwal",
+        "Best Duo - Ellena Stamatiou & Beatriz Baptista"
+      ],    },
     {
-      committee: "WHO",
+      committee: "Vive La Revolution: Cake, Blood and Banque",
       image: "/committees/who.jpg",
       winners: [
-        "Best Delegate – Daniel Chen",
-        "Outstanding – Bella Nguyen",
-        "Honourable Mention – Raj Patel",
-        "Verbal Commendation – Sarah Lopez",
+        "Best Delegate – Spencer Moriarty",
+        "Outstanding Delegate – Gur Niwaz Singh Aulakh",
+        "Honourable Mention – Maddix Huffman",
+        "Best Novice – Anishka Kulkarni",
       ],
     },
-    // ...continue for all committees
+    {
+      committee: "Bakumatsu: The Fall of the Shogunate (Pro-Shogunate)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Lucas Pan",
+        "Outstanding Delegate – Ishsimar Pahwa",
+        "Honourable Mention – Andrew Zhang",
+        "Best Novice – Alexa Wen",
+      ],
+    },
+    {
+      committee: "Bakumatsu: The Fall of the Shogunate (Pro-Emperor)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Jason Zhao",
+        "Outstanding Delegate – Anomioghene Medu",
+        "Honourable Mention – Ryo Kumar",
+        "Best Novice – Cole Ebata",
+      ],
+    },
+    {
+      committee: "English Civil War (Royalists)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – David Setareh",
+        "Outstanding Delegate – Kaleb Blanchard",
+        "Honourable Mention – Grace Sun",
+        "Best Novice – Justin Cao",
+      ],
+    },
+    {
+      committee: "English Civil War (Parliamentarians)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Jacob Lang",
+        "Outstanding Delegate – Artus Siu",
+        "Honourable Mention – Kimaya Gupte",
+        "Best Novice – Rishitha Poda",
+      ],
+    },
+    {
+      committee: "Historical Ad Hoc",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Rubina Khan",
+        "Outstanding Delegate – Helena Musson",
+        "Honourable Mention – Megan Allison",
+        "Best Novice – Ryan Delill",
+      ],
+    },
+    {
+      committee: "March of the Machine: The Phyrexian Invasion",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Jasjeet Sidhu",
+        "Outstanding Delegate – Ananya Singhal",
+        "Honourable Mention – Benji Agromayor",
+        "Best Novice – Gopika Vaspate",
+      ],
+    },
+    {
+      committee: "See You This Summer!",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Grace Lavallee-Noel",
+        "Outstanding Delegate – Suhaan Chanana",
+        "Honourable Mention – Lily Nguyen",
+        "Best Novice – Oona Galipeau",
+      ],
+
+    },
+    {
+      committee: "The 39 Clues: Cahills vs. Vespers (Cahills)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Camilo Sierra de Rojas",
+        "Outstanding Delegate – William Debane",
+        "Honourable Mention – Robbie Armstrong",
+        "Best Novice – Reichen Thorpe",
+      ]
+    },
+    {
+      committee: "The 39 Clues: Cahills vs. Vespers (Vespers)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Tate Ullock",
+        "Outstanding Delegate – Dhyana Patel",
+        "Honourable Mention – Sabin Koirala",
+        "Best Novice – Dillon Shelley",
+      ]
+    },
+    {
+      committee: "Valorant: CONV//ERGENCE (Alpha)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Ariel Ow",
+        "Outstanding Delegate – Suhaana Sharma",
+        "Honourable Mention – Sarathraj Maharajan",
+        "Best Novice – Rudraa Manjrekar",
+      ]
+    },
+    {
+      committee: "Valorant: CONV//ERGENCE (Omega)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Bessie Liu",
+        "Outstanding Delegate – Rahib Arham",
+        "Honourable Mention – Elliot Zhou",
+        "Best Novice – Yousef Muhammed",
+      ]
+    },
+    {
+      committee: "Fictional Ad Hoc",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Desmond Hollingsworth",
+        "Outstanding Delegate – Onur Soran",
+        "Honourable Mention – Isabel Dai",
+        "Best Novice – Saiffie Sidhu",
+      ]
+    },
+    {
+      committee: "Fall of Atlantis",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Giulia Gucciardi",
+        "Outstanding Delegate – Julia Wu",
+        "Honourable Mention – Ariadne Gonsalves",
+        "Best Novice – Muhammad Syed",
+      ]
+    },
+    {
+      committee: "Met Gala 2026",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Flora Gu",
+        "Outstanding Delegate – Mitchell Ojei-David",
+        "Honourable Mention – Kate Yau",
+        "Best Novice – Vaibhavi Khare",
+      ]
+    },
+    {
+      committee: "Second Renaissance",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Hayley Pang",
+        "Outstanding Delegate – Kaelyn Shen",
+        "Honourable Mention – Ben Krakauer",
+        "Best Novice – Madeline Mountz",
+      ]
+    },
+    {
+      committee: "Tetris",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Gloria Yang",
+        "Outstanding Delegate – Jackie Liu",
+        "Honourable Mention – Aydin Dossa",
+        "Best Novice – Nick Chen",
+      ]
+    },
+    {
+      committee: "Saving Selene City: A Lunar Colony Crisis (Earth)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Adarsh Thoduvakkal",
+        "Outstanding Delegate – Douglas Forrest",
+        "Honourable Mention – Jasmeet Singh",
+        "Best Novice – Malcolm Seifred",
+      ]
+    },
+    {
+      committee: "Saving Selene City: A Lunar Colony Crisis (Selene City)",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Prabhjot Singh Saini",
+        "Outstanding Delegate – Xavier Gaudreau",
+        "Honourable Mention – Preston Lui",
+        "Best Novice – Julian Cheng",
+      ]
+    },
+    {
+      committee: "Conceptual Ad Hoc",
+      image: "/committees/who.jpg",
+      winners: [
+        "Best Delegate – Sumayyah Satia",
+        "Outstanding Delegate – Audrina Dayrit",
+        "Honourable Mention – Gordon Zeng",
+        "Best Novice – Xavi Amy",
+      ]
+    }
   ];
 
   // useEffect(() => {
