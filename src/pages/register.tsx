@@ -77,7 +77,7 @@ const Register = () => {
                 Waitlist
               </h1>
               <p className="text-gray-700 text-2xl font-dm-sans font-light w-[80vw] lg:w-[30vw] lg:ml-6 pt-2">
-                Registration for SSICSIM 2025 is now closed. Delegates may join
+                Registration for SSICSIM 2026 is now closed. Delegates may join
                 the waitlist using this form and will be contacted if a spot
                 becomes available—no payment is required unless officially
                 offered a spot.

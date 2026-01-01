@@ -73,7 +73,7 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-center text-white font-dm-sans max-w-2xl mx-auto mb-12">
-            Have questions about SSICSM 2025 or need more details? We’d love to
+            Have questions about SSICSM 2026 or need more details? We’d love to
             hear from you — fill out the form below or reach out via email.
           </p>
 

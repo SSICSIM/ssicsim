@@ -187,7 +187,7 @@ const Landing = () => {
               Canada’s Premier Model UN Crisis Simulation
             </h1>
             <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-              October 24th - 26th, 2025
+              2026 TBD
             </h3>
 
             <div className="flex flex-row">
@@ -283,7 +283,7 @@ const Landing = () => {
         <div className="max-w-[2000px] mx-auto relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-4 md:px-12 py-8">
           <div className="md:w-1/2 px-4">
             <p className="text-[24px] md:text-[30px] font-extralight text-white font-grotesque">
-              SSICSIM 2025
+              SSICSIM 2026
             </p>
             <h2
               className="text-[36px] md:text-[50px]/ lg:text-[72px] font-bold text-white font-nunito leading-tight"

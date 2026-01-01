@@ -43,7 +43,7 @@ const Events = () => {
             </p>
             <p className="text-lg text-gray-700 font-dm-sans mt-2">
               <span className="font-bold">Note:</span> These events are only
-              open to confirmed attendees of SSICSIM 2025.
+              open to confirmed attendees of SSICSIM 2026.
             </p>
           </div>
 

@@ -76,18 +76,18 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
 
               {/* TITLE */}
               <div className="my-auto">
-              <h2 className="text-2xl mb-6 md:text-3xl lg:text-4xl font-extrabold text-[#A3841D] font-nunito text-center drop-shadow-sm">
-                {current.committee}
-              </h2>
+                <h2 className="text-2xl mb-6 md:text-3xl lg:text-4xl font-extrabold text-[#A3841D] font-nunito text-center drop-shadow-sm">
+                  {current.committee}
+                </h2>
 
-              {/* WINNERS LIST */}
-              <ul className="text-sm md:text-lg lg:text-xl font-dm-sans text-center space-y-1 md:space-y-2 max-h-[180px] md:max-h-[240px] overflow-auto px-2 md:px-3">
-                {current.winners.map((w, i) => (
-                  <li key={i} className="font-medium text-gray-700">
-                    {w}
-                  </li>
-                ))}
-              </ul>
+                {/* WINNERS LIST */}
+                <ul className="text-sm md:text-lg lg:text-xl font-dm-sans text-center space-y-1 md:space-y-2 max-h-[180px] md:max-h-[240px] overflow-auto px-2 md:px-3">
+                  {current.winners.map((w, i) => (
+                    <li key={i} className="font-medium text-gray-700">
+                      {w}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           </AnimatePresence>
