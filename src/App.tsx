@@ -7,10 +7,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Landing from "./pages/landing";
 // import About from "./pages/about";
-import Committees from "./pages/committees";
+// import Committees from "./pages/committees";
 // import Sponsors from "./pages/sponsors";
 import Contact from "./pages/contact";
-import Openings from "./pages/openings";
+// import Openings from "./pages/openings";
 import UnderConstruction from "./pages/underconstruction";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -18,9 +18,10 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import Mission from "./pages/mission";
 import Resources from "./pages/resources";
-import Events from "./pages/events";
-import Team from "./pages/team";
+// import Events from "./pages/events";
+// import Team from "./pages/team";
 import Wrapped from "./pages/wrapped";
+import SecHiring from "./pages/sec-hiring";
 
 function App() {
   useEffect(() => {
@@ -43,15 +44,17 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/committees" element={<Committees />} />
-          <Route path="/staff/openings" element={<Openings />} />
+          {/* <Route path="/committees" element={<Committees />} /> */}
+          {/* <Route path="/staff/openings" element={<Openings />} /> */}
           <Route path="/about/mission" element={<Mission />} />
           <Route path="*" element={<UnderConstruction />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/about/team" element={<Team />} />
+          {/* <Route path="/events" element={<Events />} />
+          <Route path="/about/team" element={<Team />} /> */}
           <Route path="/wrapped" element={<Wrapped />} />
+          <Route path="/sec-hiring" element={<SecHiring />} />
+          <Route path="/apply" element={<SecHiring />} />
         </Routes>
         <Footer />
         <Analytics />

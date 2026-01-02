@@ -42,7 +42,7 @@ const Mission = () => {
               viewport={{ once: true }}
             >
               <p className="text-2xl font-light text-[#A3841D] font-grotesque mb-2">
-                SSICSIM 2025
+                SSICSIM 2026
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-[#A3841D] font-nunito leading-snug mb-10">
                 Our Mission
@@ -120,7 +120,7 @@ const Mission = () => {
             className="order-1 lg:order-2"
           >
             <p className="text-xl font-light text-[#A3841D] font-grotesque mb-2">
-              SSICSIM 2025
+              SSICSIM 2026
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-[#A3841D] font-nunito leading-snug mb-6">
               Land Acknowledgement
@@ -190,7 +190,7 @@ const Mission = () => {
             viewport={{ once: true }}
           >
             <p className="text-2xl font-light text-white font-grotesque mb-2">
-              SSICSIM 2025
+              SSICSIM 2026
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white font-nunito leading-snug mb-6">
               University of Toronto

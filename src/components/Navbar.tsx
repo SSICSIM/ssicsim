@@ -12,22 +12,17 @@ export default function Navbar() {
     {
       label: "About",
       path: "/about",
-      subItems: [
-        { label: "Our Mission", path: "/about/mission" },
-        { label: "Our Team", path: "/about/team" },
-      ],
-    },
-    {
-      label: "Committees",
-      path: "/committees",
+      subItems: [{ label: "Our Mission", path: "/about/mission" }],
     },
     {
       label: "Conference",
       path: "/conference",
-      subItems: [
-        { label: "Resources", path: "/resources" },
-        { label: "Events", path: "/events" },
-      ],
+      subItems: [{ label: "Resources", path: "/resources" }],
+    },
+    {
+      label: "Staff",
+      path: "/staff",
+      subItems: [{ label: "Secretariat Hiring", path: "/sec-hiring" }],
     },
     { label: "Contact", path: "/contact" },
   ];
