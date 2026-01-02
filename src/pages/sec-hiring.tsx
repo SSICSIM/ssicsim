@@ -125,7 +125,7 @@ const SecHiring = () => {
               <p className="text-[30px] font-extralight text-[#A3841D] font-grotesque">
                 SSICSIM 2026
               </p>
-              <h2 className="ml-[-3px] mb-[-10px] mt-[10px] text-[60px] md:text-[72px] md:text-[60px] lg:text-[72px] font-bold text-[#A3841D] font-nunito leading-[1]">
+              <h2 className="ml-[-3px] mb-[-10px] mt-[10px] text-[60px] font-bold text-[#A3841D] font-nunito leading-[1]">
                 Secretariat Hiring
               </h2>
               <p className="text-[15px] mt-4 lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
