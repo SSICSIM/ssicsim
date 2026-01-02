@@ -187,7 +187,7 @@ const Landing = () => {
               Canada’s Premier Model UN Crisis Simulation
             </h1>
             <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-              2026 TBD
+              Coming Soon.. 👀
             </h3>
 
             <div className="flex flex-row">
@@ -203,7 +203,7 @@ const Landing = () => {
                 rel="noopener noreferrer"
                 className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
               >
-                Conference Photos
+                SSICSIM 2025 Conference Photos
               </a>
             </div>
           </div>

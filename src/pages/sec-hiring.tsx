@@ -35,7 +35,7 @@ const SecHiring = () => {
     },
     {
       question:
-        "What are the requirements to apply to be a secretariat member for SSICSIM 2026?",
+        "What are the requirements to apply to be a Secretariat member for SSICSIM 2026?",
       answer: (
         <ul className="list-disc pl-6 space-y-2">
           <li>
@@ -132,7 +132,7 @@ const SecHiring = () => {
                 Thank you for your interest in a SSICSIM 2026 Secretariat
                 Position! Applications are due{" "}
                 <span className="font-bold underline">
-                  Saturday, January 17, 2026.
+                  Saturday, January 17, 2026 at 11:59 PM.
                 </span>{" "}
                 Please read the Secretariat FAQs before applying and for more
                 information with regards to the roles offered.
@@ -157,7 +157,7 @@ const SecHiring = () => {
               </p>
               <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSewsKyMC-dXuSvrGxa4yZ8zTnQDxRXyz5dyNjMPLgwQrCDj6g/viewform"
+                  href="https://docs.google.com/forms/u/4/d/e/1FAIpQLScqLiFG4FBHW0Gsm8mIMD30YbLAlPZSkd-vkbZ5FjSgEShqAw/formResponse"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-dm-sans text-[20px] md:text-[25px] text-center bg-[#A3841D] text-white px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
@@ -165,7 +165,7 @@ const SecHiring = () => {
                   Apply Now
                 </a>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSewsKyMC-dXuSvrGxa4yZ8zTnQDxRXyz5dyNjMPLgwQrCDj6g/viewform"
+                  href="https://docs.google.com/document/d/1UQe1CURsqdbyQf2QBfL-i2Y42CeV46gUbqzTpWD79vA/edit?usp=drivesdk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-dm-sans text-[20px] md:text-[25px] text-center bg-[#A3841D] text-white px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"

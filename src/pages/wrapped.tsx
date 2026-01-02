@@ -101,27 +101,27 @@ const Wrapped = () => {
     {
       title: "Fight for the Layton Legacy: 2012 NDP Leadership Race",
       description: "A movement shaken, a legacy reborn.",
-      image: `${CF_DOMAIN}/FightOfTheLaytonLegacy.jpg?format=webp`,
+      image: `${CF_DOMAIN}/FightOfTheLaytonLegacy.jpg`,
     },
     {
       title: "Vive La Revolution: Cake, Blood and Banque",
       description: "A kingdom on fire, and a blade that decides its fate.",
-      image: `${CF_DOMAIN}/ViveLaRevolution.jpg?format=webp`,
+      image: `${CF_DOMAIN}/ViveLaRevolution.jpg`,
     },
     {
       title: "Bakumatsu: The Fall of the Shogunate",
       description: "Tradition collapsing, a new Japan igniting.",
-      image: `${CF_DOMAIN}/BakamatsuCommittee.jpg?format=webp`,
+      image: `${CF_DOMAIN}/BakamatsuCommittee.jpg`,
     },
     {
       title: "English Civil War",
       description: "Power divided, a nation at its breaking point.",
-      image: `${CF_DOMAIN}/EnglishCivilWar.jpg?format=webp`,
+      image: `${CF_DOMAIN}/EnglishCivilWar.jpg`,
     },
     {
       title: "Historical Ad Hoc",
       description: "History’s chaos—unfiltered and unforgiving.",
-      image: `${CF_DOMAIN}/HistoricalAdHocCommittee.jpg?format=webp`,
+      image: `${CF_DOMAIN}/HistoricalAdHocCommittee.jpg`,
     },
     {
       title: "March of the Machine: The Phyrexian Invasion",
@@ -131,17 +131,17 @@ const Wrapped = () => {
     {
       title: "See You This Summer!",
       description: "Mysteries uncovered, weirdness unleashed.",
-      image: `${CF_DOMAIN}/GravityFalls.jpg?format=webp`,
+      image: `${CF_DOMAIN}/GravityFalls.jpg`,
     },
     {
       title: "The 39 Clues: Cahills vs. Vespers",
       description: "Ancient secrets, global stakes, one final race.",
-      image: `${CF_DOMAIN}/39CluesCommittee.jpg?format=webp`,
+      image: `${CF_DOMAIN}/39CluesCommittee.jpg`,
     },
     {
       title: "Valorant: CONV//ERGENCE",
       description: "Two worlds colliding, one reality left standing.",
-      image: `${CF_DOMAIN}/Valorant.jpg?format=webp`,
+      image: `${CF_DOMAIN}/Valorant.jpg`,
     },
     {
       title: "Fictional Ad Hoc",
@@ -151,7 +151,7 @@ const Wrapped = () => {
     {
       title: "Fall of Atlantis",
       description: "A utopia crumbling beneath rising tides.",
-      image: `${CF_DOMAIN}/FallOfAtlantis.jpg?format=webp`,
+      image: `${CF_DOMAIN}/FallOfAtlantis.jpg`,
     },
     {
       title: "Met Gala 2026",
@@ -172,7 +172,7 @@ const Wrapped = () => {
     {
       title: "Saving Selene City: A Lunar Colony Crisis",
       description: "Oxygen dwindling, tensions rising, the moon on edge.",
-      image: `${CF_DOMAIN}/SavingSeleneCity.jpg?format=webp`,
+      image: `${CF_DOMAIN}/SavingSeleneCity.jpg`,
     },
     {
       title: "Conceptual Ad Hoc",
@@ -529,7 +529,7 @@ const Wrapped = () => {
         <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
           {/* Background Image */}
           <img
-            src={`${CF_DOMAIN}/SSICSIMWrappedHero.png?format=webp`}
+            src={`${CF_DOMAIN}/SSICSIMWrappedHero.png`}
             alt="University of Toronto Ariel View"
             className="absolute top-0 left-0 w-full min-h-[500px] h-screen max-h-[1200px] object-cover z-10"
             loading="lazy"
