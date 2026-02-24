@@ -22,7 +22,7 @@ export default function Navbar() {
     {
       label: "Staff",
       path: "/staff",
-      subItems: [{ label: "Secretariat Hiring", path: "/sec-hiring" }],
+      subItems: [{ label: "Director Hiring", path: "/director-hiring" }],
     },
     { label: "Contact", path: "/contact" },
   ];

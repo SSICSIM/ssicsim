@@ -22,6 +22,7 @@ import Resources from "./pages/resources";
 // import Team from "./pages/team";
 import Wrapped from "./pages/wrapped";
 import SecHiring from "./pages/sec-hiring";
+import DirectorHiring from "./pages/director-hiring";
 
 function App() {
   useEffect(() => {
@@ -54,7 +55,8 @@ function App() {
           <Route path="/about/team" element={<Team />} /> */}
           <Route path="/wrapped" element={<Wrapped />} />
           <Route path="/sec-hiring" element={<SecHiring />} />
-          <Route path="/apply" element={<SecHiring />} />
+          <Route path="/apply" element={<DirectorHiring />} />
+          <Route path="/director-hiring" element={<DirectorHiring />} />
         </Routes>
         <Footer />
         <Analytics />
