@@ -2,10 +2,11 @@ import { CF_DOMAIN } from "../utils/consts";
 import { useState } from "react";
 
 const DirectorHiring = () => {
-  const [openDirectorateIndex, setOpenDirectorateIndex] = useState<number | null>(null);
+  const [openDirectorateIndex, setOpenDirectorateIndex] = useState<
+    number | null
+  >(null);
   // const [openOAIndex, setOpenOAIndex] = useState<number | null>(null);
   // const [openMSDIndex, setOpenMSDIndex] = useState<number | null>(null);
-
 
   const toggleDirectorateFAQ = (index: number) => {
     setOpenDirectorateIndex(openDirectorateIndex === index ? null : index);
@@ -21,28 +22,49 @@ const DirectorHiring = () => {
 
   const directorateQuestions = [
     {
-        question: "What is a crisis committee? What commitees can I pitch?",
-        answer: (
-            <div className="space-y-3">
-                <p>
-                    Crisis committees are faster-paced simulations compared to normal MUN committees, where delegates respond to live updates and timed updates. Your committee idea should be a topic that <strong>allows for interesting and evolving situations that gradually build overtime</strong>.
-                </p>
-                <br></br>
-                <p>
-                    SSICSIM committees are categorized under the following three branches:
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>Fictional Branch:</strong> Committees based on pre-existing fiction (e.g., Harry Potter, Attack on Titan)</li>
-                    <li><strong>Historical Branch:</strong> Committees based on real historical settings (e.g., Cuban Missile Crisis, French Revolution)</li>
-                    <li><strong>Conceptual Branch:</strong> Committees based on unique/original settings (e.g., business, entertainment, sports)</li>
-                </ul>
-                <br></br> 
-                <p> 
-                    What types of committees can you pitch? The short answer is: <strong> anything </strong> that falls in these branches! We encourage you to be creative with your committee ideas, and consider whether your committee will have enough content for 3 days of debate.
-                </p>
-
-            </div>
-        )
+      question: "What is a crisis committee? What commitees can I pitch?",
+      answer: (
+        <div className="space-y-3">
+          <p>
+            Crisis committees are faster-paced simulations compared to normal
+            MUN committees, where delegates respond to live updates and timed
+            updates. Your committee idea should be a topic that{" "}
+            <strong>
+              allows for interesting and evolving situations that gradually
+              build overtime
+            </strong>
+            .
+          </p>
+          <br></br>
+          <p>
+            SSICSIM committees are categorized under the following three
+            branches:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Fictional Branch:</strong> Committees based on
+              pre-existing fiction (e.g., Harry Potter, Attack on Titan)
+            </li>
+            <li>
+              <strong>Historical Branch:</strong> Committees based on real
+              historical settings (e.g., Cuban Missile Crisis, French
+              Revolution)
+            </li>
+            <li>
+              <strong>Conceptual Branch:</strong> Committees based on
+              unique/original settings (e.g., business, entertainment, sports)
+            </li>
+          </ul>
+          <br></br>
+          <p>
+            What types of committees can you pitch? The short answer is:{" "}
+            <strong> anything </strong> that falls in these branches! We
+            encourage you to be creative with your committee ideas, and consider
+            whether your committee will have enough content for 3 days of
+            debate.
+          </p>
+        </div>
+      ),
     },
     {
       question:
@@ -50,10 +72,12 @@ const DirectorHiring = () => {
       answer: (
         <ul className="list-disc pl-6 space-y-2">
           <li>
-            Open to all students who will be enrolled at a Canadian post-secondary institution in Fall 2026. 
+            Open to all students who will be enrolled at a Canadian
+            post-secondary institution in Fall 2026.
           </li>
           <li>
-            <strong> Preferred (Not Required): </strong> At least 1 year of experience in Crisis at SSICSIM/UTMUN/NAMUN.
+            <strong> Preferred (Not Required): </strong> At least 1 year of
+            experience in Crisis at SSICSIM/UTMUN/NAMUN.
           </li>
         </ul>
       ),
@@ -63,7 +87,10 @@ const DirectorHiring = () => {
         "I want to pitch a commitee idea with a friend. Do we have to submit separate applications?",
       answer: (
         <p>
-            <strong> No </strong>, if you are applying with one or more Co-Directors, please ensure that each of you fill out this form individually and indicate the full name(s) of your Co-Director(s) on your Committee Pitches Document! 
+          <strong> No </strong>, if you are applying with one or more
+          Co-Directors, please ensure that each of you fill out this form
+          individually and indicate the full name(s) of your Co-Director(s) on
+          your Committee Pitches Document!
         </p>
       ),
     },
@@ -72,13 +99,20 @@ const DirectorHiring = () => {
         "Can I pitch a JCC Commitee by myself or do I need to find a Co-Director to apply with?",
       answer: (
         <p>
-            <strong> SSICSIM 2026 is enforcing a co-director requirement for all JCC Committees. </strong> If you are interested in directing a JCC Committee, you must find at least one Co-Director to apply with. If you cannot find a co-director but still interested in a JCC, please reach out to                 <a href="mailto:academics@ssicsim.ca" className="underline font-bold">
-                  academics@ssicsim.ca.
-                </a>
+          <strong>
+            {" "}
+            SSICSIM 2026 is enforcing a co-director requirement for all JCC
+            Committees.{" "}
+          </strong>{" "}
+          If you are interested in directing a JCC Committee, you must find at
+          least one Co-Director to apply with. If you cannot find a co-director
+          but still interested in a JCC, please reach out to{" "}
+          <a href="mailto:academics@ssicsim.ca" className="underline font-bold">
+            academics@ssicsim.ca.
+          </a>
         </p>
       ),
     },
-
   ];
 
   // const oaQuestions = [
@@ -106,7 +140,7 @@ const DirectorHiring = () => {
   //             Open to all students who will be enrolled at a Canadian post-secondary institution in Fall 2026.
   //           </li>
   //           <li>
-  //             Proficiency in common industry programming language(s), such Python, HTML, and/or JavaScript. 
+  //             Proficiency in common industry programming language(s), such Python, HTML, and/or JavaScript.
   //           </li>
   //           <li>
   //             A strong ability to learn and adapt to new programming languages and software development tools quickly and independently.
@@ -121,7 +155,7 @@ const DirectorHiring = () => {
   //             <strong> Preferred (Not Required): </strong> Experience in programming design and/or creating software for diverse applications demonstrated through classwork, personal projects, or other examples.
   //           </li>
   //         </ul>
-  //         
+  //
   //       ),
   //   },
   //   {
@@ -173,7 +207,7 @@ const DirectorHiring = () => {
       <div className="relative py-16 bg-gradient-to-br from-white via-gray-50 to-white w-full overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#A3841D] opacity-5 transform skew-x-12"></div>
-        
+
         <div className="relative z-10 max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -186,22 +220,29 @@ const DirectorHiring = () => {
                 </h2>
                 <div className="w-24 h-1 bg-[#A3841D] mt-4"></div>
               </div>
-              
+
               <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
-                Thank you for your interest in joining SSICSIM 2026! Applications for all positions are due{" "}
+                Thank you for your interest in joining SSICSIM 2026!
+                Applications for all positions are due{" "}
                 <span className="font-bold underline">
                   Wednesday, March 18, 2026 at 11:59 PM.
                 </span>{" "}
-                Please review the role-specific FAQs & the roles and repsonsbilities document below before applying.
+                Please review the role-specific FAQs & the roles and
+                repsonsbilities document below before applying.
               </p>
-                            
+
               <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
-                In the event that we select you for an interview, you will be contacted by email. Please keep an eye on your spam box after submitting your application.
+                In the event that we select you for an interview, you will be
+                contacted by email. Please keep an eye on your spam box after
+                submitting your application.
               </p>
-              
+
               <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
                 If you have any questions, feel free to email{" "}
-                <a href="mailto:academics@ssicsim.ca" className="underline font-bold hover:text-[#8A7018] transition-colors">
+                <a
+                  href="mailto:academics@ssicsim.ca"
+                  className="underline font-bold hover:text-[#8A7018] transition-colors"
+                >
                   academics@ssicsim.ca
                 </a>
                 . Good luck with your application!
@@ -217,13 +258,12 @@ const DirectorHiring = () => {
                   Roles & Responsibilities
                 </a>
               </div>
-
             </div>
-            
+
             <div className="relative group">
               {/* Decorative border */}
               <div className="absolute -inset-2 bg-gradient-to-br from-[#A3841D] to-[#8A7018] rounded-xl blur-sm opacity-30 group-hover:opacity-50 transition duration-300"></div>
-              
+
               {/* Image */}
               <div className="relative">
                 <img
@@ -259,9 +299,16 @@ const DirectorHiring = () => {
                 Director
               </h2>
               <p className="text-[15px] md:text-[20px] mt-4 lg:text-[25px] font-light text-[#A3841D] font-dm-sans">
-                We're looking for people who share our vision for clarity, stability, and innovation. As a Director, you will have the opportunity to reflect these values through the creative process of writing, planning, and directing a crisis committee at SSICSIM 2026!  <br></br><br></br>
-
-                You'll be leading one or more committee teams consisting of a small group of staff members through the creation of a crisis committee and overseeing process of planning and creating committee content.
+                We're looking for people who share our vision for clarity,
+                stability, and innovation. As a Director, you will have the
+                opportunity to reflect these values through the creative process
+                of writing, planning, and directing a crisis committee at
+                SSICSIM 2026! <br></br>
+                <br></br>
+                You'll be leading one or more committee teams consisting of a
+                small group of staff members through the creation of a crisis
+                committee and overseeing process of planning and creating
+                committee content.
               </p>
               <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
                 <a
@@ -342,7 +389,7 @@ const DirectorHiring = () => {
         </div>
         {/* Divider */}
       </div>
-      
+
       {/* OA and MSD hiring sections are temporarily hidden
       <div className="w-full bg-white">
         <div className="max-w-[3000px] mx-auto">
@@ -540,7 +587,6 @@ const DirectorHiring = () => {
         </div>
       </div>
       */}
-
     </>
   );
 };
