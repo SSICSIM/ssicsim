@@ -22,7 +22,7 @@ export default function Navbar() {
     {
       label: "Staff",
       path: "/staff",
-      subItems: [{ label: "Director Hiring", path: "/director-hiring" }],
+      subItems: [{ label: "Open Roles", path: "/apply" }],
     },
     { label: "Contact", path: "/contact" },
   ];
@@ -39,13 +39,28 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-2 left-2 right-2 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/70 backdrop-blur-md shadow-lg border border-[#A3841D] py-2 rounded-lg px-4"
-          : " shadow-md border-b border-white py-4"
-      }`}
-    >
+    <>
+      {/* Announcement Banner */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#A3841D] via-[#B89520] to-[#A3841D] text-white py-3 px-4 text-center shadow-md">
+        <Link 
+          to="/apply" 
+          className="hover:underline transition-all duration-200 inline-block"
+        >
+          <span className="font-dm-sans text-sm md:text-base">
+            🎉 <strong>Director, Operations Assistant & Mechanics Software Developer</strong> applications are officially open! 
+            <span className="hidden sm:inline"> Closes on <strong>Wednesday, March 18, 2026 at 11:59 PM</strong>.</span>
+            <span className="ml-2 underline font-semibold">Click here to apply!</span>
+          </span>
+        </Link>
+      </div>
+      
+      <nav
+        className={`fixed top-[52px] left-2 right-2 z-40 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/70 backdrop-blur-md shadow-lg border border-[#A3841D] py-2 rounded-lg px-4"
+            : " shadow-md border-b border-white py-4"
+        }`}
+      >
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo / Brand */}
         {/* Logo / Brand */}
@@ -242,5 +257,6 @@ export default function Navbar() {
         </ul>
       </div>
     </nav>
+    </>
   );
 }
