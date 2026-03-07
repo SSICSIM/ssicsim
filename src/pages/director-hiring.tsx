@@ -3,21 +3,21 @@ import { useState } from "react";
 
 const DirectorHiring = () => {
   const [openDirectorateIndex, setOpenDirectorateIndex] = useState<number | null>(null);
-  const [openOAIndex, setOpenOAIndex] = useState<number | null>(null);
-  const [openMSDIndex, setOpenMSDIndex] = useState<number | null>(null);
+  // const [openOAIndex, setOpenOAIndex] = useState<number | null>(null);
+  // const [openMSDIndex, setOpenMSDIndex] = useState<number | null>(null);
 
 
   const toggleDirectorateFAQ = (index: number) => {
     setOpenDirectorateIndex(openDirectorateIndex === index ? null : index);
   };
 
-  const toggleOAFAQ = (index: number) => {
-    setOpenOAIndex(openOAIndex === index ? null : index);
-  }
+  // const toggleOAFAQ = (index: number) => {
+  //   setOpenOAIndex(openOAIndex === index ? null : index);
+  // }
 
-  const toggleMSDFAQ = (index: number) => {
-    setOpenMSDIndex(openMSDIndex === index ? null : index);
-  }
+  // const toggleMSDFAQ = (index: number) => {
+  //   setOpenMSDIndex(openMSDIndex === index ? null : index);
+  // }
 
   const directorateQuestions = [
     {
@@ -81,75 +81,75 @@ const DirectorHiring = () => {
 
   ];
 
-  const oaQuestions = [
-    {
-        question: "What are the requirements to apply to be an Operations Assistant for SSICSIM 2026?",
-        answer: (
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              Open to all students who will be enrolled at a Canadian post-secondary institution in Fall 2026.
-            </li>
-            <li>
-              <strong> Preferred (Not Required): </strong> At least 1 year of experience in Operations at SSICSIM/UTMUN/NAMUN.
-            </li>
-          </ul>
-        ),
-    },
-  ]
+  // const oaQuestions = [
+  //   {
+  //       question: "What are the requirements to apply to be an Operations Assistant for SSICSIM 2026?",
+  //       answer: (
+  //         <ul className="list-disc pl-6 space-y-2">
+  //           <li>
+  //             Open to all students who will be enrolled at a Canadian post-secondary institution in Fall 2026.
+  //           </li>
+  //           <li>
+  //             <strong> Preferred (Not Required): </strong> At least 1 year of experience in Operations at SSICSIM/UTMUN/NAMUN.
+  //           </li>
+  //         </ul>
+  //       ),
+  //   },
+  // ]
 
-  const msdQuestions = [
-    {
-        question: "What are the requirements to apply to be a Mechanics Software Developer for SSICSIM 2026?",
-        answer: (
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              Open to all students who will be enrolled at a Canadian post-secondary institution in Fall 2026.
-            </li>
-            <li>
-              Proficiency in common industry programming language(s), such Python, HTML, and/or JavaScript. 
-            </li>
-            <li>
-              A strong ability to learn and adapt to new programming languages and software development tools quickly and independently.
-            </li>
-            <li>
-              <strong> Preferred (Not Required): </strong> At least 1 year of experience in Operations at SSICSIM/UTMUN/NAMUN.
-            </li>
-            <li>
-              <strong> Preferred (Not Required): </strong> Major(s) in engineering, computer science, information technologies (IT), or other equivalent technical program(s).
-            </li>
-            <li>
-              <strong> Preferred (Not Required): </strong> Experience in programming design and/or creating software for diverse applications demonstrated through classwork, personal projects, or other examples.
-            </li>
-          </ul>
-          
-        ),
-    },
-    {
-        question: "What frameworks and languages does SSICSIM currently use?",
-        answer: (
-          <p>
-            We currently use a React-based for our website hoping to migrate to next.js soon, and looking into using FastAPI (Python) for our backend for internal tools. However, we are open to using other frameworks and programming languages if there are better options that you may suggest.
-          </p>
-        ),
-    },
-    {
-      question: "I don't have experience in all of the frameworks/languages mentioned above. Should I still apply?",
-      answer: (
-        <p>
-          <strong>Yes!</strong> In fact we highly encourage you to apply even if you don't have experience in all of the languages mentioned above. We are mainly looking for someone who has strong critical thinking skills, problem solving skills and ability to learn quickly, and we are happy to help you to learn any necessary frameworks/languages if you are selected for this role.
-        </p>
-      ),
-    },
-    {
-      question: "Why software development for a MUN conference?",
-      answer: (
-        <p>
-          We've noticed that internal processes and committee management before and during the conference that often lack simplicity and automation. This year, we want to use this opportunity to experiment and improve the experience for both delegates and staff. This is a new role this year, and we're excited to see how it develops! <br></br><br></br> One main area where we've identified complexity is in committee mechanics, where tracking certain elements during the conference can be challenging, and that's where we come in!
-        </p>
-      ),
-    }
+  // const msdQuestions = [
+  //   {
+  //       question: "What are the requirements to apply to be a Mechanics Software Developer for SSICSIM 2026?",
+  //       answer: (
+  //         <ul className="list-disc pl-6 space-y-2">
+  //           <li>
+  //             Open to all students who will be enrolled at a Canadian post-secondary institution in Fall 2026.
+  //           </li>
+  //           <li>
+  //             Proficiency in common industry programming language(s), such Python, HTML, and/or JavaScript. 
+  //           </li>
+  //           <li>
+  //             A strong ability to learn and adapt to new programming languages and software development tools quickly and independently.
+  //           </li>
+  //           <li>
+  //             <strong> Preferred (Not Required): </strong> At least 1 year of experience in Operations at SSICSIM/UTMUN/NAMUN.
+  //           </li>
+  //           <li>
+  //             <strong> Preferred (Not Required): </strong> Major(s) in engineering, computer science, information technologies (IT), or other equivalent technical program(s).
+  //           </li>
+  //           <li>
+  //             <strong> Preferred (Not Required): </strong> Experience in programming design and/or creating software for diverse applications demonstrated through classwork, personal projects, or other examples.
+  //           </li>
+  //         </ul>
+  //         
+  //       ),
+  //   },
+  //   {
+  //       question: "What frameworks and languages does SSICSIM currently use?",
+  //       answer: (
+  //         <p>
+  //           We currently use a React-based for our website hoping to migrate to next.js soon, and looking into using FastAPI (Python) for our backend for internal tools. However, we are open to using other frameworks and programming languages if there are better options that you may suggest.
+  //         </p>
+  //       ),
+  //   },
+  //   {
+  //     question: "I don't have experience in all of the frameworks/languages mentioned above. Should I still apply?",
+  //     answer: (
+  //       <p>
+  //         <strong>Yes!</strong> In fact we highly encourage you to apply even if you don't have experience in all of the languages mentioned above. We are mainly looking for someone who has strong critical thinking skills, problem solving skills and ability to learn quickly, and we are happy to help you to learn any necessary frameworks/languages if you are selected for this role.
+  //       </p>
+  //     ),
+  //   },
+  //   {
+  //     question: "Why software development for a MUN conference?",
+  //     answer: (
+  //       <p>
+  //         We've noticed that internal processes and committee management before and during the conference that often lack simplicity and automation. This year, we want to use this opportunity to experiment and improve the experience for both delegates and staff. This is a new role this year, and we're excited to see how it develops! <br></br><br></br> One main area where we've identified complexity is in committee mechanics, where tracking certain elements during the conference can be challenging, and that's where we come in!
+  //       </p>
+  //     ),
+  //   }
 
-  ]
+  // ]
 
   return (
     <>
@@ -343,7 +343,7 @@ const DirectorHiring = () => {
         {/* Divider */}
       </div>
       
-      {/* Separator Line */}
+      {/* OA and MSD hiring sections are temporarily hidden
       <div className="w-full bg-white">
         <div className="max-w-[3000px] mx-auto">
           <hr className="border-t-2 border-[#A3841D] my-8" />
@@ -351,12 +351,9 @@ const DirectorHiring = () => {
       </div>
 
       <div className="relative py-12 bg-white w-full">
-        {/* Text Content */}
         <div className="relative z-10 flex max-w-[3000px] mx-auto">
           <div className="flex flex-col-reverse md:grid md:grid-cols-2 w-full gap-8 px-6">
-            {/* FAQ Section - Now on the left for second hiring */}
             <div>
-              {/* FAQ Section */}
               <div className="px-6">
                 <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D] mb-10">
                   Operations Assistant FAQs
@@ -371,7 +368,6 @@ const DirectorHiring = () => {
                         key={index}
                         className="border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white"
                       >
-                        {/* Question */}
                         <button
                           onClick={() => toggleOAFAQ(index)}
                           className={`w-full flex justify-between items-center px-6 py-5 text-left transition-colors
@@ -395,7 +391,6 @@ const DirectorHiring = () => {
                           </span>
                         </button>
 
-                        {/* Answer */}
                         <div
                           className={`grid transition-all duration-500 ease-in-out ${
                             isOpen
@@ -419,7 +414,7 @@ const DirectorHiring = () => {
                 </div>
               </div>
             </div>
-            {/* Text Content - Now on the right for second hiring */}
+
             <div className="p-4">
               <p className="text-[30px] font-extralight text-[#A3841D] font-grotesque">
                 SSICSIM 2026
@@ -445,10 +440,8 @@ const DirectorHiring = () => {
             </div>
           </div>
         </div>
-        {/* Divider */}
       </div>
 
-      {/* Separator Line */}
       <div className="w-full bg-white">
         <div className="max-w-[3000px] mx-auto">
           <hr className="border-t-2 border-[#A3841D] my-8" />
@@ -456,7 +449,6 @@ const DirectorHiring = () => {
       </div>
 
       <div className="relative py-12 bg-white w-full">
-        {/* Text Content */}
         <div className="relative z-10 flex max-w-[3000px] mx-auto">
           <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-8 px-6">
             <div className="p-4">
@@ -482,8 +474,8 @@ const DirectorHiring = () => {
                 </a>
               </div>
             </div>
+
             <div>
-              {/* FAQ Section */}
               <div className="px-6">
                 <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D] mb-10">
                   Mechanics Software Developer FAQs
@@ -498,7 +490,6 @@ const DirectorHiring = () => {
                         key={index}
                         className="border border-gray-200 rounded-xl shadow-sm overflow-hidden bg-white"
                       >
-                        {/* Question */}
                         <button
                           onClick={() => toggleMSDFAQ(index)}
                           className={`w-full flex justify-between items-center px-6 py-5 text-left transition-colors
@@ -522,7 +513,6 @@ const DirectorHiring = () => {
                           </span>
                         </button>
 
-                        {/* Answer */}
                         <div
                           className={`grid transition-all duration-500 ease-in-out ${
                             isOpen
@@ -548,8 +538,8 @@ const DirectorHiring = () => {
             </div>
           </div>
         </div>
-        {/* Divider */}
       </div>
+      */}
 
     </>
   );
