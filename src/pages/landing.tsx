@@ -250,7 +250,7 @@ const Landing = () => {
           </ScrollScrub>
           <ScrollScrub>
             <h3 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
-              300+ delegates
+              3000+ delegates
             </h3>
           </ScrollScrub>
           <ScrollScrub>

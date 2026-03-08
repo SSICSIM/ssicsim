@@ -2,6 +2,7 @@ import { CF_DOMAIN } from "../utils/consts";
 import { useState } from "react";
 
 const DirectorHiring = () => {
+  const showGeneralInformation = false;
   const [openDirectorateIndex, setOpenDirectorateIndex] = useState<
     number | null
   >(null);
@@ -87,7 +88,7 @@ const DirectorHiring = () => {
         "I want to pitch a commitee idea with a friend. Do we have to submit separate applications?",
       answer: (
         <p>
-          <strong> No </strong>, if you are applying with one or more
+          <strong> Yes</strong>, if you are applying with one or more
           Co-Directors, please ensure that each of you fill out this form
           individually and indicate the full name(s) of your Co-Director(s) on
           your Committee Pitches Document!
@@ -198,95 +199,98 @@ const DirectorHiring = () => {
         <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
         <div className="max-w-[3000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
           <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
-            Open Roles
+            Director Hiring
           </h1>
         </div>
       </div>
 
-      {/* General Information Section */}
-      <div className="relative py-16 bg-gradient-to-br from-white via-gray-50 to-white w-full overflow-hidden">
-        {/* Decorative background element */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#A3841D] opacity-5 transform skew-x-12"></div>
+      {/* General Information Section (hidden) */}
+      {showGeneralInformation && (
+        <>
+          <div className="relative py-16 bg-gradient-to-br from-white via-gray-50 to-white w-full overflow-hidden">
+            {/* Decorative background element */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-[#A3841D] opacity-5 transform skew-x-12"></div>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div>
-                <p className="text-[30px] font-extralight text-[#A3841D] font-grotesque">
-                  SSICSIM 2026
-                </p>
-                <h2 className="text-[60px] font-bold text-[#A3841D] font-nunito leading-[1] mt-2">
-                  Open Positions
-                </h2>
-                <div className="w-24 h-1 bg-[#A3841D] mt-4"></div>
-              </div>
+            <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-[30px] font-extralight text-[#A3841D] font-grotesque">
+                      SSICSIM 2026
+                    </p>
+                    <h2 className="text-[60px] font-bold text-[#A3841D] font-nunito leading-[1] mt-2">
+                      Open Positions
+                    </h2>
+                    <div className="w-24 h-1 bg-[#A3841D] mt-4"></div>
+                  </div>
 
-              <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
-                Thank you for your interest in joining SSICSIM 2026!
-                Applications for all positions are due{" "}
-                <span className="font-bold underline">
-                  Wednesday, March 18, 2026 at 11:59 PM.
-                </span>{" "}
-                Please review the role-specific FAQs & the roles and
-                repsonsbilities document below before applying.
-              </p>
+                  <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
+                    Thank you for your interest in joining SSICSIM 2026!
+                    Applications for all positions are due{" "}
+                    <span className="font-bold underline">
+                      Wednesday, March 18, 2026 at 11:59 PM.
+                    </span>{" "}
+                    Please review the role-specific FAQs & the roles and
+                    repsonsbilities document below before applying.
+                  </p>
 
-              <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
-                In the event that we select you for an interview, you will be
-                contacted by email. Please keep an eye on your spam box after
-                submitting your application.
-              </p>
+                  <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
+                    In the event that we select you for an interview, you will be
+                    contacted by email. Please keep an eye on your spam box after
+                    submitting your application.
+                  </p>
 
-              <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
-                If you have any questions, feel free to email{" "}
-                <a
-                  href="mailto:academics@ssicsim.ca"
-                  className="underline font-bold hover:text-[#8A7018] transition-colors"
-                >
-                  academics@ssicsim.ca
-                </a>
-                . Good luck with your application!
-              </p>
+                  <p className="text-[15px] lg:text-[20px] font-light text-[#A3841D] font-dm-sans">
+                    If you have any questions, feel free to email{" "}
+                    <a
+                      href="mailto:academics@ssicsim.ca"
+                      className="underline font-bold hover:text-[#8A7018] transition-colors"
+                    >
+                      academics@ssicsim.ca
+                    </a>
+                    . Good luck with your application!
+                  </p>
 
-              <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
-                <a
-                  href="https://docs.google.com/document/d/1UQe1CURsqdbyQf2QBfL-i2Y42CeV46gUbqzTpWD79vA/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-dm-sans text-[20px] md:text-[25px] text-center bg-[#A3841D] text-white px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-                >
-                  Roles & Responsibilities
-                </a>
-              </div>
-            </div>
+                  <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
+                    <a
+                      href="https://docs.google.com/document/d/1UQe1CURsqdbyQf2QBfL-i2Y42CeV46gUbqzTpWD79vA/edit?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-dm-sans text-[20px] md:text-[25px] text-center bg-[#A3841D] text-white px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                    >
+                      Roles & Responsibilities
+                    </a>
+                  </div>
+                </div>
 
-            <div className="relative group">
-              {/* Decorative border */}
-              <div className="absolute -inset-2 bg-gradient-to-br from-[#A3841D] to-[#8A7018] rounded-xl blur-sm opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                <div className="relative group">
+                  {/* Decorative border */}
+                  <div className="absolute -inset-2 bg-gradient-to-br from-[#A3841D] to-[#8A7018] rounded-xl blur-sm opacity-30 group-hover:opacity-50 transition duration-300"></div>
 
-              {/* Image */}
-              <div className="relative">
-                <img
-                  src={`${CF_DOMAIN}/EnglishCivilWar.jpg`}
-                  alt="English Civil War Committee"
-                  className="w-full h-full rounded-lg shadow-2xl object-cover transform group-hover:scale-[1.02] transition duration-300"
-                  loading="lazy"
-                />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                  {/* Image */}
+                  <div className="relative">
+                    <img
+                      src={`${CF_DOMAIN}/EnglishCivilWar.jpg`}
+                      alt="English Civil War Committee"
+                      className="w-full h-full rounded-lg shadow-2xl object-cover transform group-hover:scale-[1.02] transition duration-300"
+                      loading="lazy"
+                    />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Separator Line */}
-      <div className="w-full bg-white">
-        <div className="max-w-[3000px] mx-auto">
-          <hr className="border-t-2 border-[#A3841D] my-8" />
-        </div>
-      </div>
-
+          {/* Separator Line */}
+          <div className="w-full bg-white">
+            <div className="max-w-[3000px] mx-auto">
+              <hr className="border-t-2 border-[#A3841D] my-8" />
+            </div>
+          </div>
+        </>
+      )}
       <div className="relative py-12 bg-white w-full">
         {/* Text Content */}
         <div className="relative z-10 flex max-w-[3000px] mx-auto">
