@@ -113,7 +113,7 @@ const DirectorHiring = () => {
       question: "Why software development for a MUN conference?",
       answer: (
         <p>
-          We've noticed that internal processes and committee management before and during the conference that often lack simplicity and automation. This year, we want to use this opportunity to experiment and improve the experience for both delegates and staff. This is a new role this year, and we're excited to see how it develops! <br></br><br></br> One main area where we've identified complexity is in committee mechanics, where tracking certain elements during the conference can be challenging, and that's where we come in!
+          We've noticed that internal processes and committee management before and during the conference often lack simplicity and automation. This year, we want to use this opportunity to experiment and improve the experience for both delegates and staff. This is a new role this year, and we're excited to see how it develops! <br></br><br></br> One main area where we've identified complexity is in committee mechanics, where tracking certain elements during the conference can be challenging, and that's where we come in!
         </p>
       ),
     }
