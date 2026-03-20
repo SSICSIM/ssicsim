@@ -22,7 +22,7 @@ export default function Navbar() {
     {
       label: "Staff",
       path: "/staff",
-      subItems: [{ label: "Director Hiring", path: "/apply" }],
+      subItems: [{ label: "OA/MSD Hiring", path: "/apply" }],
     },
     { label: "Contact", path: "/contact" },
   ];
@@ -46,11 +46,11 @@ export default function Navbar() {
           to="/apply"
           className="hover:underline transition-all duration-200 inline-block"
         >
-          <span className="font-dm-sans text-sm md:text-base">
-            🎉 <strong>Director </strong> applications are officially open!
+          <span className="font-dm-sans text-xs md:text-sm">
+            🎉 <strong>Operations Assistant & Mechanics Software Developer </strong> applications are officially open!
             <span className="hidden lg:inline">
               {" "}
-              Closes on <strong>Wednesday, March 18, 2026 at 11:59 PM</strong>.
+              Closes on <strong>Tuesday, March 31, 2026 at 11:59 PM</strong>.
             </span>
             <span className="ml-2 underline font-semibold">
               Click here to apply!
