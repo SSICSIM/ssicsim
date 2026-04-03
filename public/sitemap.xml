@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ssicsim.com/</loc>
-    <lastmod>2025-07-14</lastmod>
+    <loc>https://ssicsim.ca/</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ssicsim.com/about</loc>
-    <lastmod>2025-07-14</lastmod>
+    <loc>https://ssicsim.ca/about/mission</loc>
+    <lastmod>2026-04-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://ssicsim.ca/apply</loc>
+    <lastmod>2026-04-03</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ssicsim.ca/resources</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ssicsim.com/committees</loc>
-    <lastmod>2025-07-14</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ssicsim.com/register</loc>
-    <lastmod>2025-07-14</lastmod>
+    <loc>https://ssicsim.ca/contact</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ssicsim.com/contact</loc>
-    <lastmod>2025-07-14</lastmod>
+    <loc>https://ssicsim.ca/wrapped</loc>
+    <lastmod>2026-04-03</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>

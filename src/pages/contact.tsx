@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Seo from "../components/Seo";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,11 @@ const Contact = () => {
 
   return (
     <>
+      <Seo
+        title="Contact Us"
+        description="Get in touch with the SSICSIM team for questions about the conference, resources, or participation."
+        path="/contact"
+      />
       {/* HERO */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img

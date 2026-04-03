@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo";
 
 const UnderConstruction = () => {
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center bg-[#A3841D]">
+      <Seo
+        title="Page Under Construction"
+        description="This page is currently under construction. Check back soon for updates."
+        noindex={true}
+      />
       {/* Animated Construction Icon */}
       <div className="flex items-center justify-center mb-6">
         <svg

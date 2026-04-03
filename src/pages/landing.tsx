@@ -11,6 +11,7 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CF_DOMAIN } from "../utils/consts";
+import Seo from "../components/Seo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -168,6 +169,11 @@ const Landing = () => {
 
   return (
     <>
+      <Seo
+        title="SSICSIM 2026"
+        description="Canada's premier Model UN crisis simulation hosted by UofT students in Toronto. Explore committees, resources, and updates for SSICSIM 2026."
+        path="/"
+      />
       <div>
         <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
           {/* Background Image */}

@@ -1,5 +1,6 @@
 import { CF_DOMAIN } from "../utils/consts";
 import { useState } from "react";
+import Seo from "../components/Seo";
 
 const SecHiring = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -101,6 +102,11 @@ const SecHiring = () => {
 
   return (
     <>
+      <Seo
+        title="Secretariat Hiring"
+        description="Apply for SSICSIM 2026 Secretariat roles and learn about responsibilities, requirements, and FAQs."
+        path="/sec-hiring"
+      />
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Seo from "../components/Seo";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -8,6 +9,11 @@ const fadeInUp = {
 const Mission = () => {
   return (
     <>
+      <Seo
+        title="Our Mission"
+        description="Learn about SSICSIM's mission to build fast-paced, adaptive diplomacy and crisis leadership skills for delegates."
+        path="/about/mission"
+      />
       {/* Hero Banner */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img

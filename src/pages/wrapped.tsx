@@ -7,6 +7,7 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CF_DOMAIN } from "../utils/consts";
+import Seo from "../components/Seo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -525,6 +526,11 @@ const Wrapped = () => {
 
   return (
     <>
+      <Seo
+        title="SSICSIM 2025 Wrapped"
+        description="Highlights, committees, and standout moments from SSICSIM 2025."
+        path="/wrapped"
+      />
       <div className="w-[100vw] overflow-x-hidden">
         <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
           {/* Background Image */}

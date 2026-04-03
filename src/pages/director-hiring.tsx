@@ -1,5 +1,6 @@
 import { CF_DOMAIN } from "../utils/consts";
 import { useState } from "react";
+import Seo from "../components/Seo";
 
 const DirectorHiring = () => {
   const showGeneralInformation = true;
@@ -122,6 +123,11 @@ const DirectorHiring = () => {
 
   return (
     <>
+      <Seo
+        title="OA/MSD Hiring"
+        description="Applications for Operations Assistant and Mechanics Software Developer roles at SSICSIM 2026."
+        path="/apply"
+      />
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <img

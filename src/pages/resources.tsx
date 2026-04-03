@@ -3,6 +3,7 @@ import { resources } from "../utils/data";
 import ConferenceSchedule from "../components/Schedule";
 import { useState } from "react";
 import { parseDescription } from "../utils/utils";
+import Seo from "../components/Seo";
 
 const Resources = () => {
   const faqs = [
@@ -63,6 +64,11 @@ const Resources = () => {
   };
   return (
     <>
+      <Seo
+        title="Conference Resources"
+        description="Guides, schedules, rules of procedure, and FAQs to help delegates prepare for SSICSIM 2026."
+        path="/resources"
+      />
       {/* Hero Section */}
       <div className="block w-full min-h-[400px] h-[80vh] max-h-[1200px] relative">
         <img
