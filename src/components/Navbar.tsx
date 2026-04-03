@@ -47,10 +47,10 @@ export default function Navbar() {
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Operations Assistant & Mechanics Software Developer </strong> applications are officially open!
+            🎉 <strong>Operations Assistant & Mechanics Software Developer </strong> applications are officially open and extended!
             <span className="hidden lg:inline">
               {" "}
-              Closes on <strong>Tuesday, March 31, 2026 at 11:59 PM</strong>.
+              Closes on <strong>Friday, May 1st, 2026 at 11:59 PM</strong>.
             </span>
             <span className="ml-2 underline font-semibold">
               Click here to apply!

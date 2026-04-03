@@ -162,7 +162,7 @@ const DirectorHiring = () => {
                     Thank you for your interest in joining SSICSIM 2026!
                     Applications for all positions are due{" "}
                     <span className="font-bold underline">
-                      Tuesday, March 31, 2026 at 11:59 PM.
+                      Friday, May 1st, 2026 at 11:59 PM.
                     </span>{" "}
                     Please review the role-specific FAQs & the roles and
                     repsonsbilities document below before applying.
