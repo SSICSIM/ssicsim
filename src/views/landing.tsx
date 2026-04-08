@@ -393,7 +393,7 @@ const Landing = () => {
                     imageLoading ? "opacity-0" : "opacity-100"
                   }`}
                   priority={false}
-                  onLoadingComplete={() => {
+                  onLoad={() => {
                     requestAnimationFrame(() => setImageLoading(false));
                   }}
                 />
