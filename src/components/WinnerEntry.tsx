@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface WinnerEntry {
   committee: string;
@@ -67,12 +68,16 @@ const WinnersCarousel = ({ data }: { data: WinnerEntry[] }) => {
               className="absolute inset-0 flex flex-col items-center gap-4 md:gap-6 px-2 md:px-4"
             >
               {/* IMAGE */}
-              <img
-                src={current.image}
-                alt={current.committee}
-                loading="eager"
-                className="w-full md:w-[95%] lg:w-[90%] h-[300px] md:h-[400px] lg:h-[400px] object-cover rounded-xl shadow-md"
-              />
+              <div className="relative w-full md:w-[95%] lg:w-[90%] h-[300px] md:h-[400px] lg:h-[400px]">
+                <Image
+                  src={current.image}
+                  alt={current.committee}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 95vw, 90vw"
+                  className="object-cover rounded-xl shadow-md"
+                  priority={index === 0}
+                />
+              </div>
 
               {/* TITLE */}
               <div className="my-auto">

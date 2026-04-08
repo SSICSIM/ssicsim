@@ -5,6 +5,8 @@ interface Props {
   index: number;
 }
 
+import Image from "next/image";
+
 export default function CommitteeSummary({ title, description, image }: Props) {
   return (
     <div
@@ -25,8 +27,14 @@ export default function CommitteeSummary({ title, description, image }: Props) {
       transition-all duration-300
     "
     >
-      <div className="relative">
-        <img src={image} alt={title} className="w-full h-[40vh] object-cover" />
+      <div className="relative w-full h-[40vh]">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, 380px"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/50"></div>
       </div>
 

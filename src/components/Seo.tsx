@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import Head from "next/head";
 
 type SeoProps = {
   title: string;
@@ -9,63 +9,42 @@ type SeoProps = {
 };
 
 const DEFAULT_IMAGE = "/assets/photos/branding/GoldLogo.png";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ssicsim.ca";
 
-const toAbsoluteUrl = (url: string, baseUrl: string) => {
-  if (url.startsWith("http://") || url.startsWith("https://")) {
-    return url;
-  }
-
-  return `${baseUrl}${url.startsWith("/") ? url : `/${url}`}`;
+const toAbsoluteUrl = (url: string) => {
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  return `${BASE_URL}${url.startsWith("/") ? url : `/${url}`}`;
 };
 
-const upsertMeta = (attribute: "name" | "property", key: string, content: string) => {
-  const selector = `meta[${attribute}="${key}"]`;
-  let element = document.head.querySelector(selector) as HTMLMetaElement | null;
+const Seo = ({
+  title,
+  description,
+  path,
+  image,
+  noindex = false,
+}: SeoProps) => {
+  const fullTitle = title.includes("SSICSIM")
+    ? title
+    : `${title} | SSICSIM 2026`;
+  const url = path ? toAbsoluteUrl(path) : BASE_URL;
+  const imageUrl = toAbsoluteUrl(image ?? DEFAULT_IMAGE);
 
-  if (!element) {
-    element = document.createElement("meta");
-    element.setAttribute(attribute, key);
-    document.head.appendChild(element);
-  }
-
-  element.setAttribute("content", content);
-};
-
-const upsertLink = (rel: string, href: string) => {
-  const selector = `link[rel="${rel}"]`;
-  let element = document.head.querySelector(selector) as HTMLLinkElement | null;
-
-  if (!element) {
-    element = document.createElement("link");
-    element.setAttribute("rel", rel);
-    document.head.appendChild(element);
-  }
-
-  element.setAttribute("href", href);
-};
-
-const Seo = ({ title, description, path, image, noindex = false }: SeoProps) => {
-  useEffect(() => {
-    const baseUrl = window.location.origin;
-    const fullTitle = title.includes("SSICSIM")
-      ? title
-      : `${title} | SSICSIM 2026`;
-    const url = path ? `${baseUrl}${path}` : window.location.href;
-    const imageUrl = toAbsoluteUrl(image ?? DEFAULT_IMAGE, baseUrl);
-
-    document.title = fullTitle;
-
-    upsertMeta("name", "description", description);
-    upsertMeta("property", "og:title", fullTitle);
-    upsertMeta("property", "og:description", description);
-    upsertMeta("property", "og:url", url);
-    upsertMeta("property", "og:type", "website");
-    upsertMeta("property", "og:image", imageUrl);
-    upsertMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
-    upsertLink("canonical", url);
-  }, [description, image, noindex, path, title]);
-
-  return null;
+  return (
+    <Head>
+      <title>{fullTitle}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={imageUrl} />
+      <meta
+        name="robots"
+        content={noindex ? "noindex, nofollow" : "index, follow"}
+      />
+      <link rel="canonical" href={url} />
+    </Head>
+  );
 };
 
 export default Seo;

@@ -1,4 +1,5 @@
 import { CF_DOMAIN } from "../utils/consts";
+import Image from "next/image";
 
 const sponsors = [
   "CEES.png",
@@ -30,10 +31,12 @@ export default function LogoMarquee() {
         {/* Duplicate once */}
         {[...sponsors, ...sponsors, ...sponsors, ...sponsors].map(
           (src, index) => (
-            <img
+            <Image
               key={index}
               src={`${CF_DOMAIN}/${src}?format=webp`}
               alt={`sponsor-${index}`}
+              width={200}
+              height={80}
               className="h-[5vh] w-auto object-contain mx-6"
             />
           ),
