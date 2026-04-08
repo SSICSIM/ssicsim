@@ -1,11 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
-  const location = useLocation();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null); // Track which dropdown is open
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Track mobile menu state
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -30,7 +34,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      // Change navbar style when scrolling past 100px
       setIsScrolled(scrollY > 100);
     };
 
@@ -38,16 +41,25 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // close mobile menu on route change
+    setIsMenuOpen(false);
+    setDropdownOpen(null);
+  }, [pathname]);
+
   return (
     <>
-      {/* Announcement Banner */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r mb-5 from-[#A3841D] via-[#B89520] to-[#A3841D] text-white py-3 px-4 text-center shadow-md">
         <Link
-          to="/apply"
+          href="/apply"
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Operations Assistant & Mechanics Software Developer </strong> applications are officially open and extended!
+            🎉{" "}
+            <strong>
+              Operations Assistant & Mechanics Software Developer{" "}
+            </strong>{" "}
+            applications are officially open and extended!
             <span className="hidden lg:inline">
               {" "}
               Closes on <strong>Friday, May 1st, 2026 at 11:59 PM</strong>.
@@ -67,31 +79,29 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
-          {/* Logo / Brand */}
-          {/* Logo / Brand */}
           <div className="flex items-center">
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>
-              {" "}
-              {/* Navigate to home */}
-              <img
+            <Link href="/" aria-label="SSICSM Home">
+              <Image
                 src={
                   isScrolled
                     ? "/assets/photos/branding/GoldLogo.png"
                     : "/assets/photos/branding/WhiteLogo.png"
                 }
                 alt="SSICSM Logo"
-                className={`h-10 transition-all duration-300 ml-5 ${
+                width={160}
+                height={40}
+                priority
+                className={`h-10 w-auto transition-all duration-300 ml-5 ${
                   isScrolled ? "filter-none" : "filter brightness-0 invert"
                 }`}
               />
             </Link>
-          </div>{" "}
-          {/* Hamburger Menu for Mobile */}
+          </div>
+
           <button
-            className={`md:hidden focus:outline-none ${
-              isScrolled ? "text-[#A3841D]" : "text-white"
-            }`}
+            className={`md:hidden focus:outline-none ${isScrolled ? "text-[#A3841D]" : "text-white"}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -108,8 +118,7 @@ export default function Navbar() {
               />
             </svg>
           </button>
-          {/* Mobile Menu */}
-          {/* Mobile Menu */}
+
           <ul
             className={`absolute top-full left-0 w-full bg-gray-200 border-b-2 border-b-gray-500 shadow-lg rounded-lg py-4 z-40 transition-all duration-300 ${
               isMenuOpen
@@ -124,7 +133,6 @@ export default function Navbar() {
               >
                 {item.subItems ? (
                   <>
-                    {/* Dropdown Toggle */}
                     <button
                       className="block text-black hover:bg-[#A3841D] hover:text-white rounded-lg transition-colors w-full text-left"
                       onClick={() =>
@@ -150,18 +158,13 @@ export default function Navbar() {
                       </svg>
                     </button>
 
-                    {/* Dropdown Menu */}
                     {dropdownOpen === item.label && (
                       <ul className="pl-4 mt-2">
                         {item.subItems.map((subItem) => (
                           <li key={subItem.path} className="py-2">
                             <Link
-                              to={subItem.path}
+                              href={subItem.path}
                               className="block text-black hover:bg-[#A3841D] hover:text-white rounded-lg transition-colors"
-                              onClick={() => {
-                                setIsMenuOpen(false); // Close menu after navigation
-                                setDropdownOpen(null); // Close dropdown
-                              }}
                             >
                               {subItem.label}
                             </Link>
@@ -172,11 +175,8 @@ export default function Navbar() {
                   </>
                 ) : (
                   <Link
-                    to={item.path}
+                    href={item.path}
                     className="block text-black hover:bg-[#A3841D] hover:text-white rounded-lg transition-colors"
-                    onClick={() => {
-                      setIsMenuOpen(false); // Close menu after navigation
-                    }}
                   >
                     {item.label}
                   </Link>
@@ -184,20 +184,15 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          {/* Nav Links */}
-          <ul
-            className={`hidden md:flex lg:gap-10 md:text-md md:gap-4 lg:text-lg  font-dm-sans font-light items-center mr-6`}
-          >
+
+          <ul className="hidden md:flex lg:gap-10 md:text-md md:gap-4 lg:text-lg  font-dm-sans font-light items-center mr-6">
             {navItems.map((item) => (
               <li
                 key={item.path}
-                className={`relative group flex items-center ${
-                  isScrolled ? "text-black" : "text-white"
-                }`}
+                className={`relative group flex items-center ${isScrolled ? "text-black" : "text-white"}`}
                 onMouseEnter={() => setDropdownOpen(item.label)}
                 onMouseLeave={() => setDropdownOpen(null)}
               >
-                {/* Conditionally render Link or span */}
                 {item.subItems ? (
                   <span
                     className={`hover:text-[#A3841D] transition-colors cursor-default py-3 ${
@@ -205,7 +200,6 @@ export default function Navbar() {
                     } flex items-center`}
                   >
                     {item.label}
-                    {/* Add downwards arrow for dropdown items */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="ml-2 h-4 w-4"
@@ -223,9 +217,9 @@ export default function Navbar() {
                   </span>
                 ) : (
                   <Link
-                    to={item.path}
+                    href={item.path}
                     className={`hover:text-[#A3841D] transition-colors ${
-                      location.pathname === item.path
+                      pathname === item.path
                         ? isScrolled
                           ? "bg-[#A3841D] text-white p-3 px-6 rounded-full"
                           : "bg-white text-[#A3841D] p-3 px-6 rounded-4xl"
@@ -236,7 +230,6 @@ export default function Navbar() {
                   </Link>
                 )}
 
-                {/* Dropdown Menu */}
                 {item.subItems && dropdownOpen === item.label && (
                   <ul
                     className={`absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 z-50 ${
@@ -248,7 +241,7 @@ export default function Navbar() {
                     {item.subItems.map((subItem) => (
                       <li key={subItem.path}>
                         <Link
-                          to={subItem.path}
+                          href={subItem.path}
                           className="block px-4 py-2 text-black hover:bg-[#A3841D] hover:text-white rounded-lg transition-colors"
                         >
                           {subItem.label}

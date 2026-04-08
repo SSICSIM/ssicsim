@@ -1,4 +1,4 @@
-name: Deploy Vite to Vercel
+name: Deploy Next.js to Vercel
 
 on:
   push:
@@ -18,22 +18,16 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure Git
-        run: |
-          git config user.name "Nuthanan Tharmarajah"
-          git config user.email "nuthanan06@gmail.com"
-
-      - name: Make dummy commit as Nuthanan
-        run: |
-          echo "Last deploy: $(date)" > .last_deploy.txt
-          git add .last_deploy.txt
-          git commit -m "chore: trigger deploy as Nuthanan" || echo "No changes to commit"
-          git push origin HEAD:main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Vite app
+      - name: Build Next.js app
         run: npm run build
 
       - name: Install Vercel CLI

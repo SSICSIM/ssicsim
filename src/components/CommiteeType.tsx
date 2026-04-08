@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+
 interface CommiteeTypeProps {
   title: string;
   description: string;
-  onClick: () => void; // Callback for handling selection
-  isSelected: boolean; // Whether this committee type is selected
+  onClick: () => void;
+  isSelected: boolean;
 }
 
 const CommiteeType = ({
@@ -21,7 +24,6 @@ const CommiteeType = ({
       }`}
       onClick={onClick}
     >
-      {/* Title and Description */}
       <div className="flex flex-col items-center md:items-start justify-center w-full md:w-[80%] h-[100%] md:h-[100%]">
         <div className="text-3xl md:text-4xl lg:text-[55px] font-nunito break-words mb-2">
           {title}
@@ -33,7 +35,7 @@ const CommiteeType = ({
         )}
         {isSelected && (
           <Link
-            to={`/committees?filter=${title}`} // Pass the filter as a query parameter
+            href={`/committees?filter=${title}`}
             className="my-4 px-6 py-2 bg-white text-center text-[#A3841D] rounded-lg font-dm-sans text-lg hover:bg-gray-200 transition-colors"
           >
             View {title} Committees
@@ -41,7 +43,6 @@ const CommiteeType = ({
         )}
       </div>
 
-      {/* Circle with Plus/Minus */}
       <div
         className={`flex items-center justify-center w-[80px] h-[80px] md:w-[60px] md:h-[60px] rounded-full self-center md:self-start transition-colors duration-300 ${
           isSelected ? "bg-white text-black" : "bg-gray-300 text-black"
@@ -58,10 +59,8 @@ const CommiteeType = ({
           strokeWidth={2}
         >
           {isSelected ? (
-            // Minus Icon
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 12h16" />
           ) : (
-            // Plus Icon
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

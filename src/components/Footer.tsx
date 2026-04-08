@@ -1,4 +1,5 @@
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import icons from React Icons
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -7,10 +8,13 @@ const Footer = () => {
         {/* Left Section */}
         <div className="text-center md:text-left mb-6 md:mb-0 flex flex-col items-center md:items-start h-auto">
           {/* SSICSM Logo */}
-          <img
-            src="/assets/photos/branding/WhiteLogo.png" // Replace with the correct path to your logo
+          <Image
+            src="/assets/photos/branding/WhiteLogo.png"
             alt="SSICSM Logo"
+            width={200}
+            height={80}
             className="w-[200px] h-auto ml-[-5px]"
+            priority
           />
           <p className="text-sm">
             Canada’s Premier Model UN Crisis Simulation. ©{" "}

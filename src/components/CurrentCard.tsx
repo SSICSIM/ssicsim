@@ -4,18 +4,23 @@ interface CurrentCardProps {
   description: string;
 }
 
+import Image from "next/image";
+
 const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
   return (
     <>
-      <div className="flex flex-col h-auto md:h-[100%] w-[90%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg">
+      <div className="flex flex-col min-h-[420px] w-[90%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg">
         {/* Image Section */}
-        <div className="h-[60%] flex items-center justify-center">
-          <div className="relative w-full h-full rounded-md">
-            <img
+        <div className="h-[220px] md:h-[240px] flex items-center justify-center">
+          <div className="relative w-full h-full rounded-md overflow-hidden">
+            <Image
+              key={image}
               src={image}
-              className="md:w-full md:h-[100%] object-cover rounded-md mx-auto"
               alt="Current Card Image"
-              loading="lazy"
+              fill
+              sizes="(max-width: 768px) 90vw, 100%"
+              className="object-cover mx-auto"
+              priority={false}
             />
             {/* Filter Overlay */}
             <div className="absolute inset-0 bg-[#A3841D]/50 rounded-md"></div>
