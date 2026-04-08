@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "SSICSIM 2026",
   description:
     "Canada's premier Model UN crisis simulation hosted by UofT students in Toronto.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/Favicon.png",
+  },
 };
 
 export default function RootLayout({
