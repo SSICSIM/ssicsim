@@ -7,8 +7,8 @@ interface BackgroundGuide {
 
 interface CommiteeCardProps {
   title: string;
-  description: string;
-  expandedDescription: string;
+  description?: string;
+  expandedDescription?: string;
   backgroundGuides?: BackgroundGuide[]; // <-- new array for guides
   contactEmail?: string;
   director?: string;
@@ -30,6 +30,11 @@ const CommiteeCard = ({
   contactEmail,
 }: CommiteeCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const hasBackgroundImage = Boolean(backgroundImage && backgroundImage.trim());
+  const hasDescription = Boolean(description && description.trim());
+  const hasExpandedDescription = Boolean(
+    expandedDescription && expandedDescription.trim(),
+  );
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -58,10 +63,12 @@ const CommiteeCard = ({
     <>
       {/* Card */}
       <div
-        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] h-[600px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
+        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] h-[400px] md:h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow"
         onClick={handleOpenModal}
         style={{
-          backgroundImage: `url('${backgroundImage}')`,
+          backgroundImage: hasBackgroundImage
+            ? `url('${backgroundImage}')`
+            : "linear-gradient(160deg, #A3841D 0%, #000000 100%)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -72,9 +79,11 @@ const CommiteeCard = ({
           <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
             {title}
           </h2>
-          <p className="text-white mb-4 text-[12px] font-regular font-dm-sans">
-            {description}
-          </p>
+          {hasDescription && (
+            <p className="text-white mb-4 text-[12px] font-regular font-dm-sans">
+              {description}
+            </p>
+          )}
           {/* Background Guide Buttons on Main Card */}
           <div className="mb-4 flex flex-row gap-2 flex-wrap">
             {backgroundGuides &&
@@ -106,7 +115,9 @@ const CommiteeCard = ({
           onClick={handleCloseModal}
         >
           <div
-            className="modal-scrollbar relative grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]"
+            className={`modal-scrollbar relative grid grid-cols-1 ${
+              hasBackgroundImage ? "md:grid-cols-2" : "md:grid-cols-1"
+            } gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]`}
             style={{ overflowY: "scroll", WebkitOverflowScrolling: "touch" }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -119,7 +130,7 @@ const CommiteeCard = ({
             </button>
 
             {/* Image Section */}
-            {backgroundImage && (
+            {hasBackgroundImage && (
               <div
                 className="flex items-center justify-center w-full h-full rounded-lg"
                 style={{
@@ -170,40 +181,42 @@ const CommiteeCard = ({
                   ))}
                 </div>
               )}
-              <p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
-                {expandedDescription.split("\n").map((line, index) => {
-                  // Regex: (text before)[URL](text after)
-                  const match = line.match(
-                    /^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/,
-                  );
-                  if (match) {
-                    const before = match[1]; // text before [URL]
-                    const url = match[2]; // the URL inside []
-                    const after = match[3]; // text after ]
-                    return (
-                      <React.Fragment key={index}>
-                        {before}
-                        <a
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-500 underline hover:text-blue-300"
-                        >
-                          {after}
-                        </a>
-                        <br />
-                      </React.Fragment>
+              {hasExpandedDescription && (
+                <p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
+                  {expandedDescription && expandedDescription.split("\n").map((line, index) => {
+                    // Regex: (text before)[URL](text after)
+                    const match = line.match(
+                      /^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/,
                     );
-                  } else {
-                    return (
-                      <React.Fragment key={index}>
-                        {line}
-                        <br />
-                      </React.Fragment>
-                    );
-                  }
-                })}
-              </p>
+                    if (match) {
+                      const before = match[1]; // text before [URL]
+                      const url = match[2]; // the URL inside []
+                      const after = match[3]; // text after ]
+                      return (
+                        <React.Fragment key={index}>
+                          {before}
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 underline hover:text-blue-300"
+                          >
+                            {after}
+                          </a>
+                          <br />
+                        </React.Fragment>
+                      );
+                    } else {
+                      return (
+                        <React.Fragment key={index}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      );
+                    }
+                  })}
+                </p>
+              )}
               {director && (
                 <div className="mt-2">
                   <h3 className="text-2xl font-semibold font-dm-sans text-[#A3841D]">

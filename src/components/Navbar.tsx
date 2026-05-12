@@ -23,10 +23,14 @@ export default function Navbar() {
       path: "/conference",
       subItems: [{ label: "Resources", path: "/resources" }],
     },
+    { label: "Committees", path: "/committees" },
     {
       label: "Staff",
       path: "/staff",
-      subItems: [{ label: "OA/MSD Hiring", path: "/apply" }],
+      subItems: [
+        { label: "OA/MSD Hiring", path: "/apply" },
+        { label: "General Staff Hiring", path: "/staff/openings" },
+      ],
     },
     { label: "Contact", path: "/contact" },
   ];

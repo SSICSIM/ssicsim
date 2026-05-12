@@ -45,7 +45,7 @@ const Openings = () => {
               </p>
               <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSewsKyMC-dXuSvrGxa4yZ8zTnQDxRXyz5dyNjMPLgwQrCDj6g/viewform"
+                  href="https://forms.gle/djopEAUNkGKRJc4A6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-dm-sans text-[15px] md:text-[20px] text-center bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
@@ -78,7 +78,7 @@ const Openings = () => {
                 alt="Moderator"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover md:rotate-90"
+                className="object-cover"
                 priority={false}
               />
             </div>
@@ -153,7 +153,7 @@ const Openings = () => {
                 alt="Staff Support"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transform md:rotate-[270deg]"
+                className="object-cover"
               />
             </div>
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
