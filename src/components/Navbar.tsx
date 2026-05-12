@@ -29,7 +29,7 @@ export default function Navbar() {
       path: "/staff",
       subItems: [
         { label: "OA/MSD Hiring", path: "/apply" },
-        { label: "General Staff Hiring", path: "/staff/openings" },
+        { label: "Staff Hiring", path: "/staff/openings" },
       ],
     },
     { label: "Contact", path: "/contact" },
