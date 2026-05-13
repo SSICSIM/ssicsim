@@ -45,7 +45,7 @@ const Openings = () => {
               </p>
               <div className="flex md:flex-row flex-col gap-3 md:gap-6 w-full mt-6">
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSewsKyMC-dXuSvrGxa4yZ8zTnQDxRXyz5dyNjMPLgwQrCDj6g/viewform"
+                  href="https://forms.gle/djopEAUNkGKRJc4A6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-dm-sans text-[15px] md:text-[20px] text-center bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
@@ -78,7 +78,7 @@ const Openings = () => {
                 alt="Moderator"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover md:rotate-90"
+                className="object-cover"
                 priority={false}
               />
             </div>
@@ -113,14 +113,14 @@ const Openings = () => {
           <div className="relative h-full row-span-1 col-span-1 bg-gradient-to-br from-[#A3841D] to-[#C2A95F] rounded-lg shadow-lg p-6 flex flex-col justify-end items-start text-white">
             <Image
               src={`${CF_DOMAIN}/CrisisStaff.JPG?format=webp`}
-              alt="Crisis Staff"
+              alt="Crisis Analyst"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
               className="absolute inset-0 object-cover rounded-lg"
             />
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
             <h3 className="text-3xl font-nunito font-extrabold z-20">
-              Crisis Staff
+              Crisis Analyst
             </h3>
             <p className="font-dm-sans text-lg mt-2 z-20">
               Steer the Story of Individual Delegates
@@ -153,7 +153,7 @@ const Openings = () => {
                 alt="Staff Support"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transform md:rotate-[270deg]"
+                className="object-cover"
               />
             </div>
             <div className="absolute inset-0 bg-[#A3841D]/60 rounded-md"></div>
