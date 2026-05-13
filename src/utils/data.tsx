@@ -253,7 +253,7 @@ export const committeesData = [
     double: false,
   },
   {
-    title: "The Obedience Project",
+    title: "Welcome to Salisbury Heights",
     description: "",
     expandedDescription: "",
     backgroundGuides: [],
