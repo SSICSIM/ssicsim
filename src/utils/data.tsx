@@ -275,7 +275,7 @@ export const committeesData = [
     directorImage: "",
     category: "Conceptual",
     backgroundImage: "",
-    jointOrNot: false,
+    jointOrNot: true,
     double: false,
   },
 ];
