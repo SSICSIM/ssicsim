@@ -7,12 +7,9 @@ export const metadata: Metadata = {
   description:
     "Canada's premier Model UN crisis simulation hosted by UofT students in Toronto.",
   icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-    ],
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/Favicon.png",
   },
 };
 

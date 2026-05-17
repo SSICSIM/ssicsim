@@ -16,7 +16,10 @@ export default function Navbar() {
     {
       label: "About",
       path: "/about",
-      subItems: [{ label: "Our Mission", path: "/about/mission" }],
+      subItems: [
+        { label: "Our Mission", path: "/about/mission" },
+        { label: "Our Team", path: "/team" },
+      ],
     },
     {
       label: "Conference",
