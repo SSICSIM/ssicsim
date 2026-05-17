@@ -10,7 +10,7 @@ type Branch = {
   name: string;
   displayName: string;
   photos: string[];
-  blurb: string;
+  note?: string;
 };
 
 const BRANCHES: Branch[] = [
@@ -18,8 +18,6 @@ const BRANCHES: Branch[] = [
     name: "Executive Board",
     displayName: "Executive Board",
     photos: [`${CF_DOMAIN}/executiveboard.jpg?format=webp`],
-    blurb:
-      "The leadership team steering every aspect of SSICSIM 2026 — from vision to execution.",
   },
   {
     name: "External",
@@ -28,8 +26,6 @@ const BRANCHES: Branch[] = [
       `${CF_DOMAIN}/external.jpg?format=webp`,
       `${CF_DOMAIN}/internal.jpg?format=webp`,
     ],
-    blurb:
-      "Connecting SSICSIM to the world: corporate relations, logistics, design, and marketing.",
   },
   {
     name: "Internal",
@@ -38,8 +34,6 @@ const BRANCHES: Branch[] = [
       `${CF_DOMAIN}/equity.jpg?format=webp`,
       `${CF_DOMAIN}/acad.jpg?format=webp`,
     ],
-    blurb:
-      "The people building the committees, training delegates, and keeping operations sharp.",
   },
 ];
 
@@ -88,7 +82,7 @@ const PolaroidCard = ({ member, index }: { member: Member; index: number }) => (
         />
       </div>
       <div className="mt-2 text-center">
-        <p className="font-nunito font-bold text-gray-800 text-[12px] md:text-[14px] leading-tight">
+        <p className="font-dm-sans font-semibold text-gray-800 text-[12px] md:text-[14px] leading-tight">
           {member.name}
         </p>
         <p className="font-dm-sans text-[9px] md:text-[10px] text-[#A3841D] mt-0.5 leading-tight">
@@ -110,49 +104,31 @@ export default function Team() {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="relative block w-full min-h-[300px] h-[60vh] md:h-[80vh] max-h-[1200px]">
+      <div className="relative block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <Image
-          src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
+          src="/assets/photos/UoftAerialPhoto.jpg"
           alt="University of Toronto Aerial View"
           fill
           priority
           sizes="100vw"
           className="absolute top-0 left-0 object-cover z-10"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10" />
-        <div className="max-w-[2000px] mx-auto absolute inset-0 flex flex-col items-start justify-center z-20 px-6 md:px-16">
-          <p className="font-dm-sans text-[9px] tracking-[0.6em] text-white/50 uppercase mb-3">
-            SSICSIM · 2026 · Secretariat
-          </p>
-          <h1 className="text-white text-3xl md:text-7xl font-bold font-nunito leading-tight uppercase">
+        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
+        <div className="max-w-[2000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
+          <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
             Our Team
           </h1>
-          <div className="mt-4 flex items-center gap-3">
-            <div className="w-12 h-px bg-[#A3841D]" />
-            <p className="font-dm-sans text-[10px] tracking-[0.4em] text-white/40 uppercase">
-              Vol. I
-            </p>
-          </div>
         </div>
       </div>
 
       {/* ── Intro ── */}
-      <div className="text-center py-10 md:py-16 px-6 bg-white border-b-2 border-gray-900">
-        <p className="font-dm-sans text-[8px] tracking-[0.6em] text-[#A3841D] uppercase mb-4">
-          Meet the Secretariat
-        </p>
-        <h2 className="text-3xl md:text-5xl font-bold font-nunito text-gray-900 uppercase tracking-tight">
-          The Minds Behind SSICSIM
-        </h2>
-        <div className="flex items-center gap-4 max-w-xs mx-auto my-5">
-          <div className="flex-1 h-px bg-gray-200" />
-          <div className="w-1.5 h-1.5 rounded-full bg-[#A3841D]" />
-          <div className="flex-1 h-px bg-gray-200" />
+      <div className="text-center py-16 px-6 bg-white border-b-2 border-gray-900">
+        <h2 className="text-4xl font-bold font-nunito text-[#A3841D] mb-4">Meet the Team</h2>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg text-gray-700 font-dm-sans">
+            Everything you need to know about the people who make SSICSIM possible, meet the Secretariat!
+          </p>
         </div>
-        <p className="font-dm-sans text-base md:text-lg font-light text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Our dedicated secretariat team is committed to delivering an
-          unparalleled Model UN experience.
-        </p>
       </div>
 
       {/* ── Magazine spreads ── */}
@@ -169,17 +145,23 @@ export default function Team() {
             }`}
           >
             {/* ── Photo side — hidden on mobile ── */}
-            <div className="hidden md:block relative md:w-[44%] shrink-0 self-stretch overflow-hidden">
+            <div
+              className="hidden md:block relative md:w-[50%] shrink-0 self-stretch overflow-hidden"
+              style={branch.displayName === "Academics & Equity" ? { left: "-10px", position: "relative" } : {}}
+            >
               {multiPhoto ? (
                 <div className="flex flex-col h-full">
                   {branch.photos.map((src, pi) => (
-                    <div key={pi} className="relative flex-1 overflow-hidden">
+                    <div
+                      key={pi}
+                      className="relative flex-1 overflow-hidden"
+                    >
                       <Image
                         src={src}
                         alt={`${branch.displayName} ${pi + 1}`}
                         fill
-                        sizes="44vw"
-                        className="object-cover object-top"
+                          sizes="60vw"
+                        className={`object-cover object-top`}
                       />
                       {pi < branch.photos.length - 1 && (
                         <div className="absolute bottom-0 left-0 right-0 h-px bg-white/30 z-10" />
@@ -192,7 +174,7 @@ export default function Team() {
                   src={branch.photos[0]}
                   alt={branch.displayName}
                   fill
-                  sizes="44vw"
+                    sizes="60vw"
                   className="object-cover object-top"
                 />
               )}
@@ -240,11 +222,11 @@ export default function Team() {
               {/* Masthead */}
               <div className="flex items-center gap-3 mb-6 md:mb-8 shrink-0 relative z-10">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#A3841D]" />
-                <span className="font-dm-sans text-[8px] tracking-[0.5em] text-gray-400 uppercase shrink-0">
+                <span className="font-nunito text-[8px] tracking-[0.5em] text-gray-400 uppercase shrink-0">
                   SSICSIM · 2026
                 </span>
                 <span className="flex-1 h-px bg-gray-300" />
-                <span className="font-dm-sans text-[8px] tracking-[0.3em] text-[#A3841D] shrink-0">
+                <span className="font-nunito text-[8px] tracking-[0.3em] text-[#A3841D] shrink-0">
                   Secretariat
                 </span>
                 <div className="w-1.5 h-1.5 rounded-full bg-[#A3841D]" />
@@ -255,42 +237,31 @@ export default function Team() {
                 {/* Team Profile label */}
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-5 h-px bg-[#A3841D]" />
-                  <span className="font-dm-sans text-[8px] tracking-[0.55em] text-[#A3841D] uppercase">
+                  <span className="font-nunito text-[8px] tracking-[0.55em] text-[#A3841D] uppercase">
                     Team Profile
                   </span>
                 </div>
 
-                <h2 className="font-nunito text-3xl md:text-5xl font-bold text-gray-900 uppercase tracking-tight leading-none mb-4">
+                <h2 className="font-nunito text-3xl md:text-5xl font-bold text-gray-900 uppercase tracking-tight leading-none mb-3">
                   {branch.displayName}
                 </h2>
+
+                {branch.note && (
+                  <p className="font-dm-sans text-2xl text-[#A3841D] leading-tight mb-4">
+                    {branch.note}
+                  </p>
+                )}
 
                 {/* Double rule */}
                 <div className="flex flex-col gap-[3px] mb-5 w-full">
                   <div className="h-[3px] bg-gray-900 w-full" />
                   <div className="h-px bg-gray-900 w-2/5" />
                 </div>
-
-                {/* Pull-quote blurb */}
-                <div className="border-l-[3px] border-[#A3841D] pl-4">
-                  <p className="font-dm-sans text-sm italic text-gray-500 leading-relaxed">
-                    {branch.blurb}
-                  </p>
-                </div>
               </div>
 
               {/* Members section */}
               <div className="relative z-10">
                 {/* Members header */}
-                <div className="flex items-center gap-3 mb-5 md:mb-6">
-                  <span className="font-dm-sans text-[8px] tracking-[0.5em] text-gray-400 uppercase shrink-0">
-                    Secretariat Members
-                  </span>
-                  <span className="flex-1 h-px bg-gray-200" />
-                  <span className="font-dm-sans text-[9px] font-bold text-gray-300 tabular-nums">
-                    {String(members.length).padStart(2, "0")}
-                  </span>
-                </div>
-
                 <div className="flex flex-wrap gap-4 md:gap-6 items-start content-start justify-center">
                   {members.map((m, idx) => (
                     <PolaroidCard key={idx} member={m} index={idx} />

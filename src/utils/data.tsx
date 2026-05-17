@@ -366,7 +366,7 @@ export const secretariat = [
   {
     name: "Nicholas Ali",
     position: "DSG, Equity",
-    image: `${CF_DOMAIN}/nicholas.jpg?format=webp`,
+    image: `${CF_DOMAIN}/nicholas.png?format=webp`,
     branch: "Executive Board",
   },
   {
@@ -384,7 +384,7 @@ export const secretariat = [
   {
     name: "Pavel Nazarenko",
     position: "USG, Internal",
-    image: `${CF_DOMAIN}/nazarenko.jpg?format=webp`,
+    image: `${CF_DOMAIN}/pavel.jpg?format=webp`,
     branch: "Executive Board",
   },
   // External
@@ -434,7 +434,7 @@ export const secretariat = [
   {
     name: "Jay Kaur",
     position: "ASG, Equity",
-    image: `${CF_DOMAIN}/jay.jpg?format=webp`,
+    image: `${CF_DOMAIN}/jay.png?format=webp`,
     branch: "Internal",
   },
   {
@@ -446,7 +446,7 @@ export const secretariat = [
   {
     name: "Dor Ioffe",
     position: "ASG, Fictional",
-    image: `${CF_DOMAIN}/dor.jpg?format=webp`,
+    image: `${CF_DOMAIN}/dor.png?format=webp`,
     branch: "Internal",
   },
   {

@@ -11,7 +11,10 @@ const ALLOWED_ROUTES = new Set([
   "/staff",
   "/apply",
   "/contact",
+  "/staff/openings",
   "/underconstruction",
+  "/wrapped",
+  "/committees",
 ]);
 
 export function middleware(request: NextRequest) {
