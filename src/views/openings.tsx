@@ -66,15 +66,15 @@ const Openings = () => {
         </div>
 
         {/* Rolling Hiring Note Full Width */}
-        <div className="w-[100vw] flex justify-center mt-6 mb-8 relative left-1/2 right-1/2 -translate-x-1/2">
-          <div className="bg-[#F6E27A] rounded-xl px-8 py-8 w-[100vw] max-w-5xl shadow-lg border-4 border-[#A3841D] flex flex-col items-center text-center">
-            <p className="text-[#A3841D] text-[20px] lg:text-[24px] font-extrabold font-nunito mb-2">
+        <div className="flex justify-center mt-6 mb-8 w-full">
+          <div className="flex flex-col min-h-[220px] w-[90%] mx-auto md:w-[100%] p-6 z-[10] bg-white/30 backdrop-blur-lg rounded-lg border border-white/10 shadow-lg items-center text-center">
+            <p className="text-[22px] lg:text-[26px] font-bold font-grotesque mb-2 text-white">
               Please note that this year, we are using a rolling hiring system.
             </p>
-            <p className="text-[#A3841D] text-[16px] lg:text-[20px] font-medium font-dm-sans max-w-3xl mt-2">
+            <p className="text-white font-dm-sans font-light md:text-[15px] text-[15px] lg:text-[20px] max-w-3xl mt-2">
               This means that for the duration of our hiring period (<span className="font-bold">from now until <span className='underline'>August 10th, 2026</span></span>), we will be continuously evaluating applications and hiring successful candidates, as opposed to evaluating and hiring only after a set deadline. <span className="font-bold">This means that applying earlier is advantageous, as there will be more open positions earlier in the hiring period.</span>
             </p>
-            <p className="text-[#A3841D] text-[16px] lg:text-[18px] font-medium font-dm-sans mt-4">
+            <p className="text-white font-dm-sans font-medium md:text-[15px] text-[15px] lg:text-[18px] mt-4">
               If you have any questions about this, please reach out to <a href="mailto:hiring@ssicsim.ca" className="underline font-bold">hiring@ssicsim.ca</a>.
             </p>
           </div>
