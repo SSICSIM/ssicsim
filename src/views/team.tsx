@@ -123,10 +123,13 @@ export default function Team() {
 
       {/* ── Intro ── */}
       <div className="text-center py-16 px-6 bg-white border-b-2 border-gray-900">
-        <h2 className="text-4xl font-bold font-nunito text-[#A3841D] mb-4">Meet the Team</h2>
+        <h2 className="text-4xl font-bold font-nunito text-[#A3841D] mb-4">
+          Meet the Team
+        </h2>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-lg text-gray-700 font-dm-sans">
-            Everything you need to know about the people who make SSICSIM possible, meet the Secretariat!
+            Everything you need to know about the people who make SSICSIM
+            possible, meet the Secretariat!
           </p>
         </div>
       </div>
@@ -145,9 +148,7 @@ export default function Team() {
             }`}
           >
             {/* ── Photo side — hidden on mobile ── */}
-            <div
-              className="hidden md:block relative md:w-[50%] shrink-0 self-stretch overflow-hidden"
-            >
+            <div className="hidden md:block relative md:w-[50%] shrink-0 self-stretch overflow-hidden">
               {multiPhoto ? (
                 <div className="flex flex-col h-full justify-center">
                   {branch.photos.map((src, pi) => (
@@ -155,14 +156,13 @@ export default function Team() {
                       key={pi}
                       className="relative flex-1 overflow-hidden m-0 p-0 h-full bg-[#f4e7c5]"
                     >
-                
-                        <Image
-                          src={src}
-                          alt={`${branch.displayName} ${pi + 1}`}
-                          fill
-                          sizes="60vw"
-                          className="object-cover object-top h-full w-full"
-                        />
+                      <Image
+                        src={src}
+                        alt={`${branch.displayName} ${pi + 1}`}
+                        fill
+                        sizes="60vw"
+                        className="object-cover object-top h-full w-full"
+                      />
                       {pi < branch.photos.length - 1 && (
                         <div className="absolute bottom-0 left-0 right-0 h-px bg-white/30 z-10" />
                       )}
@@ -174,7 +174,7 @@ export default function Team() {
                   src={branch.photos[0]}
                   alt={branch.displayName}
                   fill
-                    sizes="60vw"
+                  sizes="60vw"
                   className="object-cover object-top"
                 />
               )}

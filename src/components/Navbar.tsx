@@ -62,12 +62,9 @@ export default function Navbar() {
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉{" "}
-            <strong>General Staff Hiring</strong> applications are open on a
+            🎉 <strong>General Staff Hiring</strong> applications are open on a
             rolling basis.
-            <span className="ml-2 underline font-semibold">
-              Apply now!
-            </span>
+            <span className="ml-2 underline font-semibold">Apply now!</span>
           </span>
         </Link>
       </div>

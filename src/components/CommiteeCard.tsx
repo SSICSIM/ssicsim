@@ -183,38 +183,39 @@ const CommiteeCard = ({
               )}
               {hasExpandedDescription && (
                 <p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
-                  {expandedDescription && expandedDescription.split("\n").map((line, index) => {
-                    // Regex: (text before)[URL](text after)
-                    const match = line.match(
-                      /^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/,
-                    );
-                    if (match) {
-                      const before = match[1]; // text before [URL]
-                      const url = match[2]; // the URL inside []
-                      const after = match[3]; // text after ]
-                      return (
-                        <React.Fragment key={index}>
-                          {before}
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 underline hover:text-blue-300"
-                          >
-                            {after}
-                          </a>
-                          <br />
-                        </React.Fragment>
+                  {expandedDescription &&
+                    expandedDescription.split("\n").map((line, index) => {
+                      // Regex: (text before)[URL](text after)
+                      const match = line.match(
+                        /^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/,
                       );
-                    } else {
-                      return (
-                        <React.Fragment key={index}>
-                          {line}
-                          <br />
-                        </React.Fragment>
-                      );
-                    }
-                  })}
+                      if (match) {
+                        const before = match[1]; // text before [URL]
+                        const url = match[2]; // the URL inside []
+                        const after = match[3]; // text after ]
+                        return (
+                          <React.Fragment key={index}>
+                            {before}
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-500 underline hover:text-blue-300"
+                            >
+                              {after}
+                            </a>
+                            <br />
+                          </React.Fragment>
+                        );
+                      } else {
+                        return (
+                          <React.Fragment key={index}>
+                            {line}
+                            <br />
+                          </React.Fragment>
+                        );
+                      }
+                    })}
                 </p>
               )}
               {director && (

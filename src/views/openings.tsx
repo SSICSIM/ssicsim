@@ -72,10 +72,28 @@ const Openings = () => {
               Please note that this year, we are using a rolling hiring system.
             </p>
             <p className="text-white font-dm-sans font-light md:text-[15px] text-[15px] lg:text-[20px] max-w-3xl mt-2">
-              This means that for the duration of our hiring period (<span className="font-bold">from now until <span className='underline'>August 10th, 2026</span></span>), we will be continuously evaluating applications and hiring successful candidates, as opposed to evaluating and hiring only after a set deadline. <span className="font-bold">This means that applying earlier is advantageous, as there will be more open positions earlier in the hiring period.</span>
+              This means that for the duration of our hiring period (
+              <span className="font-bold">
+                from now until{" "}
+                <span className="underline">August 10th, 2026</span>
+              </span>
+              ), we will be continuously evaluating applications and hiring
+              successful candidates, as opposed to evaluating and hiring only
+              after a set deadline.{" "}
+              <span className="font-bold">
+                This means that applying earlier is advantageous, as there will
+                be more open positions earlier in the hiring period.
+              </span>
             </p>
             <p className="text-white font-dm-sans font-medium md:text-[15px] text-[15px] lg:text-[18px] mt-4">
-              If you have any questions about this, please reach out to <a href="mailto:hiring@ssicsim.ca" className="underline font-bold">hiring@ssicsim.ca</a>.
+              If you have any questions about this, please reach out to{" "}
+              <a
+                href="mailto:hiring@ssicsim.ca"
+                className="underline font-bold"
+              >
+                hiring@ssicsim.ca
+              </a>
+              .
             </p>
           </div>
         </div>
