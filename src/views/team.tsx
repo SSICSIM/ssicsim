@@ -32,7 +32,7 @@ const BRANCHES: Branch[] = [
     displayName: "Academics & Equity",
     photos: [
       `${CF_DOMAIN}/equity.jpg?format=webp`,
-      `${CF_DOMAIN}/acad.jpg?format=webp`,
+      `${CF_DOMAIN}/academics3.jpg?format=webp`,
     ],
   },
 ];
@@ -147,22 +147,22 @@ export default function Team() {
             {/* ── Photo side — hidden on mobile ── */}
             <div
               className="hidden md:block relative md:w-[50%] shrink-0 self-stretch overflow-hidden"
-              style={branch.displayName === "Academics & Equity" ? { left: "-10px", position: "relative" } : {}}
             >
               {multiPhoto ? (
-                <div className="flex flex-col h-full">
+                <div className="flex flex-col h-full justify-center">
                   {branch.photos.map((src, pi) => (
                     <div
                       key={pi}
-                      className="relative flex-1 overflow-hidden"
+                      className="relative flex-1 overflow-hidden m-0 p-0 h-full bg-[#f4e7c5]"
                     >
-                      <Image
-                        src={src}
-                        alt={`${branch.displayName} ${pi + 1}`}
-                        fill
+                
+                        <Image
+                          src={src}
+                          alt={`${branch.displayName} ${pi + 1}`}
+                          fill
                           sizes="60vw"
-                        className={`object-cover object-top`}
-                      />
+                          className="object-cover object-top h-full w-full"
+                        />
                       {pi < branch.photos.length - 1 && (
                         <div className="absolute bottom-0 left-0 right-0 h-px bg-white/30 z-10" />
                       )}

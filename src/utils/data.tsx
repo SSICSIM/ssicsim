@@ -445,7 +445,7 @@ export const secretariat = [
   },
   {
     name: "Dor Ioffe",
-    position: "ASG, Fictional",
+    position: "ASG, Conceptual",
     image: `${CF_DOMAIN}/dor.png?format=webp`,
     branch: "Internal",
   },
@@ -457,7 +457,7 @@ export const secretariat = [
   },
   {
     name: "Abraar Hussain",
-    position: "ASG, Conceptual",
+    position: "ASG, Fictional",
     image: `${CF_DOMAIN}/abraar.jpg?format=webp`,
     branch: "Internal",
   },
