@@ -456,7 +456,7 @@ export const secretariat = [
     branch: "Internal",
   },
   {
-    name: "Abraar Hussain",
+    name: "Abraar Hussai",
     position: "ASG, Fictional",
     image: `${CF_DOMAIN}/abraar.jpg?format=webp`,
     branch: "Internal",
