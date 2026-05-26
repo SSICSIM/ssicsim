@@ -201,7 +201,7 @@ export const committeesData = [
     double: false,
   },
   {
-    title: "Marshal, Carter & Dark: The Firm",
+    title: "Marshall, Carter & Dark: The Firm",
     description: "",
     expandedDescription: "",
     backgroundGuides: [],
