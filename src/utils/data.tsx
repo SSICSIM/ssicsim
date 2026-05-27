@@ -84,7 +84,7 @@ export const committeesData = [
     double: false,
   },
   {
-    title: "The Fall of the Old Kingdom",
+    title: "Land of the Pharaohs: Egyptian Reunification",
     description: "",
     expandedDescription: "",
     backgroundGuides: [],
