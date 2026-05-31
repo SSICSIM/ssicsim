@@ -71,7 +71,7 @@ export const events: Event[] = [
 
 export const committeesData = [
   {
-    title: "Fall of the Qing: Five Coloured Banners Over Jing",
+    title: "Fall of the Qing: Five Coloured Banners Over Jing (Alternate History)",
     description: "",
     expandedDescription: "",
     backgroundGuides: [],
