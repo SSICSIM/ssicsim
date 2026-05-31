@@ -36,6 +36,7 @@ export default function Navbar() {
       ],
     },
     { label: "Contact", path: "/contact" },
+    { label: "Register", path: "/register", cta: true },
   ];
 
   useEffect(() => {
@@ -171,6 +172,13 @@ export default function Navbar() {
                       </ul>
                     )}
                   </>
+                ) : item.cta ? (
+                  <Link
+                    href={item.path}
+                    className="block bg-[#A3841D] text-white text-center py-2 px-4 rounded-lg hover:bg-[#8a6f1b] transition-colors font-semibold"
+                  >
+                    {item.label}
+                  </Link>
                 ) : (
                   <Link
                     href={item.path}
@@ -213,6 +221,13 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
+                ) : item.cta ? (
+                  <Link
+                    href={item.path}
+                    className="bg-[#A3841D] hover:bg-[#8a6f1b] text-white p-3 px-6 rounded-full transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 ) : (
                   <Link
                     href={item.path}
