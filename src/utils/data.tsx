@@ -71,8 +71,8 @@ export const events: Event[] = [
 
 export const committeesData = [
   {
-    title: "Fall of the Qing: Five Coloured Banners Over Jing (Alternate History)",
-    description: "",
+    title: "Fall of the Qing: Five Coloured Banners Over Jing",
+    description: "Alternate History: Kaiserreich",
     expandedDescription: "",
     backgroundGuides: [],
     contactEmail: "",
@@ -110,7 +110,7 @@ export const committeesData = [
     double: false,
   },
   {
-    title: "The Rovereta Affair, 1957",
+    title: "Relinquo vos Liberos: The Rovereta Affair, 1957",
     description: "",
     expandedDescription: "",
     backgroundGuides: [],
