@@ -182,7 +182,7 @@ const CommiteeCard = ({
                 </div>
               )}
               {hasExpandedDescription && (
-                <p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
+                <p className={`text-[#A3841D] font-light font-dm-sans ${backgroundGuides && backgroundGuides.length > 0 ? "border-t-[#A3841D] border-t-2 mt-2 pt-2" : ""}`}>
                   {expandedDescription &&
                     expandedDescription.split("\n").map((line, index) => {
                       // Regex: (text before)[URL](text after)
