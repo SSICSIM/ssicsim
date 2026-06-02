@@ -333,7 +333,7 @@ export default function DelegationRegister() {
                   className={inputCls}
                   value={form.schoolName}
                   onChange={(e) => set("schoolName", e.target.value)}
-                  placeholder="e.g. Westmount Collegiate Institute"
+                  placeholder="Enter your delegation name"
                 />
               </Field>
               <Field label="School Address" required>
