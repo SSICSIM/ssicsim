@@ -15,6 +15,7 @@ const ALLOWED_ROUTES = new Set([
   "/underconstruction",
   "/wrapped",
   "/committees",
+  "/register",
 ]);
 
 export function middleware(request: NextRequest) {

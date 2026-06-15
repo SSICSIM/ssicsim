@@ -21,11 +21,6 @@ export default function Navbar() {
         { label: "Our Team", path: "/team" },
       ],
     },
-    {
-      label: "Conference",
-      path: "/conference",
-      subItems: [{ label: "Resources", path: "/resources" }],
-    },
     { label: "Committees", path: "/committees" },
     {
       label: "Staff",
@@ -36,6 +31,7 @@ export default function Navbar() {
       ],
     },
     { label: "Contact", path: "/contact" },
+    { label: "Register", path: "/register", cta: true },
   ];
 
   useEffect(() => {
@@ -58,13 +54,12 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r mb-5 from-[#A3841D] via-[#B89520] to-[#A3841D] text-white py-3 px-4 text-center shadow-md">
         <Link
-          href="/staff/openings"
+          href="/register"
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>General Staff Hiring</strong> applications are open on a
-            rolling basis.
-            <span className="ml-2 underline font-semibold">Apply now!</span>
+            🎉 <strong>Early Bird Registration</strong> is now open!
+            <span className="ml-2 underline font-semibold">Register now!</span>
           </span>
         </Link>
       </div>
@@ -171,6 +166,13 @@ export default function Navbar() {
                       </ul>
                     )}
                   </>
+                ) : item.cta ? (
+                  <Link
+                    href={item.path}
+                    className="block text-center font-bold bg-[#A3841D] text-white hover:bg-white hover:text-[#A3841D] rounded-lg transition-colors px-4 py-2"
+                  >
+                    {item.label}
+                  </Link>
                 ) : (
                   <Link
                     href={item.path}
@@ -213,6 +215,13 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
+                ) : item.cta ? (
+                  <Link
+                    href={item.path}
+                    className="bg-[#A3841D] text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-white hover:text-[#A3841D] transition-colors flex items-center"
+                  >
+                    {item.label}
+                  </Link>
                 ) : (
                   <Link
                     href={item.path}

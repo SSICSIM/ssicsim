@@ -14,7 +14,9 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      prevent: (node) => !!node.closest(".modal-scrollbar"),
+    });
     const raf = (time: number) => {
       lenis.raf(time);
       requestAnimationFrame(raf);

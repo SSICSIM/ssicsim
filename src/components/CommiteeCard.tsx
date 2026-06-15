@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { parseDescription } from "../utils/utils";
 
 interface BackgroundGuide {
   description: string;
@@ -48,14 +49,17 @@ const CommiteeCard = ({
     if (isModalOpen) {
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
+      document.documentElement.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
       document.body.style.touchAction = "";
+      document.documentElement.style.overflow = "";
     }
 
     return () => {
       document.body.style.overflow = "";
       document.body.style.touchAction = "";
+      document.documentElement.style.overflow = "";
     };
   }, [isModalOpen]);
 
@@ -80,9 +84,7 @@ const CommiteeCard = ({
             {title}
           </h2>
           {hasDescription && (
-            <p className="text-white mb-4 text-[12px] font-regular font-dm-sans">
-              {description}
-            </p>
+            <div className="mb-4">{parseDescription(description!, "text-[12px]")}</div>
           )}
           {/* Background Guide Buttons on Main Card */}
           <div className="mb-4 flex flex-row gap-2 flex-wrap">
@@ -118,7 +120,11 @@ const CommiteeCard = ({
             className={`modal-scrollbar relative grid grid-cols-1 ${
               hasBackgroundImage ? "md:grid-cols-2" : "md:grid-cols-1"
             } gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]`}
-            style={{ overflowY: "scroll", WebkitOverflowScrolling: "touch" }}
+            style={{
+              overflowY: "scroll",
+              WebkitOverflowScrolling: "touch",
+              overscrollBehavior: "contain",
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -182,41 +188,19 @@ const CommiteeCard = ({
                 </div>
               )}
               {hasExpandedDescription && (
-                <p className="text-[#A3841D] font-light font-dm-sans border-t-[#A3841D] mt-2 pt-2 border-t-2">
-                  {expandedDescription &&
-                    expandedDescription.split("\n").map((line, index) => {
-                      // Regex: (text before)[URL](text after)
-                      const match = line.match(
-                        /^(.*?)\[(https?:\/\/[^\]]+)\](.*)$/,
-                      );
-                      if (match) {
-                        const before = match[1]; // text before [URL]
-                        const url = match[2]; // the URL inside []
-                        const after = match[3]; // text after ]
-                        return (
-                          <React.Fragment key={index}>
-                            {before}
-                            <a
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-500 underline hover:text-blue-300"
-                            >
-                              {after}
-                            </a>
-                            <br />
-                          </React.Fragment>
-                        );
-                      } else {
-                        return (
-                          <React.Fragment key={index}>
-                            {line}
-                            <br />
-                          </React.Fragment>
-                        );
-                      }
-                    })}
-                </p>
+                <div
+                  className={
+                    contactEmail || (backgroundGuides && backgroundGuides.length > 0)
+                      ? "border-t-[#A3841D] mt-2 pt-2 border-t-2"
+                      : "mt-2 pt-2"
+                  }
+                >
+                  {parseDescription(
+                    expandedDescription!,
+                    "text-base",
+                    "text-[#A3841D] font-light",
+                  )}
+                </div>
               )}
               {director && (
                 <div className="mt-2">
