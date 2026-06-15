@@ -84,7 +84,9 @@ const CommiteeCard = ({
             {title}
           </h2>
           {hasDescription && (
-            <div className="mb-4">{parseDescription(description!, "text-[12px]")}</div>
+            <div className="mb-4">
+              {parseDescription(description!, "text-[12px]")}
+            </div>
           )}
           {/* Background Guide Buttons on Main Card */}
           <div className="mb-4 flex flex-row gap-2 flex-wrap">
@@ -190,7 +192,8 @@ const CommiteeCard = ({
               {hasExpandedDescription && (
                 <div
                   className={
-                    contactEmail || (backgroundGuides && backgroundGuides.length > 0)
+                    contactEmail ||
+                    (backgroundGuides && backgroundGuides.length > 0)
                       ? "border-t-[#A3841D] mt-2 pt-2 border-t-2"
                       : "mt-2 pt-2"
                   }

@@ -85,8 +85,8 @@ const Register = () => {
                 Registration
               </h1>
               <p className="text-gray-700 text-2xl font-dm-sans font-light w-[80vw] lg:w-[30vw] lg:ml-6 pt-2">
-                Whether you are an individual or group delegation, it’s easy
-                to register for SSICSIM 2026!
+                Whether you are an individual or group delegation, it’s easy to
+                register for SSICSIM 2026!
               </p>
 
               {/* Buttons */}
