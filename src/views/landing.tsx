@@ -184,23 +184,23 @@ const Landing = () => {
               Canada’s Premier Model UN Crisis Simulation
             </h1>
             <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-              Coming Soon.. 👀
+              October 23rd–25th
             </h3>
 
             <div className="flex flex-row">
+              <a
+                href="/register"
+                rel="noopener noreferrer"
+                className="ml-6 mt-4 bg-[#3C2C2C] text-[#F2A900] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#BE8523] text-[#F3C02C] transition-colors"
+              >
+                Register Now!
+              </a>
               <a
                 href="/wrapped"
                 rel="noopener noreferrer"
                 className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
               >
                 SSICSIM 2025 Wrapped
-              </a>
-              <a
-                href="https://drive.google.com/drive/folders/1uGSNbdpPw-CQWR7n1-qCC_mTBeh_3_fm"
-                rel="noopener noreferrer"
-                className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-              >
-                SSICSIM 2025 Conference Photos
               </a>
             </div>
           </div>
