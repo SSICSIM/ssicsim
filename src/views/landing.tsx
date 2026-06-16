@@ -184,14 +184,14 @@ const Landing = () => {
               Canada’s Premier Model UN Crisis Simulation
             </h1>
             <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-              Coming Soon.. 👀
+              October 23rd–25th
             </h3>
 
             <div className="flex flex-row">
               <a
                 href="/register"
                 rel="noopener noreferrer"
-                className="ml-6 mt-4 bg-[#BE8523] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
+                className="ml-6 mt-4 bg-[#F2A900] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F3C02C] transition-colors"
               >
                 Register Now!
               </a>
