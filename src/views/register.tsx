@@ -50,7 +50,7 @@ const Register = () => {
               <p className="text-lg font-nunito mt-4">
                 Early Bird Registration
               </p>
-              <p className="text-sm font-light mt-2">June 10th – July 1st</p>
+              <p className="text-sm font-light mt-2">June 15th – July 1st, or until we reach 125 registrants</p>
             </div>
 
             {/* Regular Pricing */}
@@ -58,7 +58,7 @@ const Register = () => {
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
-                July 1st – September 19th, or until we reach capacity.
+                July 12th – September 19th, or until we reach capacity.
               </p>
             </div>
 
