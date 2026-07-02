@@ -1,5 +1,5 @@
-import DirectorHiring from "@/views/director-hiring";
+import Openings from "@/views/openings";
 
 export default function Page() {
-  return <DirectorHiring />;
+  return <Openings />;
 }
