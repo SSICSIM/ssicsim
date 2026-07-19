@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import {
   Breadcrumb,
@@ -20,9 +20,11 @@ interface FormData {
   contactFirstName: string;
   contactLastName: string;
   contactEmail: string;
+  contactPhone: string;
   contactRole: string;
   // Step 3 – Delegation Info
-  delegationSize: string;
+  delegationSizeMin: string;
+  delegationSizeMax: string;
   attendedBefore: string;
   // Step 4 – Policies
   paymentPolicyAck: boolean;
@@ -42,8 +44,10 @@ const INITIAL: FormData = {
   contactFirstName: "",
   contactLastName: "",
   contactEmail: "",
+  contactPhone: "",
   contactRole: "",
-  delegationSize: "",
+  delegationSizeMin: "",
+  delegationSizeMax: "",
   attendedBefore: "",
   paymentPolicyAck: false,
   overduePolicyAck: false,
@@ -103,10 +107,12 @@ function StepIndicator({ current }: { current: number }) {
 function Field({
   label,
   required,
+  hint,
   children,
 }: {
   label: string;
   required?: boolean;
+  hint?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -116,6 +122,7 @@ function Field({
         {required && <span className="text-red-500 ml-0.5">*</span>}
       </label>
       {children}
+      {hint && <p className="text-xs text-gray-400 mt-1 font-dm-sans">{hint}</p>}
     </div>
   );
 }
@@ -157,6 +164,7 @@ export default function DelegationRegister() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const formTopRef = useRef<HTMLDivElement>(null);
 
   const set = (field: keyof FormData, value: string | boolean) =>
     setForm((f) => ({ ...f, [field]: value }));
@@ -173,6 +181,7 @@ export default function DelegationRegister() {
       if (!form.contactEmail.trim()) return "Email is required.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.contactEmail))
         return "Please enter a valid email address.";
+      if (!form.contactPhone.trim()) return "Phone number is required.";
       if (!form.contactRole) return "Please select a primary role.";
     }
     if (step === 3) {
@@ -196,13 +205,13 @@ export default function DelegationRegister() {
     }
     setError(null);
     setStep((s) => s + 1);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function back() {
     setError(null);
     setStep((s) => s - 1);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   async function submit() {
@@ -222,9 +231,18 @@ export default function DelegationRegister() {
           faculty_advisor_first_name: form.contactFirstName.trim(),
           faculty_advisor_last_name: form.contactLastName.trim(),
           faculty_advisor_email: form.contactEmail.trim(),
+          contact_phone: form.contactPhone.trim(),
           contact_role: form.contactRole || null,
           school_address: form.schoolAddress.trim() || null,
-          delegation_size: form.delegationSize ? parseInt(form.delegationSize, 10) : null,
+          // Existing backend field only supports a single estimate — send the
+          // max as the primary value until delegation_size_min/max land.
+          delegation_size: form.delegationSizeMax
+            ? parseInt(form.delegationSizeMax, 10)
+            : form.delegationSizeMin
+              ? parseInt(form.delegationSizeMin, 10)
+              : null,
+          delegation_size_min: form.delegationSizeMin ? parseInt(form.delegationSizeMin, 10) : null,
+          delegation_size_max: form.delegationSizeMax ? parseInt(form.delegationSizeMax, 10) : null,
           attended_before: form.attendedBefore === "Yes" ? true : form.attendedBefore === "No" ? false : null,
           payment_process: form.paymentProcess || null,
           policy_ack_payment: form.paymentPolicyAck,
@@ -246,8 +264,8 @@ export default function DelegationRegister() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           recipients: [{ email: form.contactEmail.trim(), name: `${form.contactFirstName} ${form.contactLastName}` }],
-          subject: "SSICSIM 2026 – Delegation RSVP Received",
-          body: `Dear ${form.contactFirstName},\n\nThank you for submitting your delegation RSVP for SSICSIM 2026. Your institution, ${form.schoolName}, has been added as a Group Delegation.\n\nDelegates from your institution may now complete their individual registrations at ssicsim.ca/register/delegate.\n\nIf you have any questions, please contact us at registration@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`,
+          subject: "SSICSIM 2026 Delegation RSVP Received",
+          body: `Dear ${form.contactFirstName},\n\nThank you for submitting your delegation RSVP for SSICSIM 2026. Your institution, ${form.schoolName}, has been added as a Group Delegation.\n\nDelegates from your institution may now complete their individual registrations at ssicsim.ca/register/delegate.\n\nIf you have any questions, please contact us at contact@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`,
         }),
       }).catch(() => {});
       setSubmitted(true);
@@ -260,7 +278,7 @@ export default function DelegationRegister() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center px-6 pt-[120px]">
+      <div className="min-h-screen bg-gradient-to-br from-[#A3841D] to-[#c2a030] flex items-center justify-center px-6 pt-[120px]">
         <div className="bg-white rounded-2xl shadow-lg p-10 max-w-lg w-full text-center">
           <div className="w-16 h-16 bg-[#A3841D]/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-[#A3841D] text-3xl">✓</span>
@@ -292,7 +310,7 @@ export default function DelegationRegister() {
     <div className="min-h-screen bg-gray-100">
       {/* Gold header — clears fixed navbar (~120px) */}
       <div className="bg-gradient-to-br from-[#A3841D] to-[#c2a030] pt-[200px] pb-10 px-6">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Breadcrumb className="mb-4">
             <BreadcrumbList className="text-white/70">
               <BreadcrumbItem>
@@ -318,7 +336,7 @@ export default function DelegationRegister() {
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto py-10 px-6">
+      <div ref={formTopRef} className="max-w-2xl mx-auto py-10 px-6 scroll-mt-[120px]">
         <StepIndicator current={step} />
 
         <div className="bg-white rounded-2xl shadow-md p-8">
@@ -333,16 +351,18 @@ export default function DelegationRegister() {
                   className={inputCls}
                   value={form.schoolName}
                   onChange={(e) => set("schoolName", e.target.value)}
-                  placeholder="Enter your delegation name"
                 />
               </Field>
-              <Field label="School Address" required>
+              <Field
+                label="School Address"
+                required
+                hint="Include street address, City & Province, Postal Code, and Country."
+              >
                 <textarea
                   className={`${inputCls} resize-none`}
                   rows={3}
                   value={form.schoolAddress}
                   onChange={(e) => set("schoolAddress", e.target.value)}
-                  placeholder="Street address, City & Province, Postal Code, Country"
                 />
               </Field>
               <Field label="School Payment Process" required>
@@ -374,6 +394,14 @@ export default function DelegationRegister() {
               </h2>
               <p className="text-sm text-gray-500 font-dm-sans mb-6">
                 A primary contact must be a Faculty Advisor or Head Delegate.
+                <br /><br />
+                If you are not the Head Delegate or Faculty Advisor for your Delegation,
+                please do not fill out this form. To complete your individual
+                registration as a Delegate, please fill out the{" "}
+                <Link href="/register/delegate" className="text-[#A3841D] underline" target="_blank">
+                  Delegate Registration Form
+                </Link>
+                .
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <Field label="First Name" required>
@@ -381,7 +409,6 @@ export default function DelegationRegister() {
                     className={inputCls}
                     value={form.contactFirstName}
                     onChange={(e) => set("contactFirstName", e.target.value)}
-                    placeholder="First name"
                   />
                 </Field>
                 <Field label="Last Name" required>
@@ -389,7 +416,6 @@ export default function DelegationRegister() {
                     className={inputCls}
                     value={form.contactLastName}
                     onChange={(e) => set("contactLastName", e.target.value)}
-                    placeholder="Last name"
                   />
                 </Field>
               </div>
@@ -399,7 +425,14 @@ export default function DelegationRegister() {
                   className={inputCls}
                   value={form.contactEmail}
                   onChange={(e) => set("contactEmail", e.target.value)}
-                  placeholder="advisor@school.edu"
+                />
+              </Field>
+              <Field label="Phone Number" required>
+                <input
+                  type="tel"
+                  className={inputCls}
+                  value={form.contactPhone}
+                  onChange={(e) => set("contactPhone", e.target.value)}
                 />
               </Field>
               <Field label="Primary Role" required>
@@ -429,19 +462,35 @@ export default function DelegationRegister() {
                 Part III: Group Delegation Information
               </h2>
               <Field label="Approximate Delegation Size">
-                <input
-                  className={inputCls}
-                  type="number"
-                  min={1}
-                  max={50}
-                  value={form.delegationSize}
-                  onChange={(e) => set("delegationSize", e.target.value)}
-                  placeholder="e.g. 20"
-                />
-                <p className="text-xs text-gray-400 mt-1 font-dm-sans">
-                  Maximum Group Delegation capacity is 50 delegates. This estimate is
-                  for planning purposes only.
+                <p className="text-xs text-gray-400 mb-2 font-dm-sans">
+                  Please enter the tentative minimum and maximum number of Delegates you
+                  are expecting to attend from your Group Delegation.
+                  <br /><br />
+                  Note: The maximum Group Delegation capacity for SSICSIM 2026 is now 50
+                  delegates!
+                  <br /><br />
+                  The estimate you provide has no binding effect on how many delegates
+                  you can register, nor how many you must. This information will be used
+                  solely for planning purposes.
                 </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <input
+                    className={inputCls}
+                    type="number"
+                    min={1}
+                    max={50}
+                    value={form.delegationSizeMin}
+                    onChange={(e) => set("delegationSizeMin", e.target.value)}
+                  />
+                  <input
+                    className={inputCls}
+                    type="number"
+                    min={1}
+                    max={50}
+                    value={form.delegationSizeMax}
+                    onChange={(e) => set("delegationSizeMax", e.target.value)}
+                  />
+                </div>
               </Field>
               <Field label="Has your Delegation attended SSICSIM before?" required>
                 <div className="flex flex-col gap-3 mt-1">
@@ -474,21 +523,21 @@ export default function DelegationRegister() {
               </p>
               <PolicyBlock
                 title="Payment Policy"
-                body="All Delegates are required to pay registration fees for the SSICSIM conference. Registration fees are calculated individually for each Delegate, dependent on the registration period in which they or their Group Delegation registered and whether they have been granted financial aid. Each Independent Delegate and individually paying Group Delegate will be issued an invoice at the time they receive confirmation of their registration. They will be given twenty-one (21) days to pay the invoice total in full by Interac e-Transfer or cash. Group Delegations paying collectively will be issued an invoice to the Faculty Advisor or Head Delegate at least twenty-one (21) days before the conference."
+                body="All Delegates are required to pay registration fees for the SSICSIM conference. Registration fees are calculated individually for each Delegate, dependent on the registration period in which they or their Group Delegation registered and whether they have been granted financial aid. Each Independent Delegate and individually paying Group Delegate will be issued an invoice at the time they receive confirmation of their registration. They will be given twenty-one (21) days to pay the invoice total in full by Interac e-Transfer or cash. If payment is not received by a current Executive Member of SSICSIM by this date, their spot will be forfeited and they will be required to re-register if they wish to attend SSICSIM. Group Delegations paying collectively will be issued an invoice to the Faculty Advisor or Head Delegate at least twenty-one (21) days before the conference, or upon confirmation that all Group Delegates in their Group Delegation have individually registered. Payment can be completed by cheque, Interac e-Transfer, or cash. The only exception in which SSICSIM may delay issuing an invoice is if a Delegate has applied for financial aid. All Delegates and Group Delegations are required to pay their invoice total in full by the first day of the conference."
                 checked={form.paymentPolicyAck}
                 onChange={(v) => set("paymentPolicyAck", v)}
                 label="I have read and understand the Payment Policy."
               />
               <PolicyBlock
                 title="Overdue Policy"
-                body="Any Delegate or Group Delegation who fails to pay their invoice total in full by the first day of the conference will be considered to have overdue fees. They will not be permitted to participate in the conference until they have paid the overdue fees. If a Group Delegation has overdue payments from a previous conference, SSICSIM will not register the Group Delegation until overdue fees have been received."
+                body="Any Delegate or Group Delegation who fails to pay their invoice total in full by the first day of the conference will be considered to have overdue fees. They will not be permitted to participate in the conference until they have paid the overdue fees. Payment can be completed by cash, cheque, or e-transfer. If a Group Delegation has overdue payments from a previous conference, SSICSIM will not register the Group Delegation until overdue fees have been received by a current Executive Member of SSICSIM."
                 checked={form.overduePolicyAck}
                 onChange={(v) => set("overduePolicyAck", v)}
                 label="I have read and understand the Overdue Policy."
               />
               <PolicyBlock
                 title="Financial Aid Policy"
-                body="SSICSIM is committed to providing an accessible conference experience. SSICSIM offers two forms of financial aid: partial reduction (50% off) and total retraction (100% off). Financial aid registrants may experience a slight delay in receiving their confirmation and/or invoice. All requests are confidential and carefully considered."
+                body="SSICSIM is committed to providing an accessible conference experience while maintaining fiscal sustainability and reducing the financial burden of attendance. As such, the opportunity to request financial aid is presented to all Delegates during registration. SSICSIM offers two forms of financial aid: partial reduction (50% off) and total retraction (100% off). Financial aid registrants may experience a slight delay in receiving their confirmation and/or invoice, as additional time is allotted to process individual financial aid requests. All requests are confidential and carefully considered."
                 checked={form.financialAidPolicyAck}
                 onChange={(v) => set("financialAidPolicyAck", v)}
                 label="I have read and understand the Financial Aid Policy."
@@ -521,7 +570,6 @@ export default function DelegationRegister() {
                   className={inputCls}
                   value={form.heardAbout}
                   onChange={(e) => set("heardAbout", e.target.value)}
-                  placeholder="e.g. Social media, friend, teacher..."
                 />
               </Field>
               <Field label="Any final comments, notes, or questions?">
@@ -530,7 +578,6 @@ export default function DelegationRegister() {
                   rows={4}
                   value={form.notes}
                   onChange={(e) => set("notes", e.target.value)}
-                  placeholder="Optional notes..."
                 />
               </Field>
             </div>
