@@ -1,14 +1,14 @@
 "use client";
 
-import RegistrationStep from "../components/RegistrationStep";
+import Link from "next/link";
 import {
+  FaBook,
+  FaSchool,
   FaUsers,
   FaClipboardList,
   FaMoneyCheckAlt,
-  FaBook,
-} from "react-icons/fa"; // Import icons from React Icons
-import Link from "next/link";
-import { FaBook, FaSchool } from "react-icons/fa";
+} from "react-icons/fa";
+import RegistrationStep from "../components/RegistrationStep";
 import { CF_DOMAIN } from "../utils/consts";
 import Image from "next/image";
 
@@ -34,11 +34,6 @@ const Register = () => {
       </div>
 
       <div className="relative bg-gray-100 min-w-full min-h-screen pt-7">
-        {/* Gold Mesh Gradient Background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#white] via-[#FFC107] to-[#white] opacity-30"></div>
-        {/* Pricing Section */}
-        <div className="container mx-auto py-6 mt-2">
-          <h2 className="text-5xl font-bold font-nunito text-center mb-4">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-white via-[#FFC107] to-white opacity-30" />
 
         {/* Registration Entry Cards */}
@@ -105,18 +100,18 @@ const Register = () => {
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:w-auto w-[80%] mx-auto">
             {/* Early Bird Pricing */}
-            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$70</p>
               <p className="text-lg font-nunito mt-4">
                 Early Bird Registration
               </p>
-              <p className="text-sm font-light mt-2">June 15th – July 1st, or until we reach 125 registrants</p>
-            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
-              <p className="text-6xl font-bold">$65</p>
-              <p className="text-lg font-nunito mt-4">Early Bird Registration</p>
-              <p className="text-sm font-light mt-2">July 1st – July 31st</p>
+              <p className="text-sm font-light mt-2">
+                June 15th – July 1st, or until we reach 125 registrants
+              </p>
             </div>
-            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+
+            {/* Regular Pricing */}
+            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
@@ -128,9 +123,6 @@ const Register = () => {
             <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$110</p>
               <p className="text-lg font-nunito mt-4">Late Bird Registration</p>
-            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
-              <p className="text-6xl font-bold">$100</p>
-              <p className="text-lg font-nunito mt-4">Late Bird Registration + Waitlist</p>
               <p className="text-sm font-light mt-2">
                 September 20th – October 1st, or until we reach capacity.
               </p>
@@ -139,7 +131,6 @@ const Register = () => {
         </div>
 
         {/* Divider */}
-        <hr className="border-t-2 border-gray-300 my-6" />
         <hr className="border-t-2 border-gray-300 my-10" />
 
         {/* Registration Section */}
@@ -154,32 +145,12 @@ const Register = () => {
                 Whether you are an individual or group delegation, it’s easy to
                 register for SSICSIM 2026!
               </p>
-
-              {/* Buttons */}
-              <div className="flex gap-4 mt-6 lg:ml-6">
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdAFw0an5b2FdVB9jKDvH5aIvZS9lc1IUD9jlufK4nUOUrdZQ/viewform?usp=dialog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
-                >
-                  Early Bird Registration
-                </a>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfb7cVfWnEJWbjyyefHBbN013rKPHnyv30tOKsn-ozfHjKOgg/viewform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
-                >
-                  Delegation RSVP
-                </a>
-              </div>
             </div>
 
             <div className="pt-6">
               <RegistrationStep
                 title="Delegation Registration"
-                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Early Bird Registration Form indicating their delegation affiliation and committee preferences."
+                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Regular Registration Form indicating their delegation affiliation and committee preferences."
                 icon={
                   <FaUsers className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                 }
@@ -218,35 +189,48 @@ const Register = () => {
           </div>
         </div>
         <hr className="border-t-2 border-gray-300 my-6" />
+
         {/* Financial Aid Section */}
-        {/* Financial Aid */}
         <div className="grid grid-cols-1 gap-6 w-[90%] mx-auto">
           <div className="container mx-auto py-20 text-center w-[90%] bg-gradient-to-br from-[#A3841D] to-[#C2A95F] h-auto rounded-2xl p-6 z-20 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-5xl font-bold font-nunito text-white mb-8">
               Financial Aid
             </h2>
             <p className="text-lg text-white font-dm-sans mb-4">
-              <span className="font-bold">SSICSIM offers financial aid options</span>{" "}
-              to help cover the costs associated with the conference. You can apply
-              for this aid during the registration process, even if your school is
-              covering part of your expenses. Our goal is to make our experiences as
-              accessible as possible at all times.
+              <span className="font-bold">
+                SSICSIM offers financial aid options
+              </span>{" "}
+              to help cover the costs associated with the conference. You can
+              apply for this aid during the registration process, even if your
+              school is covering part of your expenses. Our goal is to make our
+              experiences as accessible as possible at all times. We never want
+              attendees to have finance or payment as a barrier to entry to our
+              conference.
             </p>
             <p className="text-lg text-white font-dm-sans mb-4">
-              <span className="font-bold">When you begin the registration process</span>
-              , you will find an option to apply for financial aid on the registration
-              form. Please provide a brief explanation of your financial situation and
-              the reasons why you are seeking assistance.
+              <span className="font-bold">
+                When you begin the registration process
+              </span>
+              , you will find an option to apply for financial aid on the
+              registration form. Please provide a brief explanation of your
+              financial situation and the reasons why you are seeking
+              assistance. This information will help us understand your
+              circumstances and provide the necessary support.
             </p>
             <p className="text-lg text-white font-dm-sans mb-4">
-              <span className="font-bold">Financial aid provided by SSICSIM</span>{" "}
-              is only applicable towards the delegate registration fee. SSICSIM does
-              not subsidize external costs such as transportation or accommodations.
-              Please note that full or partial financial aid is not guaranteed and
-              will be assessed on a case-by-case basis.
+              <span className="font-bold">
+                Financial aid provided by SSICSIM
+              </span>{" "}
+              is only applicable towards the delegate registration fee. SSICSIM
+              does not subsidize external costs such as transportation or
+              accommodations. Please note that full or partial financial aid is
+              not guaranteed and will be assessed on a case-by-case basis.
+              Consequently, delegation registration emails might take longer to
+              send out for those who requested aid due to the processing time.
             </p>
             <p className="text-lg text-white font-dm-sans mb-4">
-              If you have questions about financial aid, please contact our Equity Team:
+              If you have questions about financial aid, please contact our
+              Equity Team:
             </p>
             <p className="text-lg text-white font-dm-sans mb-4">
               Deputy-Secretary-General of Equity,{" "}
@@ -255,8 +239,6 @@ const Register = () => {
                 href="mailto:dsg@ssicsim.ca"
                 className="underline text-blue-300 hover:text-blue-500"
               >
-              <span className="font-bold">Leora Kasneci</span> at{" "}
-              <a href="mailto:dsg@ssicsim.ca" className="underline text-blue-300 hover:text-blue-500">
                 dsg@ssicsim.ca
               </a>
             </p>
@@ -267,16 +249,16 @@ const Register = () => {
                 href="mailto:equity@ssicsim.ca"
                 className="underline text-blue-300 hover:text-blue-500"
               >
-              <span className="font-bold">Brian Daniel</span> at{" "}
-              <a href="mailto:equity@ssicsim.ca" className="underline text-blue-300 hover:text-blue-500">
                 equity@ssicsim.ca
               </a>
             </p>
           </div>
 
-          {/* Payments */}
+          {/* Payments Section */}
           <div className="container mx-auto py-20 text-center w-[90%] bg-gradient-to-br from-[#A3841D] to-[#C2A95F] h-auto rounded-2xl p-6 z-20 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col justify-center">
-            <h2 className="text-5xl font-bold font-nunito text-white mb-8">Payments</h2>
+            <h2 className="text-5xl font-bold font-nunito text-white mb-8">
+              Payments
+            </h2>
             <p className="text-2xl text-white font-dm-sans mb-4">
               If you have questions or concerns on{" "}
               <span className="font-bold">how</span> to pay the delegate
@@ -288,15 +270,16 @@ const Register = () => {
                 href="mailto:internal@ssicsim.ca"
                 className="underline text-blue-300 hover:text-blue-500"
               >
-              Connor Begg |{" "}
-              <a href="mailto:internal@ssicsim.ca" className="underline text-blue-300 hover:text-blue-500">
                 internal@ssicsim.ca
               </a>
             </p>
             <p className="text-2xl text-white font-dm-sans mb-8">
-              Alternatively, you may view this helpful document on how to pay the
-              delegate registration fee at any of Canada&apos;s largest banks:
+              Alternatively, you may view this helpful document on how to pay
+              the delegate registration fee at any of Canada&apos;s largest
+              banks:
             </p>
+
+            {/* Payment Guide Button */}
             <div className="flex justify-center">
               <a
                 href="https://drive.google.com/file/d/1hA7hktafKiSc7ObrBf9KwaPY1z_b896z/view"

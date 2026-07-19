@@ -81,7 +81,7 @@ const STEPS = [
   "Final Notes",
 ];
 
-const EARLY_BIRD_FEE_CAD = 70;
+const REGISTRATION_FEE_CAD = 90;
 
 const EXPERIENCE_OPTIONS: { label: string; value: string; desc: string }[] = [
   { label: "Novice", value: "Beginner", desc: "Attended 0–1 Model UN conferences" },
@@ -600,13 +600,9 @@ export default function DelegateRegister() {
           {/* Step 1 – Personal Info */}
           {step === 1 && (
             <div>
-              <h2 className="text-xl font-bold font-nunito text-gray-900 mb-2">
+              <h2 className="text-xl font-bold font-nunito text-gray-900 mb-6">
                 Part I: Delegate Information
               </h2>
-              <p className="text-sm text-gray-500 font-dm-sans mb-6">
-                Please carefully fill out the information below. Your full name will
-                be used on official documents and your conference lanyard.
-              </p>
               <div className="grid grid-cols-2 gap-4">
                 <Field label="First Name" required>
                   <input
@@ -623,10 +619,7 @@ export default function DelegateRegister() {
                   />
                 </Field>
               </div>
-              <Field
-                label="Preferred Name"
-                hint="If left blank, your full legal name will be used on official documents and your lanyard."
-              >
+              <Field label="Preferred Name">
                 <input
                   className={inputCls}
                   value={form.preferredName}
@@ -956,8 +949,8 @@ export default function DelegateRegister() {
                     Delegate Registration Fee Payment
                   </h4>
                   <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">
-                    To reserve your spot as an early bird delegate, please pay the
-                    early bird price of ${EARLY_BIRD_FEE_CAD} CAD via e-transfer to{" "}
+                    To reserve your spot as a regular registrant, please pay the
+                    registration price of ${REGISTRATION_FEE_CAD} CAD via e-transfer to{" "}
                     <span className="font-semibold">internal@ssicsim.ca</span>. Be
                     sure to include your full name with the payment, then upload a
                     PDF receipt below (max 4MB).
