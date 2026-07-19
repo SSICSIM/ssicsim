@@ -1,5 +1,12 @@
 "use client";
 
+import RegistrationStep from "../components/RegistrationStep";
+import {
+  FaUsers,
+  FaClipboardList,
+  FaMoneyCheckAlt,
+  FaBook,
+} from "react-icons/fa"; // Import icons from React Icons
 import Link from "next/link";
 import { FaBook, FaSchool } from "react-icons/fa";
 import { CF_DOMAIN } from "../utils/consts";
@@ -27,6 +34,11 @@ const Register = () => {
       </div>
 
       <div className="relative bg-gray-100 min-w-full min-h-screen pt-7">
+        {/* Gold Mesh Gradient Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#white] via-[#FFC107] to-[#white] opacity-30"></div>
+        {/* Pricing Section */}
+        <div className="container mx-auto py-6 mt-2">
+          <h2 className="text-5xl font-bold font-nunito text-center mb-4">
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-white via-[#FFC107] to-white opacity-30" />
 
         {/* Registration Entry Cards */}
@@ -92,6 +104,13 @@ const Register = () => {
             *All prices are in Canadian Dollars (CAD$)
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:w-auto w-[80%] mx-auto">
+            {/* Early Bird Pricing */}
+            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+              <p className="text-6xl font-bold">$70</p>
+              <p className="text-lg font-nunito mt-4">
+                Early Bird Registration
+              </p>
+              <p className="text-sm font-light mt-2">June 15th – July 1st, or until we reach 125 registrants</p>
             <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$65</p>
               <p className="text-lg font-nunito mt-4">Early Bird Registration</p>
@@ -101,21 +120,105 @@ const Register = () => {
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
-                August 1st – September 21st, or until we reach capacity.
+                July 12th – September 19th, or until we reach capacity.
               </p>
             </div>
+
+            {/* Late Bird Pricing */}
+            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+              <p className="text-6xl font-bold">$110</p>
+              <p className="text-lg font-nunito mt-4">Late Bird Registration</p>
             <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$100</p>
               <p className="text-lg font-nunito mt-4">Late Bird Registration + Waitlist</p>
               <p className="text-sm font-light mt-2">
-                September 22nd – September 30th, or if you are off the waitlist.
+                September 20th – October 1st, or until we reach capacity.
               </p>
             </div>
           </div>
         </div>
 
+        {/* Divider */}
+        <hr className="border-t-2 border-gray-300 my-6" />
         <hr className="border-t-2 border-gray-300 my-10" />
 
+        {/* Registration Section */}
+        <div className="relative z-10 flex justify-center max-w-[3000px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 md:w-[90%] min-h-[100%]">
+            {/* First Column (Spanning All Rows) */}
+            <div className="row-span-4 p-6 flex flex-col justify-center">
+              <h1 className="text-5xl md:text-8xl font-bold font-nunito lg:ml-6">
+                Registration
+              </h1>
+              <p className="text-gray-700 text-2xl font-dm-sans font-light w-[80vw] lg:w-[30vw] lg:ml-6 pt-2">
+                Whether you are an individual or group delegation, it’s easy to
+                register for SSICSIM 2026!
+              </p>
+
+              {/* Buttons */}
+              <div className="flex gap-4 mt-6 lg:ml-6">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdAFw0an5b2FdVB9jKDvH5aIvZS9lc1IUD9jlufK4nUOUrdZQ/viewform?usp=dialog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
+                >
+                  Early Bird Registration
+                </a>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfb7cVfWnEJWbjyyefHBbN013rKPHnyv30tOKsn-ozfHjKOgg/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
+                >
+                  Delegation RSVP
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-6">
+              <RegistrationStep
+                title="Delegation Registration"
+                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Early Bird Registration Form indicating their delegation affiliation and committee preferences."
+                icon={
+                  <FaUsers className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
+                }
+              />
+            </div>
+
+            <div className="pt-6">
+              <RegistrationStep
+                title="Choose Your Committee & Register"
+                description="Look through the list of committees, and select three committees you would like to be a part of. Make sure you read all the descriptions! Then, fill out the delegate registration form."
+                icon={
+                  <FaClipboardList className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
+                }
+              />
+            </div>
+
+            <div className="pt-6">
+              <RegistrationStep
+                title="Confirm Payment"
+                description="Each Independent Delegate and individually-paying Group Delegate will be issued an invoice at the time they receive confirmation of their registration. They will be given twenty-one (21) days to pay the invoice total in full by e-transfer or cash."
+                icon={
+                  <FaMoneyCheckAlt className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
+                }
+              />
+            </div>
+
+            <div className="pt-6">
+              <RegistrationStep
+                title="Receive Assignment & Get Ready"
+                description="Once you have paid your invoice, you will receive your committee assignment. You will also get access to the SSICSIM 2026 Background Guide, which will help you prepare for the conference."
+                icon={
+                  <FaBook className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <hr className="border-t-2 border-gray-300 my-6" />
+        {/* Financial Aid Section */}
         {/* Financial Aid */}
         <div className="grid grid-cols-1 gap-6 w-[90%] mx-auto">
           <div className="container mx-auto py-20 text-center w-[90%] bg-gradient-to-br from-[#A3841D] to-[#C2A95F] h-auto rounded-2xl p-6 z-20 shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -147,6 +250,11 @@ const Register = () => {
             </p>
             <p className="text-lg text-white font-dm-sans mb-4">
               Deputy-Secretary-General of Equity,{" "}
+              <span className="font-bold">Nicholas Ali</span> at{" "}
+              <a
+                href="mailto:dsg@ssicsim.ca"
+                className="underline text-blue-300 hover:text-blue-500"
+              >
               <span className="font-bold">Leora Kasneci</span> at{" "}
               <a href="mailto:dsg@ssicsim.ca" className="underline text-blue-300 hover:text-blue-500">
                 dsg@ssicsim.ca
@@ -154,6 +262,11 @@ const Register = () => {
             </p>
             <p className="text-lg text-white font-dm-sans mb-4">
               Assistant-Secretary-General of Equity,{" "}
+              <span className="font-bold">Jay Kaur</span> at{" "}
+              <a
+                href="mailto:equity@ssicsim.ca"
+                className="underline text-blue-300 hover:text-blue-500"
+              >
               <span className="font-bold">Brian Daniel</span> at{" "}
               <a href="mailto:equity@ssicsim.ca" className="underline text-blue-300 hover:text-blue-500">
                 equity@ssicsim.ca
@@ -170,6 +283,11 @@ const Register = () => {
               registration fee, please contact our USG Internal.
             </p>
             <p className="text-2xl text-white font-dm-sans mb-8">
+              Pavel Nazarenko |{" "}
+              <a
+                href="mailto:internal@ssicsim.ca"
+                className="underline text-blue-300 hover:text-blue-500"
+              >
               Connor Begg |{" "}
               <a href="mailto:internal@ssicsim.ca" className="underline text-blue-300 hover:text-blue-500">
                 internal@ssicsim.ca
