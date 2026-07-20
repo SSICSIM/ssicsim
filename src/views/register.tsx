@@ -1,19 +1,21 @@
 "use client";
 
-import RegistrationStep from "../components/RegistrationStep";
+import Link from "next/link";
 import {
+  FaBook,
+  FaSchool,
   FaUsers,
   FaClipboardList,
   FaMoneyCheckAlt,
-  FaBook,
-} from "react-icons/fa"; // Import icons from React Icons
+} from "react-icons/fa";
+import RegistrationStep from "../components/RegistrationStep";
 import { CF_DOMAIN } from "../utils/consts";
 import Image from "next/image";
 
 const Register = () => {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero */}
       <div className="relative block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <Image
           src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
@@ -23,38 +25,93 @@ const Register = () => {
           sizes="100vw"
           className="absolute top-0 left-0 object-cover z-10"
         />
-        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10"></div>
+        <div className="absolute top-0 left-0 w-full min-h-[400px] h-[80vh] max-h-[1200px] bg-black opacity-40 z-10" />
         <div className="max-w-[3000px] mx-auto absolute top-0 left-0 inset-0 w-full min-h-[400px] h-[80vh] flex flex-col items-start justify-center z-20 max-h-[1200px]">
           <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight ml-6 md:text-7xl">
             Registration
           </h1>
         </div>
       </div>
+
       <div className="relative bg-gray-100 min-w-full min-h-screen pt-7">
-        {/* Gold Mesh Gradient Background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#white] via-[#FFC107] to-[#white] opacity-30"></div>
-        {/* Pricing Section */}
-        <div className="container mx-auto py-6 mt-2">
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-white via-[#FFC107] to-white opacity-30" />
+
+        {/* Registration Entry Cards */}
+        <div className="relative z-10 container mx-auto py-10 mt-4">
           <h2 className="text-5xl font-bold font-nunito text-center mb-4">
+            Register
+          </h2>
+          <p className="text-center text-gray-600 font-dm-sans mb-10 text-lg">
+            Choose the form that applies to you.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto px-6">
+            {/* Delegation RSVP */}
+            <Link href="/register/delegation">
+              <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 flex flex-col items-center text-center cursor-pointer border-2 border-transparent hover:border-[#A3841D]">
+                <div className="w-16 h-16 bg-[#A3841D]/10 rounded-full flex items-center justify-center mb-5 group-hover:bg-[#A3841D]/20 transition-colors">
+                  <FaSchool className="w-8 h-8 text-[#A3841D]" />
+                </div>
+                <h3 className="text-2xl font-bold font-nunito text-gray-900 mb-3">
+                  Delegation RSVP
+                </h3>
+                <p className="text-gray-600 font-dm-sans text-sm leading-relaxed mb-6">
+                  For Faculty Advisors or Head Delegates registering a school
+                  delegation. Complete this first before individual delegates
+                  register.
+                </p>
+                <span className="bg-[#A3841D] text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm group-hover:bg-[#8a6f1b] transition-colors">
+                  Register a Delegation
+                </span>
+              </div>
+            </Link>
+
+            {/* Delegate Registration */}
+            <Link href="/register/delegate">
+              <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 flex flex-col items-center text-center cursor-pointer border-2 border-transparent hover:border-[#A3841D]">
+                <div className="w-16 h-16 bg-[#A3841D]/10 rounded-full flex items-center justify-center mb-5 group-hover:bg-[#A3841D]/20 transition-colors">
+                  <FaBook className="w-8 h-8 text-[#A3841D]" />
+                </div>
+                <h3 className="text-2xl font-bold font-nunito text-gray-900 mb-3">
+                  Delegate Registration
+                </h3>
+                <p className="text-gray-600 font-dm-sans text-sm leading-relaxed mb-6">
+                  For individual delegates registering for SSICSIM 2026. Select
+                  your delegation, provide your information, and pick your
+                  committee preferences.
+                </p>
+                <span className="bg-[#A3841D] text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm group-hover:bg-[#8a6f1b] transition-colors">
+                  Register as a Delegate
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        <hr className="border-t-2 border-gray-300 my-10" />
+
+        {/* Pricing */}
+        <div className="relative z-10 container mx-auto py-10 mt-6">
+          <h2 className="text-5xl font-bold font-nunito text-center mb-8">
             Pricing*
           </h2>
           <p className="text-center text-gray-500 mb-6">
             *All prices are in Canadian Dollars (CAD$)
           </p>
-
-          {/* Pricing Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:w-auto w-[80%] mx-auto">
             {/* Early Bird Pricing */}
-            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$70</p>
               <p className="text-lg font-nunito mt-4">
                 Early Bird Registration
               </p>
-              <p className="text-sm font-light mt-2">June 15th – July 1st, or until we reach 125 registrants</p>
+              <p className="text-sm font-light mt-2">
+                June 15th – July 1st, or until we reach 125 registrants
+              </p>
             </div>
 
             {/* Regular Pricing */}
-            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
@@ -74,7 +131,7 @@ const Register = () => {
         </div>
 
         {/* Divider */}
-        <hr className="border-t-2 border-gray-300 my-6" />
+        <hr className="border-t-2 border-gray-300 my-10" />
 
         {/* Registration Section */}
         <div className="relative z-10 flex justify-center max-w-[3000px] mx-auto">
@@ -88,32 +145,12 @@ const Register = () => {
                 Whether you are an individual or group delegation, it’s easy to
                 register for SSICSIM 2026!
               </p>
-
-              {/* Buttons */}
-              <div className="flex gap-4 mt-6 lg:ml-6">
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdAFw0an5b2FdVB9jKDvH5aIvZS9lc1IUD9jlufK4nUOUrdZQ/viewform?usp=dialog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
-                >
-                  Early Bird Registration
-                </a>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfb7cVfWnEJWbjyyefHBbN013rKPHnyv30tOKsn-ozfHjKOgg/viewform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-[#8a6f1b] transition-colors"
-                >
-                  Delegation RSVP
-                </a>
-              </div>
             </div>
 
             <div className="pt-6">
               <RegistrationStep
                 title="Delegation Registration"
-                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Early Bird Registration Form indicating their delegation affiliation and committee preferences."
+                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Regular Registration Form indicating their delegation affiliation and committee preferences."
                 icon={
                   <FaUsers className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                 }
@@ -152,9 +189,9 @@ const Register = () => {
           </div>
         </div>
         <hr className="border-t-2 border-gray-300 my-6" />
+
         {/* Financial Aid Section */}
         <div className="grid grid-cols-1 gap-6 w-[90%] mx-auto">
-          {/* Financial Aid Section */}
           <div className="container mx-auto py-20 text-center w-[90%] bg-gradient-to-br from-[#A3841D] to-[#C2A95F] h-auto rounded-2xl p-6 z-20 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-5xl font-bold font-nunito text-white mb-8">
               Financial Aid
@@ -238,7 +275,8 @@ const Register = () => {
             </p>
             <p className="text-2xl text-white font-dm-sans mb-8">
               Alternatively, you may view this helpful document on how to pay
-              the delegate registration fee at any of Canada’s largest banks:
+              the delegate registration fee at any of Canada&apos;s largest
+              banks:
             </p>
 
             {/* Payment Guide Button */}
@@ -254,8 +292,9 @@ const Register = () => {
             </div>
           </div>
         </div>
+
         <hr className="border-t-2 border-gray-300 mt-10" />
-      </div>{" "}
+      </div>
     </>
   );
 };

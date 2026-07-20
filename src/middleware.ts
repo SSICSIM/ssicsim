@@ -16,6 +16,8 @@ const ALLOWED_ROUTES = new Set([
   "/wrapped",
   "/committees",
   "/register",
+  "/register/delegate",
+  "/register/delegation",
 ]);
 
 export function middleware(request: NextRequest) {

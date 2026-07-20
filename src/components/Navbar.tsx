@@ -58,7 +58,7 @@ export default function Navbar() {
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Early Bird Registration</strong> is now open!
+            🎉 <strong>Regular Registration</strong> is now open!
             <span className="ml-2 underline font-semibold">Register now!</span>
           </span>
         </Link>
@@ -218,7 +218,7 @@ export default function Navbar() {
                 ) : item.cta ? (
                   <Link
                     href={item.path}
-                    className="bg-[#A3841D] text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-white hover:text-[#A3841D] transition-colors flex items-center"
+                    className="bg-[#A3841D] hover:bg-[#8a6f1b] text-white p-3 px-6 rounded-full transition-colors"
                   >
                     {item.label}
                   </Link>
