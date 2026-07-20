@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { committeesData } from "@/utils/data";
+import { apiErrorMessage } from "@/lib/utils";
 
 interface Delegation {
   id: string;
@@ -84,7 +85,7 @@ const STEPS = [
 const REGISTRATION_FEE_CAD = 90;
 
 const EXPERIENCE_OPTIONS: { label: string; value: string; desc: string }[] = [
-  { label: "Novice", value: "Beginner", desc: "Attended 0–1 Model UN conferences" },
+  { label: "Novice", value: "Novice", desc: "Attended 0–1 Model UN conferences" },
   {
     label: "Intermediate",
     value: "Intermediate",
@@ -92,7 +93,7 @@ const EXPERIENCE_OPTIONS: { label: string; value: string; desc: string }[] = [
   },
   {
     label: "Advanced",
-    value: "Expertise",
+    value: "Advanced",
     desc: "Attended 5+ Model UN conferences",
   },
 ];
@@ -462,7 +463,7 @@ export default function DelegateRegister() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.detail ?? `Error ${res.status}`);
+        throw new Error(apiErrorMessage(data, `Error ${res.status}`));
       }
       // fire-and-forget confirmation email
       fetch("/api/email", {

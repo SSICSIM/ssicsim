@@ -10,6 +10,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { apiErrorMessage } from "@/lib/utils";
 
 interface FormData {
   // Step 1 – School Info
@@ -256,7 +257,7 @@ export default function DelegationRegister() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.detail ?? `Error ${res.status}`);
+        throw new Error(apiErrorMessage(data, `Error ${res.status}`));
       }
       // fire-and-forget confirmation email
       fetch("/api/email", {
