@@ -85,7 +85,11 @@ const STEPS = [
 const REGISTRATION_FEE_CAD = 90;
 
 const EXPERIENCE_OPTIONS: { label: string; value: string; desc: string }[] = [
-  { label: "Novice", value: "Novice", desc: "Attended 0–1 Model UN conferences" },
+  {
+    label: "Novice",
+    value: "Novice",
+    desc: "Attended 0–1 Model UN conferences",
+  },
   {
     label: "Intermediate",
     value: "Intermediate",
@@ -156,7 +160,9 @@ function Field({
         {required && <span className="text-red-500 ml-0.5">*</span>}
       </label>
       {children}
-      {hint && <p className="text-xs text-gray-400 mt-1 font-dm-sans">{hint}</p>}
+      {hint && (
+        <p className="text-xs text-gray-400 mt-1 font-dm-sans">{hint}</p>
+      )}
     </div>
   );
 }
@@ -192,7 +198,9 @@ function FileField({
 
   function handleChange(selected: File | null) {
     if (selected && selected.size > MAX_UPLOAD_BYTES) {
-      setSizeError(`File is too large. Max size is ${MAX_UPLOAD_BYTES / (1024 * 1024)}MB.`);
+      setSizeError(
+        `File is too large. Max size is ${MAX_UPLOAD_BYTES / (1024 * 1024)}MB.`,
+      );
       onChange(null);
       return;
     }
@@ -246,14 +254,20 @@ function FileField({
         >
           Browse files
         </Button>
-        <p className="text-xs text-gray-400 font-dm-sans">PDF, PNG, or JPEG · max 4MB</p>
+        <p className="text-xs text-gray-400 font-dm-sans">
+          PDF, PNG, or JPEG · max 4MB
+        </p>
       </div>
       {file && (
         <div className="flex items-start gap-3 mt-3">
           <div className="relative flex-shrink-0">
             <div className="w-20 h-20 rounded-lg border border-gray-200 bg-gray-50 shadow-sm overflow-hidden flex items-center justify-center">
               {previewUrl ? (
-                <img src={previewUrl} alt={file.name} className="w-full h-full object-cover" />
+                <img
+                  src={previewUrl}
+                  alt={file.name}
+                  className="w-full h-full object-cover"
+                />
               ) : (
                 <FileText className="w-8 h-8 text-gray-400" strokeWidth={1.5} />
               )}
@@ -322,7 +336,9 @@ export default function DelegateRegister() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [codeOfConductFile, setCodeOfConductFile] = useState<File | null>(null);
-  const [paymentReceiptFile, setPaymentReceiptFile] = useState<File | null>(null);
+  const [paymentReceiptFile, setPaymentReceiptFile] = useState<File | null>(
+    null,
+  );
   const formTopRef = useRef<HTMLDivElement>(null);
 
   const set = (field: keyof FormData, value: string | boolean) =>
@@ -354,12 +370,14 @@ export default function DelegateRegister() {
         return "Please upload a signed copy of the Delegate Code of Conduct.";
     }
     if (step === 2) {
-      if (!form.paymentPolicyAck) return "Please acknowledge the Payment Policy.";
+      if (!form.paymentPolicyAck)
+        return "Please acknowledge the Payment Policy.";
       if (!form.cancellationPolicyAck)
         return "Please acknowledge the Cancellation Policy.";
     }
     if (step === 3) {
-      if (!form.firstCommittee) return "Please select your first committee preference.";
+      if (!form.firstCommittee)
+        return "Please select your first committee preference.";
       if (!form.secondCommittee)
         return "Please select your second committee preference.";
       if (!form.thirdCommittee)
@@ -386,7 +404,10 @@ export default function DelegateRegister() {
 
   function next() {
     const err = validateStep();
-    if (err) { setError(err); return; }
+    if (err) {
+      setError(err);
+      return;
+    }
     setError(null);
     setStep((s) => s + 1);
     formTopRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -400,7 +421,10 @@ export default function DelegateRegister() {
 
   async function submit() {
     const err = validateStep();
-    if (err) { setError(err); return; }
+    if (err) {
+      setError(err);
+      return;
+    }
     setError(null);
     setSubmitting(true);
     try {
@@ -412,15 +436,27 @@ export default function DelegateRegister() {
       // persist, not the files themselves, so this must complete before the
       // delegate record is created.
       const fullName = `${form.firstName.trim()} ${form.lastName.trim()}`;
-      if (!codeOfConductFile) throw new Error("Please upload a signed copy of the Delegate Code of Conduct.");
+      if (!codeOfConductFile)
+        throw new Error(
+          "Please upload a signed copy of the Delegate Code of Conduct.",
+        );
       setSubmitStage("uploading-code-of-conduct");
-      const codeOfConductUrl = await uploadToDrive(codeOfConductFile, "code_of_conduct", fullName);
+      const codeOfConductUrl = await uploadToDrive(
+        codeOfConductFile,
+        "code_of_conduct",
+        fullName,
+      );
 
       let paymentReceiptUrl: string | null = null;
       if (form.financialAidStatus === "No") {
-        if (!paymentReceiptFile) throw new Error("Please upload a PDF receipt of your payment.");
+        if (!paymentReceiptFile)
+          throw new Error("Please upload a PDF receipt of your payment.");
         setSubmitStage("uploading-payment-receipt");
-        paymentReceiptUrl = await uploadToDrive(paymentReceiptFile, "payment_receipt", fullName);
+        paymentReceiptUrl = await uploadToDrive(
+          paymentReceiptFile,
+          "payment_receipt",
+          fullName,
+        );
       }
 
       setSubmitStage("submitting-registration");
@@ -429,7 +465,10 @@ export default function DelegateRegister() {
       // delegate who uploaded a receipt goes to Verify Payment so SEC can
       // confirm it before assignment; everyone else (financial aid pending or
       // delegation paying) waits on Awaiting Payment.
-      const delegateStatus = form.financialAidStatus === "No" ? "Verify Payment" : "Awaiting Payment";
+      const delegateStatus =
+        form.financialAidStatus === "No"
+          ? "Verify Payment"
+          : "Awaiting Payment";
 
       const res = await fetch("/api/delegates", {
         method: "POST",
@@ -453,7 +492,10 @@ export default function DelegateRegister() {
           payment_policy_ack: form.paymentPolicyAck,
           cancellation_policy_ack: form.cancellationPolicyAck,
           financial_aid_status: form.financialAidStatus,
-          financial_aid_reason: form.financialAidStatus === "Yes" ? form.financialAidReason.trim() : null,
+          financial_aid_reason:
+            form.financialAidStatus === "Yes"
+              ? form.financialAidReason.trim()
+              : null,
           payment_receipt_url: paymentReceiptUrl,
           delegate_status: delegateStatus,
           heard_about: form.heardAbout.trim() || null,
@@ -470,14 +512,21 @@ export default function DelegateRegister() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          recipients: [{ email: form.delegateEmail.trim(), name: `${form.firstName} ${form.lastName}` }],
+          recipients: [
+            {
+              email: form.delegateEmail.trim(),
+              name: `${form.firstName} ${form.lastName}`,
+            },
+          ],
           subject: "SSICSIM 2026 Delegate Registration Received",
           body: `Dear ${form.preferredName.trim() || form.firstName},\n\nThank you for registering as a delegate for SSICSIM 2026! Your registration has been received and is currently awaiting confirmation of payment.\n\nYou will receive a follow-up email with confirmation of your payment. Please check your inbox and spam folder for emails from us.\n\nIf you have any questions, please contact us at contact@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`,
         }),
       }).catch(() => {});
       setSubmitted(true);
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Submission failed. Please try again.");
+      setError(
+        e instanceof Error ? e.message : "Submission failed. Please try again.",
+      );
     } finally {
       setSubmitting(false);
       setSubmitStage("idle");
@@ -485,7 +534,9 @@ export default function DelegateRegister() {
   }
 
   // Committees available for each preference slot (exclude already chosen)
-  const available2 = COMMITTEE_NAMES.filter((name) => name !== form.firstCommittee);
+  const available2 = COMMITTEE_NAMES.filter(
+    (name) => name !== form.firstCommittee,
+  );
   const available3 = COMMITTEE_NAMES.filter(
     (name) => name !== form.firstCommittee && name !== form.secondCommittee,
   );
@@ -501,13 +552,13 @@ export default function DelegateRegister() {
             Registration Submitted!
           </h2>
           <p className="text-gray-600 font-dm-sans mb-2 leading-relaxed">
-            Thank you, <span className="font-semibold">{form.firstName}</span>! Your
-            registration has been received.
+            Thank you, <span className="font-semibold">{form.firstName}</span>!
+            Your registration has been received.
           </p>
           <p className="text-gray-600 font-dm-sans mb-6 leading-relaxed text-sm">
             A confirmation email has been sent to{" "}
-            <span className="font-semibold">{form.delegateEmail}</span>. Please check
-            your inbox and spam folder for emails from us.
+            <span className="font-semibold">{form.delegateEmail}</span>. Please
+            check your inbox and spam folder for emails from us.
           </p>
           <Link
             href="/register"
@@ -528,15 +579,27 @@ export default function DelegateRegister() {
           <Breadcrumb className="mb-4">
             <BreadcrumbList className="text-white/70">
               <BreadcrumbItem>
-                <BreadcrumbLink href="/" className="text-white/70 hover:text-white">Home</BreadcrumbLink>
+                <BreadcrumbLink
+                  href="/"
+                  className="text-white/70 hover:text-white"
+                >
+                  Home
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/register" className="text-white/70 hover:text-white">Registration</BreadcrumbLink>
+                <BreadcrumbLink
+                  href="/register"
+                  className="text-white/70 hover:text-white"
+                >
+                  Registration
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-white font-semibold">Delegate Registration</BreadcrumbPage>
+                <BreadcrumbPage className="text-white font-semibold">
+                  Delegate Registration
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -544,13 +607,16 @@ export default function DelegateRegister() {
             Delegate Registration
           </h1>
           <p className="text-white/80 font-dm-sans text-sm">
-            Register individually as a delegate for SSICSIM 2026. Each delegate must
-            complete this form independently.
+            Register individually as a delegate for SSICSIM 2026. Each delegate
+            must complete this form independently.
           </p>
         </div>
       </div>
 
-      <div ref={formTopRef} className="max-w-3xl mx-auto py-10 px-6 scroll-mt-[120px]">
+      <div
+        ref={formTopRef}
+        className="max-w-3xl mx-auto py-10 px-6 scroll-mt-[120px]"
+      >
         <StepIndicator current={step} />
 
         <div className="bg-white rounded-2xl shadow-md p-8">
@@ -561,8 +627,8 @@ export default function DelegateRegister() {
                 Section 1: Delegate Affiliation
               </h2>
               <p className="text-sm text-gray-500 font-dm-sans mb-6">
-                If you are registering with a confirmed Group Delegation, select it
-                below. Otherwise, select &quot;Independent Delegate&quot;.
+                If you are registering with a confirmed Group Delegation, select
+                it below. Otherwise, select &quot;Independent Delegate&quot;.
               </p>
               <Field label="Email Address" required>
                 <input
@@ -652,7 +718,10 @@ export default function DelegateRegister() {
               <Field label="Delegate Experience Level" required>
                 <div className="flex flex-col gap-3 mt-1">
                   {EXPERIENCE_OPTIONS.map(({ label, value, desc }) => (
-                    <label key={value} className="flex items-start gap-3 cursor-pointer">
+                    <label
+                      key={value}
+                      className="flex items-start gap-3 cursor-pointer"
+                    >
                       <input
                         type="radio"
                         name="experience"
@@ -684,7 +753,10 @@ export default function DelegateRegister() {
                   </a>{" "}
                   (PDF, PNG, or JPEG, max 4MB).
                 </p>
-                <FileField file={codeOfConductFile} onChange={setCodeOfConductFile} />
+                <FileField
+                  file={codeOfConductFile}
+                  onChange={setCodeOfConductFile}
+                />
               </div>
             </div>
           )}
@@ -696,7 +768,8 @@ export default function DelegateRegister() {
                 Part II: Official Registration Policies
               </h2>
               <p className="text-sm text-gray-500 font-dm-sans mb-6">
-                Please read through the official registration policies for SSICSIM 2026.
+                Please read through the official registration policies for
+                SSICSIM 2026.
               </p>
 
               <div className="mb-6 border border-gray-200 rounded-xl p-5 bg-gray-50">
@@ -704,21 +777,26 @@ export default function DelegateRegister() {
                   Payment Policy
                 </h4>
                 <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">
-                  Given that Early Bird and Late Registration requires that we hold your
-                  spots, we kindly request that group delegates paying individually and
-                  independent delegates registering within these timeframes pay
-                  immediately. For group delegations paying collectively (by e-transfer or
-                  cheque) within these registration periods, invoices will be sent
-                  post-registration (or upon confirmation from FAs/HDs that their entire
-                  delegation has completed registration), and delegates will not be
-                  prompted to pay SSICSIM directly at the time of registration.
-                  <br /><br />
-                  All delegations paying collectively (either by e-transfer or cheque)
-                  will be invoiced approximately 3-5 days after registration and will be
-                  expected to complete their payment within two weeks of being invoiced.
-                  <br /><br />
-                  The only instance in which SSICSIM may delay issuing a fee is if a
-                  delegate has applied for financial aid.
+                  Given that Early Bird and Late Registration requires that we
+                  hold your spots, we kindly request that group delegates paying
+                  individually and independent delegates registering within
+                  these timeframes pay immediately. For group delegations paying
+                  collectively (by e-transfer or cheque) within these
+                  registration periods, invoices will be sent post-registration
+                  (or upon confirmation from FAs/HDs that their entire
+                  delegation has completed registration), and delegates will not
+                  be prompted to pay SSICSIM directly at the time of
+                  registration.
+                  <br />
+                  <br />
+                  All delegations paying collectively (either by e-transfer or
+                  cheque) will be invoiced approximately 3-5 days after
+                  registration and will be expected to complete their payment
+                  within two weeks of being invoiced.
+                  <br />
+                  <br />
+                  The only instance in which SSICSIM may delay issuing a fee is
+                  if a delegate has applied for financial aid.
                 </p>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
@@ -738,20 +816,25 @@ export default function DelegateRegister() {
                   Cancellation Policy
                 </h4>
                 <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">
-                  Delegates may cancel their registration at any time by notifying the
-                  Chargée D&apos;Affaires at registration@ssicsim.ca. Partial refunds may
-                  be issued depending on the time the delegate initially registered:
-                  <br /><br />
+                  Delegates may cancel their registration at any time by
+                  notifying the Chargée D&apos;Affaires at
+                  registration@ssicsim.ca. Partial refunds may be issued
+                  depending on the time the delegate initially registered:
+                  <br />
+                  <br />
                   50% refunds will be issued for Early Bird registrants.
                   <br />
                   25% refunds will be issued for Regular registrants.
                   <br />
-                  No refund will be issued for delegates who registered during the Late
-                  Registration period.
-                  <br /><br />
-                  Once registration has closed for SSICSIM 2026, refunds will no longer
-                  be issued for delegates who withdraw from the conference.
-                  <br /><br />
+                  No refund will be issued for delegates who registered during
+                  the Late Registration period.
+                  <br />
+                  <br />
+                  Once registration has closed for SSICSIM 2026, refunds will no
+                  longer be issued for delegates who withdraw from the
+                  conference.
+                  <br />
+                  <br />
                   With any questions or concerns about payment, cancellation, or
                   invoicing, please contact us at registration@ssicsim.ca!
                 </p>
@@ -759,7 +842,9 @@ export default function DelegateRegister() {
                   <input
                     type="checkbox"
                     checked={form.cancellationPolicyAck}
-                    onChange={(e) => set("cancellationPolicyAck", e.target.checked)}
+                    onChange={(e) =>
+                      set("cancellationPolicyAck", e.target.checked)
+                    }
                     className="mt-0.5 accent-[#A3841D] w-4 h-4 flex-shrink-0"
                   />
                   <span className="text-sm font-dm-sans text-gray-700">
@@ -786,88 +871,94 @@ export default function DelegateRegister() {
                   SSICSIM 2026 Committee Slate
                 </Link>{" "}
                 for a list of committees.
-                <br /><br />
-                At SSICSIM we pride ourselves on innovation and accessibility for all
-                delegates: as such, we highly value your preferences regarding delegate
-                assignments. However, availability is highly limited and committee and
-                role assignments are made on a first-come first-serve basis. Therefore,
-                while SSICSIM makes every effort to accommodate delegate preferences when
-                determining committee assignments, we cannot guarantee that all delegates
-                will be assigned one of their top three committee choices.
-                <br /><br />
-                Once again, please do not hesitate to contact us at registration@ssicsim.ca
-                if you have any questions!
+                <br />
+                <br />
+                At SSICSIM we pride ourselves on innovation and accessibility
+                for all delegates: as such, we highly value your preferences
+                regarding delegate assignments. However, availability is highly
+                limited and committee and role assignments are made on a
+                first-come first-serve basis. Therefore, while SSICSIM makes
+                every effort to accommodate delegate preferences when
+                determining committee assignments, we cannot guarantee that all
+                delegates will be assigned one of their top three committee
+                choices.
+                <br />
+                <br />
+                Once again, please do not hesitate to contact us at
+                registration@ssicsim.ca if you have any questions!
               </p>
               <>
-                  <Field label="First Committee Preference" required>
-                    <select
-                      className={inputCls}
-                      value={form.firstCommittee}
-                      onChange={(e) => {
-                        set("firstCommittee", e.target.value);
-                        if (e.target.value === form.secondCommittee)
-                          set("secondCommittee", "");
-                        if (e.target.value === form.thirdCommittee)
-                          set("thirdCommittee", "");
-                      }}
-                    >
-                      <option value="">Select a committee</option>
-                      {COMMITTEE_NAMES.map((name) => (
-                        <option key={name} value={name}>
-                          {name}
-                        </option>
-                      ))}
-                    </select>
-                  </Field>
-                  <Field label="Second Committee Preference" required>
-                    <select
-                      className={inputCls}
-                      value={form.secondCommittee}
-                      onChange={(e) => {
-                        set("secondCommittee", e.target.value);
-                        if (e.target.value === form.thirdCommittee)
-                          set("thirdCommittee", "");
-                      }}
-                      disabled={!form.firstCommittee}
-                    >
-                      <option value="">Select a committee</option>
-                      {available2.map((name) => (
-                        <option key={name} value={name}>
-                          {name}
-                        </option>
-                      ))}
-                    </select>
-                  </Field>
-                  <Field label="Third Committee Preference" required>
-                    <select
-                      className={inputCls}
-                      value={form.thirdCommittee}
-                      onChange={(e) => set("thirdCommittee", e.target.value)}
-                      disabled={!form.secondCommittee}
-                    >
-                      <option value="">Select a committee</option>
-                      {available3.map((name) => (
-                        <option key={name} value={name}>
-                          {name}
-                        </option>
-                      ))}
-                    </select>
-                  </Field>
-                  <label className="flex items-start gap-3 cursor-pointer mt-2">
-                    <input
-                      type="checkbox"
-                      checked={form.committeeSelectionAck}
-                      onChange={(e) => set("committeeSelectionAck", e.target.checked)}
-                      className="mt-0.5 accent-[#A3841D] w-4 h-4 flex-shrink-0"
-                    />
-                    <span className="text-sm font-dm-sans text-gray-700">
-                      I have read and understand the committee selection process,
-                      including the possibility that I may receive a committee
-                      assignment that does not align with my top three committee
-                      preferences.
-                    </span>
-                  </label>
-                </>
+                <Field label="First Committee Preference" required>
+                  <select
+                    className={inputCls}
+                    value={form.firstCommittee}
+                    onChange={(e) => {
+                      set("firstCommittee", e.target.value);
+                      if (e.target.value === form.secondCommittee)
+                        set("secondCommittee", "");
+                      if (e.target.value === form.thirdCommittee)
+                        set("thirdCommittee", "");
+                    }}
+                  >
+                    <option value="">Select a committee</option>
+                    {COMMITTEE_NAMES.map((name) => (
+                      <option key={name} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label="Second Committee Preference" required>
+                  <select
+                    className={inputCls}
+                    value={form.secondCommittee}
+                    onChange={(e) => {
+                      set("secondCommittee", e.target.value);
+                      if (e.target.value === form.thirdCommittee)
+                        set("thirdCommittee", "");
+                    }}
+                    disabled={!form.firstCommittee}
+                  >
+                    <option value="">Select a committee</option>
+                    {available2.map((name) => (
+                      <option key={name} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label="Third Committee Preference" required>
+                  <select
+                    className={inputCls}
+                    value={form.thirdCommittee}
+                    onChange={(e) => set("thirdCommittee", e.target.value)}
+                    disabled={!form.secondCommittee}
+                  >
+                    <option value="">Select a committee</option>
+                    {available3.map((name) => (
+                      <option key={name} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <label className="flex items-start gap-3 cursor-pointer mt-2">
+                  <input
+                    type="checkbox"
+                    checked={form.committeeSelectionAck}
+                    onChange={(e) =>
+                      set("committeeSelectionAck", e.target.checked)
+                    }
+                    className="mt-0.5 accent-[#A3841D] w-4 h-4 flex-shrink-0"
+                  />
+                  <span className="text-sm font-dm-sans text-gray-700">
+                    I have read and understand the committee selection process,
+                    including the possibility that I may receive a committee
+                    assignment that does not align with my top three committee
+                    preferences.
+                  </span>
+                </label>
+              </>
             </div>
           )}
 
@@ -878,39 +969,46 @@ export default function DelegateRegister() {
                 Part V: Financial Aid & Payment
               </h2>
               <p className="text-sm text-gray-500 font-dm-sans mb-6">
-                Please note that submitting a request for financial aid will delay your
-                registration status.
-                <br /><br />
-                Financial aid is provided on an as-needed basis to delegates in need of
-                assistance in order to attend the conference.
-                <br /><br />
-                SSICSIM is committed to providing an accessible conference experience to
-                all, while maintaining fiscal sustainability and reducing the financial
-                burden of attendance for all. As such, the conference offers part and
-                full financial aid services, with aid amounts subject to delegate needs.
-                <br /><br />
-                Note: Applicants for financial aid may experience a slight delay in
-                receiving their committee assignments, as additional time is required to
-                process these requests. We are committed to ensuring that each request
-                receives the utmost attention and careful consideration.
-                <br /><br />
-                If you have any questions surrounding financial aid, please feel free to
-                reach out to Nicholas Ali, our Deputy Secretary-General, Equity at{" "}
-                <a href="mailto:dsg@ssicsim.ca" className="text-[#A3841D] underline">
+                Please note that submitting a request for financial aid will
+                delay your registration status.
+                <br />
+                <br />
+                Financial aid is provided on an as-needed basis to delegates in
+                need of assistance in order to attend the conference.
+                <br />
+                <br />
+                SSICSIM is committed to providing an accessible conference
+                experience to all, while maintaining fiscal sustainability and
+                reducing the financial burden of attendance for all. As such,
+                the conference offers part and full financial aid services, with
+                aid amounts subject to delegate needs.
+                <br />
+                <br />
+                Note: Applicants for financial aid may experience a slight delay
+                in receiving their committee assignments, as additional time is
+                required to process these requests. We are committed to ensuring
+                that each request receives the utmost attention and careful
+                consideration.
+                <br />
+                <br />
+                If you have any questions surrounding financial aid, please feel
+                free to reach out to Nicholas Ali, our Deputy Secretary-General,
+                Equity at{" "}
+                <a
+                  href="mailto:dsg@ssicsim.ca"
+                  className="text-[#A3841D] underline"
+                >
                   dsg@ssicsim.ca
                 </a>
                 .
               </p>
               <Field label="Do you intend to apply for financial aid?" required>
                 <div className="flex flex-col gap-3 mt-1">
-                  {(
-                    [
-                      "Yes",
-                      "No",
-                      "Delegation Paying",
-                    ] as const
-                  ).map((opt) => (
-                    <label key={opt} className="flex items-center gap-3 cursor-pointer">
+                  {(["Yes", "No", "Delegation Paying"] as const).map((opt) => (
+                    <label
+                      key={opt}
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
                       <input
                         type="radio"
                         name="financialAidStatus"
@@ -951,10 +1049,11 @@ export default function DelegateRegister() {
                   </h4>
                   <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">
                     To reserve your spot as a regular registrant, please pay the
-                    registration price of ${REGISTRATION_FEE_CAD} CAD via e-transfer to{" "}
-                    <span className="font-semibold">internal@ssicsim.ca</span>. Be
-                    sure to include your full name with the payment, then upload a
-                    PDF receipt below (max 4MB).
+                    registration price of ${REGISTRATION_FEE_CAD} CAD via
+                    e-transfer to{" "}
+                    <span className="font-semibold">internal@ssicsim.ca</span>.
+                    Be sure to include your full name with the payment, then
+                    upload a PDF receipt below (max 4MB).
                   </p>
                   <FileField
                     file={paymentReceiptFile}
@@ -1005,28 +1104,38 @@ export default function DelegateRegister() {
                     <dd className="text-gray-800">{form.delegateEmail}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 w-36 flex-shrink-0">Delegation</dt>
+                    <dt className="text-gray-500 w-36 flex-shrink-0">
+                      Delegation
+                    </dt>
                     <dd className="text-gray-800">
                       {form.delegationId
-                        ? (delegations.find((d) => d.id === form.delegationId)?.name ??
-                          "—")
+                        ? (delegations.find((d) => d.id === form.delegationId)
+                            ?.name ?? "—")
                         : "Independent Delegate"}
                     </dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 w-36 flex-shrink-0">1st Choice</dt>
+                    <dt className="text-gray-500 w-36 flex-shrink-0">
+                      1st Choice
+                    </dt>
                     <dd className="text-gray-800">{form.firstCommittee}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 w-36 flex-shrink-0">2nd Choice</dt>
+                    <dt className="text-gray-500 w-36 flex-shrink-0">
+                      2nd Choice
+                    </dt>
                     <dd className="text-gray-800">{form.secondCommittee}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 w-36 flex-shrink-0">3rd Choice</dt>
+                    <dt className="text-gray-500 w-36 flex-shrink-0">
+                      3rd Choice
+                    </dt>
                     <dd className="text-gray-800">{form.thirdCommittee}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 w-36 flex-shrink-0">Financial Aid</dt>
+                    <dt className="text-gray-500 w-36 flex-shrink-0">
+                      Financial Aid
+                    </dt>
                     <dd className="text-gray-800">
                       {form.financialAidStatus === "Delegation Paying"
                         ? "Delegation paying"
@@ -1034,9 +1143,13 @@ export default function DelegateRegister() {
                     </dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-gray-500 w-36 flex-shrink-0">Payment Status</dt>
+                    <dt className="text-gray-500 w-36 flex-shrink-0">
+                      Payment Status
+                    </dt>
                     <dd className="text-gray-800">
-                      {form.financialAidStatus === "No" ? "Receipt Submitted — Pending Verification" : "Awaiting Payment"}
+                      {form.financialAidStatus === "No"
+                        ? "Receipt Submitted — Pending Verification"
+                        : "Awaiting Payment"}
                     </dd>
                   </div>
                 </dl>

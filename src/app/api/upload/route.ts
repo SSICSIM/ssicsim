@@ -10,7 +10,11 @@ const REGISTRATION_OPEN = process.env.REGISTRATION_OPEN !== "false";
 const MAX_FILE_BYTES = 4 * 1024 * 1024;
 
 const ALLOWED_KINDS: DriveUploadKind[] = ["code_of_conduct", "payment_receipt"];
-const ALLOWED_MIME_TYPES = new Set(["application/pdf", "image/png", "image/jpeg"]);
+const ALLOWED_MIME_TYPES = new Set([
+  "application/pdf",
+  "image/png",
+  "image/jpeg",
+]);
 
 const EXTENSION_BY_MIME: Record<string, string> = {
   "application/pdf": "pdf",
@@ -36,7 +40,10 @@ function isSameOrigin(req: NextRequest): boolean {
 
 export async function POST(req: NextRequest) {
   if (!REGISTRATION_OPEN) {
-    return NextResponse.json({ error: "Registration is currently closed" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Registration is currently closed" },
+      { status: 403 },
+    );
   }
   if (!isSameOrigin(req)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -58,11 +65,17 @@ export async function POST(req: NextRequest) {
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
-  if (typeof kind !== "string" || !ALLOWED_KINDS.includes(kind as DriveUploadKind)) {
+  if (
+    typeof kind !== "string" ||
+    !ALLOWED_KINDS.includes(kind as DriveUploadKind)
+  ) {
     return NextResponse.json({ error: "Invalid upload kind" }, { status: 400 });
   }
   if (typeof name !== "string" || !name.trim()) {
-    return NextResponse.json({ error: "Missing delegate name" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Missing delegate name" },
+      { status: 400 },
+    );
   }
   if (!ALLOWED_MIME_TYPES.has(file.type)) {
     return NextResponse.json(
@@ -72,7 +85,9 @@ export async function POST(req: NextRequest) {
   }
   if (file.size > MAX_FILE_BYTES) {
     return NextResponse.json(
-      { error: `File too large. Max size is ${MAX_FILE_BYTES / (1024 * 1024)}MB.` },
+      {
+        error: `File too large. Max size is ${MAX_FILE_BYTES / (1024 * 1024)}MB.`,
+      },
       { status: 400 },
     );
   }
@@ -82,7 +97,12 @@ export async function POST(req: NextRequest) {
     const safeName = name.trim().replace(/[^\w.\- ]/g, "_");
     const ext = EXTENSION_BY_MIME[file.type] ?? "pdf";
     const fileName = `${LABEL_BY_KIND[kind as DriveUploadKind]} - ${safeName}.${ext}`;
-    const { url } = await uploadFileToDrive(kind as DriveUploadKind, fileName, file.type, buffer);
+    const { url } = await uploadFileToDrive(
+      kind as DriveUploadKind,
+      fileName,
+      file.type,
+      buffer,
+    );
     return NextResponse.json({ url });
   } catch (err) {
     console.error("Drive upload failed", err);

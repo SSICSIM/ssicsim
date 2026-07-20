@@ -123,7 +123,9 @@ function Field({
         {required && <span className="text-red-500 ml-0.5">*</span>}
       </label>
       {children}
-      {hint && <p className="text-xs text-gray-400 mt-1 font-dm-sans">{hint}</p>}
+      {hint && (
+        <p className="text-xs text-gray-400 mt-1 font-dm-sans">{hint}</p>
+      )}
     </div>
   );
 }
@@ -146,7 +148,9 @@ const PolicyBlock = ({
 }) => (
   <div className="mb-6 border border-gray-200 rounded-xl p-5 bg-gray-50">
     <h4 className="font-bold font-nunito text-gray-900 mb-2">{title}</h4>
-    <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">{body}</p>
+    <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">
+      {body}
+    </p>
     <label className="flex items-start gap-3 cursor-pointer">
       <input
         type="checkbox"
@@ -186,8 +190,10 @@ export default function DelegationRegister() {
       if (!form.contactRole) return "Please select a primary role.";
     }
     if (step === 3) {
-      if (!form.paymentPolicyAck) return "Please acknowledge the Payment Policy.";
-      if (!form.overduePolicyAck) return "Please acknowledge the Overdue Policy.";
+      if (!form.paymentPolicyAck)
+        return "Please acknowledge the Payment Policy.";
+      if (!form.overduePolicyAck)
+        return "Please acknowledge the Overdue Policy.";
       if (!form.financialAidPolicyAck)
         return "Please acknowledge the Financial Aid Policy.";
       if (!form.cancellationPolicyAck)
@@ -242,9 +248,18 @@ export default function DelegationRegister() {
             : form.delegationSizeMin
               ? parseInt(form.delegationSizeMin, 10)
               : null,
-          delegation_size_min: form.delegationSizeMin ? parseInt(form.delegationSizeMin, 10) : null,
-          delegation_size_max: form.delegationSizeMax ? parseInt(form.delegationSizeMax, 10) : null,
-          attended_before: form.attendedBefore === "Yes" ? true : form.attendedBefore === "No" ? false : null,
+          delegation_size_min: form.delegationSizeMin
+            ? parseInt(form.delegationSizeMin, 10)
+            : null,
+          delegation_size_max: form.delegationSizeMax
+            ? parseInt(form.delegationSizeMax, 10)
+            : null,
+          attended_before:
+            form.attendedBefore === "Yes"
+              ? true
+              : form.attendedBefore === "No"
+                ? false
+                : null,
           payment_process: form.paymentProcess || null,
           policy_ack_payment: form.paymentPolicyAck,
           policy_ack_registration: form.overduePolicyAck,
@@ -264,14 +279,21 @@ export default function DelegationRegister() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          recipients: [{ email: form.contactEmail.trim(), name: `${form.contactFirstName} ${form.contactLastName}` }],
+          recipients: [
+            {
+              email: form.contactEmail.trim(),
+              name: `${form.contactFirstName} ${form.contactLastName}`,
+            },
+          ],
           subject: "SSICSIM 2026 Delegation RSVP Received",
           body: `Dear ${form.contactFirstName},\n\nThank you for submitting your delegation RSVP for SSICSIM 2026. Your institution, ${form.schoolName}, has been added as a Group Delegation.\n\nDelegates from your institution may now complete their individual registrations at ssicsim.ca/register/delegate.\n\nIf you have any questions, please contact us at contact@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`,
         }),
       }).catch(() => {});
       setSubmitted(true);
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Submission failed. Please try again.");
+      setError(
+        e instanceof Error ? e.message : "Submission failed. Please try again.",
+      );
     } finally {
       setSubmitting(false);
     }
@@ -288,13 +310,13 @@ export default function DelegationRegister() {
             Delegation Registered!
           </h2>
           <p className="text-gray-600 font-dm-sans mb-2 leading-relaxed">
-            <span className="font-semibold">{form.schoolName}</span> has been added
-            as a Group Delegation.
+            <span className="font-semibold">{form.schoolName}</span> has been
+            added as a Group Delegation.
           </p>
           <p className="text-gray-600 font-dm-sans mb-6 leading-relaxed text-sm">
             A confirmation email has been sent to{" "}
-            <span className="font-semibold">{form.contactEmail}</span>. Delegates
-            from your institution can now register individually.
+            <span className="font-semibold">{form.contactEmail}</span>.
+            Delegates from your institution can now register individually.
           </p>
           <Link
             href="/register"
@@ -315,15 +337,27 @@ export default function DelegationRegister() {
           <Breadcrumb className="mb-4">
             <BreadcrumbList className="text-white/70">
               <BreadcrumbItem>
-                <BreadcrumbLink href="/" className="text-white/70 hover:text-white">Home</BreadcrumbLink>
+                <BreadcrumbLink
+                  href="/"
+                  className="text-white/70 hover:text-white"
+                >
+                  Home
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/register" className="text-white/70 hover:text-white">Registration</BreadcrumbLink>
+                <BreadcrumbLink
+                  href="/register"
+                  className="text-white/70 hover:text-white"
+                >
+                  Registration
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-white font-semibold">Delegation RSVP</BreadcrumbPage>
+                <BreadcrumbPage className="text-white font-semibold">
+                  Delegation RSVP
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -331,13 +365,16 @@ export default function DelegationRegister() {
             Delegation RSVP
           </h1>
           <p className="text-white/80 font-dm-sans text-sm">
-            For Faculty Advisors or Head Delegates registering a school delegation for
-            SSICSIM 2026.
+            For Faculty Advisors or Head Delegates registering a school
+            delegation for SSICSIM 2026.
           </p>
         </div>
       </div>
 
-      <div ref={formTopRef} className="max-w-2xl mx-auto py-10 px-6 scroll-mt-[120px]">
+      <div
+        ref={formTopRef}
+        className="max-w-2xl mx-auto py-10 px-6 scroll-mt-[120px]"
+      >
         <StepIndicator current={step} />
 
         <div className="bg-white rounded-2xl shadow-md p-8">
@@ -395,11 +432,16 @@ export default function DelegationRegister() {
               </h2>
               <p className="text-sm text-gray-500 font-dm-sans mb-6">
                 A primary contact must be a Faculty Advisor or Head Delegate.
-                <br /><br />
-                If you are not the Head Delegate or Faculty Advisor for your Delegation,
-                please do not fill out this form. To complete your individual
-                registration as a Delegate, please fill out the{" "}
-                <Link href="/register/delegate" className="text-[#A3841D] underline" target="_blank">
+                <br />
+                <br />
+                If you are not the Head Delegate or Faculty Advisor for your
+                Delegation, please do not fill out this form. To complete your
+                individual registration as a Delegate, please fill out the{" "}
+                <Link
+                  href="/register/delegate"
+                  className="text-[#A3841D] underline"
+                  target="_blank"
+                >
                   Delegate Registration Form
                 </Link>
                 .
@@ -439,7 +481,10 @@ export default function DelegationRegister() {
               <Field label="Primary Role" required>
                 <div className="flex flex-col gap-3 mt-1">
                   {["Faculty Advisor", "Head Delegate"].map((role) => (
-                    <label key={role} className="flex items-center gap-3 cursor-pointer">
+                    <label
+                      key={role}
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
                       <input
                         type="radio"
                         name="contactRole"
@@ -448,7 +493,9 @@ export default function DelegationRegister() {
                         onChange={() => set("contactRole", role)}
                         className="accent-[#A3841D] w-4 h-4"
                       />
-                      <span className="text-sm font-dm-sans text-gray-700">{role}</span>
+                      <span className="text-sm font-dm-sans text-gray-700">
+                        {role}
+                      </span>
                     </label>
                   ))}
                 </div>
@@ -464,15 +511,18 @@ export default function DelegationRegister() {
               </h2>
               <Field label="Approximate Delegation Size">
                 <p className="text-xs text-gray-400 mb-2 font-dm-sans">
-                  Please enter the tentative minimum and maximum number of Delegates you
-                  are expecting to attend from your Group Delegation.
-                  <br /><br />
-                  Note: The maximum Group Delegation capacity for SSICSIM 2026 is now 50
-                  delegates!
-                  <br /><br />
-                  The estimate you provide has no binding effect on how many delegates
-                  you can register, nor how many you must. This information will be used
-                  solely for planning purposes.
+                  Please enter the tentative minimum and maximum number of
+                  Delegates you are expecting to attend from your Group
+                  Delegation.
+                  <br />
+                  <br />
+                  Note: The maximum Group Delegation capacity for SSICSIM 2026
+                  is now 50 delegates!
+                  <br />
+                  <br />
+                  The estimate you provide has no binding effect on how many
+                  delegates you can register, nor how many you must. This
+                  information will be used solely for planning purposes.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <input
@@ -493,10 +543,16 @@ export default function DelegationRegister() {
                   />
                 </div>
               </Field>
-              <Field label="Has your Delegation attended SSICSIM before?" required>
+              <Field
+                label="Has your Delegation attended SSICSIM before?"
+                required
+              >
                 <div className="flex flex-col gap-3 mt-1">
                   {["Yes", "No"].map((opt) => (
-                    <label key={opt} className="flex items-center gap-3 cursor-pointer">
+                    <label
+                      key={opt}
+                      className="flex items-center gap-3 cursor-pointer"
+                    >
                       <input
                         type="radio"
                         name="attendedBefore"
@@ -505,7 +561,9 @@ export default function DelegationRegister() {
                         onChange={() => set("attendedBefore", opt)}
                         className="accent-[#A3841D] w-4 h-4"
                       />
-                      <span className="text-sm font-dm-sans text-gray-700">{opt}</span>
+                      <span className="text-sm font-dm-sans text-gray-700">
+                        {opt}
+                      </span>
                     </label>
                   ))}
                 </div>

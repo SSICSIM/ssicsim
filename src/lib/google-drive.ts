@@ -71,6 +71,7 @@ export async function uploadFileToDrive(
     supportsAllDrives: true,
   });
 
-  const url = res.data.webViewLink ?? `https://drive.google.com/file/d/${fileId}/view`;
+  const url =
+    res.data.webViewLink ?? `https://drive.google.com/file/d/${fileId}/view`;
   return { id: fileId, url };
 }

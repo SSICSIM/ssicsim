@@ -18,7 +18,10 @@ function isSameOrigin(req: NextRequest): boolean {
 
 export async function POST(req: NextRequest) {
   if (!REGISTRATION_OPEN) {
-    return NextResponse.json({ error: "Registration is currently closed" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Registration is currently closed" },
+      { status: 403 },
+    );
   }
   if (!isSameOrigin(req)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -37,7 +40,10 @@ export async function POST(req: NextRequest) {
     const email = (body.email ?? "").toLowerCase().trim();
     if (email && checkRateLimit(`delegates:email:${email}`, 2)) {
       return NextResponse.json(
-        { error: "This email has already been used to register. Contact registration@ssicsim.ca if you need help." },
+        {
+          error:
+            "This email has already been used to register. Contact registration@ssicsim.ca if you need help.",
+        },
         { status: 429 },
       );
     }
