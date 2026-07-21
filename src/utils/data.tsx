@@ -90,13 +90,13 @@ export const committeesData = [
     description:
       "After losing central authority in Memphis, Egypt fell into political turmoil when the nomarchs took power and divided the kingdom into two.",
     expandedDescription:
-      "After losing central authority in Memphis, Egypt fell into political turmoil when the nomarchs took power and divided the kingdom into two. Reaching the First Intermediate Period (2181-2055 BC), Egypt facednumerous internal conflicts, power struggles, and provincial leaders taking advantage of their wealth for roles once reserved for kings. As such, this period is defined as a dark age, and seeks to reach a golden age through reunification.\n\nBut no kingdom, especially no golden age, could ever be upheld without careful and strategic leadership. It is then in the hands of the delegates to demonstrate their abilities to lead a kingdom and protect it from all harm. Whether it be solving economic issues, fighting external attacks, dealing with political turmoil, curses, pyramid invasions, or the demise by the gods, it is all in the hands of delegates to ensure Egypt does not once again fall into the darkness.\n\nIt is only with a strong Pharaoh who unites the land, alongside his loyal subjects who support him that Egypt can be guaranteed as a whole. May the Pharaoh’s land remain in the light, or you, dear loyal subjects, shall not exist (tomb of Khnumhotep, Dyn. 12). 𓂀",
+      "After losing central authority in Memphis, Egypt fell into political turmoil when the nomarchs took power and divided the kingdom into two. Reaching the First Intermediate Period (2181-2055 BC), Egypt faced numerous internal conflicts, power struggles, and provincial leaders taking advantage of their wealth for roles once reserved for kings. As such, this period is defined as a dark age, and seeks to reach a golden age through reunification.\n\nBut no kingdom, especially no golden age, could ever be upheld without careful and strategic leadership. It is then in the hands of the delegates to demonstrate their abilities to lead a kingdom and protect it from all harm. Whether it be solving economic issues, fighting external attacks, dealing with political turmoil, curses, pyramid invasions, or the demise by the gods, it is all in the hands of delegates to ensure Egypt does not once again fall into the darkness.\n\nIt is only with a strong Pharaoh who unites the land, alongside his loyal subjects who support him that Egypt can be guaranteed as a whole. May the Pharaoh’s land remain in the light, or you, dear loyal subjects, shall not exist \\(tomb of Khnumhotep, Dyn. 12\\.) 𓂀",
     backgroundGuides: [],
     contactEmail: "",
     director: "Wajid Zaman & Paula Chu",
     directorImage: "",
     category: "Historical",
-    backgroundImage: "",
+    backgroundImage: "/assets/photos/commitees/LandOfThePharohs.jpg",
     jointOrNot: false,
     double: false,
   },
