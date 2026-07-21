@@ -1,5 +1,9 @@
 import React from "react";
 
+// Restores literal parentheses escaped with a backslash (\( \))
+const restoreEscapes = (str: string): string =>
+  str.replace(/__ESC_LPAREN__/g, "(").replace(/__ESC_RPAREN__/g, ")");
+
 // Parses a single line for inline formatting and [text]{url} links.
 const parseLine = (line: string, keyPrefix: string): React.ReactNode[] => {
   const elements: React.ReactNode[] = [];
@@ -34,6 +38,11 @@ const parseLine = (line: string, keyPrefix: string): React.ReactNode[] => {
     tempLine = tempLine.replace(fullMatch, placeholder);
   }
 
+  // Escape \( and \) so literal parentheses can appear without triggering italics
+  tempLine = tempLine
+    .replace(/\\\(/g, "__ESC_LPAREN__")
+    .replace(/\\\)/g, "__ESC_RPAREN__");
+
   // Regex for formatting: [bold], (italic), {underline}, <bold italic>
   const formatRegex = /(\[([^\]]+)\]|\(([^)]+)\)|\{([^}]+)\}|<([^>]+)>)/g;
   let match;
@@ -54,7 +63,7 @@ const parseLine = (line: string, keyPrefix: string): React.ReactNode[] => {
         React.createElement(
           "span",
           { key: `${keyPrefix}-${index}-bold`, className: "font-bold" },
-          match[2],
+          restoreEscapes(match[2]),
         ),
       );
     } else if (match[3]) {
@@ -62,7 +71,7 @@ const parseLine = (line: string, keyPrefix: string): React.ReactNode[] => {
         React.createElement(
           "span",
           { key: `${keyPrefix}-${index}-italic`, className: "italic" },
-          match[3],
+          restoreEscapes(match[3]),
         ),
       );
     } else if (match[4]) {
@@ -70,7 +79,7 @@ const parseLine = (line: string, keyPrefix: string): React.ReactNode[] => {
         React.createElement(
           "span",
           { key: `${keyPrefix}-${index}-underline`, className: "underline" },
-          match[4],
+          restoreEscapes(match[4]),
         ),
       );
     } else if (match[5]) {
@@ -81,7 +90,7 @@ const parseLine = (line: string, keyPrefix: string): React.ReactNode[] => {
             key: `${keyPrefix}-${index}-bold-italic`,
             className: "font-bold italic",
           },
-          match[5],
+          restoreEscapes(match[5]),
         ),
       );
     }
@@ -145,7 +154,7 @@ function replacePlaceholders(
     const placeholder = match[0];
 
     if (index > lastIndex) {
-      result.push(text.slice(lastIndex, index));
+      result.push(restoreEscapes(text.slice(lastIndex, index)));
     }
 
     result.push(map[placeholder]);
@@ -153,7 +162,7 @@ function replacePlaceholders(
   }
 
   if (lastIndex < text.length) {
-    result.push(text.slice(lastIndex));
+    result.push(restoreEscapes(text.slice(lastIndex)));
   }
 
   return result;
