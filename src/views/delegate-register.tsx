@@ -102,7 +102,7 @@ const EXPERIENCE_OPTIONS: { label: string; value: string; desc: string }[] = [
   },
 ];
 
-const GRADE_OPTIONS = ["Grade 9", "Grade 10", "Grade 11", "Grade 12", "Other"];
+const GRADE_OPTIONS = ["Grade 9", "Grade 10", "Grade 11", "Grade 12"];
 
 function StepIndicator({ current }: { current: number }) {
   return (
