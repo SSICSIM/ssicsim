@@ -2,7 +2,7 @@
 
 import ScrollScrub from "../components/ScrollTrigger";
 import CurrentCard from "../components/CurrentCard";
-import CommiteeType from "../components/CommiteeType";
+import CommitteeType from "../components/CommitteeType";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -371,7 +371,7 @@ const Landing = () => {
 
             <div className="flex flex-col justify-center items-center gap-4 w-full md:w-[40%] z-[20]">
               {committees.map((committee) => (
-                <CommiteeType
+                <CommitteeType
                   key={committee.title}
                   title={committee.title}
                   description={committee.description}

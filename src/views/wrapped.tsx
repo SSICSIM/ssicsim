@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRef } from "react";
-import CommitteeSummary from "../components/CommiteeSummary";
+import CommitteeSummary from "../components/CommitteeSummary";
 import WinnersCarousel from "../components/WinnerEntry";
 
 import SplitType from "split-type";

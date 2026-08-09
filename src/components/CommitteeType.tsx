@@ -2,19 +2,19 @@
 
 import Link from "next/link";
 
-interface CommiteeTypeProps {
+interface CommitteeTypeProps {
   title: string;
   description: string;
   onClick: () => void;
   isSelected: boolean;
 }
 
-const CommiteeType = ({
+const CommitteeType = ({
   title,
   description,
   onClick,
   isSelected,
-}: CommiteeTypeProps) => {
+}: CommitteeTypeProps) => {
   return (
     <div
       className={`md:w-[100%] md:max-w-[600px] w-[80%] rounded-lg p-8 flex flex-col items-center md:flex-row cursor-pointer transition-colors duration-300 ${
@@ -73,4 +73,4 @@ const CommiteeType = ({
   );
 };
 
-export default CommiteeType;
+export default CommitteeType;

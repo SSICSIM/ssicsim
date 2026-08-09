@@ -6,7 +6,7 @@ interface BackgroundGuide {
   link: string;
 }
 
-interface CommiteeCardProps {
+interface CommitteeCardProps {
   title: string;
   description?: string;
   expandedDescription?: string;
@@ -19,7 +19,7 @@ interface CommiteeCardProps {
   double?: boolean;
 }
 
-const CommiteeCard = ({
+const CommitteeCard = ({
   title,
   description,
   expandedDescription,
@@ -29,7 +29,7 @@ const CommiteeCard = ({
   double = false, // Default to false if not provided
   backgroundGuides,
   contactEmail,
-}: CommiteeCardProps) => {
+}: CommitteeCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const hasBackgroundImage = Boolean(backgroundImage && backgroundImage.trim());
   const hasDescription = Boolean(description && description.trim());
@@ -223,4 +223,4 @@ const CommiteeCard = ({
   );
 };
 
-export default CommiteeCard;
+export default CommitteeCard;

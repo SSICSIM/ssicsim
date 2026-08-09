@@ -1,6 +1,6 @@
 "use client";
 
-import CommiteeCard from "../components/CommiteeCard";
+import CommitteeCard from "../components/CommitteeCard";
 import { CF_DOMAIN } from "../utils/consts";
 import { committeesData } from "../utils/data";
 import Image from "next/image";
@@ -32,7 +32,7 @@ const Committees = () => {
             xl:grid-cols-3 xl:w-[100%] gap-4 justify-items-center"
         >
           {committeesData.map((committee) => (
-            <CommiteeCard
+            <CommitteeCard
               key={committee.title}
               title={committee.title}
               description={committee.description}
