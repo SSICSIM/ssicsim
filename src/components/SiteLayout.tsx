@@ -18,7 +18,7 @@ export default function SiteLayout({
       prevent: (node) => !!node.closest(".modal-scrollbar"),
     });
     const raf = (time: number) => {
-      lenis.raf(time);
+      lenis.raf(time * 2.5);
       requestAnimationFrame(raf);
     };
     requestAnimationFrame(raf);
