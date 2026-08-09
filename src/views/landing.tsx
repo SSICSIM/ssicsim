@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollScrub from "../components/ScrollTriger";
+import ScrollScrub from "../components/ScrollTrigger";
 import CurrentCard from "../components/CurrentCard";
 import CommiteeType from "../components/CommiteeType";
 import { useState } from "react";
