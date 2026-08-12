@@ -24,9 +24,9 @@ export default function ScrollScrub({
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
-            start: "top 80%", // Start when the element is 80% visible in
+            start: "top 90%", // Start when the element is 80% visible in
             // the viewport
-            end: "top 20%", // End when the element is 20% visible in the viewport
+            end: "top 60%", // End when the element is 20% visible in the viewport
             scrub: true,
           },
         },

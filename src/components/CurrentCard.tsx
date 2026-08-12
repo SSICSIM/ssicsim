@@ -29,7 +29,7 @@ const CurrentCard = ({ title, image, description }: CurrentCardProps) => {
 
         {/* Text Section */}
         <div className="flex flex-col py-6">
-          <h2 className="text-[30px]/7 text-center md:text-start text-white font-grotesque font-bold md:text-[25px] lg:text-[30px] tracking-tight mb-2 ">
+          <h2 className="text-[30px]/7 text-center md:text-start text-white font-grotesque font-bold md:text-[25px] lg:text-[30px] mb-2">
             {title}
           </h2>
           <p className="text-white font-dm-sans font-extralight md:text-[15px] text-[15px] lg:text-[20px]">
