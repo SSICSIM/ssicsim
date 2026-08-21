@@ -41,6 +41,7 @@ const Committees = () => {
               contactEmail={committee.contactEmail}
               director={committee.director}
               backgroundImage={committee.backgroundImage}
+              logo={committee.logo}
               jointOrNot={committee.jointOrNot}
               double={committee.double}
             />
