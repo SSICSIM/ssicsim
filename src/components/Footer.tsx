@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import icons from React Icons
+import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import icons from React Icons
 import Image from "next/image";
 
 const Footer = () => {
@@ -60,7 +60,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors"
             >
-              <FaFacebook className="w-6 h-6" />
+              <FaFacebookSquare className="w-6 h-6" />
             </a>
             <a
               href="https://www.instagram.com/ssicsim/?hl=en"
