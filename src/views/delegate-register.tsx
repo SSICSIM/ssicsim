@@ -263,6 +263,7 @@ function FileField({
           <div className="relative flex-shrink-0">
             <div className="w-20 h-20 rounded-lg border border-gray-200 bg-gray-50 shadow-sm overflow-hidden flex items-center justify-center">
               {previewUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element -- previewUrl is a client-side blob: URL (URL.createObjectURL); next/image's optimizer can't process it
                 <img
                   src={previewUrl}
                   alt={file.name}

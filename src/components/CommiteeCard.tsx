@@ -41,7 +41,9 @@ const CommiteeCard = ({
   const firstSentence = description
     ? description.slice(
         0,
-        description.includes(".") ? description.indexOf(".") + 1 : description.length,
+        description.includes(".")
+          ? description.indexOf(".") + 1
+          : description.length,
       )
     : "";
   const hasExpandedDescription = Boolean(
@@ -91,6 +93,7 @@ const CommiteeCard = ({
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.7)] to-[rgba(255,215,0,0.8)] rounded-lg"></div>
 
         {hasLogo && (
+          // eslint-disable-next-line @next/next/no-img-element -- width is intentionally auto (scales with height to preserve aspect ratio); next/image's fill mode needs both dimensions fixed
           <img
             src={logo}
             alt=""
@@ -177,6 +180,7 @@ const CommiteeCard = ({
             {/* Content Section */}
             <div className="relative flex flex-col justify-start rounded-lg overflow-hidden p-4 -m-4">
               {hasLogo && (
+                // eslint-disable-next-line @next/next/no-img-element -- width is intentionally auto (scales with height to preserve aspect ratio); next/image's fill mode needs both dimensions fixed
                 <img
                   src={logo}
                   alt=""
