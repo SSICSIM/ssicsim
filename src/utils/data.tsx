@@ -73,7 +73,7 @@ export const committeesData = [
   {
     title: "Fall of the Qing: Five Coloured Banners Over Jing",
     description:
-      "“A divided China would certainly lose its place in the world” - Sun Yat-Sen.\n\n1936, the Qing Empire lingers on. Almost ten years ago, the revolutionary dreams of the Northern Expedition were shattered by the German Empire, who rose to the top of the world following their victory in the Great War.",
+      "Qing hegemony evaporated overnight and China slipped into the control of a plethora of local factions.",
     expandedDescription:
       "“A divided China would certainly lose its place in the world” - Sun Yat-Sen.\n\n1936, the Qing Empire lingers on. Almost ten years ago, the revolutionary dreams of the Northern Expedition were shattered by the German Empire, who rose to the top of the world following their victory in the Great War.\n\nBy February, however, a reversal of fortune emerged: The German stock markets crashed! Qing hegemony evaporated overnight and China slipped into the control of a plethora of local factions. Violence and economic catastrophe were boiling over. With the last of their power, the central government invites the local leaders to one final conference.\n\nThese visionaries come with a shared goal of reversing the economic recession but also their own personal ideologies and ambitions on the future of China. As delegates, you will represent these political leaders, generals and diplomats. How will you act to save an economy in freefall, react to growing foreign influence and foster your ideology in shaping the future of China? Will you collaborate and win the hearts of the people or will you seek your own mandate in this Kaiserreich-inspired alt-history scenario?",
     backgroundGuides: [],
@@ -105,7 +105,7 @@ export const committeesData = [
   {
     title: "Forged in Flames: The Franco-Prussian War",
     description:
-      "The year is 1870. A feud between the world’s predominant powers — the reigning hegemon, France, and the ambitious upstart, Prussia — has begun to brew.",
+      "A feud between the world’s predominant powers — the reigning hegemon, France, and the ambitious upstart, Prussia — has begun to brew.",
     expandedDescription:
       "(A war of game-changing technologies and tested wartime tactics. Cunning versus clinicality, infantry versus artillery, lightning speed versus rock-solid defence.) <A war of French pride and German hunger for glory. Forged in Flames.>\n\nThe year is 1870. A feud between the world’s predominant powers — the reigning hegemon, France, and the ambitious upstart, Prussia — has begun to brew. Threatened by Chancellor Otto von Bismarck’s brazen flanking of Emperor Napoleon III through a crisis for Spain’s throne, and taunted by a communication secretly edited to incite public outrage, by summer 1870, France finds itself heavily under pressure.\n\nAlthough strong and experienced, France is fragmented — internal divisions have caused rifts both in the courtroom and on the battlefield in recent times. And even though Prussia’s armies have access to superior technologies in transportation and battle — a key advantage on their side — they lack the sheer experience needed to topple a continental giant with such sheer strength.\n\nWill the legacy of the French Empire win out over modern technologies? Or will the newly united forces led by Prussia usher in a new era for Europe, and perhaps, for Germany?",
     backgroundGuides: [],
@@ -147,6 +147,7 @@ export const committeesData = [
     backgroundImage: "/assets/photos/commitees/HistoricalAdHoc.jpg",
     jointOrNot: false,
     double: false,
+    compactBox: true,
   },
   {
     title: "Lord of the Rings: The Shattered Fellowship",
@@ -183,7 +184,7 @@ export const committeesData = [
   {
     title: "The Meteor of Extinction: Pokemon Omega Ruby Alpha Sapphire",
     description:
-      "Welcome trainers, to the world of Pokémon – mysterious, wondrous creatures who live in and shape the earth, the land, the sea and sky, and who will work with you to save this world.",
+      "The residents of Hoenn now must deal with a new crisis: a giant meteor is headed towards the region, and is sure to wipe it off of the map.",
     expandedDescription:
       "Welcome trainers, to the world of Pokémon – mysterious, wondrous creatures who live in and shape the earth, the land, the sea and sky, and who will work with you to save this world.\n\nOf all pokémon regions, Hoenn may have the deepest relationship with the land, seas and skies, as they are host to the powerful legendary pokémon Kyogre, Groudon and Rayquaza. Currently, Hoenn is recovering from the fight between Kyogre and Groudon. However, the residents of Hoenn now must deal with a new crisis: a giant meteor is headed towards the region, and is sure to wipe it off of the map. Thankfully, powerful factions in Hoenn have many ways that they can deal with the disaster, – if they can pause their politics and long-held grudges long enough to work together.\n\nWill Team Aqua and Team Magma be able to put aside their rivalry? Which is superior, Devon Corp’s science or the Draconids’ traditions? Maybe most importantly: will the Pokémon league be cancelled??? Maybe, if even the legendary pokémon of Hoenn managed to stop fighting, perhaps there is still hope for this committee.\n\nAll delegates in the committee will be assigned human characters, except Team Rocket’s Meowth.",
     backgroundGuides: [],
@@ -225,6 +226,7 @@ export const committeesData = [
     backgroundImage: "/assets/photos/commitees/FictionalAdHoc.avif",
     jointOrNot: false,
     double: false,
+    compactBox: true,
   },
   {
     title: "Marshall, Carter & Dark: The Firm",
@@ -261,7 +263,7 @@ export const committeesData = [
   {
     title: "Family Ties: The Titanomachy",
     description:
-      "Everyone has heard of the Olympians, ruled by Zeus, the King of the Gods. But who came before them? How did their rule come crashing down?",
+      "This little-known battle that paved the way for the Olympians is known in Greek Mythology as the Titanomachy.",
     expandedDescription:
       "Everyone has heard of the Olympians, ruled by Zeus, the King of the Gods. But who came before them? How did their rule come crashing down? This little-known battle that paved the way for the Olympians is known in Greek Mythology as the Titanomachy.\n\nTides are changing in the world of the Gods. It’s time for a new generation to take over for the Titans. But they aren’t ready to concede. As children turn against their elders, the road ahead is so much more than power dynamics and politics: it is deeply influenced by family ties. But the members of this committee can change things. They can work to mend the broken power structures on Mount Othrys and consolidate leadership amongst themselves, securing peace between the Titans and Olympians. If they fail, a brutal war awaits, and this time, we’re unsure as to who will come out on top.",
     backgroundGuides: [],
@@ -277,7 +279,7 @@ export const committeesData = [
   {
     title: "Digital Gold Rush",
     description:
-      "It is 2022, the world is healing from the aftermath of the COVID pandemic. Yet something appears to have fundamentally changed. Instead of a single world existing, now we face the prominence of the digital world.",
+      "We are in a gold rush, but a digital one where data is the new gold.",
     expandedDescription:
       "It is 2022, the world is healing from the aftermath of the COVID pandemic. Humanity is ready to return to “normal life”.  Yet something appears to have fundamentally changed.  Instead of a single world existing, now we face the prominence of the digital world. Social media companies are pushing for more content while online shopping apps are encouraging overconsumption.\n\nNow a new wave of change hits the digital world as AI is unleashed to the public. With this new tool, data brokers wish to see and buy everything about you: where you are, what you’ve seen, what you’ve bought, who you talk to and who you know. Everything about you is out there collected and sifted like how they did with gold back in 1849. We are in a gold rush, but a digital one where data is the new gold.\n\nAnd in this period, you collect the gold, working to scrape as much information from your loyal customers. You will make your service addictive, market it a necessity. No matter what, force the consumers to use your product.\n\nFinally, it is up to you if you wish to work with your competitors which will make lobbying effective and profit immense. However be careful, the public will push back if they figure out what you are doing.\n\nIn this committee, delegates will navigate through the tensions between technological advancement, profit maximization, and public demand for regulation.",
     backgroundGuides: [],
@@ -293,7 +295,7 @@ export const committeesData = [
   {
     title: "Welcome to Salisbury Heights",
     description:
-      "In Salisbury Heights, everything is peaceful. People go to work, see their families, hang out with their neighbours, and live the American dream.",
+      "Every town has its secrets, and the Conspiracy Theorists of Salisbury Heights gather in parallel to the Town Council, looking to uncover the truth about their town and the universe at large.",
     expandedDescription:
       "(“Life Live Simple & Good.”)\n(– Town Motto)\n\nIn Salisbury Heights, everything is peaceful. A charming small town in the American Midwest. People go to work, see their families, hang out with their neighbours, and live the American dream. This idyllic life is maintained by the Town Council, members of the community who work to address the needs and wants of Salisbury’s residents -  even if petty gossip and interpersonal conflicts can leak into Council policy. Not everybody has the same faith in the town’s security, happiness, and Sunday BBQs at Lindberg’s backyard, though. Every town has its secrets, and the Conspiracy Theorists of Salisbury Heights gather in parallel to the Town Council, looking to uncover the truth about their town and the universe at large. The Conspiracy Theorists believe the Town Council is behind some grand conspiracy, hiding something, though they disagree on what: aliens? Chemicals in the water? Government surveillance? The recent disappearance of Mary Kennedy, one of the teachers at Salisbury High, has  created a rift between the rival groups: the Council has to keep the town stable, and the Theorists believe Mary was onto something big… In Salisbury Heights, small town life faces big questions: Is the truth more important than peace? When does gossip turn into grand conspiracy? Can life be this simple?",
     backgroundGuides: [],

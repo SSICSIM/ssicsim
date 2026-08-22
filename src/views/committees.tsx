@@ -1,11 +1,27 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import CommiteeCard from "../components/CommiteeCard";
 import { CF_DOMAIN } from "../utils/consts";
 import { committeesData } from "../utils/data";
 import Image from "next/image";
 
 const Committees = () => {
+  const searchParams = useSearchParams();
+  const checkFilter = searchParams.get("filter") || "All";
+
+  const [filter, setFilter] = useState<string>("All");
+
+  useEffect(() => {
+    setFilter(checkFilter);
+  }, [checkFilter]);
+
+  const filteredCommittees =
+    filter === "All"
+      ? committeesData
+      : committeesData.filter((committee) => committee.category === filter);
+
   return (
     <>
       <div className="relative block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
@@ -26,12 +42,38 @@ const Committees = () => {
       </div>
 
       <div className="container mx-auto py-10">
+        <div className="text-center mb-6">
+          <p className="text-lg text-gray-700">
+            Click on the buttons below to filter through specific committees by
+            category.
+          </p>
+        </div>
+        <div className="w-full">
+          <div className="flex flex-wrap justify-center gap-4 px-4 mb-8 w-full">
+            {(["All", "Historical", "Fictional", "Conceptual"] as const).map(
+              (name) => (
+                <button
+                  key={name}
+                  className={`px-4 py-2 rounded ${
+                    filter === name
+                      ? "bg-[#A3841D] text-white"
+                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  }`}
+                  onClick={() => setFilter(name)}
+                >
+                  {name}
+                </button>
+              ),
+            )}
+          </div>
+        </div>
+
         <div
           className="grid grid-cols-1 w-[100%] mx-auto
             md:grid-cols-2 md:w-[85%] md:mx-auto
             xl:grid-cols-3 xl:w-[100%] gap-4 justify-items-center"
         >
-          {committeesData.map((committee) => (
+          {filteredCommittees.map((committee) => (
             <CommiteeCard
               key={committee.title}
               title={committee.title}
@@ -44,6 +86,7 @@ const Committees = () => {
               logo={committee.logo}
               jointOrNot={committee.jointOrNot}
               double={committee.double}
+              compactBox={committee.compactBox}
             />
           ))}
         </div>

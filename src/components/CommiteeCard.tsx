@@ -18,6 +18,7 @@ interface CommiteeCardProps {
   logo?: string;
   jointOrNot?: boolean;
   double?: boolean;
+  compactBox?: boolean;
 }
 
 const CommiteeCard = ({
@@ -31,11 +32,18 @@ const CommiteeCard = ({
   double = false, // Default to false if not provided
   backgroundGuides,
   contactEmail,
+  compactBox = false,
 }: CommiteeCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const hasBackgroundImage = Boolean(backgroundImage && backgroundImage.trim());
   const hasLogo = Boolean(logo && logo.trim());
   const hasDescription = Boolean(description && description.trim());
+  const firstSentence = description
+    ? description.slice(
+        0,
+        description.includes(".") ? description.indexOf(".") + 1 : description.length,
+      )
+    : "";
   const hasExpandedDescription = Boolean(
     expandedDescription && expandedDescription.trim(),
   );
@@ -70,7 +78,7 @@ const CommiteeCard = ({
     <>
       {/* Card */}
       <div
-        className="relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] h-[400px] md:h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
+        className="group relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] h-[400px] md:h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
         onClick={handleOpenModal}
         style={{
           backgroundImage: hasBackgroundImage
@@ -86,22 +94,23 @@ const CommiteeCard = ({
           <img
             src={logo}
             alt=""
-            className="absolute inset-y-0 right-0 translate-x-1/4 h-full w-auto object-contain opacity-50 pointer-events-none select-none"
+            className="absolute inset-y-0 left-0 -translate-x-1/4 h-full w-auto object-contain opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none select-none"
           />
         )}
 
-        <div className="relative z-10 bg-white/30 backdrop-blur-lg border border-white/10 rounded-lg p-6 overflow-hidden">
+        <div className="relative z-10 bg-white/10 backdrop-blur-xl backdrop-saturate-150 border border-white/25 rounded-lg p-6 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+          <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-br from-white/25 via-white/5 to-transparent" />
           <div className="relative z-10">
             <h2 className="text-2xl font-nunito font-bold mb-4 text-white">
               {title}
             </h2>
             {hasDescription && (
-              <div className="mb-4 line-clamp-4 overflow-hidden">
-                {parseDescription(description!, "text-[12px]")}
+              <div className="mb-4">
+                {parseDescription(firstSentence, "text-[12px]")}
               </div>
             )}
             {/* Background Guide Buttons on Main Card */}
-            <div className="mb-4 flex flex-row gap-2 flex-wrap">
+            <div className="flex flex-col gap-2">
               {backgroundGuides &&
                 backgroundGuides.length > 0 &&
                 backgroundGuides.map((guide, idx) => (
@@ -111,13 +120,13 @@ const CommiteeCard = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()} // Prevent modal
-                    className="text-center w-[100%] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] my-auto hover:text-black transition-colors text-[12px]"
+                    className="text-center w-full bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-[12px]"
                   >
                     {guide.description}
                   </a>
                 ))}
 
-              <button className="w-[100%] bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm">
+              <button className="w-full bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm">
                 Learn More
               </button>
             </div>
@@ -134,7 +143,9 @@ const CommiteeCard = ({
           <div
             className={`modal-scrollbar relative grid grid-cols-1 ${
               hasBackgroundImage ? "md:grid-cols-2" : "md:grid-cols-1"
-            } gap-8 bg-white rounded-lg shadow-lg p-6 w-[90vw] max-h-[90vh]`}
+            } gap-4 bg-white rounded-lg shadow-lg p-6 ${
+              compactBox ? "w-[60vw]" : "w-[90vw]"
+            } max-w-[1500px] max-h-[90vh]`}
             style={{
               overflowY: "scroll",
               WebkitOverflowScrolling: "touch",
@@ -169,10 +180,10 @@ const CommiteeCard = ({
                 <img
                   src={logo}
                   alt=""
-                  className="absolute top-0 bottom-0 right-0 translate-x-1/4 h-full w-auto object-contain opacity-10 pointer-events-none select-none"
+                  className="absolute top-0 bottom-0 right-0 translate-x-1/4 h-full w-auto object-contain opacity-5 pointer-events-none select-none"
                 />
               )}
-              <div className="relative z-10">
+              <div className="relative z-10 w-full">
                 <h2 className="text-4xl text-[#A3841D] font-nunito font-bold mb-2">
                   {title}
                 </h2>
