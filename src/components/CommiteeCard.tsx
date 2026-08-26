@@ -97,7 +97,7 @@ const CommiteeCard = ({
           <img
             src={logo}
             alt=""
-            className="absolute inset-y-0 left-0 -translate-x-1/4 h-full w-auto object-contain opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none select-none"
+            className="absolute inset-y-0 left-0 -translate-x-1/4 h-full w-auto object-contain opacity-40 group-hover:opacity-75 transition-opacity duration-300 pointer-events-none select-none"
           />
         )}
 
@@ -184,7 +184,7 @@ const CommiteeCard = ({
                 <img
                   src={logo}
                   alt=""
-                  className="absolute top-0 bottom-0 right-0 translate-x-1/4 h-full w-auto object-contain opacity-5 pointer-events-none select-none"
+                  className="absolute top-0 bottom-0 right-0 translate-x-1/4 h-full w-auto object-contain opacity-[0.075] pointer-events-none select-none"
                 />
               )}
               <div className="relative z-10 w-full">
@@ -199,11 +199,11 @@ const CommiteeCard = ({
                       : "Single Crisis"}
                 </h2>
                 {contactEmail && (
-                  <p className="text-[#A3841D] font-bold font-dm-sans mb-4">
-                    Contact:{" "}
+                  <p className="text-[#A3841D] font-dm-sans text-lg mb-4">
+                    <span className="font-bold">Contact:</span>{" "}
                     <a
                       href={`mailto:${contactEmail}`}
-                      className="text-blue-500 underline hover:text-blue-300"
+                      className="text-[#A3841D] underline hover:text-[#FFD700]"
                     >
                       {contactEmail}
                     </a>
