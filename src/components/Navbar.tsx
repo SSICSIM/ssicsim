@@ -25,10 +25,7 @@ export default function Navbar() {
     {
       label: "Staff",
       path: "/staff",
-      subItems: [
-        { label: "OA/MSD Hiring", path: "/apply" },
-        { label: "Staff Hiring", path: "/staff/openings" },
-      ],
+      subItems: [{ label: "Staff Hiring", path: "/staff/openings" }],
     },
     { label: "Contact", path: "/contact" },
     { label: "Register", path: "/register", cta: true },

@@ -1,21 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 import CommiteeCard from "../components/CommiteeCard";
 import { CF_DOMAIN } from "../utils/consts";
 import { committeesData } from "../utils/data";
 import Image from "next/image";
 
-const Committees = () => {
-  const searchParams = useSearchParams();
-  const checkFilter = searchParams.get("filter") || "All";
+interface Props {
+  initialFilter?: string;
+}
 
-  const [filter, setFilter] = useState<string>("All");
-
-  useEffect(() => {
-    setFilter(checkFilter);
-  }, [checkFilter]);
+const Committees = ({ initialFilter = "All" }: Props) => {
+  const [filter, setFilter] = useState<string>(initialFilter);
 
   const filteredCommittees =
     filter === "All"
