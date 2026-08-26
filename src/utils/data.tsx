@@ -76,10 +76,12 @@ export const committeesData = [
       "Qing hegemony evaporated overnight and China slipped into the control of a plethora of local factions.",
     expandedDescription:
       "“A divided China would certainly lose its place in the world” - Sun Yat-Sen.\n\n1936, the Qing Empire lingers on. Almost ten years ago, the revolutionary dreams of the Northern Expedition were shattered by the German Empire, who rose to the top of the world following their victory in the Great War.\n\nBy February, however, a reversal of fortune emerged: The German stock markets crashed! Qing hegemony evaporated overnight and China slipped into the control of a plethora of local factions. Violence and economic catastrophe were boiling over. With the last of their power, the central government invites the local leaders to one final conference.\n\nThese visionaries come with a shared goal of reversing the economic recession but also their own personal ideologies and ambitions on the future of China. As delegates, you will represent these political leaders, generals and diplomats. How will you act to save an economy in freefall, react to growing foreign influence and foster your ideology in shaping the future of China? Will you collaborate and win the hearts of the people or will you seek your own mandate in this Kaiserreich-inspired alt-history scenario?",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/1eflgUyPMP09hoIVr7jZizB11vP_DToir/view?usp=sharing", 
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1eflgUyPMP09hoIVr7jZizB11vP_DToir/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "falloftheqing@gmail.com",
     director: "Chance Hattrick & Glenn Yu",
     directorImage: "",
@@ -95,10 +97,12 @@ export const committeesData = [
       "After losing central authority in Memphis, Egypt fell into political turmoil when the nomarchs took power and divided the kingdom into two.",
     expandedDescription:
       "After losing central authority in Memphis, Egypt fell into political turmoil when the nomarchs took power and divided the kingdom into two. Reaching the First Intermediate Period (2181-2055 BC), Egypt faced numerous internal conflicts, power struggles, and provincial leaders taking advantage of their wealth for roles once reserved for kings. As such, this period is defined as a dark age, and seeks to reach a golden age through reunification.\n\nBut no kingdom, especially no golden age, could ever be upheld without careful and strategic leadership. It is then in the hands of the delegates to demonstrate their abilities to lead a kingdom and protect it from all harm. Whether it be solving economic issues, fighting external attacks, dealing with political turmoil, curses, pyramid invasions, or the demise by the gods, it is all in the hands of delegates to ensure Egypt does not once again fall into the darkness.\n\nIt is only with a strong Pharaoh who unites the land, alongside his loyal subjects who support him that Egypt can be guaranteed as a whole. May the Pharaoh’s land remain in the light, or you, dear loyal subjects, shall not exist \\(tomb of Khnumhotep, Dyn. 12.\\) 𓂀",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/1IgoPfw1pl0leCSnmzqPjRMRfG6Fs97mv/view?usp=sharing",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1IgoPfw1pl0leCSnmzqPjRMRfG6Fs97mv/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "pharaohs@ssicsim.ca",
     director: "Paula Chu",
     directorImage: "",
@@ -114,10 +118,12 @@ export const committeesData = [
       "A feud between the world’s predominant powers — the reigning hegemon, France, and the ambitious upstart, Prussia — has begun to brew.",
     expandedDescription:
       "(A war of game-changing technologies and tested wartime tactics. Cunning versus clinicality, infantry versus artillery, lightning speed versus rock-solid defence.) <A war of French pride and German hunger for glory. Forged in Flames.>\n\nThe year is 1870. A feud between the world’s predominant powers — the reigning hegemon, France, and the ambitious upstart, Prussia — has begun to brew. Threatened by Chancellor Otto von Bismarck’s brazen flanking of Emperor Napoleon III through a crisis for Spain’s throne, and taunted by a communication secretly edited to incite public outrage, by summer 1870, France finds itself heavily under pressure.\n\nAlthough strong and experienced, France is fragmented — internal divisions have caused rifts both in the courtroom and on the battlefield in recent times. And even though Prussia’s armies have access to superior technologies in transportation and battle — a key advantage on their side — they lack the sheer experience needed to topple a continental giant with such sheer strength.\n\nWill the legacy of the French Empire win out over modern technologies? Or will the newly united forces led by Prussia usher in a new era for Europe, and perhaps, for Germany?",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/1B_fdnTv1XKpCDcurKUQci_OBx7PA6a2y/view?usp=sharing",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1B_fdnTv1XKpCDcurKUQci_OBx7PA6a2y/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "fpw@ssicsim.ca",
     director: "Aryan Rajagopal & Joshua Qu",
     directorImage: "",
@@ -133,10 +139,12 @@ export const committeesData = [
       "The Most Serene Republic teeters on the brink of civil war.\n\nIn this Joint Crisis Committee, delegates will join an alliance and battle for the fate of Saint Marinus’ chosen republic.",
     expandedDescription:
       "In the winter of 366 A.D., Saint Marinus lay dying on Monte Titano. With his last words, he ordained the destiny of the republic that bears his name, besieged by Emperor and Pope: (Relinquo vos liberos ab utroque homine — I leave you free from both men.)\n\nOver a millenium later, the founding legend of San Marino  — a fiercely independent microstate of 15,000 people — appears more prophecy than myth, as two heavyweights clash over its future.\n\nWhen six members of the ruling Communist/Socialist Committee of Freedom defect to the opposition Popular Alliance of Christian Democrats and Independent Socialists, the balance of power shifts and a constitutional crisis ensues. Parliament is dissolved. The Committee of Freedom hunker down in the capital. The Popular Alliance establish a provisional government in a half-built iron foundry in Rovereta.\n\nThe Most Serene Republic teeters on the brink of civil war.\n\nIn this Joint Crisis Committee, delegates will join an alliance and battle for the fate of Saint Marinus’ chosen republic. But, on a microscopic battlefield with waning supplies, it will be influence and soft power — not just military might — that decides who secures San Marino’s destiny for themselves.",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/1oCy7d8Dy8NRIK7A9zmOdG0ZSKkwDN1qN/view?usp=sharing",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1oCy7d8Dy8NRIK7A9zmOdG0ZSKkwDN1qN/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "rovereta@ssicsim.ca",
     director: "Ngila Stone & Luca Rampersad",
     directorImage: "",
@@ -167,10 +175,12 @@ export const committeesData = [
       "With the appearance of the One Ring of Power, Middle-Earth is drowning in absolute peril.",
     expandedDescription:
       "“One Ring to rule them all, One Ring to find them; One Ring to bring them all and in the darkness bind them”\n\nWith the appearance of the One Ring of Power, Middle-Earth is drowning in absolute peril. Amassing his army of Orcs, the piercing Eye of Sauron is ever-watching, waiting for the return of his ring to obtain complete dominion over Middle-Earth. In Rivendell’s hallowed halls, a legendary fellowship unites the races once more with one goal in mind: to destroy the ring and prevent a retelling of the War of the Last Alliance. Now in the late Third Age, it is your turn to fly—and if luck has it, across the bridge of Khazad-dûm too.\n\nAmidst the racial feuds within the fellowship, tensions grow between them as they attempt to navigate the treacherous path to Mordor. Through the Misty Mountains, Forest of  Lothlórien, the Dead Marshes, and more, they face the terror of Sauron through his growing army, Nazgûl, and wide-spread corruption. Paths may separate, battles may ensue, but the purpose of the quest must not be lost: the ring must be destroyed in the fires of Mount Doom.\n\nWill you be able to resist the temptations of the ring and the corruption of Lord Sauron, thus rising above evil to save Middle Earth from catastrophe?",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/15JdcepMn1VrOVWP3dHGDg8Abh6SOeo_R/view?usp=sharing",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/15JdcepMn1VrOVWP3dHGDg8Abh6SOeo_R/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "lotr@ssicsim.ca",
     director: "Samantha Chang & Hasnain Heryani",
     directorImage: "",
@@ -186,10 +196,12 @@ export const committeesData = [
       "It started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.",
     expandedDescription:
       '<“The human whose name is written in this note shall die.">\n<このノートに名前を書かれた人間は死ぬ.>\n\nIt started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.\n\nWielding a supernatural notebook known as the Death Note, the user gains the ability to kill anyone simply by writing their name and visualizing their face. In their hands, morality itself has been weaponized. What began as isolated incidents has rapidly escalated into a global crisis. Criminals are no longer the only targets, fear spreads faster than information, and international legal systems are beginning to crumble.\n\nSociety is fracturing under deep ideological divisions. Is Kira a saviour correcting a broken world, or a tyrant establishing a justice system built on fear? As public panic rises, the world watches in terror.\n\nThe global order is collapsing, and the clock is ticking. In the pursuit of a perfect world, justice itself becomes a source of fear, and it is up to you to decide what that looks like. Will you uphold the traditional structures of accountability, or will you allow the international legal order to be rewritten by a single individual? The judgement begins now.',
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/15V7U5M_MZva6-lhQXZOIZE9TYxTXWclY/view?usp=sharing",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/15V7U5M_MZva6-lhQXZOIZE9TYxTXWclY/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "deathnote@ssicsim.ca",
     director: "Sukaina Syed",
     directorImage: "",
@@ -205,10 +217,12 @@ export const committeesData = [
       "The residents of Hoenn now must deal with a new crisis: a giant meteor is headed towards the region, and is sure to wipe it off of the map.",
     expandedDescription:
       "Welcome trainers, to the world of Pokémon – mysterious, wondrous creatures who live in and shape the earth, the land, the sea and sky, and who will work with you to save this world.\n\nOf all pokémon regions, Hoenn may have the deepest relationship with the land, seas and skies, as they are host to the powerful legendary pokémon Kyogre, Groudon and Rayquaza. Currently, Hoenn is recovering from the fight between Kyogre and Groudon. However, the residents of Hoenn now must deal with a new crisis: a giant meteor is headed towards the region, and is sure to wipe it off of the map. Thankfully, powerful factions in Hoenn have many ways that they can deal with the disaster, – if they can pause their politics and long-held grudges long enough to work together.\n\nWill Team Aqua and Team Magma be able to put aside their rivalry? Which is superior, Devon Corp’s science or the Draconids’ traditions? Maybe most importantly: will the Pokémon league be cancelled??? Maybe, if even the legendary pokémon of Hoenn managed to stop fighting, perhaps there is still hope for this committee.\n\nAll delegates in the committee will be assigned human characters, except Team Rocket’s Meowth.",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/1Ped6A-TLfZ1yJWfgDLiPGmHHytkPlx3w/view?usp=sharing",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1Ped6A-TLfZ1yJWfgDLiPGmHHytkPlx3w/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "pokemon@ssicsim.ca",
     director: "Annabelle Chin",
     directorImage: "",
