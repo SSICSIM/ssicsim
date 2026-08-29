@@ -274,7 +274,12 @@ export const committeesData = [
       "MC&D holds a monopoly over the weird, the anomalous, and the impossible; selling miracles, magics, and machinery since the Middle Ages.",
     expandedDescription:
       "(Winning and losing are meaningless. There is no need to move pieces when you can move the board. When you can end the match, there's only one reason to continue.)\n\n(It's all about playing the game.)\n\nMC&D holds a monopoly over the weird, the anomalous, and the impossible; selling miracles, magics, and machinery since the Middle Ages. Headquartered in London, their services are frequented by King Arthur, Iýa, Napoleon, and more, serving as the crossroads of arcane knowledge. With enough economic power to topple nations, rewrite histories, and shatter worlds, MC&D have been playing from the shadows for centuries. Yet, these are unprecedented times, as oracles and augurs alike burn from madness. In an era of technological innovation and astronomical economic expansion, the richest mortals to ever exist are minted, amidst the backdrop of renewing imperial power. Mr. Dark himself heads the 479th annual meeting, hosting name partners, their heirs, and a deluge of their staff, some ancient and some unborn. It is 1882, and threats, paranormal and normal, arise.\n\nA new game begins for this new age.",
-    backgroundGuides: [],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1MkA7dzgJ0PRnzh9Fw06LKux9_ylLgqbT/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "mcd@ssicsim.ca",
     director: "Evelyn So",
     directorImage: "",
@@ -290,7 +295,12 @@ export const committeesData = [
       "It is well known that idol groups - from One Direction to Twice - are different from the average artist. Extremely likable, and extremely liable.",
     expandedDescription:
       "It is well known that idol groups - from One Direction to Twice - are different from the average artist. Extremely likable, and extremely liable. Idol groups are meant to follow a strict schedule of comeback and promotion, preventing fans from turning their heads away for even a second. But this kind of pressure demands perfection, whether it’s talent, performance or personality. Even the smallest slip up removes the illusion of perfection, and your entire career can come crumbling down.\n\nWhen just one slip up can turn fame into a weapon, the creation and execution of the newest CO-ED group must be handled with utmost care.\n\nInspired by real life companies, like HYBE (creators of BTS) and YG (creators of BLACKPINK), delegates now have the mission to create and guide a group that will rival their talent and fame. Make them the face of music and stardom, but make sure they don't fall into the relentless claws of the fans.\n\nMake their talents bloom, control their scandals, and get them their wins. After all, the only thing more powerful than the group, is the company that controls them.",
-    backgroundGuides: [],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1cjwnMpV4NxUJ6MxWm-tssJMN-RjZl-NO/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "risingidols@ssicsim.ca",
     director: "Akshaya Churesh",
     directorImage: "",
@@ -306,7 +316,12 @@ export const committeesData = [
       "This little-known battle that paved the way for the Olympians is known in Greek Mythology as the Titanomachy.",
     expandedDescription:
       "Everyone has heard of the Olympians, ruled by Zeus, the King of the Gods. But who came before them? How did their rule come crashing down? This little-known battle that paved the way for the Olympians is known in Greek Mythology as the Titanomachy.\n\nTides are changing in the world of the Gods. It’s time for a new generation to take over for the Titans. But they aren’t ready to concede. As children turn against their elders, the road ahead is so much more than power dynamics and politics: it is deeply influenced by family ties. But the members of this committee can change things. They can work to mend the broken power structures on Mount Othrys and consolidate leadership amongst themselves, securing peace between the Titans and Olympians. If they fail, a brutal war awaits, and this time, we’re unsure as to who will come out on top.",
-    backgroundGuides: [],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1-YYzwXCEIt8IeYO9loz_6GvDC44VCZ-3/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "titanomachy@ssicsim.ca",
     director: "Lily Cohen",
     directorImage: "",
@@ -322,7 +337,12 @@ export const committeesData = [
       "We are in a gold rush, but a digital one where data is the new gold.",
     expandedDescription:
       "It is 2022, the world is healing from the aftermath of the COVID pandemic. Humanity is ready to return to “normal life”.  Yet something appears to have fundamentally changed.  Instead of a single world existing, now we face the prominence of the digital world. Social media companies are pushing for more content while online shopping apps are encouraging overconsumption.\n\nNow a new wave of change hits the digital world as AI is unleashed to the public. With this new tool, data brokers wish to see and buy everything about you: where you are, what you’ve seen, what you’ve bought, who you talk to and who you know. Everything about you is out there collected and sifted like how they did with gold back in 1849. We are in a gold rush, but a digital one where data is the new gold.\n\nAnd in this period, you collect the gold, working to scrape as much information from your loyal customers. You will make your service addictive, market it a necessity. No matter what, force the consumers to use your product.\n\nFinally, it is up to you if you wish to work with your competitors which will make lobbying effective and profit immense. However be careful, the public will push back if they figure out what you are doing.\n\nIn this committee, delegates will navigate through the tensions between technological advancement, profit maximization, and public demand for regulation.",
-    backgroundGuides: [],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1tdR978kXpL8urFWA4DYpK8jxgU-nD424/view?usp=sharing",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "digital@ssicsim.ca",
     director: "Eileen Jones",
     directorImage: "",
