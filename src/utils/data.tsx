@@ -82,7 +82,7 @@ export const committeesData = [
         description: "Background Guide",
       },
     ],
-    contactEmail: "falloftheqing@gmail.com",
+    contactEmail: "falloftheqing@ssicsim.ca",
     director: "Chance Hattrick & Glenn Yu",
     directorImage: "",
     logo: "/assets/photos/committee-logos/FallOfTheQing.png",
