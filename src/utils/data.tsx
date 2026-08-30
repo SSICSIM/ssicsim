@@ -342,7 +342,7 @@ export const committeesData = [
     contactEmail: "salisbury@ssicsim.ca",
     director: "Beatrix Stone & Oscar Hollingsworth",
     directorImage: "",
-    logo: "",
+    logo: "/assets/photos/committee-logos/SalisburyHeights.png",
     category: "Conceptual",
     backgroundImage: "/assets/photos/commitees/WelcomeToSalisburyHeights.png",
     jointOrNot: true,
