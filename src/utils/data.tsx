@@ -186,12 +186,7 @@ export const committeesData = [
       "It started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.",
     expandedDescription:
       '<“The human whose name is written in this note shall die.">\n<このノートに名前を書かれた人間は死ぬ.>\n\nIt started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.\n\nWielding a supernatural notebook known as the Death Note, the user gains the ability to kill anyone simply by writing their name and visualizing their face. In their hands, morality itself has been weaponized. What began as isolated incidents has rapidly escalated into a global crisis. Criminals are no longer the only targets, fear spreads faster than information, and international legal systems are beginning to crumble.\n\nSociety is fracturing under deep ideological divisions. Is Kira a saviour correcting a broken world, or a tyrant establishing a justice system built on fear? As public panic rises, the world watches in terror.\n\nThe global order is collapsing, and the clock is ticking. In the pursuit of a perfect world, justice itself becomes a source of fear, and it is up to you to decide what that looks like. Will you uphold the traditional structures of accountability, or will you allow the international legal order to be rewritten by a single individual? The judgement begins now.',
-    backgroundGuides: [
-      {
-        link: "https://drive.google.com/file/d/1YBNamohXZTj7BOAzx_wQkGrj8BPv0EJ8/view?usp=sharing",
-        description: "Background Guide",
-      },
-    ],
+    backgroundGuides: [],
     contactEmail: "deathnote@ssicsim.ca",
     director: "Sukaina Syed",
     directorImage: "",
