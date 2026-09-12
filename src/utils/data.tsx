@@ -196,10 +196,12 @@ export const committeesData = [
       "It started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.",
     expandedDescription:
       '<“The human whose name is written in this note shall die.">\n<このノートに名前を書かれた人間は死ぬ.>\n\nIt started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.\n\nWielding a supernatural notebook known as the Death Note, the user gains the ability to kill anyone simply by writing their name and visualizing their face. In their hands, morality itself has been weaponized. What began as isolated incidents has rapidly escalated into a global crisis. Criminals are no longer the only targets, fear spreads faster than information, and international legal systems are beginning to crumble.\n\nSociety is fracturing under deep ideological divisions. Is Kira a saviour correcting a broken world, or a tyrant establishing a justice system built on fear? As public panic rises, the world watches in terror.\n\nThe global order is collapsing, and the clock is ticking. In the pursuit of a perfect world, justice itself becomes a source of fear, and it is up to you to decide what that looks like. Will you uphold the traditional structures of accountability, or will you allow the international legal order to be rewritten by a single individual? The judgement begins now.',
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/110dLh5q5y9Gu_hath4kjJUoiG4W-YnNl/view?usp=drivesdk",
-      description: "Background Guide"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/110dLh5q5y9Gu_hath4kjJUoiG4W-YnNl/view?usp=drivesdk",
+        description: "Background Guide",
+      },
+    ],
     contactEmail: "deathnote@ssicsim.ca",
     director: "Sukaina Syed",
     directorImage: "",
@@ -356,10 +358,16 @@ export const committeesData = [
       "Every town has its secrets, and the Conspiracy Theorists of Salisbury Heights gather in parallel to the Town Council, looking to uncover the truth about their town and the universe at large.",
     expandedDescription:
       "(“Life Live Simple & Good.”)\n(– Town Motto)\n\nIn Salisbury Heights, everything is peaceful. A charming small town in the American Midwest. People go to work, see their families, hang out with their neighbours, and live the American dream. This idyllic life is maintained by the Town Council, members of the community who work to address the needs and wants of Salisbury’s residents -  even if petty gossip and interpersonal conflicts can leak into Council policy. Not everybody has the same faith in the town’s security, happiness, and Sunday BBQs at Lindberg’s backyard, though. Every town has its secrets, and the Conspiracy Theorists of Salisbury Heights gather in parallel to the Town Council, looking to uncover the truth about their town and the universe at large. The Conspiracy Theorists believe the Town Council is behind some grand conspiracy, hiding something, though they disagree on what: aliens? Chemicals in the water? Government surveillance? The recent disappearance of Mary Kennedy, one of the teachers at Salisbury High, has  created a rift between the rival groups: the Council has to keep the town stable, and the Theorists believe Mary was onto something big… In Salisbury Heights, small town life faces big questions: Is the truth more important than peace? When does gossip turn into grand conspiracy? Can life be this simple?",
-    backgroundGuides: [{
-      link: "https://drive.google.com/file/d/18XlRB2X7I-7obdn-Yu3ZRdw4RkwXpo8U/view?usp=sharing",
-      description: "Backgorund Guide (Theorists)"
-    }],
+    backgroundGuides: [
+      {
+        link: "https://drive.google.com/file/d/1H1QWvl7yTBKVbdGFkcEMvYA-kUw6ulWf/view?usp=sharing",
+        description: "Background Guide (Council)",
+      },
+      {
+        link: "https://drive.google.com/file/d/18XlRB2X7I-7obdn-Yu3ZRdw4RkwXpo8U/view?usp=sharing",
+        description: "Backgorund Guide (Theorists)",
+      },
+    ],
     contactEmail: "salisbury@ssicsim.ca",
     director: "Beatrix Stone & Oscar Hollingsworth",
     directorImage: "",
