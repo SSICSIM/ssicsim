@@ -120,7 +120,7 @@ export const committeesData = [
       "(A war of game-changing technologies and tested wartime tactics. Cunning versus clinicality, infantry versus artillery, lightning speed versus rock-solid defence.) <A war of French pride and German hunger for glory. Forged in Flames.>\n\nThe year is 1870. A feud between the world’s predominant powers — the reigning hegemon, France, and the ambitious upstart, Prussia — has begun to brew. Threatened by Chancellor Otto von Bismarck’s brazen flanking of Emperor Napoleon III through a crisis for Spain’s throne, and taunted by a communication secretly edited to incite public outrage, by summer 1870, France finds itself heavily under pressure.\n\nAlthough strong and experienced, France is fragmented — internal divisions have caused rifts both in the courtroom and on the battlefield in recent times. And even though Prussia’s armies have access to superior technologies in transportation and battle — a key advantage on their side — they lack the sheer experience needed to topple a continental giant with such sheer strength.\n\nWill the legacy of the French Empire win out over modern technologies? Or will the newly united forces led by Prussia usher in a new era for Europe, and perhaps, for Germany?",
     backgroundGuides: [
       {
-        link: "https://drive.google.com/file/d/1FTqDDMgWIRNefZVD57AKlt4XJxltRXXh/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1vTQWHN3lj6sPEi_dkBFPBUhBSov-7ZHq/view?usp=drivesdk",
         description: "Background Guide",
       },
     ],
@@ -196,7 +196,10 @@ export const committeesData = [
       "It started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.",
     expandedDescription:
       '<“The human whose name is written in this note shall die.">\n<このノートに名前を書かれた人間は死ぬ.>\n\nIt started with a sudden, untraceable surge of heart attacks striking down criminals worldwide. The public names this unseen force Kira, a self-proclaimed arbiter of justice operating entirely outside the law.\n\nWielding a supernatural notebook known as the Death Note, the user gains the ability to kill anyone simply by writing their name and visualizing their face. In their hands, morality itself has been weaponized. What began as isolated incidents has rapidly escalated into a global crisis. Criminals are no longer the only targets, fear spreads faster than information, and international legal systems are beginning to crumble.\n\nSociety is fracturing under deep ideological divisions. Is Kira a saviour correcting a broken world, or a tyrant establishing a justice system built on fear? As public panic rises, the world watches in terror.\n\nThe global order is collapsing, and the clock is ticking. In the pursuit of a perfect world, justice itself becomes a source of fear, and it is up to you to decide what that looks like. Will you uphold the traditional structures of accountability, or will you allow the international legal order to be rewritten by a single individual? The judgement begins now.',
-    backgroundGuides: [],
+    backgroundGuides: [{
+      link: "https://drive.google.com/file/d/110dLh5q5y9Gu_hath4kjJUoiG4W-YnNl/view?usp=drivesdk",
+      description: "Background Guide"
+    }],
     contactEmail: "deathnote@ssicsim.ca",
     director: "Sukaina Syed",
     directorImage: "",
@@ -334,7 +337,7 @@ export const committeesData = [
       "It is 2022, the world is healing from the aftermath of the COVID pandemic. Humanity is ready to return to “normal life”.  Yet something appears to have fundamentally changed.  Instead of a single world existing, now we face the prominence of the digital world. Social media companies are pushing for more content while online shopping apps are encouraging overconsumption.\n\nNow a new wave of change hits the digital world as AI is unleashed to the public. With this new tool, data brokers wish to see and buy everything about you: where you are, what you’ve seen, what you’ve bought, who you talk to and who you know. Everything about you is out there collected and sifted like how they did with gold back in 1849. We are in a gold rush, but a digital one where data is the new gold.\n\nAnd in this period, you collect the gold, working to scrape as much information from your loyal customers. You will make your service addictive, market it a necessity. No matter what, force the consumers to use your product.\n\nFinally, it is up to you if you wish to work with your competitors which will make lobbying effective and profit immense. However be careful, the public will push back if they figure out what you are doing.\n\nIn this committee, delegates will navigate through the tensions between technological advancement, profit maximization, and public demand for regulation.",
     backgroundGuides: [
       {
-        link: "https://drive.google.com/file/d/1tdR978kXpL8urFWA4DYpK8jxgU-nD424/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1h-nb6qS1_XPKKOMgXM7QP8Aphb-20oCk/view?usp=drivesdk",
         description: "Background Guide",
       },
     ],
@@ -353,7 +356,10 @@ export const committeesData = [
       "Every town has its secrets, and the Conspiracy Theorists of Salisbury Heights gather in parallel to the Town Council, looking to uncover the truth about their town and the universe at large.",
     expandedDescription:
       "(“Life Live Simple & Good.”)\n(– Town Motto)\n\nIn Salisbury Heights, everything is peaceful. A charming small town in the American Midwest. People go to work, see their families, hang out with their neighbours, and live the American dream. This idyllic life is maintained by the Town Council, members of the community who work to address the needs and wants of Salisbury’s residents -  even if petty gossip and interpersonal conflicts can leak into Council policy. Not everybody has the same faith in the town’s security, happiness, and Sunday BBQs at Lindberg’s backyard, though. Every town has its secrets, and the Conspiracy Theorists of Salisbury Heights gather in parallel to the Town Council, looking to uncover the truth about their town and the universe at large. The Conspiracy Theorists believe the Town Council is behind some grand conspiracy, hiding something, though they disagree on what: aliens? Chemicals in the water? Government surveillance? The recent disappearance of Mary Kennedy, one of the teachers at Salisbury High, has  created a rift between the rival groups: the Council has to keep the town stable, and the Theorists believe Mary was onto something big… In Salisbury Heights, small town life faces big questions: Is the truth more important than peace? When does gossip turn into grand conspiracy? Can life be this simple?",
-    backgroundGuides: [],
+    backgroundGuides: [{
+      link: "https://drive.google.com/file/d/18XlRB2X7I-7obdn-Yu3ZRdw4RkwXpo8U/view?usp=sharing",
+      description: "Theorists Backgorund Guide"
+    }],
     contactEmail: "salisbury@ssicsim.ca",
     director: "Beatrix Stone & Oscar Hollingsworth",
     directorImage: "",
