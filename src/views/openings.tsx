@@ -75,7 +75,7 @@ const Openings = () => {
               This means that for the duration of our hiring period (
               <span className="font-bold">
                 from now until{" "}
-                <span className="underline">August 10th, 2026</span>
+                <span className="underline">September 26th, 2026</span>
               </span>
               ), we will be continuously evaluating applications and hiring
               successful candidates, as opposed to evaluating and hiring only
