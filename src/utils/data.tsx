@@ -365,7 +365,7 @@ export const committeesData = [
       },
       {
         link: "https://drive.google.com/file/d/18XlRB2X7I-7obdn-Yu3ZRdw4RkwXpo8U/view?usp=drive_link",
-        description: "Backgorund Guide (Theorists)",
+        description: "Background Guide (Theorists)",
       },
     ],
     contactEmail: "salisbury@ssicsim.ca",
