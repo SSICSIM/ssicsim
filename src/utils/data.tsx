@@ -276,7 +276,7 @@ export const committeesData = [
       "(Winning and losing are meaningless. There is no need to move pieces when you can move the board. When you can end the match, there's only one reason to continue.)\n\n(It's all about playing the game.)\n\nMC&D holds a monopoly over the weird, the anomalous, and the impossible; selling miracles, magics, and machinery since the Middle Ages. Headquartered in London, their services are frequented by King Arthur, Iýa, Napoleon, and more, serving as the crossroads of arcane knowledge. With enough economic power to topple nations, rewrite histories, and shatter worlds, MC&D have been playing from the shadows for centuries. Yet, these are unprecedented times, as oracles and augurs alike burn from madness. In an era of technological innovation and astronomical economic expansion, the richest mortals to ever exist are minted, amidst the backdrop of renewing imperial power. Mr. Dark himself heads the 479th annual meeting, hosting name partners, their heirs, and a deluge of their staff, some ancient and some unborn. It is 1882, and threats, paranormal and normal, arise.\n\nA new game begins for this new age.",
     backgroundGuides: [
       {
-        link: "https://drive.google.com/file/d/1WG3IAwDvdp-6NJGwIS6MeSGWqgEm5oIs/view?usp=drive_link",
+        link: "https://drive.google.com/drive/u/0/folders/1ESj19-NzQPSWscBEEAhW-7uafcgdc6pl",
         description: "Background Guide",
       },
     ],
