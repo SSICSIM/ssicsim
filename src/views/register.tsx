@@ -111,7 +111,7 @@ const Register = () => {
             </div>
 
             {/* Regular Pricing */}
-            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
@@ -120,7 +120,7 @@ const Register = () => {
             </div>
 
             {/* Late Bird Pricing */}
-            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$110</p>
               <p className="text-lg font-nunito mt-4">Late Bird Registration</p>
               <p className="text-sm font-light mt-2">
