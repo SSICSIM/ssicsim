@@ -55,7 +55,7 @@ export default function Navbar() {
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Regular Registration</strong> is now open!
+            🎉 <strong>Late Registration</strong> is now open!
             <span className="ml-2 underline font-semibold">Register now!</span>
           </span>
         </Link>
