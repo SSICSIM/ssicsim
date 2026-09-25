@@ -111,20 +111,20 @@ const Register = () => {
             </div>
 
             {/* Regular Pricing */}
-            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$90</p>
               <p className="text-lg font-nunito mt-4">Regular Registration</p>
               <p className="text-sm font-light mt-2">
-                July 12th – September 19th, or until we reach capacity.
+                July 12th – September 23rd, or until we reach capacity.
               </p>
             </div>
 
             {/* Late Bird Pricing */}
-            <div className="bg-gray-100 text-gray-400 p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
+            <div className="bg-[#A3841D] text-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center">
               <p className="text-6xl font-bold">$110</p>
               <p className="text-lg font-nunito mt-4">Late Bird Registration</p>
               <p className="text-sm font-light mt-2">
-                September 20th – October 1st, or until we reach capacity.
+                September 24th – October 14th, or until we reach capacity.
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@ const Register = () => {
             <div className="pt-6">
               <RegistrationStep
                 title="Delegation Registration"
-                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Regular Registration Form indicating their delegation affiliation and committee preferences."
+                description="If attending SSICSIM as a delegation, please make sure your Faculty Advisor/Head Delegate filled out the Delegation RSVP Form for their delegation. Once we confirm your delegation’s RSVP, your delegates may then fill out the Late Registration Form indicating their delegation affiliation and committee preferences."
                 icon={
                   <FaUsers className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]" />
                 }

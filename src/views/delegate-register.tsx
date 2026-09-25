@@ -82,7 +82,7 @@ const STEPS = [
   "Final Notes",
 ];
 
-const REGISTRATION_FEE_CAD = 90;
+const REGISTRATION_FEE_CAD = 110;
 
 const EXPERIENCE_OPTIONS: { label: string; value: string; desc: string }[] = [
   {
@@ -1049,7 +1049,7 @@ export default function DelegateRegister() {
                     Delegate Registration Fee Payment
                   </h4>
                   <p className="text-xs text-gray-600 font-dm-sans mb-4 leading-relaxed">
-                    To reserve your spot as a regular registrant, please pay the
+                    To reserve your spot as a late registrant, please pay the
                     registration price of ${REGISTRATION_FEE_CAD} CAD via
                     e-transfer to{" "}
                     <span className="font-semibold">internal@ssicsim.ca</span>.
