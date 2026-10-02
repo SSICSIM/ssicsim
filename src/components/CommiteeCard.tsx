@@ -80,7 +80,7 @@ const CommiteeCard = ({
     <>
       {/* Card */}
       <div
-        className="group relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] h-[400px] md:h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
+        className="group relative bg-white flex flex-col justify-end rounded-lg shadow-lg p-6 w-[90%] md:w-[100%] min-h-[400px] mx-auto cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
         onClick={handleOpenModal}
         style={{
           backgroundImage: hasBackgroundImage
@@ -113,7 +113,7 @@ const CommiteeCard = ({
               </div>
             )}
             {/* Background Guide Buttons on Main Card */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 pb-2">
               {backgroundGuides &&
                 backgroundGuides.length > 0 &&
                 backgroundGuides.map((guide, idx) => (
@@ -210,7 +210,7 @@ const CommiteeCard = ({
                   </p>
                 )}
                 {backgroundGuides && backgroundGuides.length > 0 && (
-                  <div className="mb-2 flex flex-col gap-2">
+                  <div className="mb-4 flex flex-col gap-2">
                     {backgroundGuides.map((guide, idx) => (
                       <div key={idx} className="flex flex-col items-start">
                         <a
