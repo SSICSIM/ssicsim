@@ -11,10 +11,10 @@ export default async function Page({
 }: {
   searchParams: Promise<{ filter?: string }>;
 }) {
-  const [{ filter }, adminGuides] = await Promise.all([
-    searchParams,
-    getCommitteeGuides(),
-  ]);
+  // Await searchParams first so the build bails out to dynamic rendering
+  // before we hit the admin portal.
+  const { filter } = await searchParams;
+  const adminGuides = await getCommitteeGuides();
 
   // The admin portal is the source of truth for guide links. Fall back to the
   // static links in data.tsx only when the portal is unreachable or doesn't
