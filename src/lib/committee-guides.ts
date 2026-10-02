@@ -6,6 +6,8 @@ const TOKEN = process.env.ADMIN_API_TOKEN ?? "";
 
 // How long (seconds) Next caches the admin response before refetching.
 const REVALIDATE_SECONDS = 300;
+// Don't hold the page hostage to a cold-starting backend; fall back instead.
+const TIMEOUT_MS = 5000;
 
 export interface CommitteeGuide {
   description: string;
@@ -61,6 +63,7 @@ export async function getCommitteeGuides(): Promise<Map<
     const res = await fetch(`${BACKEND}/api/committees`, {
       headers: { "X-Admin-Token": TOKEN },
       next: { revalidate: REVALIDATE_SECONDS },
+      signal: AbortSignal.timeout(TIMEOUT_MS),
     });
     if (!res.ok) {
       console.error(`Committee guides fetch failed: ${res.status}`);
