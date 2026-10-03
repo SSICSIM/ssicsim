@@ -327,8 +327,15 @@ const SUBMIT_STAGE_LABEL: Record<SubmitStage, string> = {
   "submitting-registration": "Submitting Registration…",
 };
 
-export default function DelegateRegister() {
+interface Props {
+  // True once delegate capacity is reached: the form registers the delegate on
+  // the waitlist and doesn't ask for payment.
+  initialWaitlist?: boolean;
+}
+
+export default function DelegateRegister({ initialWaitlist = false }: Props) {
   const [step, setStep] = useState(0);
+  const [waitlist, setWaitlist] = useState(initialWaitlist);
   const [form, setForm] = useState<FormData>(INITIAL);
   const [delegations, setDelegations] = useState<Delegation[]>([]);
   const [loadingData, setLoadingData] = useState(true);
@@ -397,7 +404,7 @@ export default function DelegateRegister() {
         return "Please indicate whether you intend to apply for financial aid.";
       if (form.financialAidStatus === "Yes" && !form.financialAidReason.trim())
         return "Please briefly explain why you are applying for financial aid.";
-      if (form.financialAidStatus === "No" && !paymentReceiptFile)
+      if (!waitlist && form.financialAidStatus === "No" && !paymentReceiptFile)
         return "Please upload a PDF receipt of your payment.";
     }
     return null;
@@ -449,7 +456,7 @@ export default function DelegateRegister() {
       );
 
       let paymentReceiptUrl: string | null = null;
-      if (form.financialAidStatus === "No") {
+      if (!waitlist && form.financialAidStatus === "No") {
         if (!paymentReceiptFile)
           throw new Error("Please upload a PDF receipt of your payment.");
         setSubmitStage("uploading-payment-receipt");
@@ -462,12 +469,13 @@ export default function DelegateRegister() {
 
       setSubmitStage("submitting-registration");
 
-      // Both values already exist on the backend's DelegateStatus enum. A
+      // Waitlisted delegates haven't paid and hold no spot. Otherwise, a
       // delegate who uploaded a receipt goes to Verify Payment so SEC can
       // confirm it before assignment; everyone else (financial aid pending or
       // delegation paying) waits on Awaiting Payment.
-      const delegateStatus =
-        form.financialAidStatus === "No"
+      const delegateStatus = waitlist
+        ? "Waitlist"
+        : form.financialAidStatus === "No"
           ? "Verify Payment"
           : "Awaiting Payment";
 
@@ -506,6 +514,13 @@ export default function DelegateRegister() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
+        if (data?.code === "registration_full") {
+          // Capacity was reached while this delegate was filling out the form.
+          setWaitlist(true);
+          throw new Error(
+            "Registration just reached capacity, so this form has switched to the waitlist. Please review your answers and submit again to join the waitlist. Do not send payment unless we offer you a spot.",
+          );
+        }
         throw new Error(apiErrorMessage(data, `Error ${res.status}`));
       }
       // fire-and-forget confirmation email
@@ -519,8 +534,12 @@ export default function DelegateRegister() {
               name: `${form.firstName} ${form.lastName}`,
             },
           ],
-          subject: "SSICSIM 2026 Delegate Registration Received",
-          body: `Dear ${form.preferredName.trim() || form.firstName},\n\nThank you for registering as a delegate for SSICSIM 2026! Your registration has been received and is currently awaiting confirmation of payment.\n\nYou will receive a follow-up email with confirmation of your payment. Please check your inbox and spam folder for emails from us.\n\nIf you have any questions, please contact us at contact@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`,
+          subject: waitlist
+            ? "SSICSIM 2026 Waitlist Registration Received"
+            : "SSICSIM 2026 Delegate Registration Received",
+          body: waitlist
+            ? `Dear ${form.preferredName.trim() || form.firstName},\n\nThank you for your interest in SSICSIM 2026! Registration is currently full, so you have been added to our waitlist.\n\nPlease do not send payment at this time. If a spot opens up, we will email you with next steps, and once you complete payment you will be good to go. Please note that we cannot guarantee you will be placed in one of your preferred committees.\n\nIf you have any questions, please contact us at contact@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`
+            : `Dear ${form.preferredName.trim() || form.firstName},\n\nThank you for registering as a delegate for SSICSIM 2026! Your registration has been received and is currently awaiting confirmation of payment.\n\nYou will receive a follow-up email with confirmation of your payment. Please check your inbox and spam folder for emails from us.\n\nIf you have any questions, please contact us at contact@ssicsim.ca.\n\nSincerely,\nThe SSICSIM Secretariat`,
         }),
       }).catch(() => {});
       setSubmitted(true);
@@ -550,11 +569,13 @@ export default function DelegateRegister() {
             <span className="text-[#A3841D] text-3xl">✓</span>
           </div>
           <h2 className="text-3xl font-bold font-nunito text-gray-900 mb-4">
-            Registration Submitted!
+            {waitlist ? "You're on the Waitlist!" : "Registration Submitted!"}
           </h2>
           <p className="text-gray-600 font-dm-sans mb-2 leading-relaxed">
-            Thank you, <span className="font-semibold">{form.firstName}</span>!
-            Your registration has been received.
+            Thank you, <span className="font-semibold">{form.firstName}</span>!{" "}
+            {waitlist
+              ? "You've been added to the SSICSIM 2026 waitlist. Please don't send payment yet. If a spot opens up, we'll email you with next steps and you'll be good to go."
+              : "Your registration has been received."}
           </p>
           <p className="text-gray-600 font-dm-sans mb-6 leading-relaxed text-sm">
             A confirmation email has been sent to{" "}
@@ -599,13 +620,13 @@ export default function DelegateRegister() {
               <BreadcrumbSeparator className="text-white/50" />
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-white font-semibold">
-                  Delegate Registration
+                  {waitlist ? "Delegate Waitlist" : "Delegate Registration"}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
           <h1 className="text-4xl md:text-5xl font-bold font-nunito text-white mb-2">
-            Delegate Registration
+            {waitlist ? "Delegate Waitlist" : "Delegate Registration"}
           </h1>
           <p className="text-white/80 font-dm-sans text-sm">
             Register individually as a delegate for SSICSIM 2026. Each delegate
@@ -618,6 +639,18 @@ export default function DelegateRegister() {
         ref={formTopRef}
         className="max-w-3xl mx-auto py-10 px-6 scroll-mt-[120px]"
       >
+        {waitlist && (
+          <div className="mb-6 border border-[#A3841D]/40 bg-[#A3841D]/10 rounded-xl p-5 font-dm-sans text-sm text-gray-800 leading-relaxed">
+            <p className="font-bold font-nunito text-gray-900 mb-1">
+              Registration is full: you&apos;re joining the waitlist
+            </p>
+            Joining the waitlist does not guarantee a spot, and we cannot
+            guarantee you will be placed in one of your preferred committees. No
+            payment is required right now. Once a spot opens up, we&apos;ll
+            email you with next steps and you&apos;ll be good to go.
+          </div>
+        )}
+
         <StepIndicator current={step} />
 
         <div className="bg-white rounded-2xl shadow-md p-8">
@@ -883,6 +916,17 @@ export default function DelegateRegister() {
                 determining committee assignments, we cannot guarantee that all
                 delegates will be assigned one of their top three committee
                 choices.
+                {waitlist && (
+                  <>
+                    <br />
+                    <br />
+                    <span className="font-semibold text-gray-700">
+                      As a waitlisted delegate, there is no guarantee that you
+                      will get the committee you want. Once a spot opens up,
+                      we&apos;ll assign you based on what&apos;s available.
+                    </span>
+                  </>
+                )}
                 <br />
                 <br />
                 Once again, please do not hesitate to contact us at
@@ -1043,7 +1087,21 @@ export default function DelegateRegister() {
                 </Field>
               )}
 
-              {form.financialAidStatus === "No" && (
+              {waitlist && form.financialAidStatus === "No" && (
+                <div className="border border-gray-200 rounded-xl p-5 bg-gray-50">
+                  <h4 className="font-bold font-nunito text-gray-900 mb-2">
+                    No Payment Required Yet
+                  </h4>
+                  <p className="text-xs text-gray-600 font-dm-sans leading-relaxed">
+                    You&apos;re joining the waitlist, so please don&apos;t send
+                    payment now. If a spot opens up, we&apos;ll email you
+                    instructions for paying the ${REGISTRATION_FEE_CAD} CAD
+                    registration fee.
+                  </p>
+                </div>
+              )}
+
+              {!waitlist && form.financialAidStatus === "No" && (
                 <div className="border border-gray-200 rounded-xl p-5 bg-gray-50">
                   <h4 className="font-bold font-nunito text-gray-900 mb-2">
                     Delegate Registration Fee Payment
@@ -1148,9 +1206,11 @@ export default function DelegateRegister() {
                       Payment Status
                     </dt>
                     <dd className="text-gray-800">
-                      {form.financialAidStatus === "No"
-                        ? "Receipt Submitted — Pending Verification"
-                        : "Awaiting Payment"}
+                      {waitlist
+                        ? "Waitlist (no payment required yet)"
+                        : form.financialAidStatus === "No"
+                          ? "Receipt Submitted — Pending Verification"
+                          : "Awaiting Payment"}
                     </dd>
                   </div>
                 </dl>

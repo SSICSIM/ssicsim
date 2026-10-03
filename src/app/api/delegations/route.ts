@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { checkRateLimit, getIp } from "@/lib/rate-limit";
+import { getRegistrationCapacity } from "@/lib/registration-capacity";
 
 const BACKEND = process.env.BACKEND_API_URL ?? "http://localhost:8000";
 const TOKEN = process.env.ADMIN_API_TOKEN ?? "";
@@ -38,6 +39,17 @@ export async function POST(req: NextRequest) {
   }
   if (!isSameOrigin(req)) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+  // New delegations can't RSVP once delegate registration is full.
+  const capacity = await getRegistrationCapacity();
+  if (capacity?.is_full) {
+    return NextResponse.json(
+      {
+        error:
+          "Delegation RSVPs are closed because registration is full. Delegates may still join the waitlist individually.",
+      },
+      { status: 403 },
+    );
   }
 
   const ip = getIp(req);
