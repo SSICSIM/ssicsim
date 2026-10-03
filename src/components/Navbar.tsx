@@ -10,6 +10,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [waitlist, setWaitlist] = useState(false);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -42,6 +43,13 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    fetch("/api/registration-status")
+      .then((r) => r.json())
+      .then((data) => setWaitlist(Boolean(data?.waitlist)))
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
     // close mobile menu on route change
     setIsMenuOpen(false);
     setDropdownOpen(null);
@@ -55,8 +63,21 @@ export default function Navbar() {
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Late Registration</strong> is now open!
-            <span className="ml-2 underline font-semibold">Register now!</span>
+            {waitlist ? (
+              <>
+                <strong>Registration is full.</strong> Our waitlist is open!
+                <span className="ml-2 underline font-semibold">
+                  Join the waitlist
+                </span>
+              </>
+            ) : (
+              <>
+                🎉 <strong>Late Registration</strong> is now open!
+                <span className="ml-2 underline font-semibold">
+                  Register now!
+                </span>
+              </>
+            )}
           </span>
         </Link>
       </div>
