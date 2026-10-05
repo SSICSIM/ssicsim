@@ -8,6 +8,7 @@ const ALLOWED_ROUTES = new Set([
   "/team",
   "/conference",
   "/resources",
+  "/events",
   "/staff",
   "/apply",
   "/contact",
