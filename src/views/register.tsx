@@ -358,7 +358,7 @@ const Register = ({ waitlist = false }: Props) => {
             {/* Payment Guide Button */}
             <div className="flex justify-center">
               <a
-                href="https://drive.google.com/file/d/1hA7hktafKiSc7ObrBf9KwaPY1z_b896z/view"
+                href="https://drive.google.com/file/d/1c2z_XKamzRdByuXiSprDVQc6LVVAqtSY/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#A3841D] px-6 py-3 rounded-lg font-dm-sans text-lg hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg"
