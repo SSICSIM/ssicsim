@@ -50,7 +50,7 @@ const Resources = () => {
     {
       question: "I'm not sure where or how to find my committee room.",
       answer:
-        "The provided SSICSIM 2025 Delegate Handbook features a map of the UofT campus as well as room details. For navigating the campus and finding specific buildings at UofT, visit [map.utoronto.ca]{https://map.utoronto.ca/?id=1809} to search the name of the building you need. Once inside, navigating the rooms can be confusing: look for signs as best you can, and feel free to ask any member of staff for help. We also recommend using [ClassFind]{https://classfind.com/toronto} for specific directions to a room!",
+        "For navigating the campus and finding specific buildings at UofT, visit [map.utoronto.ca]{https://map.utoronto.ca/?id=1809} to search the name of the building you need. Once inside, navigating the rooms can be confusing: look for signs as best you can, and feel free to ask any member of staff for help. We also recommend using [ClassFind]{https://classfind.com/toronto} for specific directions to a room!",
     },
     {
       question:
@@ -117,40 +117,6 @@ const Resources = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Full-width resource card */}
-            <a
-              href="https://drive.google.com/file/d/1tuoAAv6g3IbADvzDk4w3QcUOEP7-Zw-j/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative h-56 overflow-hidden shadow-lg group rounded-xl md:col-span-3"
-            >
-              {/* Background with gold tint */}
-              <div
-                className="absolute inset-0 bg-cover bg-[#A3841D]/40 bg-center transition-transform duration-300 group-hover:scale-105"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(163,132,29,0.4), rgba(163,132,29,0.4)), url('https://your-image-url.com')`,
-                  backgroundBlendMode: "multiply",
-                }}
-              />
-
-              {/* Optional: subtle dark overlay for readability */}
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition" />
-
-              {/* Glassmorphic text box */}
-              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
-                <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 py-3">
-                  <h3 className="text-2xl font-bold text-white mb-2 font-nunito">
-                    Delegate Handbook
-                  </h3>
-                  <p className="text-white text-sm font-dm-sans">
-                    Your comprehensive guide to everything SSICSIM 2025,
-                    including campus maps, schedules, rooms and important
-                    information.
-                  </p>
-                </div>
-              </div>
-            </a>
-
             {/* Regular 3-column resources */}
             {resources.map((res, idx) => (
               <a
