@@ -24,6 +24,14 @@ export default function Navbar() {
     },
     { label: "Committees", path: "/committees" },
     {
+      label: "Conference",
+      path: "/resources",
+      subItems: [
+        { label: "Resources & Schedule", path: "/resources" },
+        { label: "Events", path: "/events" },
+      ],
+    },
+    {
       label: "Staff",
       path: "/staff",
       subItems: [{ label: "Staff Hiring", path: "/staff/openings" }],

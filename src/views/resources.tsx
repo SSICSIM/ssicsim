@@ -96,6 +96,15 @@ const Resources = () => {
 
       {/* Resources Section */}
       <div className="relative bg-gray-100 py-20 px-6">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
+            Conference Schedule
+          </h2>
+          <div className="space-y-12">
+            <ConferenceSchedule />
+          </div>
+        </div>
+
         <div className="max-w-[1200px] mx-auto">
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
             Resources
@@ -174,15 +183,6 @@ const Resources = () => {
           </div>
 
           {/* Description under resources */}
-        </div>
-
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-4xl mt-18 font-bold font-nunito text-center text-[#A3841D]">
-            Conference Schedule
-          </h2>
-          <div className="space-y-12">
-            <ConferenceSchedule />
-          </div>
         </div>
 
         <div className="max-w-[1200px] mx-auto mt-24 px-6">

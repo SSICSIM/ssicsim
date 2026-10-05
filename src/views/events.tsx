@@ -1,18 +1,11 @@
 "use client";
 
 import { CF_DOMAIN } from "../utils/consts";
-import { useState } from "react";
 import { events } from "../utils/data";
 import { parseDescription } from "../utils/utils";
 import Image from "next/image";
 
 const Events = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number>(0);
-
-  const toggleExpand = (idx: number) => {
-    if (idx !== expandedIndex) setExpandedIndex(idx); // always one expanded
-  };
-
   return (
     <>
       {/* Hero Section */}
@@ -52,115 +45,63 @@ const Events = () => {
             </p>
           </div>
 
-          {/* Responsive Accordion */}
-          <div className="flex flex-col md:flex-row gap-2 overflow-x-auto md:overflow-hidden mx-auto">
-            {events.map((event, idx) => {
-              const isExpanded = expandedIndex === idx;
-              return (
+          {/* Event Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {events.map((event, idx) => (
+              <div
+                key={idx}
+                className="relative min-h-[500px] rounded-xl shadow-lg overflow-hidden flex flex-col justify-end"
+              >
+                {/* Background Image with Dark Overlay */}
                 <div
-                  key={idx}
-                  className={`relative flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer
-                    ${isExpanded ? "w-full h-[500px] md:w-[59%]" : "h-[75px] md:w-[9%]"}
-                    h-80 md:h-[500px] rounded-xl shadow-lg overflow-hidden group
-                  `}
-                  onClick={() => toggleExpand(idx)}
-                >
-                  {/* Background Image with Dark Overlay */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-500"
-                    style={{
-                      backgroundImage: `linear-gradient(${
-                        isExpanded ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0.6)"
-                      }, ${isExpanded ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0.6)"}), url(${event.image})`,
-                      backgroundBlendMode: "multiply",
-                    }}
-                  />
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${event.image})`,
+                    backgroundBlendMode: "multiply",
+                  }}
+                />
 
-                  {/* Click indicator */}
-                  {!isExpanded && (
-                    <div className="absolute top-2 right-2 text-white opacity-70 text-sm md:text-sm font-bold">
-                      Click
+                {/* Text Container */}
+                <div className="relative p-4 pt-40">
+                  <div className="bg-black/70 border border-white/20 rounded-xl px-4 py-4 flex flex-col items-start">
+                    <h3 className="text-white font-bold font-nunito text-xl md:text-2xl text-left">
+                      {event.title}
+                    </h3>
+                    <div className="mt-2 w-full">
+                      {parseDescription(event.description, "text-xs")}
                     </div>
-                  )}
 
-                  {/* Text Container */}
-                  <div
-                    className={`absolute left-0 right-0  px-4 ${
-                      isExpanded
-                        ? "bottom-0 py-4 md:py-6 flex flex-col items-start md:w-[500px]"
-                        : "top-0 h-full flex items-center justify-center md:rotate-90 md:origin-center"
-                    }`}
-                  >
-                    <div
-                      className={` bg-black/70 border border-white/20 rounded-xl px-4 py-2  ${
-                        isExpanded
-                          ? "w-full flex flex-col items-start"
-                          : "w-auto"
-                      }`}
-                    >
-                      <h3
-                        className={`text-white font-bold font-nunito  ${
-                          isExpanded
-                            ? "text-xl md:text-3xl text-left"
-                            : "text-lg md:text-2xl whitespace-nowrap"
-                        }`}
-                      >
-                        {event.title}
-                      </h3>
-                      {isExpanded && (
-                        <>
-                          <div className="mt-2 max-h-[200px] overflow-y-auto pr-2 w-full">
-                            {parseDescription(event.description, "text-xs")}
-                          </div>
-
-                          {/* Dates, Times, Locations */}
-                          <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
-                            {event.dates.length === 1 ? (
-                              <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
-                                <span className="font-bold">Event:</span>{" "}
-                                {event.dates[0]} | {event.times[0]} |{" "}
-                                {event.locations[0]}
-                              </p>
-                            ) : (
-                              event.dates.map((date, i) => (
-                                <p
-                                  key={i}
-                                  className="text-white text-xs md:text-sm mt-1 font-dm-sans"
-                                >
-                                  <span className="font-bold">
-                                    Session {i + 1}:
-                                  </span>{" "}
-                                  {date} | {event.times[i]} |{" "}
-                                  {event.locations[i]}
-                                </p>
-                              ))
-                            )}
-
-                            {event.spots && (
-                              <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
-                                <span className="font-bold">
-                                  Number of Spots:
-                                </span>{" "}
-                                {event.spots}
-                              </p>
-                            )}
-                          </div>
-
-                          <a
-                            href={event.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-4 inline-block bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
+                    {/* Dates, Times, Locations */}
+                    <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
+                      {event.dates.length === 1 ? (
+                        <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
+                          <span className="font-bold">Event:</span>{" "}
+                          {event.dates[0]} | {event.times[0]} |{" "}
+                          {event.locations[0]}
+                        </p>
+                      ) : (
+                        event.dates.map((date, i) => (
+                          <p
+                            key={i}
+                            className="text-white text-xs md:text-sm mt-1 font-dm-sans"
                           >
-                            Register Now
-                          </a>
-                        </>
+                            <span className="font-bold">Session {i + 1}:</span>{" "}
+                            {date} | {event.times[i]} | {event.locations[i]}
+                          </p>
+                        ))
+                      )}
+
+                      {event.spots && (
+                        <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
+                          <span className="font-bold">Number of Spots:</span>{" "}
+                          {event.spots}
+                        </p>
                       )}
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
