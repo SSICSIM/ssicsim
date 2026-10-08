@@ -193,7 +193,7 @@ const Landing = () => {
                 rel="noopener noreferrer"
                 className="ml-6 mt-4 bg-[#F3C02C] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
               >
-                Register Now!
+                Waitlist Now!
               </a>
               <a
                 href="/wrapped"
