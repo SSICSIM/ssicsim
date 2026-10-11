@@ -17,7 +17,7 @@ export const events: Event[] = [
     description:
       "Never competed at Model UN conference before? Need a refresher on the flow of debate in crisis committees? Sign up for a Delegate Training session, hosted by our Co-ASGs of Hiring & Training, to learn all you need to know before participating in your first crisis committee!\n\n[Delegates must check in to the conference at OISE first before attending Delegate Training.]\n\n[Note:] Delegates are only permitted to attend {one} of the two sessions.",
     dates: ["Friday, October 23", "Friday, October 23"],
-    times: ["1:00 – 2:00 PM", "2:00 – 3:00 PM"],
+    times: ["12:00 – 1:00 PM", "2:00 – 3:00 PM"],
     locations: ["UC 179", "UC 179"],
     spots: "In Person: 280 (140 per session), Online: Unlimited",
     image: `${CF_DOMAIN}/DelegateTraining.JPG?format=webp`,
