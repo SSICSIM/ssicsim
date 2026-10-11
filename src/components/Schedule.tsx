@@ -19,8 +19,8 @@ const events: MyEvent[] = [
   {
     id: 2,
     title: "Delegate Training 1",
-    start: new Date(2026, 9, 23, 13, 0),
-    end: new Date(2026, 9, 23, 14, 0),
+    start: new Date(2026, 9, 23, 12, 0),
+    end: new Date(2026, 9, 23, 13, 0),
     location: "UC 179",
     category: "training",
   },
