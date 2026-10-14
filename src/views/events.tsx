@@ -4,6 +4,7 @@ import { CF_DOMAIN } from "../utils/consts";
 import { events } from "../utils/data";
 import { parseDescription } from "../utils/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 const Events = () => {
   return (
@@ -98,6 +99,12 @@ const Events = () => {
                         </p>
                       )}
                     </div>
+                    <Link
+                      href={`/events/${event.slug}/register`}
+                      className="mt-4 w-full text-center bg-[#A3841D] text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm hover:bg-[#8a6f1b] transition-colors"
+                    >
+                      Register
+                    </Link>
                   </div>
                 </div>
               </div>
