@@ -5,8 +5,13 @@ import { events } from "../utils/data";
 import { parseDescription } from "../utils/utils";
 import Image from "next/image";
 import Link from "next/link";
+import type { EventStatus } from "@/lib/event-status";
 
-const Events = () => {
+interface Props {
+  statuses?: Partial<Record<string, EventStatus>>;
+}
+
+const Events = ({ statuses = {} }: Props) => {
   return (
     <>
       {/* Hero Section */}
@@ -48,67 +53,78 @@ const Events = () => {
 
           {/* Event Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {events.map((event, idx) => (
-              <div
-                key={idx}
-                className="relative min-h-[500px] rounded-xl shadow-lg overflow-hidden flex flex-col justify-end"
-              >
-                {/* Background Image with Dark Overlay */}
+            {events.map((event, idx) => {
+              const status = statuses[event.slug];
+              return (
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${event.image})`,
-                    backgroundBlendMode: "multiply",
-                  }}
-                />
+                  key={idx}
+                  className="relative min-h-[500px] rounded-xl shadow-lg overflow-hidden flex flex-col justify-end"
+                >
+                  {/* Background Image with Dark Overlay */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${event.image})`,
+                      backgroundBlendMode: "multiply",
+                    }}
+                  />
 
-                {/* Text Container */}
-                <div className="relative p-4 pt-40">
-                  <div className="bg-black/70 border border-white/20 rounded-xl px-4 py-4 flex flex-col items-start">
-                    <h3 className="text-white font-bold font-nunito text-xl md:text-2xl text-left">
-                      {event.title}
-                    </h3>
-                    <div className="mt-2 w-full">
-                      {parseDescription(event.description, "text-xs")}
-                    </div>
+                  {/* Text Container */}
+                  <div className="relative p-4 pt-40">
+                    <div className="bg-black/70 border border-white/20 rounded-xl px-4 py-4 flex flex-col items-start">
+                      <h3 className="text-white font-bold font-nunito text-xl md:text-2xl text-left">
+                        {event.title}
+                      </h3>
+                      <div className="mt-2 w-full">
+                        {parseDescription(event.description, "text-xs")}
+                      </div>
 
-                    {/* Dates, Times, Locations */}
-                    <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
-                      {event.dates.length === 1 ? (
-                        <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
-                          <span className="font-bold">Event:</span>{" "}
-                          {event.dates[0]} | {event.times[0]} |{" "}
-                          {event.locations[0]}
-                        </p>
-                      ) : (
-                        event.dates.map((date, i) => (
-                          <p
-                            key={i}
-                            className="text-white text-xs md:text-sm mt-1 font-dm-sans"
-                          >
-                            <span className="font-bold">Session {i + 1}:</span>{" "}
-                            {date} | {event.times[i]} | {event.locations[i]}
+                      {/* Dates, Times, Locations */}
+                      <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
+                        {event.dates.length === 1 ? (
+                          <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
+                            <span className="font-bold">Event:</span>{" "}
+                            {event.dates[0]} | {event.times[0]} |{" "}
+                            {event.locations[0]}
                           </p>
-                        ))
-                      )}
+                        ) : (
+                          event.dates.map((date, i) => (
+                            <p
+                              key={i}
+                              className="text-white text-xs md:text-sm mt-1 font-dm-sans"
+                            >
+                              <span className="font-bold">
+                                Session {i + 1}:
+                              </span>{" "}
+                              {date} | {event.times[i]} | {event.locations[i]}
+                            </p>
+                          ))
+                        )}
 
-                      {event.spots && (
-                        <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
-                          <span className="font-bold">Number of Spots:</span>{" "}
-                          {event.spots}
-                        </p>
+                        {event.spots && (
+                          <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
+                            <span className="font-bold">Number of Spots:</span>{" "}
+                            {event.spots}
+                          </p>
+                        )}
+                      </div>
+                      {status?.closed ? (
+                        <span className="mt-4 w-full text-center bg-white/20 text-white/80 px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm cursor-not-allowed">
+                          Registration Closed
+                        </span>
+                      ) : (
+                        <Link
+                          href={`/events/${event.slug}/register`}
+                          className="mt-4 w-full text-center bg-[#A3841D] text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm hover:bg-[#8a6f1b] transition-colors"
+                        >
+                          {status?.full ? "Join the Waitlist" : "Register"}
+                        </Link>
                       )}
                     </div>
-                    <Link
-                      href={`/events/${event.slug}/register`}
-                      className="mt-4 w-full text-center bg-[#A3841D] text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm hover:bg-[#8a6f1b] transition-colors"
-                    >
-                      Register
-                    </Link>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

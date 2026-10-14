@@ -119,7 +119,22 @@ function withOther(selected: string[], other: string | null): string[] {
   return other?.trim() ? [...selected, `Other: ${other.trim()}`] : selected;
 }
 
-export default function EventRegister({ slug }: { slug: EventSlug }) {
+interface Props {
+  slug: EventSlug;
+  // Closed by SEC or past the deadline
+  closed?: boolean;
+  // Event is full: new sign-ups join the waitlist
+  full?: boolean;
+  // Training sessions whose in-person spots are taken
+  fullSessions?: string[];
+}
+
+export default function EventRegister({
+  slug,
+  closed = false,
+  full = false,
+  fullSessions = [],
+}: Props) {
   const event = EVENT_FORMS[slug];
 
   const [firstName, setFirstName] = useState("");
@@ -144,6 +159,7 @@ export default function EventRegister({ slug }: { slug: EventSlug }) {
   const [status, setStatus] = useState<RegistrationStatus | null>(null);
 
   const motivationWords = countWords(motivation);
+  const sessionFull = (key: string) => fullSessions.includes(key);
 
   function validate(): string | null {
     if (!firstName.trim() || !lastName.trim())
@@ -232,6 +248,35 @@ export default function EventRegister({ slug }: { slug: EventSlug }) {
     }
   }
 
+  if (closed) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#A3841D] to-[#c2a030] flex items-center justify-center px-6 pt-[120px]">
+        <div className="bg-white rounded-2xl shadow-lg p-10 max-w-lg w-full text-center">
+          <h2 className="text-3xl font-bold font-nunito text-gray-900 mb-4">
+            {event.title} Registration Is Closed
+          </h2>
+          <p className="text-gray-600 font-dm-sans mb-6 leading-relaxed">
+            We&apos;re no longer accepting registrations for {event.title}. If
+            you have questions, please contact us at{" "}
+            <a
+              href="mailto:registration@ssicsim.ca"
+              className="text-[#A3841D] underline"
+            >
+              registration@ssicsim.ca
+            </a>
+            .
+          </p>
+          <Link
+            href="/events"
+            className="inline-block bg-[#A3841D] text-white px-6 py-3 rounded-lg font-dm-sans font-semibold hover:bg-[#8a6f1b] transition-colors"
+          >
+            Back to Events
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   if (status) {
     const heading =
       status === "Pending"
@@ -316,6 +361,19 @@ export default function EventRegister({ slug }: { slug: EventSlug }) {
       </div>
 
       <div className="max-w-3xl mx-auto py-10 px-6">
+        {(full ||
+          (slug === "delegate-training" && fullSessions.length > 0)) && (
+          <div className="mb-6 border border-[#A3841D]/40 bg-[#A3841D]/10 rounded-xl p-5 font-dm-sans text-sm text-gray-800 leading-relaxed">
+            <p className="font-bold font-nunito text-gray-900 mb-1">
+              {full
+                ? `${event.title} is full: you're joining the waitlist`
+                : "Some sessions are full"}
+            </p>
+            {full
+              ? "All spots have been taken, so new registrations join the waitlist. If a spot opens up, we'll email you to confirm your place."
+              : "Sessions marked “waitlist only” are full. Choosing one puts you on its waitlist, and we'll email you if a spot opens up. Other sessions still have spots."}
+          </div>
+        )}
         <div className="mb-6 border border-[#A3841D]/40 bg-[#A3841D]/10 rounded-xl p-5 font-dm-sans text-sm text-gray-800 leading-relaxed space-y-3">
           {event.intro.map((p, i) => (
             <p key={i}>{p}</p>
@@ -459,6 +517,11 @@ export default function EventRegister({ slug }: { slug: EventSlug }) {
                       />
                       <span className="text-sm font-dm-sans text-gray-700">
                         {s.label}
+                        {sessionFull(s.key) && (
+                          <span className="ml-2 text-xs font-semibold text-[#A3841D]">
+                            Full, waitlist only
+                          </span>
+                        )}
                       </span>
                     </label>
                   ))}
@@ -553,7 +616,9 @@ export default function EventRegister({ slug }: { slug: EventSlug }) {
                 ? "Submitting..."
                 : event.selective
                   ? "Submit Application"
-                  : "Register"}
+                  : full || sessionFull(session)
+                    ? "Join the Waitlist"
+                    : "Register"}
             </button>
           </div>
         </div>
