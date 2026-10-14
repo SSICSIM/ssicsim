@@ -38,7 +38,6 @@ const WITHDRAWAL_BODY = (event: string, deadline?: string) =>
 export const TRAINING_SESSIONS: EventSession[] = [
   { key: "session_1", label: "Session 1: 12:00 – 1:00 PM (in person, UC 179)" },
   { key: "session_2", label: "Session 2: 2:00 – 3:00 PM (in person, UC 179)" },
-  { key: "online", label: "Online" },
 ];
 
 export const ALLERGY_OPTIONS = [
@@ -148,11 +147,11 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
     title: "Delegate Training",
     date: "Friday, October 23, 2026",
     time: "12:00 – 1:00 PM or 2:00 – 3:00 PM",
-    location: "UC 179, University College (15 King's College Cir), or online",
+    location: "UC 179, University College (15 King's College Cir)",
     selective: false,
     intro: [
       "Whether you are new to Model UN or have a wealth of experience, all delegates are welcome to attend Delegate Training and learn about everything from Rules and Procedure to crisis and everything in between, hosted by our Co-ASGs of Hiring & Training.",
-      "We're offering two in-person sessions (the same content is covered in both) plus an online option. Please only sign up for one session to make room for other delegates. Delegates must check in to the conference at OISE first before attending in person.",
+      "We're offering two in-person sessions, and the same content is covered in both. Please only sign up for one session to make room for other delegates. Delegates must check in to the conference at OISE first before attending in person.",
     ],
     policies: [],
   },

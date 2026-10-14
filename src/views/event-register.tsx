@@ -402,8 +402,7 @@ export default function EventRegister({
           <p className="text-sm text-gray-500 font-dm-sans mb-6">
             Enter your name and email exactly as you did on your delegate
             registration. We use them to confirm you&apos;re a registered
-            delegate, and pull your school, grade, and experience from your
-            registration.
+            delegate.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Field label="First Name" required>

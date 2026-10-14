@@ -19,7 +19,7 @@ interface BackendEvent {
 export interface EventStatus {
   // Closed by SEC or past the deadline: the form can't be submitted.
   closed: boolean;
-  // New sign-ups join the waitlist (events without sessions).
+  // New sign-ups join the waitlist (for Training: every session is full).
   full: boolean;
   // Training sessions whose in-person spots are taken.
   fullSessions: string[];
@@ -38,9 +38,9 @@ function toStatus(event: BackendEvent): EventStatus {
     // never "full" from the form's point of view.
     full:
       event.slug !== "midnight-crisis" &&
-      event.sessions.length === 0 &&
-      event.capacity != null &&
-      event.filled >= event.capacity,
+      (event.sessions.length > 0
+        ? fullSessions.length === event.sessions.length
+        : event.capacity != null && event.filled >= event.capacity),
     fullSessions,
   };
 }

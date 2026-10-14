@@ -21,7 +21,7 @@ export const events: Event[] = [
     dates: ["Friday, October 23", "Friday, October 23"],
     times: ["12:00 – 1:00 PM", "2:00 – 3:00 PM"],
     locations: ["UC 179", "UC 179"],
-    spots: "In Person: 280 (140 per session), Online: Unlimited",
+    spots: "280 (140 per session)",
     image: `${CF_DOMAIN}/DelegateTraining.JPG?format=webp`,
   },
   {
