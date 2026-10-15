@@ -38,12 +38,6 @@ const Footer = () => {
             Committees
           </a>
           <a
-            href="/register"
-            className="text-sm hover:text-gray-300 transition-colors"
-          >
-            Register
-          </a>
-          <a
             href="/contact"
             className="text-sm hover:text-gray-300 transition-colors"
           >

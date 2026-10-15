@@ -15,6 +15,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CF_DOMAIN } from "../utils/consts";
 import Seo from "../components/Seo";
+import FlipCountdown from "../components/FlipCountdown";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -164,7 +165,7 @@ const Landing = () => {
         path="/"
       />
       <div>
-        <div className="relative w-full min-h-[500px] h-screen max-h-[1200px] overflow-hidden pt-[80px]">
+        <div className="relative w-full min-h-screen overflow-hidden">
           {/* Background Image */}
           <NextImage
             src={`${CF_DOMAIN}/UoftAerialPhoto.jpg?format=webp`}
@@ -175,38 +176,51 @@ const Landing = () => {
             className="absolute top-0 left-0 object-cover z-10"
           />
 
-          {/* Content Section */}
-          <div className="max-w-[2000px] mt-12 mx-auto absolute inset-0 w-full h-full flex flex-col items-start justify-center font-nunito z-20">
-            <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-              Toronto, ON
-            </h3>
-            <h1 className="text-white text-left md:text-5xl lg:text-7xl font-bold w-[90vw] lg:w-[900px] ml-6 leading-tight text-4xl">
-              Canada’s Premier Model UN Crisis Simulation
-            </h1>
-            <h3 className="text-white text-left md:text-[35px] w-[80vw] lg:w-[800px] ml-6 text-[25px] font-normal italic md:w-[800px]">
-              October 23rd–25th
-            </h3>
+          {/* Content Section: in the flow, so the hero grows (rather than
+              clipping) when the content is taller than the screen. The top
+              padding clears the banner and navbar. */}
+          <div className="relative max-w-[2000px] mx-auto min-h-screen pt-[160px] pb-12 flex flex-col items-start justify-center font-nunito z-20">
+            {/* Text on the left; from 1024px the countdown sits to the right,
+                level with the heading. */}
+            <div className="flex w-full flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pr-10 xl:pr-16">
+              <div>
+                <h3 className="text-white text-left md:text-[35px] ml-6 text-[25px] font-normal italic">
+                  Toronto, ON
+                </h3>
+                <h1 className="text-white text-left text-3xl md:text-4xl lg:text-[2.75rem] xl:text-6xl font-bold w-[90vw] lg:w-auto lg:max-w-[560px] xl:max-w-none xl:w-[760px] ml-6 leading-tight">
+                  Canada’s Premier Model UN Crisis Simulation
+                </h1>
+                <h3 className="text-white text-left md:text-[35px] ml-6 text-[25px] font-normal italic">
+                  October 23rd–25th
+                </h3>
+                <div className="flex flex-row mt-3">
+                  <a
+                    href="/resources"
+                    className="ml-6 mt-4 bg-[#F3C02C] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
+                  >
+                    Schedule & Resources
+                  </a>
+                  <a
+                    href="/events"
+                    className="ml-4 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+                  >
+                    Events
+                  </a>
+                </div>
+              </div>
 
-            <div className="flex flex-row">
-              <a
-                href="/register"
-                rel="noopener noreferrer"
-                className="ml-6 mt-4 bg-[#F3C02C] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
-              >
-                Waitlist Now!
-              </a>
-              <a
-                href="/wrapped"
-                rel="noopener noreferrer"
-                className="ml-6 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-              >
-                SSICSIM 2025 Wrapped
-              </a>
+              {/* Counts down to Delegate Registration opening (Friday, 12:00 PM ET). */}
+              <div className="ml-6 mt-8 self-start lg:self-auto lg:ml-0 lg:mt-0 shrink-0">
+                <FlipCountdown
+                  targetDate="2026-10-23T12:00:00-04:00"
+                  heading="Conference starts in"
+                />
+              </div>
             </div>
           </div>
 
           {/* Overlay */}
-          <div className="absolute top-0 left-0 w-full h-screen min-h-[500px] bg-black opacity-40 z-10"></div>
+          <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
 
           {/* Golden Borders */}
           <div

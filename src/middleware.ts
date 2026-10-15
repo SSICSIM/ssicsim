@@ -9,20 +9,22 @@ const ALLOWED_ROUTES = new Set([
   "/conference",
   "/resources",
   "/events",
-  "/staff",
-  "/apply",
   "/contact",
-  "/staff/openings",
   "/underconstruction",
   "/wrapped",
   "/committees",
-  "/register",
-  "/register/delegate",
-  "/register/delegation",
   "/events/midnight-crisis/register",
   "/events/delegate-social/register",
   "/events/delegate-training/register",
 ]);
+
+const CLOSED_ROUTES = [
+  "/register",
+  "/staff",
+  "/apply",
+  "/sec-hiring",
+  "/director-hiring",
+];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -35,6 +37,16 @@ export function middleware(request: NextRequest) {
     pathname.includes(".")
   ) {
     return NextResponse.next();
+  }
+
+  // Conference registration and staff hiring have closed; old links go to
+  // the home page.
+  if (
+    CLOSED_ROUTES.some(
+      (route) => pathname === route || pathname.startsWith(`${route}/`),
+    )
+  ) {
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
   if (!ALLOWED_ROUTES.has(pathname)) {
