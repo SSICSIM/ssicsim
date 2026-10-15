@@ -1,6 +1,8 @@
 import { CF_DOMAIN } from "../utils/consts";
 
 interface Event {
+  // Registration form lives at /events/{slug}/register
+  slug: string;
   title: string;
   description: string;
   dates: string[];
@@ -8,22 +10,22 @@ interface Event {
   locations: string[];
   spots?: string;
   image: string;
-  link: string;
 }
 
 export const events: Event[] = [
   {
+    slug: "delegate-training",
     title: "Delegate Training",
     description:
       "Never competed at Model UN conference before? Need a refresher on the flow of debate in crisis committees? Sign up for a Delegate Training session, hosted by our Co-ASGs of Hiring & Training, to learn all you need to know before participating in your first crisis committee!\n\n[Delegates must check in to the conference at OISE first before attending Delegate Training.]\n\n[Note:] Delegates are only permitted to attend {one} of the two sessions.",
     dates: ["Friday, October 23", "Friday, October 23"],
     times: ["12:00 – 1:00 PM", "2:00 – 3:00 PM"],
     locations: ["UC 179", "UC 179"],
-    spots: "In Person: 280 (140 per session), Online: Unlimited",
+    spots: "280 (140 per session)",
     image: `${CF_DOMAIN}/DelegateTraining.JPG?format=webp`,
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSdL4hvJuvKMe3Go06UGxOhCunXApg6srVDFpwFmBAIMIpLxJg/viewform?usp=header",
   },
   {
+    slug: "midnight-crisis",
     title: "Midnight Crisis",
     description:
       "Looking for another crisis committee to participate in? Can’t get enough of the crisis committees at SSICSIM? Sign up for (Midnight Crisis), a short but sweet committee directed by the Secretariat in the late hours of the first conference day! This year’s Midnight Crisis is ad hoc, so the committee topic will be revealed at the beginning of the session. ",
@@ -32,9 +34,9 @@ export const events: Event[] = [
     locations: ["OI 8200"],
     spots: "20",
     image: `${CF_DOMAIN}/MidnightCrisis.jpg?format=webp`,
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSdVUzu9bIN6aSXWs6ANbv3SqgZjhxtmj3hkdsOqLSahnfP2nQ/viewform",
   },
   {
+    slug: "delegate-social",
     title: "Delegate Social",
     description:
       "Looking to unwind after a long day of formal debate? Hoping to connect with other Delegates, Staff, and Secretariat members at SSICSIM? Sign up for Delegate Social, a lively event we’ll be hosting in the heart of the University of Toronto! [Free refreshments and dinner will be provided.]",
@@ -43,7 +45,6 @@ export const events: Event[] = [
     locations: ["Victoria College (Alumni Hall)"],
     spots: "120",
     image: `${CF_DOMAIN}/DelegateSocial.JPG?format=webp`,
-    link: "https://forms.gle/LKUUnKbYrepvxMiF7",
   },
 ];
 

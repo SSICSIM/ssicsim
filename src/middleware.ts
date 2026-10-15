@@ -19,6 +19,9 @@ const ALLOWED_ROUTES = new Set([
   "/register",
   "/register/delegate",
   "/register/delegation",
+  "/events/midnight-crisis/register",
+  "/events/delegate-social/register",
+  "/events/delegate-training/register",
 ]);
 
 export function middleware(request: NextRequest) {
