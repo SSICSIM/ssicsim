@@ -10,7 +10,6 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [waitlist, setWaitlist] = useState(false);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -31,13 +30,7 @@ export default function Navbar() {
         { label: "Events", path: "/events" },
       ],
     },
-    {
-      label: "Staff",
-      path: "/staff",
-      subItems: [{ label: "Staff Hiring", path: "/staff/openings" }],
-    },
     { label: "Contact", path: "/contact" },
-    { label: "Register", path: "/register", cta: true },
   ];
 
   useEffect(() => {
@@ -51,13 +44,6 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/registration-status")
-      .then((r) => r.json())
-      .then((data) => setWaitlist(Boolean(data?.waitlist)))
-      .catch(() => {});
-  }, []);
-
-  useEffect(() => {
     // close mobile menu on route change
     setIsMenuOpen(false);
     setDropdownOpen(null);
@@ -67,25 +53,12 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r mb-5 from-[#A3841D] via-[#B89520] to-[#A3841D] text-white py-3 px-4 text-center shadow-md">
         <Link
-          href="/register"
+          href="/events"
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            {waitlist ? (
-              <>
-                <strong>Registration is full.</strong> Our waitlist is open!
-                <span className="ml-2 underline font-semibold">
-                  Join the waitlist
-                </span>
-              </>
-            ) : (
-              <>
-                🎉 <strong>Late Registration</strong> is now open!
-                <span className="ml-2 underline font-semibold">
-                  Register now!
-                </span>
-              </>
-            )}
+            🎉 <strong>Event registration</strong> is now open until October 18!
+            <span className="ml-2 underline font-semibold">Sign up now!</span>
           </span>
         </Link>
       </div>
@@ -192,13 +165,6 @@ export default function Navbar() {
                       </ul>
                     )}
                   </>
-                ) : item.cta ? (
-                  <Link
-                    href={item.path}
-                    className="block text-center font-bold bg-[#A3841D] text-white hover:bg-white hover:text-[#A3841D] rounded-lg transition-colors px-4 py-2"
-                  >
-                    {item.label}
-                  </Link>
                 ) : (
                   <Link
                     href={item.path}
@@ -241,13 +207,6 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                ) : item.cta ? (
-                  <Link
-                    href={item.path}
-                    className="bg-[#A3841D] hover:bg-[#8a6f1b] text-white p-3 px-6 rounded-full transition-colors"
-                  >
-                    {item.label}
-                  </Link>
                 ) : (
                   <Link
                     href={item.path}
