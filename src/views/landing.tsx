@@ -242,7 +242,7 @@ const Landing = () => {
       <div
         className="relative bg-white h-auto py-44 w-full flex items-center justify-center overflow-hidden bg-cover bg-center"
         style={{
-          backgroundImage: "url('/assets/photos/branding/ArtDeco.png')", // Replace with the correct path to your Art Deco image
+          backgroundImage: "url('/assets/photos/branding/ArtDeco.webp')", // Replace with the correct path to your Art Deco image
         }}
       >
         <div className="absolute inset-0 bg-[white]/50"></div>

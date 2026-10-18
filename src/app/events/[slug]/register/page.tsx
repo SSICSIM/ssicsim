@@ -3,7 +3,7 @@ import EventRegister from "@/views/event-register";
 import { getEventForm } from "@/lib/event-forms";
 import { getEventStatus } from "@/lib/event-status";
 
-// Capacity changes with every sign-up, so never serve a cached page.
+// Rendered per request; event status is cached for 30s in event-status.ts.
 export const dynamic = "force-dynamic";
 
 export default async function Page({

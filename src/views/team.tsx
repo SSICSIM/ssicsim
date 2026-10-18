@@ -106,7 +106,7 @@ export default function Team() {
       {/* ── Hero ── */}
       <div className="relative block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <Image
-          src="/assets/photos/UoftAerialPhoto.jpg"
+          src="/assets/photos/UoftAerialPhoto.webp"
           alt="University of Toronto Aerial View"
           fill
           priority

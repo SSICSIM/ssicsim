@@ -20,7 +20,7 @@ const Mission = () => {
       {/* Hero Banner */}
       <div className="relative block w-full min-h-[400px] h-[80vh] max-h-[1200px]">
         <Image
-          src="/assets/photos/UoftAerialPhoto.jpg"
+          src="/assets/photos/UoftAerialPhoto.webp"
           alt="University of Toronto Aerial View"
           fill
           priority
@@ -119,7 +119,7 @@ const Mission = () => {
           >
             <div className="relative w-full h-[300px] md:h-[420px]">
               <Image
-                src="/assets/photos/LandAcknowledgement.JPG"
+                src="/assets/photos/LandAcknowledgement.webp"
                 alt="Land Acknowledgement"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -194,7 +194,7 @@ const Mission = () => {
           >
             <div className="relative w-full h-[300px] md:h-[420px]">
               <Image
-                src="/assets/photos/Uoft.png"
+                src="/assets/photos/Uoft.webp"
                 alt="University of Toronto"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

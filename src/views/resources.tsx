@@ -1,7 +1,7 @@
 "use client";
 
 import { CF_DOMAIN } from "../utils/consts";
-import { resources } from "../utils/data";
+import { equityForm, resources } from "../utils/data";
 import ConferenceSchedule from "../components/Schedule";
 import { useState } from "react";
 import { parseDescription } from "../utils/utils";
@@ -65,6 +65,13 @@ const Resources = () => {
   const toggleFAQ = (index: number | null) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const sections = [
+    { id: "schedule", label: "Schedule" },
+    { id: "equity", label: "Equity" },
+    { id: "guides", label: "Guides" },
+    { id: "faq", label: "FAQ" },
+  ];
+
   return (
     <>
       <Seo
@@ -87,37 +94,77 @@ const Resources = () => {
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
         {/* Text */}
-        <div className="max-w-[3000px] mx-auto absolute inset-0 flex flex-col items-start justify-center z-20 px-6">
+        <div className="max-w-[3000px] mx-auto absolute inset-0 flex flex-col items-start justify-end pb-[14vh] z-20 px-6">
           <h1 className="text-white text-left text-4xl font-bold w-[80vw] lg:w-[800px] font-nunito leading-tight md:text-7xl drop-shadow-md">
             Conference Resources
           </h1>
+          <nav className="flex flex-wrap gap-2 mt-6">
+            {sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white text-sm font-dm-sans font-semibold hover:bg-white hover:text-[#A3841D] transition"
+              >
+                {s.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
 
-      {/* Resources Section */}
-      <div className="relative bg-gray-100 py-20 px-6">
-        <div className="max-w-[1200px] mx-auto px-6">
+      <div className="relative bg-gray-100 py-16 md:py-20 px-4 md:px-6">
+        {/* Schedule */}
+        <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
             Conference Schedule
           </h2>
-          <div className="space-y-12">
-            <ConferenceSchedule />
-          </div>
-        </div>
+          <ConferenceSchedule />
+        </section>
 
-        <div className="max-w-[1200px] mx-auto">
+        {/* Equity */}
+        <section id="equity" className="max-w-[1200px] mx-auto scroll-mt-40">
+          <div className="rounded-3xl bg-white shadow-xl border-l-8 border-[#A3841D] p-6 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
+            <div className="flex-1">
+              <h2 className="text-3xl md:text-4xl font-bold font-nunito text-[#A3841D]">
+                {equityForm.title}
+              </h2>
+              <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+                {equityForm.description}
+              </p>
+            </div>
+            <div className="flex flex-col items-start md:items-center gap-2 shrink-0">
+              <a
+                href={equityForm.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-full bg-[#A3841D] text-white font-nunito font-bold hover:bg-[#8a6f18] transition"
+              >
+                Open the Equity Form →
+              </a>
+              <a
+                href={`mailto:${equityForm.email}`}
+                className="text-sm text-gray-600 font-dm-sans hover:text-[#A3841D]"
+              >
+                or email {equityForm.email}
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Guides */}
+        <section
+          id="guides"
+          className="max-w-[1200px] mx-auto mt-24 scroll-mt-40"
+        >
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
-            Resources
+            Guides
           </h2>
           <div className="mt-2 mb-8 max-w-2xl mx-auto text-center">
             <p className="text-lg text-gray-700 font-dm-sans">
-              Everything you need to prepare, participate, and succeed at the
-              conference — from committee archives to the code of conduct and
-              conference guides.
+              Quick references for committee — keep these open during sessions.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Regular 3-column resources */}
             {resources.map((res, idx) => (
               <a
                 key={idx}
@@ -147,23 +194,22 @@ const Resources = () => {
               </a>
             ))}
           </div>
+        </section>
 
-          {/* Description under resources */}
-        </div>
-
-        <div className="max-w-[1200px] mx-auto mt-24 px-6">
+        {/* FAQ */}
+        <section id="faq" className="max-w-[1200px] mx-auto mt-24 scroll-mt-40">
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D] mb-10">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-gray-300 rounded-lg shadow"
+                className="rounded-xl overflow-hidden shadow-sm bg-white border border-gray-200"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className={`w-full text-left px-6 py-4 flex justify-between items-center font-nunito text-lg font-semibold text-gray-800 ${openIndex === index ? "bg-[#A3841D] text-white border-b" : "bg-gray-200"}`}
+                  className={`w-full text-left px-6 py-4 flex justify-between items-center font-nunito text-lg font-semibold transition-colors ${openIndex === index ? "bg-[#A3841D] text-white" : "text-gray-800 hover:bg-gray-50"}`}
                 >
                   {faq.question}
                   <span
@@ -173,22 +219,20 @@ const Resources = () => {
                   </span>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openIndex === index
-                      ? "max-h-60 opacity-100 bg-[#A3841D]"
+                      ? "max-h-[800px] opacity-100 bg-[#A3841D]"
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div
-                    className={`px-6 pb-4 text-gray-700 text-[12px] md:text-[16px] font-dm-sans ${openIndex === index ? "text-white pt-4" : "text-gray-700"}`}
-                  >
+                  <div className="px-6 py-4 text-white text-[12px] md:text-[16px] font-dm-sans">
                     {parseDescription(faq.answer, "text-xs md:text-base")}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </>
   );
