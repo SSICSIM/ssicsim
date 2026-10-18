@@ -56,7 +56,7 @@ export const events: Event[] = [
     dates: ["Saturday & Sunday, October 24 – 25"],
     times: ["12:00 – 1:00 PM"],
     locations: ["During Lunch"],
-    image: "/assets/photos/Photo1.png",
+    image: `${CF_DOMAIN}/CharityPhotoshoot.JPG?format=webp`,
     noRegistration: true,
   },
 ];
