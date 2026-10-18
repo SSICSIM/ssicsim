@@ -43,7 +43,8 @@ const Events = ({ statuses = {} }: Props) => {
               Where will you be after committee session ends? See more
               information about the opportunities we’ll be hosting for Delegates
               and Staff outside of committee sessions, and how to sign up. All
-              of the events below are optional and completely free!
+              of the events below are optional, and all sign-up events are
+              completely free!
             </p>
             <p className="text-lg text-gray-700 font-dm-sans mt-2">
               <span className="font-bold">Note:</span> These events are only
@@ -108,7 +109,11 @@ const Events = ({ statuses = {} }: Props) => {
                           </p>
                         )}
                       </div>
-                      {status?.closed ? (
+                      {event.noRegistration ? (
+                        <span className="mt-4 w-full text-center bg-white/20 text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm">
+                          No Registration Required
+                        </span>
+                      ) : status?.closed ? (
                         <span className="mt-4 w-full text-center bg-white/20 text-white/80 px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm cursor-not-allowed">
                           Registration Closed
                         </span>
