@@ -4,15 +4,13 @@ import { useState } from "react";
 import CommiteeCard from "../components/CommiteeCard";
 import { CF_DOMAIN } from "../utils/consts";
 import { committeesData } from "../utils/data";
-import type { CommitteeGuide } from "../lib/committee-guides";
 import Image from "next/image";
 
 interface Props {
   initialFilter?: string;
-  guidesByTitle?: Record<string, CommitteeGuide[]>;
 }
 
-const Committees = ({ initialFilter = "All", guidesByTitle = {} }: Props) => {
+const Committees = ({ initialFilter = "All" }: Props) => {
   const [filter, setFilter] = useState<string>(initialFilter);
 
   const filteredCommittees =
@@ -77,7 +75,7 @@ const Committees = ({ initialFilter = "All", guidesByTitle = {} }: Props) => {
               title={committee.title}
               description={committee.description}
               expandedDescription={committee.expandedDescription}
-              backgroundGuides={guidesByTitle[committee.title]}
+              backgroundGuides={committee.backgroundGuides}
               contactEmail={committee.contactEmail}
               director={committee.director}
               backgroundImage={committee.backgroundImage}

@@ -6,6 +6,9 @@ import type { EventSlug } from "@/lib/event-forms";
 const BACKEND = process.env.BACKEND_API_URL ?? "http://localhost:8000";
 const TOKEN = process.env.ADMIN_API_TOKEN ?? "";
 const TIMEOUT_MS = 5000;
+// Seconds to reuse the admin response, so visits rarely wait on the backend.
+// The backend still enforces deadlines and capacity on submit.
+const REVALIDATE_SECONDS = 30;
 
 interface BackendEvent {
   slug: string;
@@ -49,7 +52,7 @@ async function fetchJson<T>(path: string): Promise<T | null> {
   try {
     const res = await fetch(`${BACKEND}${path}`, {
       headers: { "X-Admin-Token": TOKEN },
-      cache: "no-store",
+      next: { revalidate: REVALIDATE_SECONDS },
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
     if (!res.ok) {
