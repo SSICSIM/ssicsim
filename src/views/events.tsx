@@ -5,6 +5,7 @@ import { events } from "../utils/data";
 import { parseDescription } from "../utils/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import type { EventStatus } from "@/lib/event-status";
 
 interface Props {
@@ -12,6 +13,17 @@ interface Props {
 }
 
 const Events = ({ statuses = {} }: Props) => {
+  // Slugs of cards whose full description is showing; the rest stay collapsed
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+
+  const toggleExpanded = (slug: string) =>
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+
   return (
     <>
       {/* Hero Section */}
@@ -53,9 +65,12 @@ const Events = ({ statuses = {} }: Props) => {
           </div>
 
           {/* Event Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
             {events.map((event, idx) => {
               const status = statuses[event.slug];
+              const paragraphs = event.description.split(/\n{2,}/);
+              const isExpandable = paragraphs.length > 1;
+              const isExpanded = expanded.has(event.slug);
               return (
                 <div
                   key={idx}
@@ -77,7 +92,22 @@ const Events = ({ statuses = {} }: Props) => {
                         {event.title}
                       </h3>
                       <div className="mt-2 w-full">
-                        {parseDescription(event.description, "text-xs")}
+                        {parseDescription(
+                          isExpandable && !isExpanded
+                            ? paragraphs[0]
+                            : event.description,
+                          "text-xs",
+                        )}
+                        {isExpandable && (
+                          <button
+                            type="button"
+                            onClick={() => toggleExpanded(event.slug)}
+                            aria-expanded={isExpanded}
+                            className="text-[#E5C76B] text-xs font-dm-sans font-semibold underline hover:text-white transition-colors"
+                          >
+                            {isExpanded ? "Show less" : "Show more"}
+                          </button>
+                        )}
                       </div>
 
                       {/* Dates, Times, Locations */}
