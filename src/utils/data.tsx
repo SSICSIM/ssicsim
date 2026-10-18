@@ -4,12 +4,16 @@ interface Event {
   // Registration form lives at /events/{slug}/register
   slug: string;
   title: string;
+  // Shown on the collapsed (sideways) column when the title is too long
+  shortTitle?: string;
   description: string;
   dates: string[];
   times: string[];
   locations: string[];
   spots?: string;
   image: string;
+  // Drop-in events with no sign-up form
+  noRegistration?: boolean;
 }
 
 export const events: Event[] = [
@@ -45,6 +49,18 @@ export const events: Event[] = [
     locations: ["Victoria College (Alumni Hall)"],
     spots: "120",
     image: `${CF_DOMAIN}/DelegateSocial.JPG?format=webp`,
+  },
+  {
+    slug: "childrens-book-bank",
+    title: "The Children’s Book Bank Fundraiser",
+    shortTitle: "Book Bank Fundraiser",
+    description:
+      "We are honoured to announce that we are partnering with [The Children’s Book Bank] this year!\n\n[Book Donations:] Donate books you are no longer using and get a free spin on a prize wheel to win exclusive SSICSIM merchandise!\n\n[Tote Bags:] Pay $10 to get an exclusive SSICSIM tote bag, with fabric markers available to customise it.\n\n[Raffle:] Enter to win SSICSIM merchandise!\n$2 per ticket\n$5 for 3 tickets\n$8 for 5 tickets\n$15 for 10 tickets\n\nWe take both cash and card. [90% of all proceeds will be donated to The Children’s Book Bank.]",
+    dates: ["Saturday & Sunday, October 24 – 25"],
+    times: ["12:00 – 1:00 PM"],
+    locations: ["During Lunch"],
+    image: `${CF_DOMAIN}/CharityPhotoshoot.JPG?format=webp`,
+    noRegistration: true,
   },
 ];
 

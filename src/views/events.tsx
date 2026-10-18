@@ -5,6 +5,7 @@ import { events } from "../utils/data";
 import { parseDescription } from "../utils/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import type { EventStatus } from "@/lib/event-status";
 
 interface Props {
@@ -12,6 +13,12 @@ interface Props {
 }
 
 const Events = ({ statuses = {} }: Props) => {
+  const [expandedIndex, setExpandedIndex] = useState<number>(0);
+
+  const toggleExpand = (idx: number) => {
+    if (idx !== expandedIndex) setExpandedIndex(idx); // always one expanded
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -43,7 +50,8 @@ const Events = ({ statuses = {} }: Props) => {
               Where will you be after committee session ends? See more
               information about the opportunities we’ll be hosting for Delegates
               and Staff outside of committee sessions, and how to sign up. All
-              of the events below are optional and completely free!
+              of the events below are optional, and all sign-up events are
+              completely free!
             </p>
             <p className="text-lg text-gray-700 font-dm-sans mt-2">
               <span className="font-bold">Note:</span> These events are only
@@ -51,74 +59,122 @@ const Events = ({ statuses = {} }: Props) => {
             </p>
           </div>
 
-          {/* Event Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Responsive Accordion */}
+          <div className="flex flex-col md:flex-row gap-2 overflow-x-auto md:overflow-hidden mx-auto">
             {events.map((event, idx) => {
               const status = statuses[event.slug];
+              const isExpanded = expandedIndex === idx;
               return (
                 <div
                   key={idx}
-                  className="relative min-h-[500px] rounded-xl shadow-lg overflow-hidden flex flex-col justify-end"
+                  className={`relative flex-shrink-0 md:flex-shrink md:min-w-0 transition-all duration-500 ease-in-out cursor-pointer
+                    ${isExpanded ? "w-full h-[500px] md:flex-[6]" : "h-[75px] md:flex-1"}
+                    md:h-[500px] rounded-xl shadow-lg overflow-hidden group
+                  `}
+                  onClick={() => toggleExpand(idx)}
                 >
                   {/* Background Image with Dark Overlay */}
                   <div
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-500"
                     style={{
-                      backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${event.image})`,
+                      backgroundImage: `linear-gradient(${
+                        isExpanded ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0.6)"
+                      }, ${isExpanded ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0.6)"}), url(${event.image})`,
                       backgroundBlendMode: "multiply",
                     }}
                   />
 
+                  {/* Click indicator */}
+                  {!isExpanded && (
+                    <div className="absolute top-2 right-2 text-white opacity-70 text-sm md:text-sm font-bold">
+                      Click
+                    </div>
+                  )}
+
                   {/* Text Container */}
-                  <div className="relative p-4 pt-40">
-                    <div className="bg-black/70 border border-white/20 rounded-xl px-4 py-4 flex flex-col items-start">
-                      <h3 className="text-white font-bold font-nunito text-xl md:text-2xl text-left">
-                        {event.title}
+                  <div
+                    className={`absolute left-0 right-0  px-4 ${
+                      isExpanded
+                        ? "bottom-0 py-4 md:py-6 flex flex-col items-start md:w-[500px]"
+                        : "top-0 h-full flex items-center justify-center md:rotate-90 md:origin-center"
+                    }`}
+                  >
+                    <div
+                      className={` bg-black/70 border border-white/20 rounded-xl px-4 py-2  ${
+                        isExpanded
+                          ? "w-full flex flex-col items-start"
+                          : "w-auto"
+                      }`}
+                    >
+                      <h3
+                        className={`text-white font-bold font-nunito  ${
+                          isExpanded
+                            ? "text-xl md:text-3xl text-left"
+                            : "text-lg md:text-2xl whitespace-nowrap"
+                        }`}
+                      >
+                        {isExpanded
+                          ? event.title
+                          : (event.shortTitle ?? event.title)}
                       </h3>
-                      <div className="mt-2 w-full">
-                        {parseDescription(event.description, "text-xs")}
-                      </div>
+                      {isExpanded && (
+                        <>
+                          <div className="mt-2 max-h-[200px] overflow-y-auto pr-2 w-full">
+                            {parseDescription(event.description, "text-xs")}
+                          </div>
 
-                      {/* Dates, Times, Locations */}
-                      <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
-                        {event.dates.length === 1 ? (
-                          <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
-                            <span className="font-bold">Event:</span>{" "}
-                            {event.dates[0]} | {event.times[0]} |{" "}
-                            {event.locations[0]}
-                          </p>
-                        ) : (
-                          event.dates.map((date, i) => (
-                            <p
-                              key={i}
-                              className="text-white text-xs md:text-sm mt-1 font-dm-sans"
+                          {/* Dates, Times, Locations */}
+                          <div className="mt-4 bg-[#A3841D]/50 rounded-lg p-4 w-full">
+                            {event.dates.length === 1 ? (
+                              <p className="text-white text-xs md:text-sm mt-1 font-dm-sans">
+                                <span className="font-bold">Event:</span>{" "}
+                                {event.dates[0]} | {event.times[0]} |{" "}
+                                {event.locations[0]}
+                              </p>
+                            ) : (
+                              event.dates.map((date, i) => (
+                                <p
+                                  key={i}
+                                  className="text-white text-xs md:text-sm mt-1 font-dm-sans"
+                                >
+                                  <span className="font-bold">
+                                    Session {i + 1}:
+                                  </span>{" "}
+                                  {date} | {event.times[i]} |{" "}
+                                  {event.locations[i]}
+                                </p>
+                              ))
+                            )}
+
+                            {event.spots && (
+                              <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
+                                <span className="font-bold">
+                                  Number of Spots:
+                                </span>{" "}
+                                {event.spots}
+                              </p>
+                            )}
+                          </div>
+
+                          {event.noRegistration ? (
+                            <span className="mt-4 inline-block bg-white/20 text-white px-6 py-2 rounded-lg font-dm-sans font-bold">
+                              No Registration Required
+                            </span>
+                          ) : status?.closed ? (
+                            <span className="mt-4 inline-block bg-white/20 text-white/80 px-6 py-2 rounded-lg font-dm-sans font-bold cursor-not-allowed">
+                              Registration Closed
+                            </span>
+                          ) : (
+                            <Link
+                              href={`/events/${event.slug}/register`}
+                              className="mt-4 inline-block bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
                             >
-                              <span className="font-bold">
-                                Session {i + 1}:
-                              </span>{" "}
-                              {date} | {event.times[i]} | {event.locations[i]}
-                            </p>
-                          ))
-                        )}
-
-                        {event.spots && (
-                          <p className="mt-4 text-white text-xs md:text-sm font-dm-sans">
-                            <span className="font-bold">Number of Spots:</span>{" "}
-                            {event.spots}
-                          </p>
-                        )}
-                      </div>
-                      {status?.closed ? (
-                        <span className="mt-4 w-full text-center bg-white/20 text-white/80 px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm cursor-not-allowed">
-                          Registration Closed
-                        </span>
-                      ) : (
-                        <Link
-                          href={`/events/${event.slug}/register`}
-                          className="mt-4 w-full text-center bg-[#A3841D] text-white px-6 py-2.5 rounded-lg font-dm-sans font-semibold text-sm hover:bg-[#8a6f1b] transition-colors"
-                        >
-                          {status?.full ? "Join the Waitlist" : "Register"}
-                        </Link>
+                              {status?.full
+                                ? "Join the Waitlist"
+                                : "Register Now"}
+                            </Link>
+                          )}
+                        </>
                       )}
                     </div>
                   </div>
