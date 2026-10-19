@@ -156,6 +156,15 @@ const Resources = () => {
 
         {/* Equity */}
         <section id="equity" className="max-w-[1200px] mx-auto scroll-mt-40">
+          <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
+            Equity
+          </h2>
+          <div className="mt-2 mb-8 max-w-2xl mx-auto text-center">
+            <p className="text-lg text-gray-700 font-dm-sans">
+              Helping keep SSICSIM a safe, respectful and inclusive space for
+              everyone.
+            </p>
+          </div>
           <div className="rounded-3xl bg-white shadow-xl border-l-8 border-[#A3841D] p-6 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
             <div className="flex-1">
               <h2 className="text-3xl md:text-4xl font-bold font-nunito text-[#A3841D]">
