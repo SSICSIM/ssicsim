@@ -584,13 +584,13 @@ export const equityResources = [
   {
     title: "Delegate Code of Conduct",
     description: "The expectations every delegate agrees to at SSICSIM.",
-    href: "https://docs.google.com/document/d/1BnX0i2ebmvt0w3kY9I-5NgHPsuyoXK0M456cL6iqJY8/edit?usp=sharing",
+    href: "https://drive.google.com/file/d/1drqHhMjnzqlNHUtceMzmAdVzAoi2Zio9/view?usp=sharing",
     bg: `${CF_DOMAIN}/Photo2.png?format=webp`,
   },
   {
     title: "Equity Guidelines & Policies",
     description: "How we keep SSICSIM a safe and inclusive space for all.",
-    href: "https://docs.google.com/document/d/1y-4pG84heptEBnWLZdF4uu5mF-WRjY2fIBBHr8Ce1Lk/edit?usp=sharing",
+    href: "https://drive.google.com/file/d/1UdoPjSl-Nn_kJD7lMnaDPR8hQTqqHDPE/view?usp=sharing",
     bg: `${CF_DOMAIN}/Historical.JPG?format=webp`,
   },
 ];
