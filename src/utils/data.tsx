@@ -591,7 +591,7 @@ export const equityResources = [
     title: "Equity Guidelines & Policies",
     description: "How we keep SSICSIM a safe and inclusive space for all.",
     href: "https://docs.google.com/document/d/1y-4pG84heptEBnWLZdF4uu5mF-WRjY2fIBBHr8Ce1Lk/edit?usp=sharing",
-    bg: `${CF_DOMAIN}/equity.png?format=webp`,
+    bg: `${CF_DOMAIN}/Historical.JPG?format=webp`,
   },
 ];
 
