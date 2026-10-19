@@ -580,6 +580,21 @@ export const equityForm = {
   email: "dsg@ssicsim.ca",
 };
 
+export const equityResources = [
+  {
+    title: "Delegate Code of Conduct",
+    description: "The expectations every delegate agrees to at SSICSIM.",
+    href: "https://drive.google.com/file/d/1drqHhMjnzqlNHUtceMzmAdVzAoi2Zio9/view?usp=sharing",
+    bg: `${CF_DOMAIN}/Photo2.png?format=webp`,
+  },
+  {
+    title: "Equity Guidelines & Policies",
+    description: "How we keep SSICSIM a safe and inclusive space for all.",
+    href: "https://drive.google.com/file/d/1UdoPjSl-Nn_kJD7lMnaDPR8hQTqqHDPE/view?usp=sharing",
+    bg: `${CF_DOMAIN}/Historical.JPG?format=webp`,
+  },
+];
+
 export const secretariat = [
   // Executive Board
   {
