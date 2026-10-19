@@ -1,12 +1,45 @@
 "use client";
 
 import { CF_DOMAIN } from "../utils/consts";
-import { equityForm, resources } from "../utils/data";
+import { equityForm, equityResources, resources } from "../utils/data";
 import ConferenceSchedule from "../components/Schedule";
 import { useState } from "react";
 import { parseDescription } from "../utils/utils";
 import Seo from "../components/Seo";
 import Image from "next/image";
+
+interface ResourceCardProps {
+  title: string;
+  description: string;
+  href: string;
+  bg: string;
+}
+
+const ResourceCard = ({ title, description, href, bg }: ResourceCardProps) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative h-56 overflow-hidden shadow-lg group rounded-xl"
+  >
+    <div
+      className="absolute inset-0 bg-cover bg-[#A3841D]/40 bg-center transition-transform duration-300 group-hover:scale-105"
+      style={{
+        backgroundImage: `linear-gradient(rgba(163,132,29,0.4), rgba(163,132,29,0.4)), url(${bg})`,
+        backgroundBlendMode: "multiply",
+      }}
+    />
+    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition" />
+    <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 py-3">
+        <h3 className="text-2xl font-bold text-white mb-2 font-nunito ">
+          {title}
+        </h3>
+        <p className="text-white text-sm font-dm-sans">{description}</p>
+      </div>
+    </div>
+  </a>
+);
 
 const Resources = () => {
   const faqs = [
@@ -149,6 +182,11 @@ const Resources = () => {
               </a>
             </div>
           </div>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {equityResources.map((res, idx) => (
+              <ResourceCard key={idx} {...res} />
+            ))}
+          </div>
         </section>
 
         {/* Guides */}
@@ -166,32 +204,7 @@ const Resources = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {resources.map((res, idx) => (
-              <a
-                key={idx}
-                href={res.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative h-56 overflow-hidden shadow-lg group rounded-xl"
-              >
-                <div
-                  className="absolute inset-0 bg-cover bg-[#A3841D]/40 bg-center transition-transform duration-300 group-hover:scale-105"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(163,132,29,0.4), rgba(163,132,29,0.4)), url(${res.bg})`,
-                    backgroundBlendMode: "multiply",
-                  }}
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition" />
-                <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
-                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 py-3">
-                    <h3 className="text-2xl font-bold text-white mb-2 font-nunito ">
-                      {res.title}
-                    </h3>
-                    <p className="text-white text-sm font-dm-sans">
-                      {res.description}
-                    </p>
-                  </div>
-                </div>
-              </a>
+              <ResourceCard key={idx} {...res} />
             ))}
           </div>
         </section>
