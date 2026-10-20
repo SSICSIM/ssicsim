@@ -168,7 +168,7 @@ export const committeesData = [
         description: "Mechanics Guide",
       },
       {
-        link: "https://drive.google.com/file/d/1Vglc3eiWrPK6fgdFSQWcki_PT5Uj9vU8/view?usp=drive_link",
+        link: "https://drive.google.com/file/d/1yTXTL89H0LVkKPE0LhCjsrFQxd3w06n-/view?usp=sharing",
         description: "Character List (Comitato della Libertà)",
       },
       {
