@@ -14,6 +14,7 @@ const events: MyEvent[] = [
     title: "Delegate Registration",
     start: new Date(2026, 9, 23, 12, 0),
     end: new Date(2026, 9, 23, 16, 0),
+    location: "OI 8200",
     category: "other",
   },
   {
