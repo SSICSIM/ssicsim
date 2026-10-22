@@ -256,7 +256,7 @@ const Landing = () => {
           </h3>
           <ScrollScrub>
             <h3 className="text-4xl md:text-6xl font-dm-sans font-bold mb-2 text-black">
-              13 years
+              14 years
             </h3>
           </ScrollScrub>
           <ScrollScrub>
