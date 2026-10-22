@@ -75,10 +75,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1e-w5s0gEAe4kITF9_JCSXLahQn43Pgpc/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1b2kCOtzXul6ShFwCfTrj4ij1e10aqRZl/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1zeEYmNrK6w-5wY5c99ILcgAKLHg132ZR/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1PtyKVzKoHCX-RPO_C706SUuuvCvfKvKk/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1kLS4j2gk37csLJZqdYlM8Tjae37_jbsz/view?usp=drive_link",
@@ -104,10 +108,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1R7-sIEkImOr1qHR8W6_gieuK66MENRAR/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1b7rfbK4yzxexjC_vZGLANvm1fnt-tgvC/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1Ba7D_a6MiOl6OxOIIsVeIZC6vhQjVJD7/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1Kuzikc04L5WUYlP7xp6QKS-NNp09beg6/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1Bx6OSENeHxLdnhDVNvfYvzKqtaboSoHm/view?usp=drive_link",
@@ -133,10 +141,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1vTQWHN3lj6sPEi_dkBFPBUhBSov-7ZHq/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1qIDDTMsahpVxOHoTzw5kXFBnDTV6BLsI/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1lomSkI4LgwPAlcr3WX-AP1vG2Y3wIzD7/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1dShmCEGlz3mdyOLu4S-N2n_vmO68lQEK/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1sHcnzbqVZzEodeRs_PeynlPZsnfheNLg/view?usp=sharing",
@@ -162,10 +174,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1cczb_6tT2ePzvFrzDhfcT5cnV8qjI1di/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1NMBJsD01Na0-mjzkK9KwV76VFm9Je0tm/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1TY-NHFSkZeDcpDlF3v4lAXuG2CFZARlP/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1Yh5eEGY-Kddm2tQwUqHEcM8DTW_oE39M/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1yTXTL89H0LVkKPE0LhCjsrFQxd3w06n-/view?usp=sharing",
@@ -210,10 +226,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1-2OocFkmtVFsru4Flfp0Zy80RnwSSAql/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1MBAB7RLt6Od0u_q3UfZ53hMnUf3Jrn3y/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1MX5Tr-MaDMhdcvmeGSvtltjnnw_HCdHW/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1jBWR7GQ0oLuKsHNxHFNW5nEJQi0cQdpH/view?usp=sharing",
       },
     ],
     contactEmail: "lotr@ssicsim.ca",
@@ -235,10 +255,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/110dLh5q5y9Gu_hath4kjJUoiG4W-YnNl/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1Qpu3FNkY1bn-WC8PzWpifE0B30Bv3TQ3/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1YOEG8dDblKeYCxO0_xdMBEW8kHNBoxul/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1Rpf7_00kgUavEWo2Bk3v55hx0bZJWGey/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1qCtAgbB8MUtUKkN2ZXfJ-8kv7UJM0Uxx/view?usp=drive_link",
@@ -264,10 +288,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1vj1VcQqDxqE833hAxKEEienM417V0e7F/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1GWe7t1EuWp8WDk_6-KpI3RL23k31NLpv/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1OWV4Tzn9KGige9x5Ydkw6Nf7HTcnu1r0/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1GQB6kOLJWkbXTEINp1XMeArvn-wA6zYJ/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1gmG6hLrMfdcmlgPXbezLHtK5H4miss2m/view?usp=drive_link",
@@ -293,10 +321,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/14pIHj8rvIWopO5ClbY4-coT7SOKwid5_/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1ZNuHRwDwBrwFxPuLUHmmW5e28OoDhlpF/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1H7lCJbUJRLvYJ8tExdxJ_QLRRf3w4ijz/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1li7bNyg_mJDpWqrY6B4dDhWOAytaRwIP/view?usp=sharing",
       },
     ],
     contactEmail: "wizardingpuzzle@ssicsim.ca",
@@ -333,10 +365,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1cbdN3LrQkpaiBzchK1bYB8Bfxw3g6TgC/view?usp=drivesdk",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1GbtEmVs44Y5bvfiCm0uEV5EGxjMaBKIr/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1-GDO8oMsYZZ5eCio3Exc2yEg4Ai6bcfK/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1q5a_5j4rsZ4MN_UBraEvHiN831bOAQwC/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1Ak8AftBLzHMSX9UBHmt8r7gulWoYQy7-/view?usp=drive_link",
@@ -362,10 +398,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1N2wq_lZQFgq1-_d-7TcoM9mX2wpQ93cY/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1vwl_IZ_cW3J5bM0JD-JWKiWX1-8pSVgg/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1w5YDsEJRhU0LURvixZyS-YrwPOLAx5Kq/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1CLhW-2pV_3x5Jwa8l9ViibbfPDUkutv1/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1sVRgrSkvuYdxfze4k32O5Wzpz-GYOIBd/view?usp=drive_link",
@@ -391,10 +431,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1QYCLMurHH_L0GqkjtBPQG1-ChA8si2U9/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1qB5NsjpWFBjkaNg5GSwxELz0vel1e60F/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/17gxu2D1DixHk98rBHX9oEzXoZQTn4CGp/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/1ZZ1-kQWRbRiPjdf1lwTSQejMQHzieIUj/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1gKy-6-mkOjmPagpjmyU9bAzH2-8VwOI5/view?usp=sharing",
@@ -420,10 +464,14 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1h-nb6qS1_XPKKOMgXM7QP8Aphb-20oCk/view?usp=drive_link",
         description: "Background Guide",
+        printLink:
+          "https://drive.google.com/file/d/1avwwFFbO4Bg1a16jsHRPcvXom3cB_CmJ/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1rcPX1sFvnKKmRAcPKtqdeTTZzpjxYYAr/view?usp=sharing",
         description: "Mechanics Guide",
+        printLink:
+          "https://drive.google.com/file/d/12sUHw_P5Lhqaf_2ajZ2pHJhPlkZfAqpd/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1sbWMQVYYiJOQ9dh9Fkc6zhHHaSnE88vc/view?usp=sharing",
@@ -449,18 +497,26 @@ export const committeesData = [
       {
         link: "https://drive.google.com/file/d/1H1QWvl7yTBKVbdGFkcEMvYA-kUw6ulWf/view?usp=drive_link",
         description: "Background Guide (Council)",
+        printLink:
+          "https://drive.google.com/file/d/1nog0IW2N1F_zjLBir7q6M-PezjzH0_zi/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/18XlRB2X7I-7obdn-Yu3ZRdw4RkwXpo8U/view?usp=drive_link",
         description: "Background Guide (Theorists)",
+        printLink:
+          "https://drive.google.com/file/d/1kJUrD0Bhvi2rc90-MwOiM7jqbFdLRcXU/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1y9mvfBKUPoBDS1n76NxYrLpBcucgHl8L/view?usp=sharing",
         description: "Mechanics Guide (Council)",
+        printLink:
+          "https://drive.google.com/file/d/1D9ufMK3nuliy4Z7N1qqqI2i41hzEwTHs/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1Eu4Z-zUJO0xCqq5Qw9Ni-kazEIswiu-f/view?usp=sharing",
         description: "Mechanics Guide (Theorists)",
+        printLink:
+          "https://drive.google.com/file/d/1j0dmraAXzeErudkRgBIzVYA9ragIe2b5/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1c-kfTvLe3avhs6U8F5phC38IgvUUPOle/view?usp=drive_link",

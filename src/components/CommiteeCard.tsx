@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Printer } from "lucide-react";
 import { parseDescription } from "../utils/utils";
 
 interface BackgroundGuide {
   description: string;
   link: string;
+  printLink?: string; // print-friendly PDF of the same guide
 }
 
 interface CommiteeCardProps {
@@ -117,16 +119,30 @@ const CommiteeCard = ({
               {backgroundGuides &&
                 backgroundGuides.length > 0 &&
                 backgroundGuides.map((guide, idx) => (
-                  <a
-                    key={idx}
-                    href={guide.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()} // Prevent modal
-                    className="text-center w-full bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-[12px]"
-                  >
-                    {guide.description}
-                  </a>
+                  <div key={idx} className="flex gap-2">
+                    <a
+                      href={guide.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // Prevent modal
+                      className="flex-1 text-center bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-[12px]"
+                    >
+                      {guide.description}
+                    </a>
+                    {guide.printLink && (
+                      <a
+                        href={guide.printLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()} // Prevent modal
+                        title="Print-friendly version"
+                        className="flex items-center justify-center gap-1 bg-white text-[#A3841D] font-dm-sans font-bold px-3 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-[12px]"
+                      >
+                        <Printer className="size-3.5" aria-hidden />
+                        Print-Friendly
+                      </a>
+                    )}
+                  </div>
                 ))}
 
               <button className="w-full bg-[#A3841D] text-white font-dm-sans font-bold px-4 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors text-sm">
@@ -212,15 +228,27 @@ const CommiteeCard = ({
                 {backgroundGuides && backgroundGuides.length > 0 && (
                   <div className="mb-4 flex flex-col gap-2">
                     {backgroundGuides.map((guide, idx) => (
-                      <div key={idx} className="flex flex-col items-start">
+                      <div key={idx} className="flex gap-2">
                         <a
                           href={guide.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-center inline-block w-[100%] bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
+                          className="flex-1 text-center bg-[#A3841D] text-white font-dm-sans font-bold px-6 py-2 rounded-lg shadow-md hover:bg-[#FFD700] hover:text-black transition-colors"
                         >
                           {guide.description}
                         </a>
+                        {guide.printLink && (
+                          <a
+                            href={guide.printLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Print-friendly version"
+                            className="flex items-center justify-center gap-1.5 border-2 border-[#A3841D] text-[#A3841D] font-dm-sans font-bold px-4 py-2 rounded-lg hover:bg-[#FFD700] hover:border-[#FFD700] hover:text-black transition-colors"
+                          >
+                            <Printer className="size-4" aria-hidden />
+                            Print-Friendly
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>
