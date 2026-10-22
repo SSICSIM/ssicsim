@@ -496,25 +496,25 @@ export const committeesData = [
     backgroundGuides: [
       {
         link: "https://drive.google.com/file/d/1H1QWvl7yTBKVbdGFkcEMvYA-kUw6ulWf/view?usp=drive_link",
-        description: "Background Guide (Council)",
+        description: "BG (Council)",
         printLink:
           "https://drive.google.com/file/d/1nog0IW2N1F_zjLBir7q6M-PezjzH0_zi/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/18XlRB2X7I-7obdn-Yu3ZRdw4RkwXpo8U/view?usp=drive_link",
-        description: "Background Guide (Theorists)",
+        description: "BG (Theorists)",
         printLink:
           "https://drive.google.com/file/d/1kJUrD0Bhvi2rc90-MwOiM7jqbFdLRcXU/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1y9mvfBKUPoBDS1n76NxYrLpBcucgHl8L/view?usp=sharing",
-        description: "Mechanics Guide (Council)",
+        description: "MG (Council)",
         printLink:
           "https://drive.google.com/file/d/1D9ufMK3nuliy4Z7N1qqqI2i41hzEwTHs/view?usp=sharing",
       },
       {
         link: "https://drive.google.com/file/d/1Eu4Z-zUJO0xCqq5Qw9Ni-kazEIswiu-f/view?usp=sharing",
-        description: "Mechanics Guide (Theorists)",
+        description: "MG (Theorists)",
         printLink:
           "https://drive.google.com/file/d/1j0dmraAXzeErudkRgBIzVYA9ragIe2b5/view?usp=sharing",
       },
