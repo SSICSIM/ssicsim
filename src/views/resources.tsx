@@ -147,7 +147,7 @@ const Resources = () => {
 
       <div className="relative bg-gray-100 py-16 md:py-20 px-4 md:px-6">
         {/* Delegate Handbook */}
-        <section className="max-w-[1200px] mx-auto mb-16">
+        <section id="handbook" className="max-w-[1200px] mx-auto mb-16">
           <a
             href="https://drive.google.com/file/d/1kjZ7iBDObL23F8_VnyS-Yob_bRT9hhiv/view?usp=sharing"
             target="_blank"
@@ -163,7 +163,7 @@ const Resources = () => {
                 </h2>
                 <p className="mt-3 text-white/90 font-dm-sans text-base md:text-lg max-w-2xl">
                   Everything you need for SSICSIM 2026 in one place, including
-                  the schedule, rooms, campus maps and key conference info.
+                  the schedule, rooms, campus map and key conference info.
                 </p>
               </div>
               <span className="self-start md:self-center shrink-0 px-6 py-3 rounded-full bg-white text-[#A3841D] font-nunito font-bold transition group-hover:bg-gray-100">
