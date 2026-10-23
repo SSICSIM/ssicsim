@@ -100,7 +100,7 @@ const Resources = () => {
   };
   const sections = [
     { id: "schedule", label: "Schedule" },
-    { id: "handbook"},
+    { id: "handbook", label: "Handbook" },
     { id: "equity", label: "Equity" },
     { id: "guides", label: "Guides" },
     { id: "faq", label: "FAQ" },
@@ -147,6 +147,14 @@ const Resources = () => {
       </div>
 
       <div className="relative bg-gray-100 py-16 md:py-20 px-4 md:px-6">
+        {/* Schedule */}
+        <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
+          <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
+            Conference Schedule
+          </h2>
+          <ConferenceSchedule />
+        </section>
+        
         {/* Delegate Handbook */}
         <section id="handbook" className="max-w-[1200px] mx-auto mb-16">
           <a
@@ -172,14 +180,6 @@ const Resources = () => {
               </span>
             </div>
           </a>
-        </section>
-
-        {/* Schedule */}
-        <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
-          <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
-            Conference Schedule
-          </h2>
-          <ConferenceSchedule />
         </section>
 
         {/* Equity */}
