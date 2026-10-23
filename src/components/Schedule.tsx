@@ -4,6 +4,7 @@ interface MyEvent {
   start: Date;
   end: Date;
   location?: string;
+  location2?: string;
   category: "committee" | "ceremony" | "training" | "other";
 }
 
