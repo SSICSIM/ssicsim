@@ -193,18 +193,24 @@ const Landing = () => {
                 <h3 className="text-white text-left md:text-[35px] ml-6 text-[25px] font-normal italic">
                   October 23rd–25th
                 </h3>
-                <div className="flex flex-row mt-3">
+                <div className="flex flex-row flex-wrap gap-x-4 ml-6 mt-3">
                   <a
                     href="/resources"
-                    className="ml-6 mt-4 bg-[#F3C02C] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
+                    className="mt-4 bg-[#F3C02C] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
                   >
                     Schedule & Resources
                   </a>
                   <a
                     href="/events"
-                    className="ml-4 mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+                    className="mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
                   >
                     Events
+                  </a>
+                  <a
+                    href="/venue"
+                    className="mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
+                  >
+                    Venue
                   </a>
                 </div>
               </div>

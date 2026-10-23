@@ -28,6 +28,7 @@ export default function Navbar() {
       subItems: [
         { label: "Resources & Schedule", path: "/resources" },
         { label: "Events", path: "/events" },
+        { label: "Venue", path: "/venue" },
       ],
     },
     { label: "Contact", path: "/contact" },
