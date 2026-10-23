@@ -68,19 +68,10 @@ const WifiCard = () => {
           <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
             Text <span className="font-bold text-gray-900">{wifi.keyword}</span>{" "}
             to <span className="font-bold text-gray-900">{wifi.phone}</span> to
-            get today&apos;s Wi-Fi access. It&apos;s a text, not a call, and the
-            code changes every day.
+            get today&apos;s Wi-Fi access.
           </p>
         )}
       </div>
-      {current ? (
-        <a
-          href={`sms:+${wifi.phone.replace(/\D/g, "")}?&body=${encodeURIComponent(wifi.keyword)}`}
-          className="self-start md:self-center shrink-0 px-6 py-3 rounded-full bg-[#A3841D] text-white font-nunito font-bold hover:bg-[#8a6f18] transition"
-        >
-          Text for Wi-Fi →
-        </a>
-      ) : null}
     </div>
   );
 };
