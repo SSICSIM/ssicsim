@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 
 const ALLOWED_ROUTES = new Set([
   "/",
+  "/2026",
   "/about",
   "/about/mission",
   "/team",
