@@ -46,6 +46,7 @@ export const VENUE_LOCATIONS: VenueLocation[] = [
     note: "OISE auditorium",
   },
   { name: "Prayer Room", group: "General", rooms: ["10-200"] },
+  { name: "Faculty Advisor Lounge", group: "General", rooms: ["4-426"] },
 
   {
     name: "Delegate Social",
