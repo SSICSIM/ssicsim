@@ -104,8 +104,8 @@ const events: MyEvent[] = [
     title: "Delegate Social",
     start: new Date(2026, 9, 24, 19, 0),
     end: new Date(2026, 9, 24, 22, 0),
-    location: `Food: OI 8200
-    Event: Victoria College, Alumni Hall`
+    location: "Food: OI 8200",
+    location2: "Event: Victoria College, Alumni Hall",
     category: "training",
   },
   // Sunday
@@ -250,6 +250,9 @@ export default function ConferenceSchedule() {
           {e.location && !isShort && (
             <div className="text-gray-600 truncate">{e.location}</div>
           )}
+           {e.location2 && !isShort && (
+            <div className="text-gray-600 truncate">{e.location2}</div>
+          )}
         </div>
       );
     });
@@ -357,6 +360,9 @@ export default function ConferenceSchedule() {
                     </div>
                     {e.location && (
                       <div className="text-sm text-gray-600">{e.location}</div>
+                    )}
+                    {e.location2 && (
+                      <div className="text-sm text-gray-600">{e.location2}</div>
                     )}
                   </div>
                 </li>
