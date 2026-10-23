@@ -4,7 +4,6 @@ import BuildingMap from "@/components/venue/BuildingMap";
 import { CF_DOMAIN } from "@/utils/consts";
 
 export const metadata: Metadata = {
-  title: "Venue Map | SSICSIM 2026",
   description:
     "Explore the OISE building (252 Bloor St W) in 3D and find your committee room.",
 };
