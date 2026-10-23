@@ -251,7 +251,7 @@ export default function ConferenceSchedule() {
           {e.location && !isShort && (
             <div className="text-gray-600 truncate">{e.location}</div>
           )}
-           {e.location2 && !isShort && (
+          {e.location2 && !isShort && (
             <div className="text-gray-600 truncate">{e.location2}</div>
           )}
         </div>
