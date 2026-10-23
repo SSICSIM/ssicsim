@@ -147,14 +147,6 @@ const Resources = () => {
       </div>
 
       <div className="relative bg-gray-100 py-16 md:py-20 px-4 md:px-6">
-        {/* Schedule */}
-        <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
-          <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
-            Conference Schedule
-          </h2>
-          <ConferenceSchedule />
-        </section>
-        
         {/* Delegate Handbook */}
         <section id="handbook" className="max-w-[1200px] mx-auto mb-16">
           <a
@@ -172,7 +164,7 @@ const Resources = () => {
                 </h2>
                 <p className="mt-3 text-white/90 font-dm-sans text-base md:text-lg max-w-2xl">
                   Everything you need for SSICSIM 2026 in one place, including
-                  the schedule, rooms, campus map and key conference info.
+                  the schedule, committee rooms, campus map and key conference info.
                 </p>
               </div>
               <span className="self-start md:self-center shrink-0 px-6 py-3 rounded-full bg-white text-[#A3841D] font-nunito font-bold transition group-hover:bg-gray-100">
@@ -181,7 +173,15 @@ const Resources = () => {
             </div>
           </a>
         </section>
-
+        
+        {/* Schedule */}
+        <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
+          <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
+            Conference Schedule
+          </h2>
+          <ConferenceSchedule />
+        </section>
+        
         {/* Equity */}
         <section id="equity" className="max-w-[1200px] mx-auto scroll-mt-40">
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
