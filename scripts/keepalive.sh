@@ -31,9 +31,13 @@ INTERVAL=300 # seconds between rounds; Render sleeps after 15 minutes
 # GitHub stops a job after 6 hours; the next scheduled run picks up from here.
 MAX_RUNTIME=$((5 * 3600 + 45 * 60))
 
+# Toronto is on EDT (UTC-4) until Nov 1. Spelled out so the windows don't
+# depend on the runner having time-zone data installed.
+OFFSET="-0400"
+
 to_epoch() {
-  TZ=America/Toronto date -d "$1" +%s 2>/dev/null ||
-    TZ=America/Toronto date -j -f "%Y-%m-%d %H:%M" "$1" +%s
+  date -d "$1 $OFFSET" +%s 2>/dev/null ||
+    date -j -f "%Y-%m-%d %H:%M %z" "$1 $OFFSET" +%s
 }
 
 now=$(date +%s)
@@ -79,7 +83,7 @@ ping_all() {
 
 status=0
 while :; do
-  echo "--- $(TZ=America/Toronto date '+%a %H:%M')"
+  echo "--- $(date -u "+%a %H:%M UTC")"
   ping_all || status=1
   (($(date +%s) + INTERVAL >= end)) && break
   sleep "$INTERVAL"
