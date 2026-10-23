@@ -13,6 +13,7 @@ const ALLOWED_ROUTES = new Set([
   "/underconstruction",
   "/wrapped",
   "/committees",
+  "/venue",
   "/events/midnight-crisis/register",
   "/events/delegate-social/register",
   "/events/delegate-training/register",
