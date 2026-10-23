@@ -46,15 +46,21 @@ export const VENUE_LOCATIONS: VenueLocation[] = [
     note: "OISE auditorium",
   },
   { name: "Prayer Room", group: "General", rooms: ["10-200"] },
+
   {
-    name: "Midnight Crisis",
+    name: "Delegate Social",
     group: "Events",
-    rooms: ["8-200"],
-    note: "Friday, 7:30–11:00 pm.",
+    rooms: ["Victoria College (Alumni Hall)"],
+    note: "Saturday, 7–10 pm.",
+    external: {
+      building: "not in OISE",
+      mapsQuery: "Alumni Hall, Victoria College, Toronto",
+      short: "Vic",
+    },
   },
   {
-    name: "Delegate Training Room",
-    group: "General",
+    name: "Delegate Training",
+    group: "Events",
     rooms: ["UC 179"],
     note: "Friday, 12–1 pm and 2–3 pm.",
     external: {
@@ -64,15 +70,10 @@ export const VENUE_LOCATIONS: VenueLocation[] = [
     },
   },
   {
-    name: "Delegate Social",
-    group: "General",
-    rooms: ["Victoria College (Alumni Hall)"],
-    note: "Saturday, 7–10 pm.",
-    external: {
-      building: "not in OISE",
-      mapsQuery: "Alumni Hall, Victoria College, Toronto",
-      short: "Vic",
-    },
+    name: "Midnight Crisis",
+    group: "Events",
+    rooms: ["8-200"],
+    note: "Friday, 7:30–11:00 pm.",
   },
 
   {
