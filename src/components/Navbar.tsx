@@ -53,16 +53,9 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r mb-5 from-[#A3841D] via-[#B89520] to-[#A3841D] text-white py-3 px-4 text-center shadow-md">
-        <Link
-          href="/events"
-          className="hover:underline transition-all duration-200 inline-block"
-        >
-          <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Event registration</strong> is now open until October 21
-            at 11:59 PM!
-            <span className="ml-2 underline font-semibold">Sign up now!</span>
-          </span>
-        </Link>
+        <span className="font-dm-sans text-xs md:text-sm">
+          🎉 <strong>Welcome to SSICSIM 2026!</strong>
+        </span>
       </div>
 
       <nav
