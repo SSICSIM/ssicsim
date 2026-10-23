@@ -3,6 +3,7 @@ import { checkRateLimit, getIp } from "@/lib/rate-limit";
 import {
   TRAINING_SESSIONS,
   getEventForm,
+  sessionClosed,
   type EventFormConfig,
 } from "@/lib/event-forms";
 
@@ -118,6 +119,19 @@ export async function POST(
     body.answers && typeof body.answers === "object"
       ? (body.answers as Record<string, unknown>)
       : {};
+
+  // Each training session closes 1 minute before it starts. The backend only
+  // knows the event-wide deadline, so the per-session cut-off is checked here.
+  const chosen = TRAINING_SESSIONS.find((s) => s.key === answers.session);
+  if (slug === "delegate-training" && chosen && sessionClosed(chosen)) {
+    return NextResponse.json(
+      {
+        error:
+          "That session has already started. Please choose the other session.",
+      },
+      { status: 403 },
+    );
+  }
 
   let res: Response;
   try {

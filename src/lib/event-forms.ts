@@ -18,6 +18,8 @@ export interface EventPolicy {
 export interface EventSession {
   key: string;
   label: string;
+  // Sign-ups for this session close 1 minute before it starts (Toronto time).
+  closesAt: string;
 }
 
 export interface EventFormConfig {
@@ -25,6 +27,9 @@ export interface EventFormConfig {
   title: string;
   date: string;
   time: string;
+  // When registration closes, as shown on the form. The admin portal enforces
+  // the event's deadline; per-session cut-offs are in TRAINING_SESSIONS.
+  registrationCloses: string;
   location: string;
   intro: string[];
   // Midnight Crisis is selective; everyone else is first come, first served.
@@ -36,9 +41,21 @@ const WITHDRAWAL_BODY = (event: string, deadline?: string) =>
   `If you are unable to attend ${event} and need to withdraw after registering, you must inform the Chargée d'Affaires, Joanna Wang, by emailing registration@ssicsim.ca as soon as possible${deadline ? ` (no later than ${deadline})` : ""}. This allows us to make the necessary accommodations for your absence.`;
 
 export const TRAINING_SESSIONS: EventSession[] = [
-  { key: "session_1", label: "Session 1: 12:00 – 1:00 PM (in person, UC 179)" },
-  { key: "session_2", label: "Session 2: 2:00 – 3:00 PM (in person, UC 179)" },
+  {
+    key: "session_1",
+    label: "Session 1: 12:00 – 1:00 PM (in person, UC 179)",
+    closesAt: "2026-10-23T11:59:00-04:00",
+  },
+  {
+    key: "session_2",
+    label: "Session 2: 2:00 – 3:00 PM (in person, UC 179)",
+    closesAt: "2026-10-23T13:59:00-04:00",
+  },
 ];
+
+export function sessionClosed(session: EventSession, now = Date.now()) {
+  return now >= new Date(session.closesAt).getTime();
+}
 
 export const ALLERGY_OPTIONS = [
   "None",
@@ -70,6 +87,7 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
     title: "Midnight Crisis",
     date: "Friday, October 23, 2026",
     time: "7:30 – 11:00 PM",
+    registrationCloses: "Friday, October 23, 2026 @ 7:29 PM",
     location: "OI 8200 (in person)",
     selective: true,
     intro: [
@@ -118,6 +136,7 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
     title: "Delegate Social",
     date: "Saturday, October 24, 2026",
     time: "7:00 – 10:00 PM",
+    registrationCloses: "Saturday, October 24, 2026 @ 6:59 PM",
     location: "Victoria College, Alumni Hall (in person)",
     selective: false,
     intro: [
@@ -147,6 +166,8 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
     title: "Delegate Training",
     date: "Friday, October 23, 2026",
     time: "12:00 – 1:00 PM or 2:00 – 3:00 PM",
+    registrationCloses:
+      "1 minute before each session starts (Friday, October 23, 2026 @ 11:59 AM for Session 1 and 1:59 PM for Session 2)",
     location: "UC 179, University College (15 King's College Cir)",
     selective: false,
     intro: [
