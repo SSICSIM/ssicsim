@@ -106,7 +106,7 @@ const events: MyEvent[] = [
     start: new Date(2026, 9, 24, 19, 0),
     end: new Date(2026, 9, 24, 22, 0),
     location: "Food: OI 8200",
-    location2: "Event: Victoria College, Alumni Hall",
+    location2: "Event: Victoria College (Alumni Hall)",
     category: "training",
   },
   // Sunday

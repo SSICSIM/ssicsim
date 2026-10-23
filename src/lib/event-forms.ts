@@ -118,7 +118,7 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
     title: "Delegate Social",
     date: "Saturday, October 24, 2026",
     time: "7:00 – 10:00 PM",
-    location: "Victoria College, Alumni Hall (in person)",
+    location: "Victoria College (Alumni Hall), in person",
     selective: false,
     intro: [
       "Looking to unwind after a long day of formal debate? Hoping to connect with other Delegates, Staff, and Secretariat members at SSICSIM? Sign up for the Delegate Social, a lively event in the heart of the University of Toronto! Free refreshments and dinner will be provided.",
