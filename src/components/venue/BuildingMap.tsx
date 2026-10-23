@@ -644,8 +644,7 @@ export default function BuildingMap() {
               </div>
             ) : (
               <p className="text-sm text-[#3C2C2C]/60">
-                Pick a committee or room to see where it is, or click a floor in
-                the model to look inside.
+                Pick a room, or click one on the map.
               </p>
             )}
           </div>
@@ -765,9 +764,7 @@ export default function BuildingMap() {
             )}
             {!route && !routeError && (
               <p className="text-sm text-[#3C2C2C]/60">
-                Choose where you are and where you&apos;re going, or click two
-                gold rooms on the map. The route takes the elevators or the
-                stairs, whichever you pick.
+                Pick two rooms, or click them on the map.
               </p>
             )}
             <details className="border-t border-black/5 pt-3">

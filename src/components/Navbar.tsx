@@ -58,9 +58,8 @@ export default function Navbar() {
           className="hover:underline transition-all duration-200 inline-block"
         >
           <span className="font-dm-sans text-xs md:text-sm">
-            🎉 <strong>Event registration</strong> is now open until October 21
-            at 11:59 PM!
-            <span className="ml-2 underline font-semibold">Sign up now!</span>
+            🎉 <strong>Welcome to SSICSIM 2026!</strong> Registration for events
+            is still open!
           </span>
         </Link>
       </div>
