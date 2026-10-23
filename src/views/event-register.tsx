@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Breadcrumb,
@@ -17,6 +17,7 @@ import {
   MOTIVATION_MAX_WORDS,
   TRAINING_SESSIONS,
   countWords,
+  sessionClosed,
   type EventSlug,
 } from "@/lib/event-forms";
 import { apiErrorMessage } from "@/lib/utils";
@@ -160,6 +161,18 @@ export default function EventRegister({
 
   const motivationWords = countWords(motivation);
   const sessionFull = (key: string) => fullSessions.includes(key);
+  // Training sessions close 1 minute before they start. Checked after mount (and
+  // every 30 s) so the server-rendered page and the browser agree.
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const timer = setInterval(() => setNow(Date.now()), 30_000);
+    return () => clearInterval(timer);
+  }, []);
+  const sessionOver = (key: string) => {
+    const s = TRAINING_SESSIONS.find((x) => x.key === key);
+    return !!s && now !== null && sessionClosed(s, now);
+  };
 
   function validate(): string | null {
     if (!firstName.trim() || !lastName.trim())
@@ -180,6 +193,8 @@ export default function EventRegister({
     }
     if (slug === "delegate-training" && !session)
       return "Please choose a training session.";
+    if (slug === "delegate-training" && sessionOver(session))
+      return "That session has already started. Please choose the other session.";
     for (const policy of event.policies) {
       if (!policy.acks.every((a) => acks[a.key]))
         return `Please acknowledge the ${policy.title}.`;
@@ -381,10 +396,8 @@ export default function EventRegister({
           <p>
             <span className="font-bold">Note:</span> {event.title} is only open
             to registered SSICSIM 2026 delegates. Registration closes{" "}
-            <span className="font-semibold">
-              Friday, October 23, 2026 @ 7:00 PM
-            </span>
-            . Questions? Contact our Chargée d&apos;Affaires, Joanna Wang, at{" "}
+            <span className="font-semibold">{event.registrationCloses}</span>.
+            Questions? Contact our Chargée d&apos;Affaires, Joanna Wang, at{" "}
             <a
               href="mailto:registration@ssicsim.ca"
               className="text-[#A3841D] underline"
@@ -511,15 +524,22 @@ export default function EventRegister({
                         name="session"
                         value={s.key}
                         checked={session === s.key}
+                        disabled={sessionOver(s.key)}
                         onChange={() => setSession(s.key)}
                         className="accent-[#A3841D] w-4 h-4 mt-0.5 flex-shrink-0"
                       />
                       <span className="text-sm font-dm-sans text-gray-700">
                         {s.label}
-                        {sessionFull(s.key) && (
-                          <span className="ml-2 text-xs font-semibold text-[#A3841D]">
-                            Full, waitlist only
+                        {sessionOver(s.key) ? (
+                          <span className="ml-2 text-xs font-semibold text-gray-500">
+                            Closed, session has started
                           </span>
+                        ) : (
+                          sessionFull(s.key) && (
+                            <span className="ml-2 text-xs font-semibold text-[#A3841D]">
+                              Full, waitlist only
+                            </span>
+                          )
                         )}
                       </span>
                     </label>
