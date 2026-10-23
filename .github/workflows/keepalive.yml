@@ -1,0 +1,33 @@
+name: Conference keep-alive
+
+# Keeps the committee backends on Render awake during committee hours.
+# The schedule just wakes this up; scripts/keepalive.sh decides whether a
+# committee window is open and keeps pinging until it closes.
+on:
+  schedule:
+    # Every 30 minutes, Oct 23-25 (UTC). Runs outside a window exit right away.
+    - cron: "5,35 * 23-25 10 *"
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: "Ping for this many minutes, ignoring the schedule (blank = follow the schedule)"
+        required: false
+
+# One pinger at a time; a run that arrives while one is going waits its turn.
+concurrency:
+  group: conference-keepalive
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+
+      - name: Ping committee servers
+        run: bash scripts/keepalive.sh
+        env:
+          FORCE_MINUTES: ${{ inputs.minutes }}
