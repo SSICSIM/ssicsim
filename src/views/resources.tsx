@@ -150,7 +150,7 @@ const Resources = () => {
         {/* Delegate Handbook */}
         <section id="handbook" className="max-w-[1200px] mx-auto mb-16">
           <a
-            href="https://drive.google.com/file/d/1kjZ7iBDObL23F8_VnyS-Yob_bRT9hhiv/view?usp=sharing"
+            href="https://drive.google.com/file/d/1kjZ7iBDObL23F8_VnyS-Yob_bRT9hhiv/view?usp=drivesdk
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block overflow-hidden rounded-3xl bg-gradient-to-br from-[#A3841D] to-[#7a6215] p-6 md:p-10 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
