@@ -97,7 +97,7 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
         title: "Withdrawal Policy",
         body: WITHDRAWAL_BODY(
           "Midnight Crisis",
-          "Wednesday, October 21 @ 11:59 PM",
+          "Friday, October 23, 2026 @ 7:00 PM",
         ),
         acks: [
           {
@@ -107,7 +107,7 @@ export const EVENT_FORMS: Record<EventSlug, EventFormConfig> = {
           {
             key: "withdrawal_notice_ack",
             label:
-              "I understand that if I am unable to attend Midnight Crisis, I will notify the Chargée d'Affaires no later than Wednesday, October 21 @ 11:59 PM.",
+              "I understand that if I am unable to attend Midnight Crisis, I will notify the Chargée d'Affaires no later than Friday, October 23, 2026 @ 7:00 PM.",
           },
         ],
       },

@@ -382,7 +382,7 @@ export default function EventRegister({
             <span className="font-bold">Note:</span> {event.title} is only open
             to registered SSICSIM 2026 delegates. Registration closes{" "}
             <span className="font-semibold">
-              Wednesday, October 21, 2026 @ 11:59 PM
+              Friday, October 23, 2026 @ 7:00 PM
             </span>
             . Questions? Contact our Chargée d&apos;Affaires, Joanna Wang, at{" "}
             <a
