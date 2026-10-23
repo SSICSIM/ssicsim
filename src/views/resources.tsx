@@ -146,6 +146,33 @@ const Resources = () => {
       </div>
 
       <div className="relative bg-gray-100 py-16 md:py-20 px-4 md:px-6">
+        {/* Delegate Handbook */}
+        <section className="max-w-[1200px] mx-auto mb-16">
+          <a
+            href="https://drive.google.com/file/d/1kjZ7iBDObL23F8_VnyS-Yob_bRT9hhiv/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block overflow-hidden rounded-3xl bg-gradient-to-br from-[#A3841D] to-[#7a6215] p-6 md:p-10 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />
+            <div className="absolute -bottom-20 right-24 h-40 w-40 rounded-full bg-white/5" />
+            <div className="relative flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <h2 className="text-3xl md:text-4xl font-bold font-nunito text-white">
+                  Delegate Handbook
+                </h2>
+                <p className="mt-3 text-white/90 font-dm-sans text-base md:text-lg max-w-2xl">
+                  Everything you need for SSICSIM 2026 in one place, including
+                  the schedule, rooms, campus maps and key conference info.
+                </p>
+              </div>
+              <span className="self-start md:self-center shrink-0 px-6 py-3 rounded-full bg-white text-[#A3841D] font-nunito font-bold transition group-hover:bg-gray-100">
+                Open the Handbook →
+              </span>
+            </div>
+          </a>
+        </section>
+
         {/* Schedule */}
         <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">
