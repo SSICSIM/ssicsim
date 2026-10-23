@@ -1,9 +1,9 @@
 "use client";
 
 import { CF_DOMAIN } from "../utils/consts";
-import { equityForm, equityResources, resources } from "../utils/data";
+import { equityForm, equityResources, resources, wifi } from "../utils/data";
 import ConferenceSchedule from "../components/Schedule";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { parseDescription } from "../utils/utils";
 import Seo from "../components/Seo";
 import Image from "next/image";
@@ -40,6 +40,48 @@ const ResourceCard = ({ title, description, href, bg }: ResourceCardProps) => (
     </div>
   </a>
 );
+
+// Today's date in Toronto as YYYY-MM-DD, to match wifi.validOn.
+const torontoToday = () =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto" }).format(new Date());
+
+const WifiCard = () => {
+  // Checked in the browser, not at build time, so the page never shows a
+  // keyword from another day.
+  const [current, setCurrent] = useState<boolean | null>(null);
+  useEffect(() => setCurrent(wifi.validOn === torontoToday()), []);
+
+  return (
+    <div className="rounded-3xl bg-white shadow-xl border-l-8 border-[#A3841D] p-6 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
+      <div className="flex-1">
+        <h2 className="text-3xl md:text-4xl font-bold font-nunito text-[#A3841D]">
+          Campus Wi-Fi
+        </h2>
+        {current === false ? (
+          <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+            Today&apos;s Wi-Fi code is on its way. Check back soon, or ask any
+            staff member.
+          </p>
+        ) : (
+          <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+            Text <span className="font-bold text-gray-900">{wifi.keyword}</span>{" "}
+            to <span className="font-bold text-gray-900">{wifi.phone}</span> to
+            get today&apos;s Wi-Fi access. It&apos;s a text, not a call, and the
+            code changes every day.
+          </p>
+        )}
+      </div>
+      {current ? (
+        <a
+          href={`sms:+${wifi.phone.replace(/\D/g, "")}?&body=${encodeURIComponent(wifi.keyword)}`}
+          className="self-start md:self-center shrink-0 px-6 py-3 rounded-full bg-[#A3841D] text-white font-nunito font-bold hover:bg-[#8a6f18] transition"
+        >
+          Text for Wi-Fi →
+        </a>
+      ) : null}
+    </div>
+  );
+};
 
 const Resources = () => {
   const faqs = [
@@ -101,6 +143,7 @@ const Resources = () => {
   const sections = [
     { id: "schedule", label: "Schedule" },
     { id: "handbook", label: "Handbook" },
+    { id: "wifi", label: "Wi-Fi" },
     { id: "equity", label: "Equity" },
     { id: "guides", label: "Guides" },
     { id: "faq", label: "FAQ" },
@@ -150,7 +193,7 @@ const Resources = () => {
         {/* Delegate Handbook */}
         <section id="handbook" className="max-w-[1200px] mx-auto mb-16">
           <a
-            href="https://drive.google.com/file/d/1kjZ7iBDObL23F8_VnyS-Yob_bRT9hhiv/view?usp=drivesdk
+            href="https://drive.google.com/file/d/1kjZ7iBDObL23F8_VnyS-Yob_bRT9hhiv/view?usp=drivesdk"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block overflow-hidden rounded-3xl bg-gradient-to-br from-[#A3841D] to-[#7a6215] p-6 md:p-10 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
@@ -174,6 +217,11 @@ const Resources = () => {
           </a>
         </section>
         
+        {/* Wi-Fi */}
+        <section id="wifi" className="max-w-[1200px] mx-auto mb-16 scroll-mt-40">
+          <WifiCard />
+        </section>
+
         {/* Schedule */}
         <section id="schedule" className="max-w-[1200px] mx-auto scroll-mt-40">
           <h2 className="text-4xl font-bold font-nunito text-center text-[#A3841D]">

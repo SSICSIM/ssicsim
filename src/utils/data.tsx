@@ -627,6 +627,16 @@ export const resources = [
   },
 ];
 
+// Campus Wi-Fi: delegates text the keyword to the number to get access.
+// UofT issues a new keyword every day, so update all three each morning
+// (validOn is YYYY-MM-DD). On any other day the site hides the keyword and
+// says today's is coming, so an old one is never shown.
+export const wifi = {
+  keyword: "utoronto76",
+  phone: "1-833-338-7626",
+  validOn: "2026-10-23",
+};
+
 // Summarized from the form's own description on Google Forms.
 export const equityForm = {
   title: "Equity Contact Form",
