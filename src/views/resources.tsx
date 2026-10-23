@@ -100,6 +100,7 @@ const Resources = () => {
   };
   const sections = [
     { id: "schedule", label: "Schedule" },
+    { id: "handbook"},
     { id: "equity", label: "Equity" },
     { id: "guides", label: "Guides" },
     { id: "faq", label: "FAQ" },
