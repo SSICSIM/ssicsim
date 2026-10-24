@@ -65,41 +65,53 @@ const WifiCard = () => {
         <h2 className="text-3xl md:text-4xl font-bold font-nunito text-[#A3841D]">
           Campus Wi-Fi
         </h2>
-        {current === false ? (
-          <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
-            Today&apos;s Wi-Fi code is on its way. Check back soon, or ask any
-            staff member.
-          </p>
-        ) : (
-          <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
-            Text <span className="font-bold text-gray-900">{wifi.keyword}</span>{" "}
-            to <span className="font-bold text-gray-900">{wifi.phone}</span> to
-            get today&apos;s Wi-Fi access.
-          </p>
-        )}
+        <h3 className="mt-6 text-xl font-bold font-nunito text-gray-900">
+          How to connect
+        </h3>
+        <ol className="mt-2 list-decimal pl-6 space-y-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          {current === false ? (
+            <li>
+              Text today&apos;s code to the number we&apos;ll post here.
+              Today&apos;s code is on its way, so check back soon or ask any
+              staff member.
+            </li>
+          ) : (
+            <li>
+              Text{" "}
+              <span className="font-bold text-gray-900">{wifi.keyword}</span> to{" "}
+              <span className="font-bold text-gray-900">{wifi.phone}</span>.
+            </li>
+          )}
+          <li>
+            You&apos;ll get a text back with a temporary username and password.
+          </li>
+          <li>
+            Use them to sign in to the{" "}
+            <span className="font-bold text-gray-900">eduroam</span> Wi-Fi
+            network on your devices.
+          </li>
+        </ol>
         <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
-          You&apos;ll get a username and password back. Use them to sign in to
-          the <span className="font-bold text-gray-900">eduroam</span> network.
+          This gives you free, secure Wi-Fi for the day on all three UofT
+          campuses. The code changes every day.
         </p>
-        <details className="mt-4 max-w-2xl">
-          <summary className="cursor-pointer font-bold font-dm-sans text-[#A3841D]">
-            Android won&apos;t connect?
-          </summary>
-          <p className="mt-3 text-gray-700 font-dm-sans">
-            Some Android phones need these settings for eduroam:
-          </p>
-          <dl className="mt-2 divide-y divide-gray-200 font-dm-sans text-sm md:text-base">
-            {androidWifiSettings.map(({ label, value }) => (
-              <div
-                key={label}
-                className="py-2 flex flex-col sm:flex-row sm:gap-4"
-              >
-                <dt className="text-gray-600 sm:w-56 shrink-0">{label}</dt>
-                <dd className="font-bold text-gray-900 break-words">{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </details>
+
+        <h3 className="mt-6 text-xl font-bold font-nunito text-gray-900">
+          Android setup
+        </h3>
+        <p className="mt-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          Some Android phones need these settings to connect to eduroam:
+        </p>
+        <ol className="mt-2 list-decimal pl-6 space-y-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          {androidWifiSettings.map(({ label, value }) => (
+            <li key={label}>
+              {label}:{" "}
+              <span className="font-bold text-gray-900 break-words">
+                {value}
+              </span>
+            </li>
+          ))}
+        </ol>
       </div>
     </div>
   );
