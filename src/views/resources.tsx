@@ -1,7 +1,13 @@
 "use client";
 
 import { CF_DOMAIN } from "../utils/consts";
-import { equityForm, equityResources, resources, wifi } from "../utils/data";
+import {
+  androidWifiSettings,
+  equityForm,
+  equityResources,
+  resources,
+  wifi,
+} from "../utils/data";
 import ConferenceSchedule from "../components/Schedule";
 import { useEffect, useState } from "react";
 import { parseDescription } from "../utils/utils";
@@ -71,6 +77,29 @@ const WifiCard = () => {
             get today&apos;s Wi-Fi access.
           </p>
         )}
+        <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          You&apos;ll get a username and password back. Use them to sign in to
+          the <span className="font-bold text-gray-900">eduroam</span> network.
+        </p>
+        <details className="mt-4 max-w-2xl">
+          <summary className="cursor-pointer font-bold font-dm-sans text-[#A3841D]">
+            Android won&apos;t connect?
+          </summary>
+          <p className="mt-3 text-gray-700 font-dm-sans">
+            Some Android phones need these settings for eduroam:
+          </p>
+          <dl className="mt-2 divide-y divide-gray-200 font-dm-sans text-sm md:text-base">
+            {androidWifiSettings.map(({ label, value }) => (
+              <div
+                key={label}
+                className="py-2 flex flex-col sm:flex-row sm:gap-4"
+              >
+                <dt className="text-gray-600 sm:w-56 shrink-0">{label}</dt>
+                <dd className="font-bold text-gray-900 break-words">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </details>
       </div>
     </div>
   );
