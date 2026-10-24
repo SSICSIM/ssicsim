@@ -71,15 +71,32 @@ const WifiCard = () => {
         <ol className="mt-2 list-decimal pl-6 space-y-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
           {current === false ? (
             <li>
-              Text today&apos;s code to the number we&apos;ll post here.
-              Today&apos;s code is on its way, so check back soon or ask any
-              staff member.
+              Get today&apos;s keyword and phone number at{" "}
+              <a
+                href={wifi.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#A3841D] underline"
+              >
+                eva.eis.utoronto.ca
+              </a>
+              , then text the keyword to that number.
             </li>
           ) : (
             <li>
               Text{" "}
               <span className="font-bold text-gray-900">{wifi.keyword}</span> to{" "}
               <span className="font-bold text-gray-900">{wifi.phone}</span>.
+              Today&apos;s code is also posted at{" "}
+              <a
+                href={wifi.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#A3841D] underline"
+              >
+                eva.eis.utoronto.ca
+              </a>
+              .
             </li>
           )}
           <li>

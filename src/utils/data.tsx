@@ -628,13 +628,14 @@ export const resources = [
 ];
 
 // Campus Wi-Fi: delegates text the keyword to the number to get access.
-// UofT issues a new keyword every day, so update all three each morning
-// (validOn is YYYY-MM-DD). On any other day the site hides the keyword and
-// says today's is coming, so an old one is never shown.
+// UofT posts a new keyword every day at the eVA link, so copy it over each
+// morning (validOn is YYYY-MM-DD). On any other day the site hides the keyword
+// and sends delegates to the link instead, so an old one is never shown.
 export const wifi = {
-  keyword: "utoronto76",
+  keyword: "58utoronto",
   phone: "1-833-338-7626",
-  validOn: "2026-10-23",
+  validOn: "2026-10-24",
+  link: "https://eva.eis.utoronto.ca",
 };
 
 // Some Android phones need these eduroam settings to sign in with the
