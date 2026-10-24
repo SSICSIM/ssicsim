@@ -637,6 +637,23 @@ export const wifi = {
   validOn: "2026-10-23",
 };
 
+// Some Android phones need these eduroam settings to sign in with the
+// username and password from the SMS reply. From UofT's eVA instructions.
+export const androidWifiSettings = [
+  { label: "EAP method", value: "PEAP" },
+  { label: "Phase 2 authentication", value: "MSCHAPV2" },
+  { label: "CA certificate", value: "Use system certificate" },
+  {
+    label: "Online certificate status",
+    value: "Do not validate (or Request certificate status)",
+  },
+  { label: "Minimum TLS version", value: "TLSv1.2" },
+  { label: "Domain", value: "eva.eduroam.ca" },
+  { label: "Identity", value: "The username from the SMS reply" },
+  { label: "Anonymous identity", value: "eduroam@eva.eduroam.ca" },
+  { label: "Password", value: "The password from the SMS reply" },
+];
+
 // Summarized from the form's own description on Google Forms.
 export const equityForm = {
   title: "Equity Contact Form",
