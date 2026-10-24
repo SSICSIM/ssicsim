@@ -628,14 +628,32 @@ export const resources = [
 ];
 
 // Campus Wi-Fi: delegates text the keyword to the number to get access.
-// UofT issues a new keyword every day, so update all three each morning
-// (validOn is YYYY-MM-DD). On any other day the site hides the keyword and
-// says today's is coming, so an old one is never shown.
+// UofT posts a new keyword every day at the eVA link, so copy it over each
+// morning (validOn is YYYY-MM-DD). On any other day the site hides the keyword
+// and sends delegates to the link instead, so an old one is never shown.
 export const wifi = {
-  keyword: "utoronto76",
+  keyword: "58utoronto",
   phone: "1-833-338-7626",
-  validOn: "2026-10-23",
+  validOn: "2026-10-24",
+  link: "https://eva.eis.utoronto.ca",
 };
+
+// Some Android phones need these eduroam settings to sign in with the
+// username and password from the SMS reply. From UofT's eVA instructions.
+export const androidWifiSettings = [
+  { label: "Identity", value: "the guest username from your SMS" },
+  { label: "Domain", value: "eva.eduroam.ca" },
+  { label: "Anonymous identity", value: "eduroam@eva.eduroam.ca" },
+  { label: "Password", value: "the password from your SMS" },
+  { label: "EAP method", value: "PEAP" },
+  { label: "Minimum TLS version", value: "TLSv1.2" },
+  { label: "Phase 2 authentication", value: "MSCHAPV2" },
+  { label: "CA certificate", value: "Use system certificate" },
+  {
+    label: "Online certificate status",
+    value: "Do not validate, or Request certificate status",
+  },
+];
 
 // Summarized from the form's own description on Google Forms.
 export const equityForm = {

@@ -1,7 +1,13 @@
 "use client";
 
 import { CF_DOMAIN } from "../utils/consts";
-import { equityForm, equityResources, resources, wifi } from "../utils/data";
+import {
+  androidWifiSettings,
+  equityForm,
+  equityResources,
+  resources,
+  wifi,
+} from "../utils/data";
 import ConferenceSchedule from "../components/Schedule";
 import { useEffect, useState } from "react";
 import { parseDescription } from "../utils/utils";
@@ -59,18 +65,70 @@ const WifiCard = () => {
         <h2 className="text-3xl md:text-4xl font-bold font-nunito text-[#A3841D]">
           Campus Wi-Fi
         </h2>
-        {current === false ? (
-          <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
-            Today&apos;s Wi-Fi code is on its way. Check back soon, or ask any
-            staff member.
-          </p>
-        ) : (
-          <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
-            Text <span className="font-bold text-gray-900">{wifi.keyword}</span>{" "}
-            to <span className="font-bold text-gray-900">{wifi.phone}</span> to
-            get today&apos;s Wi-Fi access.
-          </p>
-        )}
+        <h3 className="mt-6 text-xl font-bold font-nunito text-gray-900">
+          How to connect
+        </h3>
+        <ol className="mt-2 list-decimal pl-6 space-y-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          {current === false ? (
+            <li>
+              Get today&apos;s keyword and phone number at{" "}
+              <a
+                href={wifi.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#A3841D] underline"
+              >
+                eva.eis.utoronto.ca
+              </a>
+              , then text the keyword to that number.
+            </li>
+          ) : (
+            <li>
+              Text{" "}
+              <span className="font-bold text-gray-900">{wifi.keyword}</span> to{" "}
+              <span className="font-bold text-gray-900">{wifi.phone}</span>.
+              Today&apos;s code is also posted at{" "}
+              <a
+                href={wifi.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#A3841D] underline"
+              >
+                eva.eis.utoronto.ca
+              </a>
+              .
+            </li>
+          )}
+          <li>
+            You&apos;ll get a text back with a temporary username and password.
+          </li>
+          <li>
+            Use them to sign in to the{" "}
+            <span className="font-bold text-gray-900">eduroam</span> Wi-Fi
+            network on your devices.
+          </li>
+        </ol>
+        <p className="mt-3 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          This gives you free, secure Wi-Fi for the day on all three UofT
+          campuses. The code changes every day.
+        </p>
+
+        <h3 className="mt-6 text-xl font-bold font-nunito text-gray-900">
+          Android setup
+        </h3>
+        <p className="mt-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          Some Android phones need these settings to connect to eduroam:
+        </p>
+        <ol className="mt-2 list-decimal pl-6 space-y-2 text-gray-700 font-dm-sans text-base md:text-lg max-w-2xl">
+          {androidWifiSettings.map(({ label, value }) => (
+            <li key={label}>
+              {label}:{" "}
+              <span className="font-bold text-gray-900 break-words">
+                {value}
+              </span>
+            </li>
+          ))}
+        </ol>
       </div>
     </div>
   );
