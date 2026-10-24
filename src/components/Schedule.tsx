@@ -105,8 +105,8 @@ const events: MyEvent[] = [
     title: "Delegate Social",
     start: new Date(2026, 9, 24, 19, 0),
     end: new Date(2026, 9, 24, 22, 0),
-    location: "Food: OI 8200",
-    location2: "Event: Victoria College, Alumni Hall",
+    location: "7:00 PM – 8:00 PM Food: OI 8200",
+    location2: "8:00 PM – 10:00 PM Event: Victoria College, Alumni Hall",
     category: "training",
   },
   // Sunday
