@@ -188,7 +188,7 @@ const Landing = () => {
                   Canada’s Premier Model UN Crisis Simulation
                 </h1>
                 <h3 className="text-white text-left md:text-[35px] ml-6 text-[25px] font-normal italic">
-                  Thanks for coming :)
+                  Thanks for coming!
                 </h3>
                 <div className="flex flex-row flex-wrap gap-x-4 ml-6 mt-3">
                   <a
