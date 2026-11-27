@@ -15,7 +15,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CF_DOMAIN } from "../utils/consts";
 import Seo from "../components/Seo";
-import FlipCountdown from "../components/FlipCountdown";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -180,8 +179,6 @@ const Landing = () => {
               clipping) when the content is taller than the screen. The top
               padding clears the banner and navbar. */}
           <div className="relative max-w-[2000px] mx-auto min-h-screen pt-[160px] pb-12 flex flex-col items-start justify-center font-nunito z-20">
-            {/* Text on the left; from 1024px the countdown sits to the right,
-                level with the heading. */}
             <div className="flex w-full flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:pr-10 xl:pr-16">
               <div>
                 <h3 className="text-white text-left md:text-[35px] ml-6 text-[25px] font-normal italic">
@@ -191,7 +188,7 @@ const Landing = () => {
                   Canada’s Premier Model UN Crisis Simulation
                 </h1>
                 <h3 className="text-white text-left md:text-[35px] ml-6 text-[25px] font-normal italic">
-                  October 23rd–25th
+                  Thanks for coming :)
                 </h3>
                 <div className="flex flex-row flex-wrap gap-x-4 ml-6 mt-3">
                   <a
@@ -201,26 +198,14 @@ const Landing = () => {
                     Schedule & Resources
                   </a>
                   <a
-                    href="/events"
+                    href="https://drive.google.com/drive/folders/1x9xpOznlo7kYSEl11eZFgJhZVzE1ZERP"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
                   >
-                    Events
-                  </a>
-                  <a
-                    href="/venue"
-                    className="mt-4 bg-white text-[#A3841D] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-gray-100 transition-colors"
-                  >
-                    Venue
+                    SSICSIM 2026 Conference Photos
                   </a>
                 </div>
-              </div>
-
-              {/* Counts down to Delegate Registration opening (Friday, 12:00 PM ET). */}
-              <div className="ml-6 mt-8 self-start lg:self-auto lg:ml-0 lg:mt-0 shrink-0">
-                <FlipCountdown
-                  targetDate="2026-10-23T12:00:00-04:00"
-                  heading="Conference starts in"
-                />
               </div>
             </div>
           </div>
