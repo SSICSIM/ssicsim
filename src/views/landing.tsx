@@ -192,12 +192,6 @@ const Landing = () => {
                 </h3>
                 <div className="flex flex-row flex-wrap gap-x-4 ml-6 mt-3">
                   <a
-                    href="/resources"
-                    className="mt-4 bg-[#F3C02C] text-[#3C2C2C] px-4 py-4 rounded-lg font-dm-sans text-xl md:text-2xl font-bold hover:bg-[#F2A900] transition-colors"
-                  >
-                    Schedule & Resources
-                  </a>
-                  <a
                     href="https://drive.google.com/drive/folders/1x9xpOznlo7kYSEl11eZFgJhZVzE1ZERP"
                     target="_blank"
                     rel="noopener noreferrer"
